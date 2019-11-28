@@ -64,6 +64,13 @@ class CarController extends Controller
     	return view('frontend.cars.sonata.index', ['header' => true, 'highlight' => true, 'footer' => true, 'disclaimer' => $disclaimer]);
 	}
 
+	public function NewSonata() {
+
+		$disclaimer = PlaceholderHelper::getPlaceholderData('NewSonata_start');
+
+		return view('frontend.cars.sonataNew.index', ['header' => true, 'highlight' => true, 'footer' => true, 'disclaimer' => $disclaimer]);
+}
+
 	public function Creta() {
 
     	$disclaimer = PlaceholderHelper::getPlaceholderData('Creta_start');

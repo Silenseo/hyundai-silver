@@ -422,6 +422,13 @@ Route::get('/Sonata/gallery', function () {
     return view('frontend.cars.sonata.gallery', ['header' => true, 'highlight' => false, 'footer' => true]);
 });
 
+//New Sonata
+Route::get('/NewSonata', 'Frontend\CarController@NewSonata')->name('static_dealerapi_car29');
+
+Route::get('/NewSonata/gallery', function () {
+    return view('frontend.cars.sonataNew.gallery', ['header' => true, 'highlight' => false, 'footer' => true]);
+})->name('dealerapi_gallery29');
+
 //Creta
 Route::get('/Creta', 'Frontend\CarController@Creta')->name('static_car22');
 

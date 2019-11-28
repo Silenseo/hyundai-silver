@@ -1,4 +1,4 @@
-@extends('layouts.master-dealer')
+@extends('layouts.master')
 
 @section('pageTitle', 'Старт')
 
@@ -11,7 +11,7 @@
 
 @component('components/plugin-map')@endcomponent
 
-<section class="banner">
+<section class="banner ended">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -21,12 +21,12 @@
 						<use xlink:href="#back-link"></use>
 					</svg>
 				</a>
-				<div class="banner__inner">
+				<div class="banner__inner lazyload lazypreview" data-bgset="/images/start/pics/title7.jpg [(max-width: 640px)] | /images/start/pics/title6.jpg">
 					<h1 class="banner__title">
 						Финансовая программа
 					</h1>
 					<div class="banner__video">
-
+						
 					</div>
 					<a href="#" class="banner__pass js-pass">
 						<span>Пропустить</span>
@@ -66,9 +66,6 @@
 					<ul class="about__list owl-carousel js-carousel">
 						<li class="about__item">
 							<div class="about__back">
-								<div class="about__migel">
-									<img src="/images/start/pics/1.png" alt="">
-								</div>
 							</div>
 							<div class="about__icon">
 								<svg width="56" height="54" viewBox="0 0 56 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,9 +80,6 @@
 						</li>
 						<li class="about__item">
 							<div class="about__back">
-								<div class="about__migel">
-									<img src="/images/start/pics/2.png" alt="">
-								</div>
 							</div>
 							<div class="about__icon">
 								<svg width="52" height="49" viewBox="0 0 52 49" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -115,9 +109,6 @@
 						</li>
 						<li class="about__item">
 							<div class="about__back">
-								<div class="about__migel">
-									<img src="/images/start/pics/3.png" alt="">
-								</div>
 							</div>
 							<div class="about__icon">
 								<svg width="104" height="104" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -446,9 +437,9 @@
 <script>
 var oldWindowWidth = 0;
 
-videoInit()
+// videoInit()
 
-window.addEventListener('resize', videoInit);
+// window.addEventListener('resize', videoInit);
 
 function videoInit() {
 	var windowWidth = window.innerWidth;
@@ -465,7 +456,7 @@ function videoInit() {
 			var cont = document.querySelector(container);
 
 			if (cont) {
-				cont.innerHTML = '<video id="video" class="' + selector + '" muted autoplay playsinline data-object-fit="cover">' +
+				cont.innerHTML = '<video id="video" class="' + selector + '" muted autoplay playsinline data-object-fit="cover">' + 
 				'<source src="' + src +'">' +
 				'</video>'
 			} else {
@@ -486,6 +477,7 @@ function videoInit() {
 @endsection
 
 @section('scripts')
+	<script src="{{ mix('/js/lazypreview.js') }}"></script>
     <script src="{{ mix('/js/start/libs.js') }}"></script>
     <script src="{{ mix('/js/start/start.js') }}"></script>
     <script src="{{ mix('/js/start/calc.js') }}"></script>
