@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer(['components.dropdown-showroom', 'frontend.pages.sitemap'], function($view) {
-            $cars_grouped = \Cache::remember('menu_cars_grouped', 3600, function() {
+            $cars_grouped = \Cache::remember('menu_cars_grouped', 0, function() {
 
                 $cars = \App\Car::where('visible', 1)->where('is_old_model', 0)->orderBy('menu_row')->orderBy('menu_column')->get();
                 $cars_grouped = [
@@ -53,12 +53,14 @@ class AppServiceProvider extends ServiceProvider
                     ],
                 ];
                 foreach($cars as $car) {
+                    if($car->id == 11) continue;
                     $cars_grouped[$car->menu_row]['items'][] = $car;
                 }
 
                 return $cars_grouped;
             });
 
+            unset($cars_grouped[1]);
             $view->with('menu_cars', $cars_grouped);
         });
 

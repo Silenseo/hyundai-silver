@@ -11,7 +11,7 @@
                     <ul class="showroom__list">
                         
                         <li class="showroom__line">
-                            <h4 class="showroom__title">Новинки</h4> 
+                            <h4 class="showroom__title">Новинки</h4>
                             <ul class="showroom__cars">
                                   <li class="showroom__car showroom__car first-place">
                                         <a href="/promo/creta-rock" class="d-car">
@@ -39,6 +39,21 @@
                                             </div>
                                         </a>
                                     </li>
+
+                                <li class="showroom__car showroom__car">
+                                    <a href="/NewSonata" class="d-car" aria-label="NEWSONATA">
+                                        <div class="d-car__top-line">
+                                            <h5 class="d-car__title">Новая СОНАТА</h5>
+                                            <div class="d-car__name">/ SONATA</div>
+                                        </div>
+                                        <div class="d-car__price">от 1 725 000 ₽</div>
+                                        <div class="d-car__m-name">SONATA</div>
+                                        <div class="d-car__img">
+                                            <img class="showroom-lazyload" data-showroomsrc="/storage/cars/1574242069.png" alt="Новая SONATA" src="/storage/cars/1574242069.png">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="showroom__car showroom__car"></li>
                             </ul>
                         </li>                        
                         
@@ -87,6 +102,7 @@
                                         </li>
                                     @endif
                                     @foreach($menu_car['items'] as $car)
+
                                     <li class="showroom__car showroom__car<?=$car->id == 3 || $car->id == 6 ? ' first-place' : '';?>"> 
                                         <a href="/{{ $car->id_text }}" class="d-car" aria-label="{{ strtoupper($car->id_text) }}">
                                             <div class="d-car__top-line">
