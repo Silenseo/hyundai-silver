@@ -1,0 +1,185 @@
+//Внимание! Этот компонент используется в попап варианте
+.service-form
+	display: flex
+	flex-wrap: wrap
+	background-color: #fff
+	color: #000
+	&__title
+		width: 55%
+		margin: 0 auto
+		text-align: center
+		margin-bottom: 48px
+	&__left, &__right
+		width: 50%
+	&__left
+		padding-right: 16px
+	&__right
+		padding-left: 16px
+	&__footer
+		display: flex
+		align-items: center
+		justify-content: space-between
+		width: 100%
+		margin-top: 50px
+	&__label
+		font-weight: 500
+		margin: 0
+		font-size: 2rem
+		line-height: 1.2
+		margin-bottom: 32px
+		&--dealer
+			margin-top: 42px
+	&__dropdown
+		margin-bottom: 24px
+		transition: 0.3s
+	&__input
+		margin-bottom: 24px
+		transition: 0.3s
+	&__map
+		text-align: right
+		margin-top: -8px
+		a
+			display: inline-block
+			position: relative
+			font-weight: 500
+			font-size: 1.2rem
+			line-height: 1.5
+			padding-left: 24px
+			color: $main_blue
+			transition: 0.3s
+			span
+				transition: 0.3s
+			svg
+				display: block
+				position: absolute
+				width: 16px
+				height: 15px
+				top: 50%
+				transform: translateY(-50%)
+				left: 0
+				stroke: $main_blue
+				transition: 0.3s
+			&:hover
+				span
+					opacity: 0.8
+				svg
+					stroke: $second_blue
+	&__accept
+		display: flex
+		align-items: center
+		width: 100%
+		input
+			display: none
+			&:checked
+				& + .service-form__box
+					svg
+						transform: scale(1)
+			&.invalid
+				& + .service-form__box
+					border-color: #C70E0E
+	&__box
+		position: relative
+		flex: none
+		width: 24px
+		height: 24px
+		border: 1px solid $sand
+		margin-right: 16px
+		cursor: pointer
+		transition: 0.3s
+		svg
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			margin: auto
+			transform: scale(0)
+			transition: 0.3s
+	&__description
+		font-size: 1.4rem
+		line-height: 1.14
+		a
+			color: $second_blue
+	&__list
+		display: flex
+		align-items: center
+		margin-bottom: 36px
+	&__item
+		&:not(:last-of-type)
+			margin-right: 36px
+
+.appeal
+	display: flex
+	align-items: center
+	cursor: pointer
+	margin: 0
+	input
+		display: none
+		&:checked
+			& + .appeal__circle
+				&::after
+					transform: scale(1)
+	&__circle
+		position: relative
+		width: 24px
+		height: 24px
+		border: 1px solid $sand
+		border-radius: 50%
+		cursor: pointer
+		margin-right: 16px
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			width: 12px
+			height: 12px
+			border-radius: 50%
+			background-color: $button_hover
+			transform: scale(0)
+			transition: 0.3s
+	&__description
+		font-size: 1.6rem
+		line-height: 1.5
+
+@media only screen and (max-width : $lg-max)
+	.service-form
+		display: block
+		&__title
+			width: 100%
+			margin-bottom: 53px
+		&__left, &__right
+			width: 100%
+			padding: 0
+		&__right
+			padding-top: 20px
+		&__footer
+			display: block
+			margin-top: 0
+		&__button
+			margin-top: 40px
+			width: 100%
+			text-align: center
+
+@media only screen and (max-width : $md-max)
+	.service-form
+		&__title
+			margin-bottom: 33px
+		&__label
+			font-size: 16px
+			margin-bottom: 20px
+			&--dealer
+				margin-top: 32px
+		&__item
+			&:not(:last-of-type)
+				margin-right: 11px
+		&__list
+			margin-bottom: 32px
+
+	.appeal
+		&__circle
+			margin-right: 6px

@@ -1,0 +1,75 @@
+.form-section
+	padding-top: 80px
+	background-image: url('/images/contactUs/background.jpg')
+	background-repeat: no-repeat
+	background-position: 50%
+	background-size: cover
+	color: $text_black
+	&__center
+		padding: 56px 72px 64px 72px
+		background-color: $white_bg
+	&__top, &__bottom
+		display: flex
+		flex-wrap: wrap
+		margin-top: 56px
+		min-width: 100%
+		margin-left: -16px
+		margin-right: -16px
+	&__bottom
+		margin-top: 15px
+	&__footer
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding-top: 47px
+		border-top: 1px solid $sand_bg
+		margin-top: 16px
+	&__item
+		width: calc(100% - 32px)
+		margin-left: 16px
+		margin-right: 16px
+		margin-bottom: 24px
+		&--50
+			width: calc(50% - 32px)
+		&--o1
+			order: 1
+		&--o2
+			order: 2
+		&--o3
+			order: 3
+		&--o4
+			order: 4
+		&--o5
+			order: 5
+		&--o6
+			order: 6
+		&--o7
+			order: 7
+		&--o8
+			order: 8
+	&__title
+		text-align: center
+		margin-bottom: 32px
+	&__subtitle
+		width: calc(100% - 32px)
+		margin-bottom: 32px
+		margin-left: 16px
+		margin-right: 16px
+	&__note
+		font-size: 1.6rem
+		line-height: 1.5
+		max-width: 800px
+		margin: 0 auto
+		text-align: center
+	&__message
+		resize: none
+		height: 128px
+	&__dsclmr
+		font-size: 1.4rem
+		margin-top: 15px
+
+.fade-enter-active, .fade-leave-active
+	transition: opacity 0.5s
+
+.fade-enter, .fade-leave-to
+	opacity: 0

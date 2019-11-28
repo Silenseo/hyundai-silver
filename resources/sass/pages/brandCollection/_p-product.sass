@@ -1,0 +1,183 @@
+//Стилизуем элемент find-dealer с картой для этой страницы
+#buyPopup
+	position: relative
+	.c-find-dealer
+		position: relative
+		background-color: transparent
+		top: auto
+		right: auto
+		left: auto
+		bottom: auto
+		z-index: 1
+		height: 100%
+		&__wrap
+			display: block
+			min-height: 0
+			height: 100%
+		&__center
+			max-width: 100%
+			margin: 0
+			height: 100%
+		&__close
+			display: none
+		&__zoomIn
+			top: 56px
+		&__zoomOut
+			top: 112px
+		&__location
+			bottom: 40px
+	.label
+		&__button
+			display: none
+
+.p-product
+	visibility: hidden
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-color: $white_bg
+	color: $text_black
+	overflow: auto
+	z-index: 1000
+	transform: translateY(200px)
+	opacity: 0
+	transition: transform 0.5s, opacity 0.2s, visibility 0.5s
+	&__product
+		display: flex
+	&__img
+		position: relative
+		width: 50%
+		flex: none
+		min-height: 100vh
+		background-color: $gray_bg
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+		img
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			max-width: calc(100% - 64px)
+			max-height: 100%
+			width: auto!important
+	&__right
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		padding: 42px 47px 36px
+		padding-right: 103px
+		width: 50%
+	&__close
+		display: block
+		position: absolute
+		top: 14px
+		right: 14px
+		padding: 10px
+		svg
+			fill: $second_text
+			transition: 0.3s
+		&:hover
+			svg
+				fill: $third_text
+	&__art
+		color: $third_text
+		margin-bottom: 12px
+	&__price
+		margin-bottom: 32px
+		white-space: nowrap
+		&--mobile
+			display: none
+			margin-bottom: 0
+	&__text
+		font-size: 1.6rem
+		line-height: 1.5
+		margin-bottom: 40px
+	&__line
+		display: flex
+		align-items: flex-start
+		margin-bottom: 14px
+		&--top
+			align-items: center
+			justify-content: space-between
+			margin-bottom: 0!important
+	&__description
+		margin-right: 32px
+	&__note
+		border-top: 1px solid $sand_bg
+		border-bottom: 1px solid $sand_bg
+		color: $third_text
+		padding: 12px 0
+		margin: 45px 0
+	&__button
+		display: inline-block
+	&__dsclmr
+		position: relative
+		padding-left: 32px
+		color: $third_text
+		margin-top: 30px
+	&__star
+		position: absolute
+		left: 0
+		top: 0
+		width: 16px
+		height: 16px
+		background-color: #C4C4C4
+		border-radius: 50%
+		svg
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+	&__list
+		.owl-nav
+			position: absolute
+			display: flex
+			justify-content: space-between
+			align-items: center
+			top: 50%
+			width: 100%
+			height: 0
+		.owl-prev, .owl-next
+			display: block
+			width: 40px
+			height: 40px
+			background-color: rgba(0, 0, 0, 0.4)!important
+			background-repeat: no-repeat!important
+			background-position: 50%!important
+			background-size: 25%!important
+			outline: none
+			transition: 0.3s
+			span
+				display: none
+			&.disabled
+				visibility: hidden	
+			&:hover
+				opacity: 0.8
+		.owl-next
+			background-image: url('/images/brandCollection/icons/next.svg')!important
+		.owl-prev
+			background-image: url('/images/brandCollection/icons/prev.svg')!important
+	&__find-dealer
+		max-height: 0
+		overflow: hidden
+		transition: 0.5s
+
+.p-product-isOpened
+	overflow: hidden
+	.p-product
+		visibility: visible
+		transform: translateY(0)
+		opacity: 1
+
+.where-buy-isOpened
+	.p-product__find-dealer
+		max-height: 1000px

@@ -1,0 +1,239 @@
+@media only screen and (max-width : $xl-max)
+	.banner
+		&__center
+			height: 440px
+
+	.where-buy
+		&__left
+			height: 400px
+			
+@media only screen and (min-width : $lg-min)
+	.nav
+		&__menu
+			display: flex!important
+
+	.product
+		display: block
+		color: $text_black
+		&:hover
+			img
+				transform: scale(1.1)
+
+
+@media only screen and (max-width : $lg-max)
+	.banner
+		padding-top: 80px
+
+	.nav
+		position: relative
+		&__head
+			display: block
+			&.isOpened
+				svg
+					transform: rotate(180deg)
+		&__menu
+			position: absolute
+			display: none
+			top: 64px
+			left: 0
+			right: 0
+			z-index: 10
+		&__link
+			text-align: left
+			padding: 0 16px
+
+	.where-buy
+		display: block
+		min-width: 100%
+		margin-left: -40px
+		margin-right: -40px
+		&__left
+			display: flex
+			width: 100%
+			padding: 40px
+			min-height: 212px
+			height: auto
+		&__top
+			width: 50%
+			padding-right: 25px
+		&__bottom
+			width: 50%
+			padding-left: 25px
+		&__text
+			margin-bottom: 0
+		&__footer
+			position: relative
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			margin-top: 32px
+		&__map
+			height: 392px
+
+	.main-list
+		display: block
+		padding-top: 32px
+		padding-bottom: 56px
+
+	.filters
+		width: 100%
+		margin-bottom: 44px
+		padding: 0
+		&__top
+			margin-bottom: 24px
+		&__list
+			display: flex
+			align-items: center
+			flex-wrap: wrap
+		&__item
+			&:not(:last-of-type)
+				margin-bottom: 0
+				margin-right: 32px
+		&__box
+			width: 20px
+			height: 20px
+			margin-right: 8px
+	
+	.p-product
+		top: 56px
+		&__product
+			display: block
+		&__close
+			right: 30px
+		&__img
+			width: 100%
+			min-height: 0
+			height: 384px
+		&__right
+			width: 100%
+			padding: 32px 40px 23px
+		&__list
+			.owl-nav
+				display: none
+				//top: calc(384px / 2)
+		&__title
+			margin-right: 20px
+		&__price
+			display: none
+			&--mobile
+				display: block
+		&__art
+			margin-bottom: 30px
+
+@media only screen and (max-width : 950px)
+	.products
+		&__item
+			width: calc(50% - 32px)
+			margin-bottom: 32px
+
+@media only screen and (max-width : $md-max)
+	.banner
+		padding-top: 64px
+		&__title
+			font-size: 30px
+			margin-bottom: 10px
+		&__center
+			padding: 24px 16px
+			height: 408px
+
+	.nav
+		&__head, &__link
+			line-height: 48px
+		&__menu
+			top: 48px
+
+	.new
+		top: 40px
+		bottom: 44px
+		&__title
+			margin-bottom: 32px
+		&__list
+			margin-bottom: 44px
+			.owl-dots
+				margin-top: 24px
+
+	.product
+		&__img
+			margin-bottom: 19px
+		&__name
+			margin-bottom: 3px
+
+	.where-buy
+		margin-left: -16px
+		margin-right: -16px
+		&__left
+			display: block
+			padding: 24px 16px 32px
+		&__title
+			font-size: 30px
+		&__text
+			margin-bottom: 28px
+		&__top
+			width: 100%
+			padding: 0
+		&__bottom
+			width: 100%
+			padding: 0
+		&__footer
+			display: none
+		&__mobile
+			display: flex
+
+	.p-product
+		&__close
+			right: 6px
+		&__img
+			height: 100vw
+			max-height: 384px
+		&__right
+			padding: 24px 16px 37px
+		&__title
+			margin-right: 0
+		&__art
+			margin-bottom: 14px
+		&__price
+			display: block
+			margin-bottom: 24px
+			&--mobile
+				display: none
+		&__text
+			margin-bottom: 24px
+		&__line
+			display: block
+		&__description
+			font-size: 16px
+			margin-right: 0
+			margin-bottom: 8px
+		&__value
+			font-size: 16px
+		&__line
+			margin-bottom: 24px
+		&__note
+			margin: 30px 0
+		&__button
+			width: 100%
+
+@media only screen and (max-width : 640px)
+	.banner
+		&__center
+			background-image: url("/images/brandCollection/banner_m.jpg")
+			height: 120vw
+
+@media only screen and (max-width : 500px)
+	.filters
+		margin-bottom: 36px
+		&__list
+			display: block
+		&__item
+			&:not(:last-of-type)
+				margin-bottom: 19px
+
+	.products
+		&__item
+			width: calc(100% - 32px)
+			margin-bottom: 32px
+
+	.main-list
+		padding-top: 24px
+		padding-bottom: 12px

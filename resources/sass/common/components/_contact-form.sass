@@ -1,0 +1,67 @@
+.contact-form
+	&__center
+		position: relative
+		width: 40%
+		min-width: 592px
+		padding: 40px 72px
+		background-color: $white_bg
+		transition: 0.5s
+	&__title
+		text-align: center
+		margin-bottom: 32px
+	&__input
+		margin-bottom: 32px
+		padding-top: 11px
+		padding-bottom: 11px
+		transition: 0.3s
+	&__accept
+		display: flex
+		align-items: center
+		width: 100%
+		margin-top: 37px
+		input
+			display: none
+			&:checked
+				& + .contact-form__box
+					svg
+						transform: scale(1)
+			&.invalid
+				& + .contact-form__box
+					border-color: #C70E0E
+	&__box
+		position: relative
+		flex: none
+		width: 24px
+		height: 24px
+		border: 1px solid $sand
+		margin-right: 16px
+		cursor: pointer
+		transition: 0.3s
+		svg
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			margin: auto
+			transform: scale(0)
+			transition: 0.3s
+	&__description
+		font-size: 1.4rem
+		line-height: 1.14
+		a
+			color: $second_blue
+	&__button
+		width: 100%
+		margin-top: 50px
+	
+@media only screen and (max-width : $md-max)
+	.contact-form
+		&__center
+			min-width: 0%
+			width: auto
+			margin: 16px
+			padding: 48px 16px 32px 16px
+		&__title
+			margin-bottom: 24px

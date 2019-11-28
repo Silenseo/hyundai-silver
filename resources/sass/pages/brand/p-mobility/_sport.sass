@@ -1,0 +1,94 @@
+.sport
+	padding: 93px 0
+	&.active
+		.sport__left
+			opacity: 1
+	&__inner
+		display: flex
+	&__left
+		position: relative
+		flex: none
+		width: 631px
+		height: 604px
+		will-change: opacity
+		transition: 1s
+		opacity: 0
+	&__right
+		padding-left: 100px
+		&.active
+			.sport__mask
+				animation: maskplay 2s steps(25) forwards
+	&__main-title
+		text-align: center
+	&__m-main-title
+		display: none
+	&__list
+		display: flex
+		align-content: space-between
+		justify-content: space-between
+		flex-wrap: wrap
+		height: 100%
+	&__item
+		position: relative
+		max-width: 298px
+		width: 100%
+		&::after
+			content: ''
+			display: block
+			position: absolute
+			left: 50%
+			bottom: -40px
+			height: 1px
+			width: 100px
+			background-color: #000
+			transform: rotate(45deg)
+			transform-origin: 0 0
+		&--main
+			max-width: 100%
+			&::after
+				display: none
+		&--2
+			&::after
+				transform: rotate(135deg)
+				transform-origin: 0 100%
+		&--3
+			&::after
+				top: -40px
+				bottom: auto
+				transform: rotate(-45deg)
+		&--4
+			&::after
+				top: -40px
+				bottom: auto
+				transform: rotate(225deg)
+	&__title
+		font-size: 20px
+		line-height: 24px
+		font-weight: 500
+		margin-bottom: 8px
+		text-align: center
+		span
+			display: none
+	&__text
+		font-size: 16px
+		line-height: 24px
+		text-align: center
+	&__img
+		position: relative
+		overflow: hidden
+	&__mask
+		position: absolute
+		top: 0
+		left: 0
+		width: 2500%
+		bottom: 0
+		background-image: url('/images/brand/p-mobility/img/mask.png')
+		background-repeat: no-repeat
+		background-position: 0 0
+		background-size: 100% 100%
+		transform: translateX(0)
+		will-change: transform
+
+@keyframes maskplay
+	100%
+		transform: translateX(-100%)

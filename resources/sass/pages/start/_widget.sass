@@ -1,0 +1,167 @@
+.widget
+	display: none
+	position: relative
+	z-index: 502
+	&.show
+		.widget__holder
+			transform: translateY(0)
+	&.active
+		.widget__overlay
+			visibility: visible
+			opacity: 1
+		.widget__main
+			transform: translateY(-100%)
+		.widget__toggle
+			&::before
+				transform: rotate(0)
+		.widget__button--statick
+			transform: translateY(100%)
+	&__overlay
+		visibility: hidden
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(0, 0, 0, 0.8)
+		opacity: 0
+		transition: 0.3s
+	&__holder
+		position: fixed
+		left: 0
+		right: 0
+		bottom: 0
+		height: 0
+		color: #fff
+		transform: translateY(200px)
+		transition: 0.3s
+	&__main
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		max-height: 100vh
+		overflow-y: auto
+		background-color: $button_hover
+		padding: 0 40px
+		transform: translateY(-152px)
+		transition: 0.3s
+	&__top
+		display: flex
+		align-items: center
+		height: 96px
+	&__img
+		width: 136px
+		height: 64px
+		img
+			display: block
+			max-width: 100%
+			max-height: 100%
+	&__info
+		margin-left: 30px
+	&__car-name
+		font-size: 14px
+		line-height: 24px
+		margin-bottom: 4px
+		font-weight: 500
+	&__month-pay
+		font-size: 24px
+		line-height: 1.1
+		font-weight: 500
+	&__toggle
+		flex: none
+		display: block
+		position: relative
+		margin-left: auto
+		width: 36px
+		height: 36px
+		border-radius: 50%
+		border: 1px solid $second_blue
+		&::after, &::before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			width: 12px
+			height: 2px
+			background-color: $second_blue
+			transition: 0.3s
+		&::before
+			transform: rotate(90deg)
+	&__body
+		padding: 24px 0
+		border-top: 1px solid #527092
+		border-bottom: 1px solid #527092
+	&__line
+		display: flex
+		align-items: center
+		justify-content: space-between
+		font-size: 16px
+		line-height: 24px
+		&:not(:last-of-type)
+			margin-bottom: 8px
+		&--total
+			align-items: flex-start
+		&--bottom
+			display: block
+			margin-top: 26px
+	&__value
+		font-weight: 500
+		&--large
+			font-size: 42px
+			line-height: 48px
+	&__footer
+		padding-top: 23px
+		padding-bottom: 45px
+	&__button
+		display: block
+		width: 100%
+		background-color: $second_blue
+		text-align: center
+		padding: 16px 0
+		margin-top: 31px
+		&--statick
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 0
+			margin-top: 0
+			transition: 0.3s
+	&__line-l, &__line-r
+		display: flex
+		align-items: center
+		justify-content: space-between
+		width: 100%
+		font-size: 14px
+		line-height: 21px
+		font-weight: 500
+	&__line-r
+		margin-top: 21px
+	&__mail
+		display: flex
+		align-items: center
+		img
+			display: block
+			width: 15px
+			height: auto
+			margin-right: 4px
+	&__phone
+		font-size: 16px
+	&__call
+		display: flex
+		align-items: center
+		img
+			display: block
+			width: 16px
+			height: auto
+			margin-right: 10px
+	&__dealers
+		svg
+			margin-left: 8px
+
+
+

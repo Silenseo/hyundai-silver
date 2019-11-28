@@ -1,0 +1,405 @@
+/*==========  Desktop First  ==========*/
+
+@media only screen and (min-width : 1263px)
+	.d-car
+		&:hover
+			opacity: 0.5
+			
+	.main-nav, .df-dropdown__submenu
+		display: block!important
+
+	.highlight
+		&__link
+			transition: 0.3s
+			&:hover
+				border-color: transparent
+				background: $gray_bg
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : $xl-max)
+	.main-nav
+		&__dropdown-close
+			right: 32px
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : $lg-max)
+	.support-service
+		display: none
+	.header-main
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+	.header-top
+		display: none
+	.header-bottom::after
+		display: none
+	.header-bottom__logo
+		display: none
+	.header-bottom__wrap
+		height: auto
+	.header-bottom__mobile-line
+		display: flex
+
+	.main-nav
+		display: none
+		position: absolute
+		top: 56px
+		left: 0
+		width: 100%
+		background-color: $white_bg
+		border-top: 1px solid $light_grey_scroll_bar
+		&__list
+			display: block
+		&__item
+			display: block
+			position: relative
+			padding-left: 40px
+			padding-right: 40px
+			margin-right: 0
+			&:not(:last-of-type)
+				border-bottom: 1px solid $light_grey_scroll_bar
+			&--mir
+				background-color: $main_blue
+				.main-nav__link
+					color: $text_white
+			&--mobile
+				display: block
+				padding-left: 0
+				padding-right: 0
+				.main-nav__link
+					font-size: 14px
+					font-weight: 400
+					background-color: $sand
+					color: $text_black
+					text-align: center
+					line-height: 48px
+		&__link
+			font-size: 16px
+			color: $text_black
+			line-height: 56px
+			&--contains-submenu
+				.main-nav__arrow
+					display: none
+				&::after
+					content: ''
+					display: block
+					position: absolute
+					top: 50%
+					transform: translateY(-50%)
+					right: 0px
+					width: 24px
+					height: 24px
+					background-image: url('/images/icons/plus_d.svg')
+					background-repeat: no-repeat
+					background-size: 100%
+		&__dropdown
+			display: none
+			visibility: visible
+			position: relative
+			top: 0
+			background-color: $gray_bg
+			transform: translateY(0)
+			width: auto
+			max-height: 100%
+			min-width: 100%
+			margin-left: -40px
+			margin-right: -40px
+			&--grey
+				background-color: #F8F8F8
+		&__dropdown-close
+			display: none
+
+	.isOpened
+		&.main-nav__link--contains-submenu
+			&::after
+				background-image: url('/images/icons/minus_d.svg')
+
+	.showroom
+		&__line
+
+		&__title
+			min-width: 200px
+			font-size: 20px
+		&__cars
+			display: flex
+			width: 100%
+		&__car
+			width: 33.33%
+			padding-right: 10px
+			&.first-place
+				.d-car__img
+					&::after
+						top: -30px
+						right: 5px
+
+	.df-dropdown
+		padding-top: 0
+		padding-bottom: 0
+		&__link
+			line-height: 56px
+		&__item
+			padding-bottom: 0
+		&__title
+			position: relative
+			font-size: 14px
+			line-height: 56px
+			white-space: nowrap
+			margin-bottom: 0
+			cursor: pointer
+			svg
+				display: block
+				position: absolute
+				right: 7px
+				top: 50%
+				transform: translateY(-50%)
+				width: 12px
+				height: 6px
+				stroke: $text_black
+				transition: transform 0.3s
+			&.isOpened
+				svg
+					transform: rotate(180deg)
+			&--desctop-hidden
+				display: block
+			&::after
+				content: ''
+				display: block
+				position: absolute
+				left: -32px
+				right: -32px
+				bottom: 0
+				height: 1px
+				background-color: $light_grey_scroll_bar
+			&::before
+				content: ''
+				display: block
+				position: absolute
+				left: -32px
+				right: -32px
+				top: 0
+				height: 1px
+				background-color: $light_grey_scroll_bar
+		&__submenu
+			display: none
+		&__submenu-item
+			position: relative
+			padding: 0 0
+			padding-left: 24px
+			font-size: 0
+			&:not(:last-of-type)
+				margin-bottom: 0
+				&::after
+					content: ''
+					display: block
+					position: absolute
+					left: -32px
+					right: -32px
+					bottom: 0
+					height: 1px
+					background-color: $light_grey_scroll_bar
+		&__button
+			font-size: 14px
+			color: $second_text
+			line-height: 2
+			font-weight: 400
+			border: none
+			padding: 0
+			svg
+				display: none
+			&--blue
+				background-color: transparent
+	
+	.d-car
+		&__name
+			display: none
+		&__m-name
+			display: block
+		&__price
+			color: $text_black
+		&__top-line
+			flex-wrap: wrap
+		&__title
+			width: 100%
+
+	.footer__top
+		padding-top: 36px
+		padding-bottom: 50px
+	.footer__column
+		width: calc(25% - 32px)
+	.footer__column--logo
+		width: calc(100% - 32px)
+		margin-bottom: 47px
+	.footer__column--last
+		width: calc(50% - 32px)
+		margin-top: 74px
+	.footer__column--combologo
+		position: relative
+		width: calc(50% - 32px)
+		margin-top: 80px
+		padding: 0
+	.footer__phone
+		font-size: 30px
+	.footer__mail
+		margin-top: 7px
+	.footer-social
+		margin-top: 50px
+	.footer__combologo
+		position: absolute
+		right: 0
+		bottom: 0
+	
+	.highlight
+		&__item
+			width: 50%
+			&:nth-of-type(1), &:nth-of-type(2)
+				border-bottom: 1px solid #B7B7B7
+			&:nth-of-type(2n)
+				border-right: none
+				
+	.content
+		margin-top: 56px
+
+	.main-nav
+		max-height: calc(100vh - 56px)
+		overflow: auto
+		// -webkit-overflow-scrolling: touch
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : $md-max)
+	.header-top
+		display: none
+
+	.main-nav
+		&__item
+			padding-left: 16px
+			padding-right: 16px
+			&--mobile
+				padding-left: 0
+				padding-right: 0
+		&__dropdown
+			margin-right: -16px
+			margin-left: -16px
+
+	.showroom
+		padding-top: 0
+		padding-left: 0
+		padding-right: 0
+		&__line
+			flex-wrap: wrap
+			&:not(:last-of-type)
+				border-bottom: 0
+		&__title
+			font-size: 30px
+			width: 100%
+			margin-bottom: 15px
+		&__cars
+			min-width: 100%
+			margin-left: -10px
+			margin-right: -10px
+		&__car
+			width: calc(50% - 20px)
+			margin: 0 10px
+			max-width: 256px
+			padding-right: 0
+
+	.d-car__title
+		margin-right: 0
+		overflow: hidden
+		text-overflow: ellipsis
+
+	.df-dropdown
+		&__title
+			padding-left: 0
+			padding-right: 0
+			&::after
+				left: -16px
+				right: -16px
+			&::before
+				left: -16px
+				right: -16px
+		&__submenu-item
+			&:not(:last-of-type)
+				&::after
+					left: -16px
+					right: -16px
+		&__submenu-item
+			padding-left: 24px
+
+	.highlight
+		&__list
+			min-width: 100%
+			margin-right: -16px
+			margin-left: -16px
+		&__item
+			width: 100%
+			border: none
+			&:not(:last-of-type)
+				border-right: none
+				border-bottom: 1px solid #B7B7B7
+		&__link
+			position: relative
+			padding: 25px 15px 30px 104px
+		&__icon
+			position: absolute
+			top: 25px
+			left: 25px
+
+	.footer__top
+		padding-top: 21px
+		padding-bottom: 39px
+	.footer__title
+		display: none
+	.footer__sub-nav
+		display: none
+	.footer__column
+		width: calc(50% - 32px)
+		margin-bottom: 0
+	.footer__column--logo
+		width: calc(100% - 32px)
+		margin-bottom: 0px
+	.footer__column--last
+		width: calc(100% - 32px)
+		margin-top: 19px
+		margin-bottom: 0
+	.footer__column--combologo
+		width: calc(100% - 32px)
+		margin-top: 50px
+		margin-bottom: 0
+	.footer-social
+		margin-top: 37px
+	.footer__combologo
+		position: relative
+		width: 128px
+
+	.footer-bottom__top-line
+		flex-wrap: wrap
+	.footer-bottom__world
+		width: 100%
+	.footer-bottom__nav
+		margin-top: 25px
+		max-width: 100%
+		flex: none
+	.footer-bottom__menu
+		flex-wrap: wrap
+	.footer-bottom__item
+		margin-bottom: 14px
+		&:first-of-type
+			padding-left: 0
+		&:nth-of-type(2)
+			width: 68%
+			border-right: none
+		&:nth-of-type(3)
+			padding-left: 0
+
+
+
+
+
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/

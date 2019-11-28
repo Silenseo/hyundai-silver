@@ -1,0 +1,63 @@
+.dealer-info
+	margin-top: 57px
+	color: #000
+	&__inner
+		display: flex
+	&__img, &__description
+		width: 50%
+		background-color: $gray_bg
+		min-height: 384px
+	&__img
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+	&__description
+		padding: 60px
+	&__title
+		margin-bottom: 13px
+	&__text
+		font-size: 1.6rem
+		line-height: 1.5
+		margin-bottom: 40px
+	&__about
+		display: inline-block
+
+@media only screen and (max-width : 1023px)
+	.dealer-info
+		&__img, &__description
+			min-height: 280px
+		&__description
+			padding: 50px 24px
+			padding-right: 41px
+		&__title
+			font-size: 20px
+		&__text
+			position: relative
+			margin-bottom: 30px
+			max-height: calc(1.6rem * 4.5)
+			padding-right: 1em
+			text-align: justify
+			overflow: hidden
+			&::after
+				content: '...'
+				display: block
+				position: absolute
+				right: 0
+				bottom: 0
+
+@media only screen and (max-width : 640px)
+	.dealer-info
+		margin-top: 0
+		&__inner
+			display: block
+			margin-right: -16px
+			margin-left: -16px
+		&__img, &__description
+			width: 100%
+			min-height: 0
+		&__img
+			height: 65vw
+		&__description
+			padding-top: 38px
+			padding-bottom: 38px
+

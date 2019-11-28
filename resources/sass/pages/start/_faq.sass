@@ -1,0 +1,89 @@
+.faq
+	padding-top: 57px
+	padding-bottom: 80px
+	background-color: $gray_bg
+	&__title
+		margin-bottom: 63px
+		text-align: center
+	&__list
+		max-width: 83%
+		margin: 0 auto
+		font-size: 20px
+		line-height: 24px
+		color: $text_black
+		font-weight: 500
+	&__item
+		&:not(:last-of-type)
+			margin-bottom: 16px
+	&__button
+		display: block
+		margin: 0 auto
+		margin-top: 48px
+		width: 240px
+	&__more
+		display: none
+		margin: 0 auto
+		margin-top: 24px
+		width: 240px
+		border: 1px solid $main_blue
+		color: $main_blue
+		text-align: center
+		line-height: 48px
+
+.question
+	position: relative
+	display: flex
+	align-items: center
+	min-height: 120px
+	padding: 15px 32px
+	padding-right: 50px
+	background-color: $white_bg
+	font-size: 20px
+	line-height: 24px
+	font-weight: 500
+	&.active
+		svg
+			transform: rotate(180deg)
+	span
+		max-width: 560px
+	svg
+		display: block
+		position: absolute
+		top: 50%
+		margin-top: -3px
+		right: 32px
+		transform: rotate(0deg)
+		transition: 0.3s
+	&__dropdown
+		position: relative
+		display: none
+		padding: 48px 75px 64px 91px
+		background-color: $white_bg
+		font-size: 16px
+		line-height: 24px
+		font-weight: 400
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 32px
+			right: 0
+			height: 1px
+			background-color: #F5F5F5
+		ul
+			li
+				position: relative
+				padding-left: 15px
+				&::before
+					content: ''
+					display: block
+					position: absolute
+					left: 0
+					top: 0.6em
+					width: 5px
+					height: 5px
+					background-color: #202020
+					border-radius: 50%
+				&:not(:last-of-type)
+					margin-bottom: 7px

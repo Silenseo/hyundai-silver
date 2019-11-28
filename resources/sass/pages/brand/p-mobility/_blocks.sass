@@ -1,0 +1,218 @@
+.future
+	padding-top: 91px
+	overflow: hidden
+	&.active
+		.future__back
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.future__img
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+	&__back
+		width: 656px
+		height: 447px
+	&__wrapper
+		position: relative
+		margin-top: -397px
+		margin-left: 128px
+	&__img
+		width: 736px
+		height: 526px
+	&__description
+		position: absolute
+		top: 132px
+		left: 768px
+
+
+.satisfaction
+	padding-top: 40px
+	padding-bottom: 122px
+	&.active
+		.best
+			&__star
+				transform: scale(1)
+		.satisfaction__back
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.satisfaction__img
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+	&__inner
+		position: relative
+		display: flex
+		justify-content: flex-end
+	&__back
+		width: 656px
+		height: 707px
+	&__wrapper
+		position: relative
+		margin-top: -647px
+		margin-left: 80px
+	&__img
+		width: 636px
+		height: 732px
+	&__description
+		position: absolute
+		top: 293px
+		left: -582px
+		max-width: 586px
+
+.best
+	position: absolute
+	top: -27px
+	left: 0
+	text-align: center
+	width: 280px
+	z-index: 1
+	&__title
+		font-size: 72px
+		line-height: 64px
+		color: $main_blue
+		sup
+			font-size: 0.6em
+	&__stars
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 100%
+		margin-bottom: 16px
+	&__star
+		transform: scale(0)
+		transition: 0.3s
+		&:not(:last-of-type)
+			margin-right: 12px
+		&:nth-of-type(1)
+			transition-delay: 0.2s
+		&:nth-of-type(2)
+			transition-delay: 0.4s
+		&:nth-of-type(3)
+			transition-delay: 0.6s
+		&:nth-of-type(4)
+			transition-delay: 0.8s
+		&:nth-of-type(5)
+			transition-delay: 1s
+	&__note
+		font-size: 20px
+		line-height: 24px
+		font-weight: 500
+		transition-delay: 1s
+
+.service
+	padding-top: 130px
+	padding-bottom: 122px
+	overflow: hidden
+	&.active
+		.power
+			svg
+				path
+					opacity: 1
+			&__number
+				opacity: 1
+		.service__back
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.service__img
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+	&__back
+		width: 716px
+		height: 781px
+		margin-left: 147px
+	&__wrapper
+		position: relative
+		margin-top: -828px
+	&__img
+		width: 734px
+		height: 720px
+	&__description
+		position: absolute
+		top: 250px
+		left: 896px
+	&__text
+		ul
+			padding-left: 20px
+			margin-top: 36px
+		li
+			position: relative
+			padding-left: 30px
+			margin-bottom: 2px
+			&::before
+				content: '—'
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+
+.power
+	position: absolute
+	top: -122px
+	right: 50px
+	max-width: 280px
+	text-align: center
+	&__number
+		position: absolute
+		top: -7px
+		left: 50%
+		font-size: 96px
+		line-height: 1
+		color: $main_blue
+		font-weight: 300
+		transform: translateX(-56%)
+		text-align: center
+		opacity: 0
+		transition: 0.3s
+		transition-delay: 0.8s
+	svg
+		display: block
+		margin: 0 auto
+		path
+			opacity: 0
+			transition: 0.1s
+	&__text
+		font-size: 20px
+		line-height: 24px
+		font-weight: 500
+		margin-top: 10px
+		transition-delay: 1s
+		
+@for $i from 1 through 20
+	.power__left
+		path
+			&:nth-of-type(#{$i})
+				transition-delay: 0.05s * (20 - $i)
+
+@for $i from 1 through 20
+	.power__right
+		path
+			&:nth-of-type(#{$i})
+				transition-delay: 0.05s * (20 - $i)
+
+@keyframes stroke
+	100%
+    	stroke-dashoffset: 100
+
+

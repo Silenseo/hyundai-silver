@@ -1,0 +1,41 @@
+.nav
+	border-bottom: 1px solid $light_grey_scroll_bar
+	background-color: $white_bg
+	z-index: 100
+	&__center
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: space-between
+		height: 72px
+	&__logo
+		width: 117px
+		img
+			display: block
+			max-width: 100%
+			height: auto
+	&__menu
+		display: flex
+		align-items: center
+	&__item
+		&:not(:last-of-type)
+			margin-right: 32px
+	&__link
+		color: $second_text
+		transition: 0.3s
+		&.active
+			color: $second_blue
+	&__arrow
+		display: none
+		position: absolute
+		top: 50%
+		margin-top: -3px
+		transform-origin: 50% 50%
+		right: 25px
+		transition: 0.3s
+
+@media only screen and (min-width : $lg-min)
+	.nav
+		&__link
+			&:hover
+				color: $third_text

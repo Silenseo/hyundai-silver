@@ -1,0 +1,28 @@
+.label
+	position: fixed
+	display: flex
+	align-items: center
+	justify-content: space-between
+	top: 0
+	left: 0
+	width: 59vw
+	min-height: 80px
+	background-color: $gray_bg
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05)
+	padding: 5px 32px
+	padding-right: 40px
+	transform: translateY(-110%)
+	transition: 0.5s
+	&.active
+		transform: translateY(0)
+	&__left
+		padding-right: 20px
+	&__pay
+		font-size: 1.6rem
+		line-height: 1.5
+		color: $second_text
+		margin-top: 4px
+	&__button
+		display: block
+		padding-top: 12px
+		padding-bottom: 12px

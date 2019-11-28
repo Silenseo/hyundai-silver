@@ -1,0 +1,210 @@
+@media only screen and (min-width : $lg-min)
+	.mir
+		&__button
+			&--appstore, &--play
+				transition: 0.3s
+				&:hover
+					transform: translateY(-5px)
+
+@media only screen and (max-width : $xl-max)
+	.banner
+		&__inner
+			height: 440px
+
+	.mir
+		&__map
+			svg
+				g
+					transform: translate(12%, 7%)
+
+	.book
+		&__title
+			margin-bottom: 82px
+		&__composition
+			max-width: 384px
+
+	.help
+		&__title
+			margin-bottom: 106px
+
+@media only screen and (max-width : $lg-max)
+	.mir
+		&__map
+			svg
+				width: 1920px
+				height: 1900px
+				top: 50%
+				left: 50%
+				bottom: auto
+				right: auto
+				margin-top: -950px
+				margin-left: -960px
+				g
+					transform: translate(18%, 30%)
+		&__title
+			margin-bottom: 0
+		&__slide
+			padding: 84px 0
+			padding-top: 64px
+		&__left
+			width: 50%
+		&__right
+			width: 50%
+			padding-left: 24px
+		&__smart
+			width: auto
+			max-width: 500px
+			margin-top: 0px
+		&__card1
+			display: none!important
+		&__m-card1
+			display: block!important
+		&__card2
+			width: calc(100% - 32px)!important
+			max-width: 345px
+			bottom: -11px
+		&__card3
+			width: calc(100% - 64px)!important
+			max-width: 332px
+		&__carousel
+			.owl-nav
+				display: none
+
+	.book
+		height: 656px
+		&__title
+			max-width: 600px
+			margin-left: auto
+			margin-right: auto
+		&__composition
+			max-width: 312px
+
+	.help
+		height: 656px
+		overflow: hidden
+		&__back
+			width: 1315px
+			right: auto
+			svg
+				height: 130%
+		&__title
+			max-width: 450px
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 82px
+		&__composition
+			max-width: 312px
+
+@media only screen and (max-width : 1023px)
+	.banner
+		&__inner
+			padding: 40px 35px
+
+	.mir
+		&__map
+			svg
+				g
+					transform: translate(21%, 30%)
+
+	.book
+		background-position: 48% 10%
+
+@media only screen and (max-width : $md-max)
+	.banner
+		padding-top: 64px
+		&__inner
+			padding: 24px 16px
+			height: 425px
+		&__title
+			font-size: 30px
+			margin-bottom: 12px
+		&__subtitle
+			font-size: 18px
+
+	.mir
+		padding-top: 40px
+		padding-bottom: 44px
+		&__slide
+			flex-direction: column
+			align-items: center
+			padding: 40px 0
+		&__left
+			width: 100%
+			max-width: 400px
+		&__right
+			width: 100%
+			padding-left: 0
+		&__text
+			margin-bottom: 24px
+		&__smart
+			max-width: 234px
+			margin: 0 auto
+		&__button
+			width: 100%
+			max-width: 400px
+			&--appstore, &--play
+				width: auto
+		&__map
+			svg
+				width: 960px
+				height: 950px
+				margin-top: -475px
+				margin-left: -480px
+				g
+					transform: translate(20%, 17%)
+
+	.book
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		padding: 40px 0
+		height: 784px
+		background-position: 66% 10%
+		&__title
+			margin-bottom: 0
+			padding: 0 16px
+		&__text
+			margin-bottom: 24px
+
+	.help
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		padding: 40px 0
+		height: 616px
+		background-color: #E7DDD7
+		&__back
+			width: 777px
+			svg
+				height: 80%
+		&__title
+			padding: 0 16px
+			margin-bottom: 0
+
+
+@media only screen and (max-width : 640px)
+	.banner
+		&__inner
+			background-image: url('/images/brand/services/img/banner_768.jpg')
+			height: 120vw
+
+@media only screen and (max-width : 500px)
+	.mir
+		&__map
+			svg
+				g
+					transform: translate(29%, 17%)
+
+	.book
+		background-size: auto 77%
+		background-position: 72% 0%
+		&__composition
+			max-width: 400px
+		&__button
+			display: block
+
+	.help
+		&__composition
+			max-width: 400px
+		&__button
+			display: block

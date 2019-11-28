@@ -1,0 +1,88 @@
+.service
+  background-color: $white_bg
+  padding-bottom: 48px
+  padding-top: 50px
+  &-inner
+    max-width: 1008px
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &-left
+    display: flex
+  &-block
+    padding-right: 160px
+    width: calc(100% - 152px)
+  &__img
+    width: 104px
+    height: 104px
+    margin-right: 48px
+  &-title
+    font-size: 3rem
+    line-height: 1.2
+    margin-bottom: 18px
+  &-text
+    font-family: 'HyundaiSansText'
+    font-weight: 400
+    font-size: 1.6rem
+    line-height: 1.5
+  .df-link
+    text-decoration: none
+    white-space: nowrap
+    transition: opacity 0.3s ease 0s
+    &:hover
+      opacity: 0.8
+    
+
+@media (min-width: 1600px)
+  .service-block
+    padding-right: 100px
+  .service-inner
+    max-width: $large-cont
+
+
+@media (max-width: 1200px)
+  .service-left
+    padding-right: 30px
+
+
+@media (max-width: 1023px)
+  .service-inner
+    flex-wrap: wrap
+  .service-left
+    width: 100%
+    padding-right: 0
+    margin-bottom: 43px
+  .service .df-button
+    margin-left: 152px
+  .service__img
+    margin-right: 34px
+  .service-block
+    padding-right: 0
+  .service .df-button
+    margin-left: 138px
+    display: inline-block
+
+
+@media (max-width: 640px)
+  .service
+    padding-bottom: 38px
+  .service-left
+    flex-wrap: wrap    
+    margin-bottom: 30px
+  .service-block
+    width: 100%    
+  .service .df-button
+    margin-left: 0  
+  .service__img
+    margin-bottom: 25px
+
+
+@media (max-width: 480px)
+  .service
+    padding-top: 40px
+
+
+@media (max-width: 400px)
+  .service .df-button
+    width: 100%

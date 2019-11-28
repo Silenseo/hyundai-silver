@@ -1,0 +1,73 @@
+.gallery
+    background-color: #E4DCD3
+    padding-top: 64px
+    padding-bottom: 83px
+    &__wrapper
+        position: relative
+        max-width: 1008px
+        margin: 0 auto
+    &__indicator
+        position: absolute
+        right: 32px
+        bottom: 32px
+        font-size: 14px
+        color: #fff
+    &__item
+        height: 544px
+        background-repeat: no-repeat
+        background-position: 50%
+        background-size: cover
+        outline: none
+    &__nav
+        max-width: 1008px
+        margin: 0 auto
+    &__nav-item
+        position: relative
+        height: 128px
+        background-repeat: no-repeat
+        background-position: 50%
+        background-size: cover
+        outline: none
+        &:not(.slick-current)
+            &::after
+                content: ''
+                display: block
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                background-color: rgba(0, 0, 0, 0.32)
+    .slick-prev, .slick-next
+        width: 40px
+        height: 40px
+        background-color: rgba(0, 0, 0, 0.4)
+        background-repeat: no-repeat
+        background-size: 22%
+        background-position: 50%
+        z-index: 10
+        &::before
+            content: ''
+    .slick-prev
+        left: 0
+        background-image: url('/images/santaFe/svg/left_slider.png')
+    .slick-next
+        right: 0
+        background-image: url('/images/santaFe/svg/right_slider.png')
+    &__download
+        display: inline-block
+        position: relative
+        font-size: 1.6rem
+        line-height: 1.25
+        font-weight: 500
+        color: #000
+        margin-top: 41px
+        padding-left: 20px
+        svg
+            display: block
+            position: absolute
+            width: 10px
+            height: 10px
+            left: 0
+            top: 50%
+            transform: translateY(-50%)

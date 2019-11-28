@@ -1,0 +1,84 @@
+.before
+	color: #000
+	margin-top: 94px
+	&.active
+		.before__img
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+	&__inner
+		padding-left: 228px
+	&__year
+		font-size: 20px
+		line-height: 24px
+		font-weight: 500
+		color: $third_text
+		margin-bottom: 32px
+	&__year-m
+		display: none
+		font-size: 16px
+		line-height: 18px
+		font-weight: 500
+		color: $third_text
+		margin-bottom: 7px
+	&__title
+		font-size: 55px
+		line-height: 1
+		font-weight: 500
+		margin-bottom: 12px
+		max-width: 574px
+	&__subtitle
+		font-size: 22px
+		line-height: 32px
+		margin-bottom: 92px
+	&__main
+		display: flex
+		padding-left: 75px
+	&__composition
+		position: relative
+		margin-left: -41px
+		margin-top: 104px
+	&__name
+		line-height: 1
+		margin-bottom: 16px
+	&__text
+		font-size: 22px
+		line-height: 32px
+	&__parallax
+		top: 0
+		bottom: 0
+	&__img
+		position: relative
+		width: 696px
+		height: 600px
+		overflow: visible
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			left: -75px
+			width: 52px
+			height: 123px
+			background-image: url('/images/brand/history/img/text.png')
+			background-repeat: no-repeat
+			background-position: 50%
+			background-size: cover
+		&::after
+			content: '1967'
+			display: block
+			position: absolute
+			top: 0
+			right: -82px
+			font-size: 20px
+			line-height: 24px
+			font-weight: 500
+			color: $third_text
+
+body.loaded
+	.before
+		&__inner
+			transform: translateY(0)
+			opacity: 1

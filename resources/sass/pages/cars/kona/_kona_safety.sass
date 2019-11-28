@@ -1,0 +1,626 @@
+@media print, screen and (max-width: 20000px)
+  .kona_highlight
+    background: $white_bg
+    padding: 50px 0 150px
+    overflow: hidden
+  .highlight_wrap
+    width: 100%
+    position: relative
+    .bg_img
+      position: relative
+      left: 50%
+      margin-left: -960px
+    .bg_img_1
+      position: absolute
+      top: 0
+      left: -246px
+    .bg_img_2
+      position: absolute
+      bottom: 0
+      left: 506px
+    .text_block
+      position: absolute
+      top: 0
+      left: 0
+      h2
+        font-size: 44px
+        line-height: 54px
+        color: $text_black
+      p
+        font-size: 16px
+        line-height: 28px
+        color: $text_black
+        margin-top: 17px
+      &.block_1
+        left: 912px
+        top: 133px
+        width: 500px
+      &.block_2
+        top: 146px
+        left: -511px
+  // performance
+  .bgB
+    background-color: $sand_bg
+  .bgB2
+    background-color: #e4dbd2
+  .pip
+    .pip_cont .text_play
+      position: relative
+      width: 940px
+      overflow: hidden
+      margin: 0 auto
+      text-align: center
+      margin-bottom: 90px
+      .text1
+        width: 100%
+        font-size: 44px
+        line-height: 40px
+      .text2
+        width: 100%
+        color: #000000
+        font-size: 16px
+        line-height: 28px
+        margin-top: 24px
+        width: 700px
+        margin: 24px auto 0
+    &.contents_safety
+      .morelist
+        padding: 100px 0 95px 0
+      .caution
+        font-size: 12px
+      .pip_cont
+        background: #e4dcd3
+        &.bg_color2
+          background: #e4dbd2
+        .text_play
+          height: 1px
+          overflow: visible
+      .visual_text
+        padding-top: 120px
+        width: 960px
+        margin: 150px auto 0 auto
+        .img
+          text-align: center
+          position: relative
+          margin-left: 50px
+        .text_list
+          font-size: 13px
+          font-weight: bold
+          color: #c84309
+          li
+            position: absolute
+            text-align: left
+          .text1
+            left: 232px
+            top: 24px
+          .text2
+            left: 384px
+            top: 0
+          .text3
+            left: 303px
+            top: 584px
+          .text4
+            left: 370px
+            top: 519px
+      .scene_wrap
+        position: relative
+        width: 940px
+        margin: 0 auto
+        height: 1130px
+        margin-top: -113px
+        .slider_wrap
+          position: absolute
+          z-index: 4
+          left: -10px
+          top: 252px
+          width: 960px
+          height: 30px
+          background: url('/images/cars/kona/animation/bg_slider5.png') no-repeat 50% 9px
+          .slider
+            position: relative
+            width: 800px
+            margin: 0 auto
+            border: 0px
+            background: none
+            height: 30px
+            .ui-slider-range
+              height: 30px
+              background: url('/images/cars/kona/animation/bg_slider5.png') no-repeat -5px -21px
+            .ui-slider-handle
+              position: absolute
+              top: 0 !important
+              display: block
+              width: 26px !important
+              height: 26px !important
+              margin-left: -13px !important
+              background: url('/images/cars/kona/animation/bg_slider_handle4.png') no-repeat 0 0 !important
+              border: 0 !important
+              border-radius: 0 !important
+          .slider_text
+            width: 900px
+            margin: 0 auto
+            ul li
+              float: left
+              width: 100px
+              margin-left: 100px
+              padding: 0
+              text-align: center
+              color: #404040
+              font-size: 14px
+              font-weight: bold
+              &.on
+                color: #ff7e00
+              &:first-child
+                margin-left: 0
+        .text_wrap
+          position: absolute
+          z-index: 2
+          left: 65px
+          top: 343px
+          height: auto
+          min-height: 1px
+          max-height: 999999px
+          ul li
+            display: none
+            &:first-child
+              display: block
+            strong
+              display: block
+              padding: 0 0 9px 0
+              font-size: 18px
+              line-height: 24px
+              color: #000
+            p
+              font-size: 14px
+              line-height: 20px
+              width: 600px
+              color: #666666
+            span.notice_wrap
+              display: block
+              padding: 3px 0 0 0
+              background: #fff
+              span.notice
+                display: block
+                padding: 7px 0 0 15px
+                font-size: 12px
+                line-height: 15px
+                color: #736357
+                background: url('/images/cars/kona/animation/icon_notice.png') no-repeat 0 9px
+          .caution
+            margin-top: 10px
+            color: #666666
+            display: block
+            font-size: 14px
+            line-height: 24px
+            padding-left: 20px
+            background: url('/images/cars/kona/animation/bul_caution.png') no-repeat 0 center
+        .controls
+          position: absolute
+          z-index: 3
+          left: 720px
+          top: 397px
+          a
+            float: left
+            display: block
+            width: 65px
+            height: 22px
+            padding: 48px 0 0 0
+            background: url('/images/cars/kona/animation/bg_slider_control3.png') no-repeat 10px 0
+            color: #555
+            font-size: 12px
+            text-align: center
+            &.replay
+              background-position: 10px 0
+              &:hover
+                background-position: 10px -90px
+                color: #888
+                text-decoration: none
+            &.play
+              background-position: -55px 0
+              &:hover
+                background-position: -55px -90px
+                color: #888
+                text-decoration: none
+            &.stop
+              display: none
+              background-position: -120px 0
+              &:hover
+                background-position: -120px -90px
+                color: #888
+                text-decoration: none
+            &.next
+              background-position: -185px 0
+              &:hover
+                background-position: -185px -90px
+                color: #888
+                text-decoration: none
+        .scene
+          position: absolute
+          z-index: 1
+          top: 190px
+          width: 100%
+          height: 900px
+          display: none
+          &.scene1
+            .bg
+              position: absolute
+              width: 100%
+              height: 100%
+            .bg1
+              background: url('/images/cars/kona/animation/safety_scene1_bg1.jpg') no-repeat 0 0
+            .bg2
+              background: url('/images/cars/kona/animation/safety_scene1_bg2.jpg') no-repeat 0 0
+            .bg3
+              background: url('/images/cars/kona/animation/safety_scene1_bg3.jpg') no-repeat 0 0
+            .bg4
+              background: url('/images/cars/kona/animation/safety_scene1_bg4.jpg') no-repeat 0 0
+            .bg5
+              background: url('/images/cars/kona/animation/safety_scene1_bg5.jpg') no-repeat 0 0
+            .bg6
+              background: url('/images/cars/kona/animation/safety_scene1_bg6.jpg') no-repeat 0 0
+            .bg7
+              background: url('/images/cars/kona/animation/safety_scene1_bg7.jpg') no-repeat 0 0
+            .bg8
+              background: url('/images/cars/kona/animation/safety_scene1_bg8.jpg') no-repeat 0 0
+            .bg9
+              background: url('/images/cars/kona/animation/safety_scene1_bg9.jpg') no-repeat 0 0
+            .bg10
+              background: url('/images/cars/kona/animation/safety_scene1_bg10.jpg') no-repeat 0 0
+            .bg11
+              background: url('/images/cars/kona/animation/safety_scene1_bg11.jpg') no-repeat 0 0
+            .bg12
+              background: url('/images/cars/kona/animation/safety_scene1_bg12.jpg') no-repeat 0 0
+            .bg13
+              background: url('/images/cars/kona/animation/safety_scene1_bg13.jpg') no-repeat 0 0
+            .bg14
+              background: url('/images/cars/kona/animation/safety_scene1_bg14.jpg') no-repeat 0 0
+            .bg15
+              background: url('/images/cars/kona/animation/safety_scene1_bg15.jpg') no-repeat 0 0
+            .bg16
+              background: url('/images/cars/kona/animation/safety_scene1_bg16.jpg') no-repeat 0 0
+          &.scene2
+            .bg
+              position: absolute
+              width: 100%
+              height: 100%
+            .bg1
+              background: url('/images/cars/kona/animation/safety_scene2_bg1.jpg') no-repeat 0 0
+            .bg2
+              background: url('/images/cars/kona/animation/safety_scene2_bg2.jpg') no-repeat 0 0
+            .bg3
+              background: url('/images/cars/kona/animation/safety_scene2_bg3.jpg') no-repeat 0 0
+            .bg4
+              background: url('/images/cars/kona/animation/safety_scene2_bg4.jpg') no-repeat 0 0
+            .bg5
+              background: url('/images/cars/kona/animation/safety_scene2_bg5.jpg') no-repeat 0 0
+            .bg6
+              background: url('/images/cars/kona/animation/safety_scene2_bg6.jpg') no-repeat 0 0
+            .bg7
+              background: url('/images/cars/kona/animation/safety_scene2_bg7.jpg') no-repeat 0 0
+            .bg8
+              background: url('/images/cars/kona/animation/safety_scene2_bg8.jpg') no-repeat 0 0
+            .bg9
+              background: url('/images/cars/kona/animation/safety_scene2_bg9.jpg') no-repeat 0 0
+            .bg10
+              background: url('/images/cars/kona/animation/safety_scene2_bg10.jpg') no-repeat 0 0
+            .bg11
+              background: url('/images/cars/kona/animation/safety_scene2_bg11.jpg') no-repeat 0 0
+            .bg12
+              background: url('/images/cars/kona/animation/safety_scene2_bg12.jpg') no-repeat 0 0
+            .bg13
+              background: url('/images/cars/kona/animation/safety_scene2_bg13.jpg') no-repeat 0 0
+            .bg14
+              background: url('/images/cars/kona/animation/safety_scene2_bg14.jpg') no-repeat 0 0
+            .bg15
+              background: url('/images/cars/kona/animation/safety_scene2_bg15.jpg') no-repeat 0 0
+            .bg16
+              background: url('/images/cars/kona/animation/safety_scene2_bg16.jpg') no-repeat 0 0
+          &.scene3
+            .bg
+              position: absolute
+              width: 100%
+              height: 100%
+            .bg1
+              background: url('/images/cars/kona/animation/safety_scene3_bg1.jpg') no-repeat 0 0
+            .bg2
+              background: url('/images/cars/kona/animation/safety_scene3_bg2.jpg') no-repeat 0 0
+            .bg3
+              background: url('/images/cars/kona/animation/safety_scene3_bg3.jpg') no-repeat 0 0
+            .bg4
+              background: url('/images/cars/kona/animation/safety_scene3_bg4.jpg') no-repeat 0 0
+            .bg5
+              background: url('/images/cars/kona/animation/safety_scene3_bg5.jpg') no-repeat 0 0
+            .bg6
+              background: url('/images/cars/kona/animation/safety_scene3_bg6.jpg') no-repeat 0 0
+            .bg7
+              background: url('/images/cars/kona/animation/safety_scene3_bg7.jpg') no-repeat 0 0
+            .bg8
+              background: url('/images/cars/kona/animation/safety_scene3_bg8.jpg') no-repeat 0 0
+            .bg9
+              background: url('/images/cars/kona/animation/safety_scene3_bg9.jpg') no-repeat 0 0
+            .bg10
+              background: url('/images/cars/kona/animation/safety_scene3_bg10.jpg') no-repeat 0 0
+            .bg11
+              background: url('/images/cars/kona/animation/safety_scene3_bg11.jpg') no-repeat 0 0
+            .bg12
+              background: url('/images/cars/kona/animation/safety_scene3_bg12.jpg') no-repeat 0 0
+            .bg13
+              background: url('/images/cars/kona/animation/safety_scene3_bg13.jpg') no-repeat 0 0
+            .bg14
+              background: url('/images/cars/kona/animation/safety_scene3_bg14.jpg') no-repeat 0 0
+            .bg15
+              background: url('/images/cars/kona/animation/safety_scene3_bg15.jpg') no-repeat 0 0
+            .bg16
+              background: url('/images/cars/kona/animation/safety_scene3_bg16.jpg') no-repeat 0 0
+          &.scene4
+            .bg
+              position: absolute
+              width: 100%
+              height: 100%
+            .bg1
+              background: url('/images/cars/kona/animation/safety_scene4_bg1.jpg') no-repeat 0 0
+            .bg2
+              background: url('/images/cars/kona/animation/safety_scene4_bg2.jpg') no-repeat 0 0
+            .bg3
+              background: url('/images/cars/kona/animation/safety_scene4_bg3.jpg') no-repeat 0 0
+            .bg4
+              background: url('/images/cars/kona/animation/safety_scene4_bg4.jpg') no-repeat 0 0
+            .bg5
+              background: url('/images/cars/kona/animation/safety_scene4_bg5.jpg') no-repeat 0 0
+            .bg6
+              background: url('/images/cars/kona/animation/safety_scene4_bg6.jpg') no-repeat 0 0
+            .bg7
+              background: url('/images/cars/kona/animation/safety_scene4_bg7.jpg') no-repeat 0 0
+            .bg8
+              background: url('/images/cars/kona/animation/safety_scene4_bg8.jpg') no-repeat 0 0
+            .bg9
+              background: url('/images/cars/kona/animation/safety_scene4_bg9.jpg') no-repeat 0 0
+            .bg10
+              background: url('/images/cars/kona/animation/safety_scene4_bg10.jpg') no-repeat 0 0
+            .bg11
+              background: url('/images/cars/kona/animation/safety_scene4_bg11.jpg') no-repeat 0 0
+            .bg12
+              background: url('/images/cars/kona/animation/safety_scene4_bg12.jpg') no-repeat 0 0
+            .bg13
+              background: url('/images/cars/kona/animation/safety_scene4_bg13.jpg') no-repeat 0 0
+            .bg14
+              background: url('/images/cars/kona/animation/safety_scene4_bg14.jpg') no-repeat 0 0
+            .bg15
+              background: url('/images/cars/kona/animation/safety_scene4_bg15.jpg') no-repeat 0 0
+            .bg16
+              background: url('/images/cars/kona/animation/safety_scene4_bg16.jpg') no-repeat 0 0
+        .text_wrap ul li .img
+          display: none
+
+.pip.contents_safety .scene_wrap .slider_wrap .slider .ui-slider-handle
+  outline: none!important
+
+
+@media (max-width: 1200px)
+  .pip .pip_cont .text_play
+    width: 100%
+  .pip.contents_safety .scene_wrap
+    width: 100%
+    height: 1050px
+  .pip.contents_safety .scene_wrap .slider_wrap
+    left: -30px
+  .pip.contents_safety .scene_wrap .text_wrap
+    left: 36px
+  .pip.contents_safety .scene_wrap .scene
+    top: 160px
+
+
+@media (max-width: 1023px)
+  .pip.contents_safety .scene_wrap
+    width: 768px
+    height: 800px
+  .pip.contents_safety .scene_wrap .scene
+    height: 586px
+    top: 250px
+  .pip.contents_safety .pip_cont .text_play
+    height: auto
+    width: 100%
+  .pip.contents_safety .scene_wrap .scene .bg
+    background-size: 100%!important
+  .pip.contents_safety .scene_wrap .slider_wrap
+    top: 67px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider_text
+    width: 688px
+    ul
+      display: flex
+      justify-content: space-between
+      li  
+        margin-left: 0
+        width: auto
+  .pip.contents_safety .scene_wrap .text_wrap
+    top: 168px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider .ui-slider-range
+    background: url('/images/cars/kona/animation/bg_slider5.png') no-repeat 0px -16px
+    background-size: 688px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider
+    width: 688px
+  .pip.contents_safety .scene_wrap .slider_wrap 
+    width: 760px
+    background: url('/images/cars/kona/animation/bg_slider5.png') no-repeat 50% 9px
+    background-size: 688px
+  .pip.contents_safety .scene_wrap .slider_wrap
+    left: 0px
+  .pip.contents_safety .scene_wrap .controls
+    display: flex
+    left: auto
+    right: -22px
+    top: 345px
+  .safety__title
+    font-size: 30px
+    line-height: 32px
+    span
+      font-size: 30px
+    br
+      display: none
+  .pip .pip_cont .text_play
+    margin-bottom: 100px
+  .pip.contents_safety .scene_wrap .text_wrap ul li strong
+    padding: 0 0 15px 0
+    font-size: 20px
+    line-height: 24px
+  .pip.contents_safety .scene_wrap .text_wrap ul li p
+    font-size: 16px
+    line-height: 24px
+    width: 100%
+  .pip.contents_safety .scene_wrap .controls a
+    zoom: 0.9
+
+  .default-text
+    line-height: 24px
+
+
+@media (max-width: 900px)
+  .pip.contents_safety .scene_wrap
+    width: 688px
+  .pip.contents_safety .scene_wrap .slider_wrap
+    width: 688px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider_text
+    width: 688px
+  .pip.contents_safety .scene_wrap .text_wrap
+    left: 0px
+  .pip.contents_safety .scene_wrap .controls
+    right: -9px
+
+
+@media (max-width: 767px)
+  .pip.contents_safety .scene_wrap
+    width: 560px
+    height: 640px
+  .pip.contents_safety .scene_wrap .slider_wrap
+    width: 100%
+    background-size: 560px
+    background-position: 50% 10px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider_text
+    width: 560px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider .ui-slider-range
+    background-size: 576px
+    background-position: 0 -11px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider
+    width: 560px
+  .pip.contents_safety .scene_wrap .controls
+    top: 336px
+  .pip.contents_safety .scene_wrap .text_wrap
+    left: 0
+  .pip.contents_safety .scene_wrap .controls
+    left: auto
+    right: 0
+  .pip.contents_safety .scene_wrap .scene
+    height: 456px
+    top: 240px
+  .pip.contents_safety .scene_wrap .text_wrap ul li p
+    width: auto
+
+
+@media (max-width: 640px)
+  .pip.contents_safety .scene_wrap .controls
+    right: 50%
+    margin-right: -65px
+  .pip.contents_safety .scene_wrap
+    width: 432px
+    height: 640px
+  .pip.contents_safety .scene_wrap .slider_wrap
+    background-size: 432px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider_text
+    width: 432px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider .ui-slider-range
+    background-size: 432px
+    background-position: 0 -6px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider
+    width: 432px
+  .pip.contents_safety .scene_wrap .slider_wrap
+    height: 25px
+  .pip.contents_safety .scene_wrap .scene
+    top: 322px
+  .pip.contents_safety .scene_wrap .text_wrap
+    top: 145px
+  .pip.contents_safety .scene_wrap .controls
+    top: 365px
+
+
+@media (max-width: 480px)
+  .pip.contents_safety .scene_wrap
+    width: 368px
+    height: 680px
+  .pip.contents_safety .scene_wrap .slider_wrap
+    background-size: 368px
+    background-position: 50% 8px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider_text
+    width: 368px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider .ui-slider-range
+    background-size: 368px
+    background-position: 0 -5px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider
+    width: 368px
+  .pip.contents_safety .scene_wrap .scene
+    height: 286px
+  .pip.contents_safety .scene_wrap .slider_wrap
+    height: 20px
+  .pip .pip_cont .text_play
+    z-index: 3
+    margin-bottom: 0
+  .pip.contents_safety .scene_wrap
+    margin-top: 0
+  .pip.contents_safety .scene_wrap .scene
+    top: -31px
+  .pip.contents_safety .scene_wrap .slider_wrap
+    top: 286px
+  .pip.contents_safety .scene_wrap .text_wrap
+    top: 440px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider .ui-slider-handle 
+    width: 22px !important
+    height: 22px !important
+    margin-left: -11px !important
+    background-size: cover!important
+  .pip.contents_safety .scene_wrap .slider_wrap .slider_text ul li
+    font-size: 12px
+  .pip.contents_safety .scene_wrap .controls
+    top: 354px
+    margin-right: -55px
+  .pip.contents_safety .scene_wrap .text_wrap ul li strong
+    font-size: 16px
+    line-height: 24px
+
+
+@media (max-width: 400px)
+  .pip.contents_safety .scene_wrap
+    width: 318px
+    height: 740px
+  .pip.contents_safety .scene_wrap .slider_wrap
+    background-size: 318px
+    background-position: 50% 7px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider_text
+    width: 318px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider .ui-slider-range
+    background-size: 318px
+    background-position: 0 -4px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider
+    width: 318px
+  .pip.contents_safety .scene_wrap .scene
+    top: 0px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider .ui-slider-handle
+    top: -2px !important
+  .pip.contents_safety .scene_wrap .slider_wrap
+    height: 16px
+  .pip.contents_safety .scene_wrap .scene
+    height: 283px
+
+
+@media (max-width: 350px)
+  .pip.contents_safety .scene_wrap
+    width: 288px
+    height: 740px
+  .pip.contents_safety .scene_wrap .slider_wrap
+    background-size: 288px
+    background-position: 50% 7px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider_text
+    width: 288px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider .ui-slider-range
+    background-size: 288px
+    background-position: 0 -4px
+  .pip.contents_safety .scene_wrap .slider_wrap .slider
+    width: 288px

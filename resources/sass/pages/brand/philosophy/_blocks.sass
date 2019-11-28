@@ -1,0 +1,302 @@
+.modern
+	padding-bottom: 122px
+	overflow: hidden
+	&.active
+		.modern__back
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.modern__img
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+	&__inner
+	&__back
+		width: 768px
+		height: 531px
+		margin-left: 127px
+	&__wrapper
+		position: relative
+		margin-top: -456px
+	&__img
+		width: 782px
+		height: 541px
+	&__description
+		position: absolute
+		top: 132px
+		left: 858px
+
+
+.capability
+	position: relative
+	height: 584px
+	margin-top: 112px
+	margin-bottom: 194px
+	&.active
+		.capability__mask
+			animation: maskplay 2s steps(25) forwards
+		.capability__description
+			transform: translate3d(0,0,0)
+			opacity: 1
+		.best
+			&__title, &__note
+				transform: translate3d(0, 0, 0)
+				opacity: 1
+			&__star
+				transform: scale(1)
+	&__inner
+		position: static
+	&__wrapper
+		position: absolute
+		top: 0
+		left: 0
+		display: flex
+		align-items: flex-end
+	&__graph
+		position: relative
+		width: 1051px
+		height: 584px
+		overflow: hidden
+		flex: none		
+	&__back
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-image: url(/images/brand/philosophy/img/3.png)
+		background-repeat: no-repeat
+		background-position: 100% 50%
+		background-size: cover
+	&__mask
+		position: absolute
+		top: 0
+		left: 0
+		width: 2500%
+		bottom: 0
+		background-image: url('/images/brand/philosophy/img/mask.png')
+		background-repeat: no-repeat
+		background-position: 0 0
+		background-size: 100% 100%
+		transform: translateX(0)
+		will-change: transform
+	&__description
+		max-width: 586px
+		margin-left: 32px
+		margin-bottom: -10px
+		padding-right: 32px
+		transition-delay: 1.5s
+	&__text
+		max-width: 586px
+
+@keyframes maskplay
+	100%
+		transform: translateX(-100%)
+
+.best
+	position: absolute
+	top: -7px
+	right: 119px
+	text-align: center
+	width: 280px
+	z-index: 1
+	&__title
+		font-size: 72px
+		line-height: 71px
+		color: $main_blue
+		text-transform: uppercase
+		transition-delay: 1s
+	&__stars
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 100%
+		margin-bottom: 16px
+	&__star
+		transform: scale(0)
+		transition: 0.3s
+		&:not(:last-of-type)
+			margin-right: 12px
+		&:nth-of-type(1)
+			transition-delay: 0.2s
+		&:nth-of-type(2)
+			transition-delay: 0.4s
+		&:nth-of-type(3)
+			transition-delay: 0.6s
+		&:nth-of-type(4)
+			transition-delay: 0.8s
+		&:nth-of-type(5)
+			transition-delay: 1s
+	&__note
+		font-size: 20px
+		line-height: 24px
+		font-weight: 500
+		transition-delay: 1s
+
+.feel
+	&.active
+		.power
+			svg
+				path
+					opacity: 1
+			&__number
+				opacity: 1
+		.feel__back
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.feel__img
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+	&__inner
+		position: relative
+		display: flex
+		justify-content: flex-end
+	&__graph
+		position: relative
+	&__wrapper
+		position: relative
+		margin-top: -410px
+		margin-left: -96px
+	&__back
+		width: 768px
+		height: 464px
+	&__img
+		width: 733px
+		height: 874px
+	&__img-img
+		background-position: 50% 100%
+	&__parallax
+
+	&__description
+		position: absolute
+		left: -517px
+		bottom: 237px
+		max-width: 586px
+
+.power
+	position: absolute
+	top: -33px
+	left: -29px
+	max-width: 280px
+	text-align: center
+	&__number
+		position: absolute
+		top: -7px
+		left: 50%
+		font-size: 96px
+		line-height: 1
+		color: $main_blue
+		font-weight: 300
+		transform: translateX(-56%)
+		text-align: center
+		opacity: 0
+		transition: 0.3s
+		transition-delay: 0.8s
+	svg
+		display: block
+		margin: 0 auto
+		path
+			opacity: 0
+			transition: 0.1s
+	&__text
+		font-size: 20px
+		line-height: 24px
+		font-weight: 500
+		margin-top: 10px
+		transition-delay: 1s
+		
+@for $i from 1 through 20
+	.power__left
+		path
+			&:nth-of-type(#{$i})
+				transition-delay: 0.05s * (20 - $i)
+
+@for $i from 1 through 20
+	.power__right
+		path
+			&:nth-of-type(#{$i})
+				transition-delay: 0.05s * (20 - $i)
+
+@keyframes stroke
+	100%
+    	stroke-dashoffset: 100
+
+.respect
+	margin-top: 249px
+	padding-bottom: 245px
+	&__inner
+		position: relative
+	&.active
+		.respect__back
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.respect__img
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+	&__wrapper
+		position: relative
+		margin-top: -1000px
+	&__back
+		width: 736px
+		height: 900px
+		margin-left: 220px
+	&__img
+		width: 736px
+		height: 892px
+	&__description
+		position: absolute
+		top: 300px
+		left: 896px
+		max-width: 586px
+
+.position
+	position: absolute
+	top: -100px
+	right: 0
+	width: 280px
+	&__top
+		display: flex
+		align-items: flex-end
+		justify-content: center
+		font-size: 72px
+		line-height: 71px
+		color: $main_blue
+		transition-delay: 1s
+	&__under
+		color: $sand
+		font-size: 36px
+		line-height: 36px
+		margin-left: 5px
+		font-weight: 500
+	&__text
+		font-size: 20px
+		line-height: 24px
+		color: #000
+		font-weight: 500
+		margin-top: 5px
+		text-align: center
+		transition-delay: 1.5s
+
+

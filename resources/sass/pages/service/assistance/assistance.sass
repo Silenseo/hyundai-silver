@@ -1,0 +1,331 @@
+@import '../../../common/_variables.scss'
+@import '../../../common/_common.sass'
+
+.head
+  background-image: url('/images/service/warranty/fon.jpg')
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+  &__composition
+    width: 600px
+    padding-top: 39px
+    padding-left: 43px
+  &__banner
+    position: relative
+    background-image: url('/images/service/assistance/pic.jpg')
+    background-repeat: no-repeat
+    background-position: 100% 50%
+    background-size: cover
+    height: 545px
+  &__title
+    font-size: 5.5rem
+    line-height: 0.98
+    font-weight: 500
+    margin-bottom: 0.2em
+  &__subtitle
+    font-size: 3rem
+    line-height: 1.067
+    font-weight: 400
+  .df-back-link
+    padding-top: 32px
+    padding-bottom: 28px
+
+.advantages
+  background-color: $gray_bg
+  padding-top: 56px
+  padding-bottom: 16px
+  &-title
+    text-align: center
+    margin-bottom: 64px
+    font-size: 4.2rem
+    line-height: 1.143
+    font-weight: 500
+  &__item
+    display: flex
+    width: 50%
+    margin-bottom: 64px
+    padding-left: 16px
+    padding-right: 32px
+  &__img
+    margin-right: 32px
+  &__phone
+    color: $second_blue
+    white-space: nowrap
+    transition: opacity 0.3s ease 0s
+    &:hover
+      opacity: 0.8
+  &__icon
+    width: 104px
+    height: 104px
+  &__info
+    width: calc(100% - 136px)
+  &__title
+    font-size: 2rem
+    line-height: 1.2
+    margin-bottom: 8px
+    font-weight: 500
+  &__text
+    font-family: 'HyundaiSansText'
+    font-size: 1.6rem
+    line-height: 1.5
+
+.terms
+  background-color: $white_bg
+  padding-top: 56px
+  padding-bottom: 73px
+  &__title
+    margin-bottom: 51px
+    text-align: center
+  &-inner
+    max-width: 1008px
+    margin: 0 auto
+  &__item
+    font-size: 1.6rem
+    line-height: 1.5
+    font-family: 'HyundaiSansText'
+    margin-bottom: 1em
+    padding-left: 24px
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      top: 5px
+      left: 0
+      width: 11px
+      height: 10px
+      background-image: url('/images/service/assistance/check.svg')
+      background-repeat: no-repeat
+      background-size: cover
+
+.comissar
+  display: flex
+  width: 100%
+  background-color: $gray_bg
+  &__img
+    width: 49%
+    display: flex
+    align-items: center
+    justify-content: flex-end
+  &__info
+    padding: 82px 80px 40px 85px
+    width: 51%
+  &__title
+    font-size: 3rem
+    line-height: 1.2
+    font-weight: 500
+    margin-bottom: 17px
+  &__text
+    font-size: 1.6rem
+    line-height: 1.5
+    font-family: 'HyundaiSansText'
+    margin-bottom: 16px
+    max-width: 400px
+  &__item
+    max-width: 400px
+    font-size: 1.6rem
+    line-height: 1.5
+    font-family: 'HyundaiSansText'
+    margin-bottom: 1em
+    padding-left: 21px
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      top: 5px
+      left: 0
+      width: 11px
+      height: 10px
+      background-image: url('/images/service/assistance/check.svg')
+      background-repeat: no-repeat
+      background-size: cover
+  .schem-img--md
+    display: none
+
+.note
+  background-color: $white_bg
+  padding-top: 77px
+  &-block
+    max-width: 1068px
+    padding-left: 32px
+    padding-bottom: 80px
+    position: relative
+    margin: 0 auto
+    line-height: 1.5
+    font-size: 1.2rem
+    color: $text_black
+    font-family: 'HyundaiSansText'
+  &-img
+    width: 16px
+    height: 16px
+    position: absolute
+    top: 0
+    left: 0
+
+
+@media (min-width: 1600px)
+  .comissar__info
+    padding-bottom: 80px
+    padding-left: 102px
+    width: 49.5%
+  .comissar__text
+    max-width: 480px
+  .comissar__item
+    max-width: 480px
+  .comissar__img
+    width: 50.5%
+
+  .terms-inner
+    max-width: $large-cont
+
+  .note-block
+    max-width: $large-cont
+
+@media (max-width: 1600px)
+  .head
+    &__banner
+      height: 440px
+
+@media (max-width: 1200px)  
+  .comissar__info
+    padding: 40px
+  
+
+@media (max-width: 1023px)
+  .advantages__item
+    flex-direction: column
+    margin-bottom: 46px
+    align-items: flex-start
+  .advantages__info
+    width: 100%
+  .advantages__img
+    margin-right: 0
+    margin-bottom: 24px
+  
+  .note
+    padding-top: 80px
+    &-block
+      padding-bottom: 78px
+
+
+@media (max-width: 900px)
+  .head__composition
+    padding-top: 50px
+    padding-left: 34px
+
+  .advantages
+    padding-top: 56px
+    &-title
+      margin-bottom: 40px
+
+  .terms
+    padding-top: 56px
+    &__title
+      margin-bottom: 48px
+
+  .comissar
+    flex-wrap: wrap
+    &__img
+      width: 100%
+      .schem-img
+        display: none
+      .schem-img--md
+        display: block
+        margin: 0 auto
+    &__info
+      width: 100%
+      padding: 80px 40px
+    &__text
+      max-width: 100%
+      margin-bottom: 40px
+    &__list
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+    &__item
+      width: 48%
+
+
+@media (max-width: $md-max)
+  .head__composition
+    width: auto
+    padding-top: 50px
+
+  .advantages
+    &__item
+      padding-right: 16px
+
+  .terms
+    padding-top: 40px
+    padding-bottom: 40px
+    &__title
+      margin-bottom: 40px
+
+  .comissar
+    &__info
+      padding: 40px 16px 32px
+
+  .note
+    padding-top: 24px
+    &-block
+      padding-bottom: 24px
+
+
+@media (max-width: 640px)
+  .head
+    &__banner
+      background-image: url('/images/service/assistance/pic-md.jpg')
+      background-position: bottom
+      height: 408px
+    &__composition
+      padding: 24px 16px
+    &__title
+      font-size: 3rem
+      line-height: 1.067
+      margin-bottom: 14px
+    &__subtitle
+      font-size: 1.8rem
+      line-height: 1.2
+      max-width: 300px
+    .df-back-link
+      padding-top: 24px
+      padding-bottom: 20px
+
+  .advantages
+    padding-top: 43px
+    padding-bottom: 18px
+    &-title
+      line-height: 1.0667
+      font-size: 3rem
+      margin-bottom: 48px
+    &__item
+      width: 100%
+    &__img
+      margin-bottom: 21px
+    &__title
+      margin-bottom: 6px
+    
+  .terms
+    padding-top: 46px
+    &__title
+      margin-bottom: 36px
+
+  .comissar
+    &__title
+      font-size: 2rem
+      line-height: 1.2
+      margin-bottom: 23px
+    &__item
+      width: 100%
+    &__text
+      margin-bottom: 16px
+
+
+@media (max-width: 480px)
+  .note-block
+    padding-left: 15px
+    padding-bottom: 34px
+  .note-img
+    width: 10px
+    height: 10px
+    top: 3px
+  

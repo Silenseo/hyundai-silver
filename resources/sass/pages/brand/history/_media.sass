@@ -1,0 +1,505 @@
+@media only screen and (max-width : $xl-max)
+	.before
+		&__inner
+			padding-left: 128px
+		&__main
+			padding-left: 75px
+
+	.year
+		left: calc((100vw - 1216px) / 2 + 100px)
+		&--ru
+			left: auto
+			right: calc((100vw - 1216px) / 2 + 10px)
+
+	.history
+		&__inner
+			padding-left: 0
+			padding-right: 0
+			&--ru
+				padding-left: 104px
+
+@media only screen and (max-width : $lg-max)
+	.intro
+		&__inner
+			padding-left: 48px
+
+	.before
+		margin-top: 70px
+		&__inner
+			padding-left: 48px
+		&__subtitle
+			margin-bottom: 70px
+		&__main
+			display: block
+		&__img
+			width: 568px
+			height: 488px
+			&::after
+				top: auto
+				bottom: -56px
+				right: auto
+				left: 0
+		&__composition
+			margin-top: 60px
+			margin-left: 0
+
+	.time-line
+		display: none
+
+	.m-time-line
+		display: block
+
+	.year
+		display: none
+
+	.history
+		padding-top: 73px
+		&__inner
+			&--ru
+				padding-top: 0
+				padding-left: 0
+		&__line
+			max-width: 100%
+		&__subtitle
+			margin-top: 32px
+			&--2
+				margin-top: 0
+			&--16
+				margin-left: 0
+			&--21
+				margin-left: 0
+		&__text
+			&--16
+				margin-left: 0
+			&--21
+				margin-left: 0
+		&__description
+			&--17
+				margin-left: 440px
+			&--19
+				margin-left: 89px
+		&__icon
+			&--20
+				margin-left: 200px
+			&--22
+				margin-left: 200px
+		&__back
+			&--1
+				width: 640px
+			&--2
+				width: 552px
+				right: 48px
+			&--3
+				left: auto
+				right: 570px
+			&--4
+				left: auto
+				right: 88px
+			&--7
+				left: auto
+				right: 120px
+				width: 568px
+			&--9
+				left: -40px
+				width: 608px
+				height: 449px
+			&--10
+				right: 48px
+			&--12
+				width: 599px
+				left: 69px
+			&--16
+				left: 70px
+				width: 600px
+			&--18
+				width: 360px
+				left: 0
+			&--21
+				left: 59px
+			&--23
+				left: 0
+				width: 640px
+		&__wrapper
+			&--1
+				margin-right: 48px
+			&--4
+				margin-right: 48px
+			&--7
+				margin-right: 48px
+			&--9
+				margin-right: 50px
+			&--16
+				margin-left: 0
+			&--21
+				margin-left: 0
+			&--23
+				margin-left: 125px
+		&__title-year
+			display: block
+
+	.canada
+		&__text
+			padding-right: 40px
+
+	.after
+		padding-top: 50px
+		padding-bottom: 121px
+		&__back
+			top: 0
+		&__gallery
+			width: 646px
+		&__inner
+			padding: 0
+			padding-top: 25px
+		&__text
+			max-width: 570px
+
+@media only screen and (max-width : 1023px)
+	.banner
+		&__inner
+			height: 957px
+
+	.philosophy
+		height: 952px
+		padding: 50px 40px
+
+@media only screen and (max-width : $md-max)
+	.banner
+		&__inner
+			height: 472px
+
+	.intro
+		&__inner
+			margin-top: -100px
+			padding-left: 0
+		&__left
+			max-width: 320px
+		&__year
+			margin-bottom: 8px
+
+	.before
+		margin-top: 60px
+		&__year
+			font-size: 16px
+			line-height: 18px
+			margin-bottom: 7px
+		&__title
+			font-size: 38px
+			margin-bottom: 16px
+			max-width: 288px
+		&__inner
+			padding-left: 0
+		&__subtitle
+			margin-bottom: 59px
+		&__main
+			padding-left: 45px
+		&__img
+			max-width: 100%
+			height: auto
+			&::before
+				width: 31px
+				height: 72px
+				left: -45px
+			&::after
+				content: ''
+				position: relative
+				display: block
+				padding-top: 100%
+		&__year-m
+			display: block
+		&__composition
+			margin-top: 19px
+		&__name
+			font-size: 38px
+		&__text
+			font-size: 16px
+			line-height: 24px
+
+	.m-time-line
+		font-size: 14px
+		line-height: 21px
+		height: 33px
+		&__item
+			padding: 6px 0px
+
+	.history
+		padding-top: 56px
+		&__subtitle
+			font-size: 20px
+			line-height: 24px
+			margin-top: 16px
+			margin-bottom: 8px
+			&--2
+				margin-top: 0
+				margin-left: 24px
+			&--15
+				margin-top: 0
+		&__text
+			font-size: 16px
+			line-height: 24px
+			&--2
+				margin-left: 24px
+		&__item
+			&:not(:last-of-type)
+				margin-bottom: 40px
+			&--3, &--5, &--6, &--7, &--8, &--9, &--10
+				article
+					justify-content: flex-start
+			&--7
+				margin-top: 90px
+			&--17
+				margin-bottom: 40px!important
+			&--20, &--14, &--22
+				article
+					align-items: flex-start
+		&__icon
+			&--5
+				width: 75px
+				height: 75px
+			&--8
+				width: 86px
+				height: 64px
+			&--14, &--20, &--22
+				width: 56px
+				height: 56px
+				margin-left: 0
+				margin-right: 8px
+		&__description
+			&--11, &--6
+				width: 100%
+			&--17
+				margin-left: 24px
+			&--19
+				margin-left: 0
+		&__back
+			height: auto
+			&::after
+				content: ''
+				position: relative
+				display: block
+			&--1
+				left: 0
+				right: 46px
+				width: auto
+				&::after
+					padding-top: 77%
+			&--2
+				right: 0
+				max-width: calc(100% - 24px)
+				&::after
+					padding-top: 62%
+			&--3
+				right: auto
+				top: 185px
+				left: -16px
+				max-width: calc(100% - 57px)
+				&::after
+					padding-top: 100%
+			&--4
+				right: auto
+				left: 0
+				max-width: calc(100% - 34px)
+				&::after
+					padding-top: 70%
+			&--7
+				right: auto
+				left: 0
+				max-width: calc(100% - 34px)
+				&::after
+					padding-top: 61%
+			&--9
+				right: auto
+				left: -16px
+				max-width: calc(100% - 34px)
+				&::after
+					padding-top: 79%
+			&--10
+				right: 0
+				left: auto
+				max-width: calc(100% - 48px)
+				&::after
+					padding-top: 60%
+			&--12
+				right: 0
+				left: auto
+				max-width: calc(100% - 64px)
+				&::after
+					padding-top: 81%
+			&--15
+				right: auto
+				left: 0
+				max-width: calc(100% - 34px)
+				&::after
+					padding-top: 117%
+			&--16
+				right: 0
+				left: auto
+				max-width: calc(100% - 24px)
+				&::after
+					padding-top: 44%
+			&--18
+				right: auto
+				left: 0
+				max-width: calc(100% - 84px)
+				&::after
+					padding-top: 141%
+			&--21
+				right: 0
+				left: auto
+				max-width: calc(100% - 24px)
+				&::after
+					padding-top: 66%
+			&--23
+				right: auto
+				left: 0
+				max-width: calc(100% - 34px)
+				&::after
+					padding-top: 80%
+		&__wrapper
+			&--1
+				margin-right: 46px
+				max-width: calc(100% - 90px)
+			&--2
+				max-width: calc(100% - 20px)
+				margin-right: 20px
+				margin-left: -16px
+			&--3
+				max-width: calc(100% - 8px)
+				margin-right: auto
+				margin-top: 352px
+			&--4
+				max-width: calc(100% - 24px)
+				margin-right: 0
+			&--7
+				max-width: calc(100% - 24px)
+				margin-right: 0
+				margin-left: 24px
+			&--9
+				max-width: calc(100% - 24px)
+				margin-right: 0
+				margin-left: 24px
+			&--10
+				max-width: calc(100% - 34px)
+				margin-right: 0
+			&--12
+				max-width: calc(100% - 34px)
+				margin-top: 46px
+				margin-right: 0
+			&--15
+				max-width: calc(100% - 24px)
+				margin-top: 151px
+				margin-left: auto
+			&--16
+				max-width: calc(100% - 34px)
+				margin-top: 53px
+				margin-left: 0
+				margin-right: auto
+			&--18
+				max-width: calc(100% - 32px)
+				margin-top: 59px
+				margin-left: 24px
+				margin-right: auto
+			&--21
+				max-width: calc(100% - 34px)
+				margin-top: 46px
+				margin-left: 0px
+				margin-right: auto
+			&--23
+				max-width: calc(100% - 24px)
+				margin-top: 35px
+				margin-left: auto
+				margin-right: 0
+		&__img
+			height: auto
+			background-size: cover
+			&::after
+				content: ''
+				position: relative
+				display: block
+			&--1
+				&::after
+					padding-top: 67%
+			&--2
+				&::after
+					padding-top: 51%
+			&--3
+				&::after
+					padding-top: 54%
+			&--4
+				&::after
+					padding-top: 68%
+			&--7
+				&::after
+					padding-top: 61%
+			&--9
+				&::after
+					padding-top: 61%
+			&--10
+				&::after
+					padding-top: 75%
+			&--12
+				&::after
+					padding-top: 53%
+			&--15
+				background-size: 100%
+				&::after
+					padding-top: 71%
+			&--16
+				&::after
+					padding-top: 68%
+			&--18
+				&::after
+					padding-top: 112%
+			&--21
+				&::after
+					padding-top: 64%
+			&--23
+				&::after
+					padding-top: 64%
+		&__year
+			margin-bottom: 4px
+		&__title-year
+			font-size: 30px
+			line-height: 36px
+			&--1985
+				top: 210px
+
+	.canada
+		right: auto
+		left: 0
+		&__img
+			width: 59px
+			height: 60px
+			margin-right: 8px
+		&__year
+			margin-bottom: 4px
+		&__text
+			font-size: 16px
+			line-height: 24px
+			max-width: 220px
+
+	.after
+		padding-top: 0
+		padding-bottom: 36px
+		&__gallery
+			width: calc(100% - 32px)
+		&__inner
+			padding-top: 51px
+		&__title
+			font-size: 38px
+			line-height: 40px
+			margin-bottom: 16px
+		&__text
+			font-size: 16px
+			line-height: 24px
+
+	.philosophy
+		height: 512px
+		padding: 28px 16px
+		&__title
+			font-size: 38px
+			line-height: 40px
+
+	.e-gallery
+		&__footer
+			margin-top: 40px!important

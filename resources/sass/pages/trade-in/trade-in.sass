@@ -1,0 +1,428 @@
+@import '../../common/_variables.scss'
+@import '../../common/_common.sass'
+
+.head
+  // background-image: url('/images/service/warranty/fon.jpg')
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+  &__composition
+    width: 600px
+    padding-top: 39px
+    padding-left: 43px
+  &__banner
+    position: relative
+    // background-image: url('/images/trade-in/main.jpg')
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: cover
+    height: 545px
+  &__title
+    font-size: 5.5rem
+    line-height: 0.98
+    font-weight: 500
+    margin-bottom: 0.6em
+    color: $text_white
+  &__subtitle
+    font-size: 3rem
+    line-height: 1.067
+    font-weight: 400
+    color: $text_white
+  .df-back-link
+    padding-top: 32px
+    padding-bottom: 28px
+
+.benefit
+  background-color: #fff
+  padding-top: 44px
+  padding-bottom: 64px
+  &-inner
+    width: 100%
+    max-width: 1008px
+    margin: 0 auto
+  &__title
+    text-align: center
+    margin-bottom: 11px
+  &__subtitle
+    text-align: center
+    margin-bottom: 15px
+  &__link
+    text-align: center
+    margin-bottom: 57px
+  &__item
+    background-color: $gray_bg
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    &:not(:last-child)
+      margin-bottom: 16px
+    &-header
+      margin-bottom: 32px
+      &--mobile
+        display: none
+    &-title
+      color: $text_black
+      font-size: 3rem
+      line-height: 1.2
+      font-weight: 500
+    &-price
+      font-size: 1.6rem
+      line-height: 1.5
+      color: $second_text
+      margin-top: -3px
+    &-text
+      color: $text_black
+      font-size: 2rem
+      line-height: 1.2
+      font-weight: 500
+      margin-bottom: 18px
+    &-buttons
+      display: flex
+      margin-bottom: 12px
+      .df-button
+        width: 200px
+        padding: 8px 30px
+        &:not(:last-child)
+          margin-right: 8px
+  &__img
+    padding: 42px 78px 42px 68px
+  &__info
+    padding: 28px 81px 29px 0
+    .df-download-link
+      font-size: 1.6rem
+      color: $main_blue
+
+.offer
+  background-color: $gray_bg
+  padding-top: 56px
+  padding-bottom: 56px
+  &__title
+    text-align: center
+    max-width: 650px
+    margin: 0 auto 53px
+  &__slider
+    .slide__img
+      width: 57.3%
+      background-color: $sand_bg
+      display: flex
+      justify-content: center
+      align-items: center
+      padding: 40px
+      box-sizing: border-box
+    .slide__info
+      background-color: #fff
+      width: 42.7%
+      padding: 92px 100px 64px 48px
+      box-sizing: border-box
+      &-step
+        color: $third_text
+        font-size: 1.2rem
+        line-height: 1.5
+        margin-bottom: 14px
+      &-text
+        color: $text_black
+        font-size: 3rem
+        line-height: 1.2
+        font-weight: 500
+        margin-bottom: 84px
+        max-width: 350px
+      .df-button
+        display: block
+        padding: 16px 30px
+        width: 240px
+        box-sizing: border-box
+
+.swiper-wrapper
+  transition-timing-function: ease-out
+.swiper-container 
+  width: 100%
+  height: 100%
+  padding-bottom: 56px
+.swiper-slide
+  display: flex 
+.swiper-button-next
+  background-image: url('/images/trade-in/right.png')
+  background-size: 40px
+  width: 40px
+  height: 40px
+  margin-top: -20px
+  right: 0
+  top: calc(50% - 28px)
+  outline: none!important
+.swiper-button-prev
+  background-image: url('/images/trade-in/left.png')
+  background-size: 40px
+  width: 40px
+  height: 40px
+  margin-top: -20px
+  left: 0
+  top: calc(50% - 28px)
+  outline: none!important
+.swiper-pagination-bullet
+  width: 12px
+  height: 12px
+  background: rgba(0, 0, 0, 0.1)
+  opacity: 1
+  outline: none!important
+  transition: 0.3s background-color ease 0s
+  &-active
+    opacity: 1
+    background-color: $second_blue
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction
+  bottom: -3px
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet
+  margin: 0 5px
+
+
+@media (min-width: 1600px)
+  .benefit
+    &-inner
+      max-width: $large-cont
+    &__item
+      justify-content: center
+    &__info
+      padding-left: 100px
+
+  .offer__slider 
+    .slide__info
+      padding: 92px 100px 64px
+
+
+@media (max-width: $xl-max)
+  .head
+    &__banner
+      height: 440px
+@media (max-width: 1262px)
+  .offer__slider 
+    .slide__info
+      padding: 92px 50px 64px 48px
+
+
+@media (max-width: 1200px)  
+  .benefit__img
+    padding: 42px 5% 42px 5%
+  .benefit__info
+    padding: 28px 5% 30px 0
+
+  
+@media (max-width: 1023px)
+  .benefit
+    padding-top: 49px
+    &__title
+      font-size: 3.8rem
+      line-height: 1.05
+      margin-bottom: 14px
+  .benefit__img
+    padding: 0px 4%
+  .benefit__item
+    align-items: center
+  .benefit__item-buttons .df-button
+    width: 152px
+    padding: 8px 0
+
+  .offer
+    padding-top: 45px
+    &__title
+      font-size: 3.8rem
+      line-height: 1.05
+      margin-bottom: 56px
+    &__slider
+      .slide__img
+        width: 52.3%
+        padding: 28px
+      .slide__info
+        width: 47.7%
+        padding: 45px 56px 32px 24px
+        &-step
+          margin-bottom: 15px
+        &-text
+          font-size: 2rem
+          line-height: 1.2
+          max-width: 250px
+          margin-bottom: 66px
+        .df-button
+          width: 208px
+          padding: 16px 0
+
+
+@media (max-width: 900px)
+  .head__composition
+    padding-top: 40px
+    padding-left: 34px
+  .head__title
+    margin-bottom: 0.35em
+
+  .benefit__info
+    padding: 26px 5% 28px 0
+  .benefit__item-title
+    font-size: 2rem
+    line-height: 1.2
+  .benefit__item-header
+    margin-bottom: 23px
+  .benefit__item-text
+    font-size: 1.8rem
+    margin-bottom: 18px
+    line-height: 1.333
+  .benefit__item-buttons
+    margin-bottom: 12px
+  .benefit__img
+    padding: 0px 3.5% 0px 3.5%
+  .benefit__item-buttons .df-button:not(:last-child)
+    margin-right: 6px
+  .benefit__item-price
+    margin-top: -2px
+    margin-left: 1px
+
+
+@media (max-width: $md-max)
+  .head__composition
+    width: auto
+    padding-top: 50px
+
+  .benefit
+    &__item
+      flex-direction: column
+      padding: 22px 16px 28px
+      &-header
+        display: none
+        &--mobile
+          display: block
+          margin-bottom: 11px
+      &-title
+        font-size: 3rem
+    &__img
+      padding: 0
+    &__info
+      padding: 0
+    &__link
+      margin-bottom: 40px
+
+
+@media (max-width: 640px)
+  .head
+    &__banner
+      // background-image: url('/images/trade-in/main-md.jpg')
+      background-position: bottom
+      height: 120vw
+    &__composition
+      padding: 24px 16px
+    &__title
+      font-size: 3.8rem
+      line-height: 1.053
+      margin-bottom: 4px
+    &__subtitle
+      font-size: 1.8rem
+      line-height: 1.2
+      max-width: 300px
+    .df-back-link
+      padding-top: 24px
+      padding-bottom: 20px
+
+  .swiper-slide
+    flex-direction: column
+  .swiper-button-next, .swiper-button-prev
+    top: 23%
+  .offer
+    &__slider
+      .slide__img
+        width: 100%
+        box-sizing: border-box
+        padding: 34px 40px
+      .slide__info
+        width: 100%
+        box-sizing: border-box
+        padding: 21px 24px 32px
+
+
+@media (max-width: 480px)
+  .benefit
+    padding-top: 32px
+    padding-bottom: 48px
+    &__title
+      font-size: 3rem
+      line-height: 1.05
+      margin-bottom: 17px
+    &__subtitle
+      font-size: 1.6rem
+      line-height: 1.5
+      margin-bottom: 16px
+      max-width: 264px
+      margin-left: auto
+      margin-right: auto
+    .df-iconed-link
+      font-size: 1.6rem
+      line-height: 1.5
+    &__link
+      margin-bottom: 39px
+    &__item
+      align-items: flex-start
+      &-title
+        font-size: 2rem
+        line-height: 1.2
+        margin-bottom: 0
+      &-price
+        margin-top: 1px
+      &-text
+        margin-bottom: 18px
+      &-buttons 
+        margin-bottom: 12px
+        .df-button
+          padding: 6px 0 5px
+          font-size: 1.4rem
+          &:not(:last-child)
+            margin-right: 9px
+    &__info
+      width: 100%
+    &__item-buttons
+      width: 100%
+      .df-button
+        width: calc(50% - 4px)
+    &__img
+      margin-bottom: 16px
+
+  .offer
+    padding-top: 39px
+    padding-bottom: 40px
+    &__title
+      font-size: 3rem
+      line-height: 1.067
+      margin-bottom: 42px
+    &__slider
+      width: calc(100% + 32px)
+      margin-left: -16px
+      .slide__info
+        &-step
+          line-height: 1.167
+          margin-bottom: 19px
+        &-text
+          margin-bottom: 58px
+        .df-button
+          width: 240px
+          margin: 0 auto
+          display: flex
+          justify-content: center
+          text-align: center
+          padding: 12px 0
+
+  .swiper-button-next, .swiper-button-prev
+    top: 24%
+  .swiper-container
+    padding-bottom: 40px
+
+
+@media (max-width: 400px)
+  .head__composition
+    padding: 30px 0 0 16px
+
+  .offer
+    &__slider
+      .slide__info
+        .df-button
+          width: 100%
+
+  .swiper-button-next, .swiper-button-prev
+    top: 22%
+
+@media (max-width: 320px)
+  .swiper-button-next, .swiper-button-prev
+    top: 21%

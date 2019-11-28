@@ -1,0 +1,128 @@
+.d-list
+	color: $text_black
+	&__title
+		text-align: center
+		margin-bottom: 30px
+	&__list
+		margin-bottom: 31px
+
+
+.legend
+	font-size: 1.2rem
+	line-height: 1.5
+	padding: 28px 0
+	&__list
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+	&__item
+		display: flex
+		align-items: center
+		margin-bottom: 27px
+		svg, img
+			display: block
+			flex: none
+			margin-right: 16px
+		img
+			display: block
+			width: 24px
+			height: 13px
+		&:not(:last-of-type)
+			margin-right: 35px
+
+.dealer
+	position: relative
+	padding-left: 32px
+	padding-right: 32px
+	padding-top: 44px
+	padding-bottom: 35px
+	&:not(:last-of-type)
+		border-bottom: 1px solid $light_grey_scroll_bar
+	&.special
+		.dealer__name
+			background-color: #A36B4F
+			color: #fff
+			padding: 4px 0
+			padding-left: 8px
+			padding-right: 24px
+			&::after
+				content: ''
+				display: block
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				right: 0
+				width: 0
+				height: 0
+				border-top: 35px solid transparent;
+				border-right: 10px solid #fff;
+				border-bottom: 35px solid transparent;
+	&.star
+		.dealer__star
+			display: block
+	&.wa
+		.dealer__wa
+			display: block
+	&.citystore
+		.dealer__citystore
+			display: block
+	&__wrap
+		position: relative
+		display: flex
+		align-items: center
+	&__flags
+		position: absolute
+		top: 0
+		left: 0
+	&__star
+		display: none
+		margin-bottom: 12px
+	&__wa
+		display: none
+		width: 31px
+	&__citystore
+		display: none
+		width: 20px
+		height: 20px
+		border-radius: 50%
+		background-color: $sand_bg
+	&__left
+		display: flex
+		align-items: center
+		flex-grow: 1
+		padding-right: 80px
+	&__row
+		position: relative
+		width: 50%
+		&--pl
+			padding-left: 50px
+	&__right
+		flex: none
+	&__name
+		position: relative
+		display: inline-block
+		margin-bottom: 12px
+	&__phone
+		font-size: 1.6rem
+		line-height: 1.5
+		margin-bottom: 8px
+	&__address
+		font-size: 1.6rem
+		line-height: 1.5
+		color: $second_text
+	&__button
+		display: block
+		background-color: transparent
+		border: 2px solid $main_blue
+		color: $main_blue
+		font-weight: 500
+		padding: 14px 24px
+		// &:focus
+		// 	background-color: transparent
+		&:hover
+			color: $text_white
+		&.avilon
+			background-color: $main_blue
+			color: $white_bg
+			&:hover
+				background-color: $bottom_bg

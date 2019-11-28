@@ -1,0 +1,39 @@
+.calc-wrapper
+	&.isDealer
+
+
+.steps
+	transition: 0.5s
+	&__wrap
+		&.isDealer
+			background-color: #fff
+			transition: 0.3s
+	&__top
+		display: flex
+		align-items: center
+		justify-content: space-between
+		position: relative
+		font-size: 16px
+		line-height: 18px
+		font-weight: 500
+		padding: 40px 0
+	&__left
+		color: #002c5f
+	&__right
+		color: #b7b7b7
+	.owl-stage
+		will-change: transform
+	&__item
+		&.isDealer
+			background-color: #fff
+		&--isHelp
+			background-color: $sand_bg
+		&--anim
+			opacity: 0
+			transition: 0.5s
+			transition-delay: 2s
+
+.active
+	.steps__item--anim
+		opacity: 1
+		transition: 0.7s

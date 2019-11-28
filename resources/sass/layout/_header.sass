@@ -1,0 +1,690 @@
+@import '../common/components/_s-contacts.sass'
+
+//Стили хедера
+body
+    position: relative
+
+.dd-overlay
+    position: absolute
+    visibility: hidden
+    top: 0px
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0,0.4)
+    z-index: 200
+    opacity: 0
+    transition: 0.3s
+    &.active
+        visibility: visible
+        opacity: 1
+
+
+.header-main
+    position: relative
+    background-color: #fff
+    z-index: 501
+
+.header-top
+    position: relative
+    display: flex
+    justify-content: flex-end
+    height: 48px
+    background-color: $gray_bg
+    z-index: 102
+    &__list
+        display: flex
+    &__item
+        width: 160px
+        background-color: $sand_bg
+        &:not(:last-of-type)
+            margin-right: 1px
+        &--search
+            width: 76px
+    &__link
+        display: block
+        line-height: 48px
+        text-align: center
+        white-space: nowrap
+        @extend .df-text-input-14px
+        color: $text_black
+        transition: background-color 0.3s
+        &:hover, &:focus
+            background-color: $gray_bg
+            color: $text_black
+
+.support-service
+	position: relative
+	&__link
+		position: relative
+		display: flex
+		align-items: center
+		height: 100%
+		padding-right: 32px
+		padding-left: 24px
+	&__text
+		position: relative
+		@extend .df-text-input-14px
+		color: $third_text
+		margin-right: 24px
+		transition: 0.3s
+		z-index: 2
+	&__phone
+		@extend .df-text-input-14px
+		font-weight: 500
+		color: $fourth_text
+		margin-right: 12px
+	&__arrow
+		display: block
+		position: relative
+		width: 9px
+		height: 6px
+		color: $main_blue
+		transition: 0.3s
+		z-index: 4
+	&__dropdown
+		position: absolute
+		visibility: hidden
+		top: 0
+		left: 0
+		width: 100%
+		background-color: $main_blue
+		color: $text_white
+		padding: 50px 30px 20px 24px
+		transform: translateY(-100%)
+		transition: 0.6s
+		z-index: 1
+		hr
+			border-color: $bottom_bg
+			margin-top: 16px
+			margin-bottom: 13px
+		&--dealer
+			left: auto
+			right: 0
+			width: auto
+			padding-top: 11px
+			z-index: 3
+			hr
+				margin-top: 22px
+	&__dd-title
+		font-size: 14px
+		line-height: 1.5
+		font-weight: 500
+		margin-bottom: 19px
+	&__dd-phone
+		@extend .df-banner-subline
+		opacity: 0
+		transition: 0.3s
+		&:hover, &:focus
+			color: $text_white
+		&--dealer
+			font-size: 2rem
+			line-height: 1.2
+			font-weight: 500
+			margin-bottom: 3px
+	&__dd-mail
+		@extend .df-text-input-14px
+		display: flex
+		align-items: center
+		opacity: 0
+		transition: opacity 0.3s, color 0.3s
+		svg
+			display: block
+			width: 17px
+			height: 13px
+			margin-right: 8px
+			stroke: $text_white
+			fill: transparent
+			transition: 0.3s
+		&:hover, &:focus
+			color: $sand
+			svg
+				stroke: $sand
+
+.isOpened
+    .support-service__dropdown
+        visibility: visible
+        transform: translateY(0)
+    .support-service__arrow
+        fill: $text_white
+        transform: rotate(180deg)
+    .support-service__text
+        color: $text_white
+    .support-service__dd-phone, .support-service__dd-mail
+        opacity: 1
+        transition-delay: 0.3s, 0s
+
+.support-service-m
+    background-color: $gray_bg
+    padding: 15px 40px
+    hr
+        background-color: $sand
+        margin: 15px 0
+    &__text
+        @extend .df-text-input-14px
+        color: $third_text
+        margin-bottom: 10px
+    &__phone
+        @extend .df-banner-subline
+        color: $main_blue
+        font-size: 30px
+    &__mail
+        @extend .df-text-radio-button-14px
+        color: $main_blue
+        display: flex
+        align-items: center
+        svg
+            display: block
+            width: 15px
+            height: 11px
+            margin-right: 8px
+            stroke: $main_blue
+            fill: transparent
+
+.header-bottom
+	position: relative
+	z-index: 101
+	// &::after
+	// 	content: ''
+	// 	display: block
+	// 	position: absolute
+	// 	top: 0
+	// 	left: 0
+	// 	right: 0
+	// 	bottom: 0
+	// 	background-color: $white_bg
+	&__wrap
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex-wrap: wrap
+		height: 72px
+	&__dealer-name
+		color: $main_blue
+		font-size: 20px
+		line-height: 1
+		font-weight: 500
+		padding: 0 15px
+		border-left: 2px solid $third_text
+		margin-left: 15px
+	&__logo
+		position: relative
+		z-index: 1
+		svg
+			display: block
+			width: 166px
+			height: 21px
+		&--dealer
+			display: flex
+			align-items: center
+	&__ps
+		position: static
+	&__mobile-line
+		display: none
+		position: relative
+		width: 100%
+		height: 56px
+		align-items: center
+		justify-content: space-between
+		.hamburger
+			display: block
+			padding: 0
+			width: 24px
+			height: 20px
+			&:hover
+				opacity: 1
+		.hamburger-box
+			width: 100%
+			height: 20px
+		.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after 
+			width: 100%
+			height: 3px
+			background-color: #002C5E
+		.hamburger-inner::after 
+			top: -16px
+		.hamburger-inner::before
+			top: -8px
+	&__m-logo
+		width: 134px
+		height: 17px
+		svg
+			display: block
+			max-width: 100%
+			max-height: 100%
+			fill: #002C5E
+
+.main-nav
+	&__list
+		display: flex
+		align-items: center
+	&__item
+		margin-right: 32px
+		&--mobile
+			display: none  
+		&--mir
+			margin-right: 0
+	&__link
+		display: block
+		position: relative
+		@extend .df-text-input-14px
+		color: $second_text
+		font-weight: 500
+		line-height: 72px
+		z-index: 1
+		transition: color 0.3s
+		&:hover
+			color: $second_blue
+			.main-nav__arrow
+				fill: $second_blue
+		&--iconed
+			position: relative
+			display: flex
+			align-items: center
+			padding-right: 40px
+			color: $main_blue
+			svg
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				right: 0
+				display: block
+				width: 24px
+				height: 10px
+				transition: 0.3s
+			&:hover, &:focus
+				color: $button_hover
+				svg
+					transform: translate(5px, -50%)
+		&--contains-submenu
+			padding-right: 18px
+		&.isOpened
+			.main-nav__arrow
+				transform: scale(1,-1)
+	&__dropdown
+		position: absolute
+		display: none
+		top: 72px
+		left: 0
+		width: 100%
+		background-color: $white_bg
+		border-top: 1px solid $light_grey_scroll_bar
+		max-height: calc(100vh - 72px)
+		overflow: auto
+		&--showroom
+			background-color: $gray_bg
+			border-top: none
+	&__dropdown-close
+		position: absolute
+		display: block
+		top: 32px
+		right: 16px
+		width: 16px
+		height: 16px
+		z-index: 1
+		svg
+			display: block
+			max-width: 100%
+			max-height: 100%
+			fill: $second_text
+			transition: 0.3s
+		&:hover
+			svg
+				fill: $third_text
+				
+	&__arrow
+		display: block
+		position: absolute
+		right: 0
+		top: 50%
+		margin-top: -3px
+		width: 9px
+		height: 6px
+		margin-left: 8px
+		transition: 0.3s
+		fill: $second_text
+
+
+//Дропдаун со списком авто
+.showroom
+	padding-top: 8px
+	padding-bottom: 30px
+	&__line
+		display: flex
+		padding-top: 15px
+		&:not(:last-of-type)
+			border-bottom: 1px solid $sand_bg
+	&__title
+		flex: none
+		min-width: 210px
+		width: 16%
+		overflow: hidden
+	&__cars
+		display: flex
+		flex-wrap: wrap
+		width: 100%
+	&__car
+		width: 25%
+		padding-right: 40px
+		padding-bottom: 10px
+		&.first-place
+			.d-car__img
+				&::after
+					content: ''
+					display: block
+					position: absolute
+					top: 0
+					right: 0
+					width: 32px
+					height: 32px
+					border-radius: 50%
+					background-image: url('/images/first_place.png')
+					background-repeat: no-repeat
+					background-position: 50%
+					background-size: 100%
+
+//Остальные дропдауны
+.df-dropdown
+	position: relative
+	padding-top: 30px
+	padding-bottom: 64px
+	&__list
+		display: flex
+	&__item
+		padding-bottom: 15px
+	&__title
+		font-size: 1.6rem
+		margin-bottom: 15px
+		svg
+			display: none
+		&--desctop-hidden
+			display: none
+	&__submenu
+		width: 100%
+	&__submenu-item
+		font-size: 0
+		&:not(:last-of-type)
+			margin-bottom: 4px
+	&__link
+		position: relative
+		display: inline-block
+		width: 100%
+		max-width: 100%
+		font-size: 1.4rem
+		color: $second_text
+		line-height: 2
+		font-weight: 400
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+		transition: 0.3s
+		&:hover
+			color: $third_text
+		&[href^='http']
+			span
+				position: relative
+				padding-right: 20px
+				&::after
+					content: ''
+					display: block
+					position: absolute
+					right: 0
+					top: 50%
+					transform: translateY(-50%)
+					width: 14px
+					height: 14px
+					background-image: url('/images/icons/Out_dd_link.svg')
+					background-repeat: no-repeat
+					background-position: 50%
+					background-size: 100%
+			&:hover
+				&::after
+					background-image: url('/images/icons/Out_dd_link_hover.svg')
+    &__button
+        display: flex
+        align-items: center
+        position: relative
+        max-width: 225px
+        line-height: 54px
+        border: 1px solid $main_blue
+        font-size: 16px
+        font-weight: 500
+        padding-left: 12px
+        svg
+            display: block
+            width: 35px
+            height: 35px
+            margin-right: 25px
+        &--blue
+            background-color: $main_blue
+            color: $text_white
+
+.d-car
+	position: relative
+	display: block
+	transition: opacity 0.5s
+	&--first-place
+		.d-car__img
+			&::after
+				content: ''
+				display: block
+				position: absolute
+				top: 10px
+				right: 10px
+				width: 30px
+				height: 30px
+				border-radius: 50%
+				background-image: url('/images/icons/logocrashtest.svg')
+				background-repeat: no-repeat
+				background-size: 100%
+	&__top-line
+		display: flex
+		align-items: flex-end
+	&__title
+		white-space: nowrap
+	&__price
+		@extend h6
+		color: $third_text
+		white-space: nowrap
+	&__name
+		@extend h5
+		white-space: nowrap
+		color: $third_text
+	&__m-name
+		display: none
+		@extend h6
+		color: $third_text
+		white-space: nowrap
+	&__img
+		position: relative
+		display: inline-block
+		width: 100%
+		img
+			display: inline-block
+			max-width: 100%
+			height: auto
+			margin-left: -20px
+
+.icon-magnifier
+    width: 16px
+    height: 16px
+    stroke: #666
+.main-nav__item--mobile
+    .icon-magnifier
+        position: relative
+        top: -2px
+        margin-right: 2px
+
+.search-field
+    display: none
+    z-index: 502
+    background-color: #fff
+    height: 48px
+    width: 100%
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+.search-field-inner
+    display: flex
+    justify-content: flex-end    
+    height: 100%
+.search-input
+    outline: none!important
+    border: none
+    margin: 0
+    width: 150px
+    padding: 16px 784px 16px 62px
+    box-sizing: content-box
+    background-image: url('/images/icons/magnifier.svg');
+    background-repeat: no-repeat
+    background-size: 17px 17px
+    background-position: 30px 16px
+    font-family: 'HyundaiSansText'
+    font-size: 1.6rem
+.search-close
+    width: 76px
+    height: 100%
+    background-color: $gray_bg
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    .df-close-button rect
+        fill: #666
+    
+.is-search
+    .header-main
+        position: static
+    .dd-overlay
+        z-index: 502
+        opacity: 1
+        visibility: visible
+
+.search-field
+    .search-body
+        width: 996px
+        position: absolute
+        right: 76px
+        top: 48px
+        background-color: #fff
+    .search-item
+        border-top: 1px solid #e3e3e3
+        cursor: pointer
+        &-inner
+            padding: 24px 32px
+            display: flex
+            justify-content: flex-start
+            align-items: flex-start
+        &-pic
+            width: 116px
+            max-height: 64px
+            margin-right: 22px          
+        &-header
+            display: flex
+            width: 100%
+            margin-top: -2px
+        &-text
+            height: 2.7em
+            text-overflow: ellipsis
+            font-size: 1.6rem
+            line-height: 1.5
+            font-weight: 500
+            white-space: nowrap
+            overflow: hidden
+        &-content
+            max-width: calc(100% - 138px)
+        &--full .search-item-content
+            max-width: 100%!important
+        &-section
+            color: $main_blue
+            font-size: 1.6rem
+            line-height: 1.5
+        &-date
+            color: $second_text
+            font-size: 1.6rem
+            line-height: 1.5
+    .search-show-all
+        display: none
+        border-top: 1px solid #e3e3e3
+        padding-left: 168px
+        color: $second_blue
+        padding-top: 24px
+        padding-bottom: 24px
+        text-decoration: underline
+        transition: opacity 0.3s ease 0s
+        &:hover
+            opacity: 0.8
+
+
+@media (max-width: 1200px)
+    .search-body
+        width: 100%
+        right: 0
+        left: 0
+    .search-input
+        padding: 16px 0px 16px 68px
+        background-position: 40px 17px
+    .search-field-inner
+        justify-content: space-between
+    .search-show-all
+        padding-left: 0
+        padding-top: 16px
+        padding-bottom: 16px
+        display: flex
+        justify-content: center
+    .search-item-inner
+        padding: 24px 40px
+    .search-item-pic
+        margin-right: 14px
+    .search-item-content
+        max-width: calc(100% - 130px)
+    .search-close
+        width: 93px
+    .search-item-text
+        height: auto
+
+
+@media (max-width: 900px)
+    .search-item-section
+        font-size: 1.2rem
+    .search-item-date
+        font-size: 1.2rem
+    .search-item-text
+        font-size: 1.2rem
+    .search-item-header
+        margin-bottom: 7px
+
+
+@media (max-width: 640px)
+    .search-item-inner
+        padding: 16px
+    .search-item-pic
+        margin-right: 16px
+        width: 64px
+        max-height: 56px
+    .search-item-content
+        max-width: calc(100% - 80px)
+    .search-item-section
+        font-size: 1rem
+        line-height: 14px
+    .search-item-date
+        font-size: 1rem
+        line-height: 14px
+    .search-item-text
+        font-size: 1rem
+        line-height: 14px
+    .search-show-all
+        font-size: 1rem
+        line-height: 14px
+    .search-field
+        height: 55px
+    .search-close
+        width: 55px
+        height: 55px
+    .search-body
+        top: 55px
+    .search-input
+        background-position: 17px 19px
+        padding: 16px 0px 16px 48px
+    .search-item-header
+        margin-bottom: 1px

@@ -1,0 +1,91 @@
+.back
+    padding-top: 25px
+    background-color: $gray_bg
+
+.max-width
+    width: 69%
+
+.news-content
+    color: $text_black
+    &__top
+        padding-top: 36px
+        padding-bottom: 10px
+        background-color: $gray_bg
+    &__bottom
+        padding-top: 50px
+    &__all
+        padding-bottom: 80px
+        a
+            display: inline-block
+    &__center
+        text-align: center
+    h1
+        @extend .max-width
+        display: block
+        margin: 0 auto
+        font-size: 4.2rem
+        line-height: 1.14
+        font-weight: 500
+    h2
+        @extend .max-width
+        display: block
+        margin: 0 auto
+        font-size: 1.6rem
+        line-height: 1.5
+        color: $second_text
+        font-weight: 400
+        margin-top: 7px
+    ul
+        @extend .max-width
+        display: block
+        margin: 0 auto
+        font-size: 1.6rem
+        line-height: 1.5
+        margin-top: 42px
+        margin-bottom: 42px
+        font-weight: 500
+        li
+            position: relative
+            padding-left: 20px
+            &::before
+                content: ''
+                display: block
+                position: absolute
+                width: 7px
+                height: 7px
+                left: 0
+                top: 0.5em
+                background-color: $text_black
+                border-radius: 50%
+            &:not(:last-of-type)
+                margin-bottom: 21px
+    img
+        display: block
+        max-width: 83%
+        margin: 70px auto
+    p
+        display: block
+        width: 65%
+        margin: 1.5rem auto
+        font-size: 1.6rem
+        &.disclamer
+            position: relative
+            font-size: 1.2rem
+            line-height: 1.5
+            margin-top: 54px
+            margin-bottom: 75px
+            padding-left: 32px
+            &::before
+                content: ''
+                display: block
+                position: absolute
+                top: 1px
+                left: 0
+                width: 16px
+                height: 16px
+                background-color: #C4C4C4
+                border-radius: 50%
+                background-image: url('/images/icons/star.svg')
+                background-repeat: no-repeat
+                background-position: 50%
+                background-size: 69%

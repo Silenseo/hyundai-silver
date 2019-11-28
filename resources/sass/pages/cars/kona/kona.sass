@@ -1,0 +1,626 @@
+@import '../../../common/_variables.scss'
+@import '../../../common/_common.sass'
+
+h1, h2, h3, div, p, span, a
+  font-family: 'HyundaiSansHead'
+
+.h1
+  font-size: 58px
+  line-height: 1.18
+  font-weight: 500
+  color: $text_white
+  margin: 0
+.h2
+  font-size: 44px
+  line-height: 1.18
+  font-weight: 500
+  color: $text_black
+  margin: 0
+  text-align: center
+.h3
+  font-size: 30px
+  line-height: 1.18
+  font-weight: 500
+  color: $text_black
+  margin: 0
+  text-align: center
+.default-text
+  font-size: 16px
+  line-height: 28px
+  color: $text_black
+.default-text--center
+  text-align: center
+.default-text--850
+  width: 100%
+  max-width: 850px
+  margin: 0 auto
+.default-text:not(.main-text)
+  font-family: 'HyundaiSansText'
+
+.section
+  padding-left: 60px
+  padding-right: 60px
+  max-width: 100%
+  background-color: #f7f3f2
+.section--white
+  background-color: $white_bg
+.section__center
+  max-width: 1190px
+  width: 100%
+  margin: 0 auto
+
+.header
+  padding-top: 84px
+  background-image: url('/images/cars/kona/kona-os-ev-highlights-stg-pc.jpg')
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+.header__img
+  position: relative
+  height: 545px
+  background-image: url('/images/cars/kona/kona-os-ev-highlights-kv-pc.jpg')
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+.header__title
+  position: absolute
+  left: 152px
+  top: 70px
+.header__text
+  font-size: 20px
+  color: $text_white
+.header__note
+  position: absolute
+  left: 152px
+  bottom: 36px
+  font-size: 14px
+  color: $text_white
+
+.main-s
+  padding-top: 67px
+  padding-bottom: 100px
+.main-s__title
+  margin-bottom: 28px
+.main-s__subtitle
+  margin-bottom: 24px
+.main-s__img
+  display: block
+  width: 100%
+.main-s__img--0
+  margin-bottom: 16px
+.main-s__img--1
+  margin-top: 120px
+  margin-bottom: 60px
+
+.gallery
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  min-width: 100%
+  margin-left: -20px
+  margin-right: -20px
+  margin-top: 160px
+  overflow: hidden
+.gallery__item
+  width: -webkit-calc(33.33% - 40px)
+  width: calc(33.33% - 40px)
+  margin-left: 20px
+  margin-right: 20px
+.gallery__img
+  width: 100%
+  height: 250px
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+  margin-bottom: 30px
+.gallery__description
+  font-size: 16px
+  font-weight: 500
+  color: $text_black
+
+.potential
+  padding-top: 59px
+  padding-bottom: 60px
+.potential__title
+  margin-bottom: 45px
+.potential__subtitle
+  margin-bottom: 61px
+.potential__img
+  display: block
+  margin-top: 65px
+  margin-bottom: 62px
+  margin-left: auto
+  margin-right: auto
+  max-width: 100%
+  height: auto
+
+.tec
+  padding-top: 70px
+  padding-bottom: 160px
+.tec-slider
+  margin-top: 56px
+  margin-bottom: 76px
+.tec-slider__header
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+.tec-slider__link
+  display: block
+  width: 50%
+  padding: 20px 0
+  font-size: 14px
+  color: $text_white
+  font-weight: 500
+  background-color: $tabs_bg
+  text-align: center
+  -webkit-transition: 0.3s
+  transition: 0.3s background-color ease 0s, 0.3s color ease 0s
+  cursor: pointer
+  &--active
+    cursor: default
+.tec-slider__link--active, .tec-slider__link:hover
+  background-color: $white_bg
+  color: $text_black
+.tec-slider__img
+  height: 640px
+  background-repeat: no-repeat
+  background-position: 100%
+  background-size: cover
+  background-color: #1c202b
+
+.safety
+  padding-top: 50px
+  background-color: #e4dbd2
+  padding-bottom: 50px
+.safety__title span
+  font-size: 57px
+  span
+    font-weight: 300
+
+.touch
+  padding-top: 70px
+  padding-bottom: 80px
+.touch__img
+  display: block
+  width: 100%
+  height: auto
+  margin-top: 60px
+  margin-bottom: 70px
+
+.covenience
+  padding-top: 170px
+  padding-bottom: 146px
+.covenience__img
+  display: block
+  width: 100%
+  height: auto
+.covenience__title
+  margin-top: 47px
+  margin-bottom: 31px
+.covenience__list
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-flex-wrap: wrap
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  min-width: 100%
+  margin-right: -20px
+  margin-left: -20px
+  overflow: hidden
+  margin-top: 100px
+.covenience__item
+  width: -webkit-calc(50% - 40px)
+  width: calc(50% - 40px)
+  margin-left: 20px
+  margin-right: 20px
+  margin-bottom: 110px
+.covenience__description
+  text-align: left
+  margin-top: 60px
+  margin-bottom: 26px
+.covenience__pic
+  width: 100%
+  height: 380px
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+
+.header__img-mobile
+  display: none
+.potential__img
+  &--md, &--sm
+    display: none
+.touch__img--md
+  display: none
+.tec-slider--mobile
+  display: none
+
+
+@media (max-width: 1600px)
+  .header__img
+    height: 440px
+  .header__note
+    left: 123px
+  .header__title
+    left: 120px
+
+
+@media (max-width: 1400px)
+  .header__note
+    left: 103px
+  .header__title
+    left: 100px
+
+
+@media (max-width: 1262px)
+  .section
+    padding-left: 40px
+    padding-right: 40px
+
+  .header__note
+    left: 81px
+    width: 350px
+  .header__title
+    left: 78px
+  .header
+    padding-top: 56px
+
+
+@media (max-width: 1200px)
+  .main-s
+    padding-bottom: 80px
+  .main-s__img--1
+    margin-top: 100px
+
+  .covenience
+    padding-top: 70px
+    padding-bottom: 80px
+
+  .tec
+    padding-top: 70px
+    padding-bottom: 80px
+
+  .gallery
+    margin-top: 100px
+
+
+@media (max-width: 1023px)
+  .section
+    padding-top: 56px
+    padding-bottom: 56px
+  .h1
+    font-size: 55px
+    line-height: 54px
+    margin-bottom: 22px
+  .h2
+    font-size: 42px
+    line-height: 48px
+    margin-bottom: 16px
+  .h3
+    font-size: 30px
+    line-height: 36px
+    margin-bottom: 16px
+  .h2.potential__title
+    font-size: 30px
+    line-height: 36px
+    margin-bottom: 16px
+  .h3.potential__subtitle
+    font-size: 20px
+    line-height: 24px
+    margin-bottom: 23px
+  .h3.covenience__description
+    font-size: 30px
+    line-height: 36px
+    margin-bottom: 16px
+    margin-top: 24px
+
+  .header
+    padding-top: 0
+    padding-bottom: 0
+  .header__title
+    left: 43px
+    top: 39px
+    font-size: 55px
+    line-height: 54px
+    right: 28px
+  .header__note
+    font-size: 20px
+    line-height: 24px
+    left: 43px
+    bottom: 40px
+    width: 450px
+    letter-spacing: 0.01em
+  .header__text
+    font-size: 30px
+    line-height: 32px
+  
+  .main-s__subtitle
+    margin-bottom: 19px
+  .main-s__img--0
+    margin-top: 50px
+    margin-bottom: 66px
+  .main-s__img--0
+    margin-top: 42px
+  .main-s__img--1
+    margin-top: 40px
+
+  .gallery
+    margin-top: 41px
+    margin-left: -16px
+    margin-right: -16px
+  .gallery__img
+    height: 135px
+    margin-bottom: 14px
+  .gallery__item
+    width: calc(33.33% - 32px)
+    margin-left: 16px
+    margin-right: 16px
+
+  .potential__img
+    display: none
+    &--md
+      display: block
+      margin: 38px auto 33px
+  .potential-text
+    width: 86%
+    text-align: center
+
+  .tec__title
+    font-size: 30px
+    line-height: 36px
+  .tec-slider
+    margin-top: 41px
+    margin-bottom: 30px
+  .tec-slider__header
+    height: 64px
+  .tec-slider__link
+    height: 100%
+    padding: 0
+    display: flex
+    justify-content: center
+    align-items: center
+  .tec-slider__img
+    height: 390px
+
+  .touch__title
+    font-size: 30px
+    line-height: 36px
+    margin-bottom: 16px
+  .touch__img
+    margin-top: 36px
+
+  .covenience__list
+    margin-top: 56px
+  .covenience__pic
+    height: 300px
+  .covenience__item
+    margin-bottom: 38px
+  .covenience
+    padding-bottom: 18px
+
+
+@media (max-width: 900px)
+  .touch__img
+    display: none
+    &--md
+      display: block
+      width: 100%
+      margin-top: 36px
+      margin-bottom: 28px
+
+  .covenience__pic
+    height: 240px
+
+  .tec-slider__link
+    padding: 0 20px
+
+
+@media (max-width: 767px)
+  .section
+    padding-left: 16px
+    padding-right: 16px
+
+  .covenience__item
+    width: calc(50% - 32px)
+    margin-left: 16px
+    margin-right: 16px
+  .covenience__list
+    margin-right: -16px
+    margin-left: -16px
+
+
+@media (max-width: 640px)
+  .section
+    padding-top: 40px
+    padding-bottom: 48px
+  .h2
+    font-size: 30px
+    line-height: 32px
+    margin-bottom: 16px
+    &.main-s__title
+      margin-bottom: 12px
+  .h2.potential__title 
+    font-size: 30px
+    line-height: 32px
+    margin-bottom: 12px
+  .h3
+    font-size: 20px
+    line-height: 24px
+    margin-bottom: 16px
+    &.main-s__subtitle--mob
+      font-size: 30px
+      line-height: 32px
+  .h3.covenience__description
+    font-size: 30px
+    line-height: 32px
+    margin-bottom: 23px
+
+  .header
+    padding-bottom: 0
+  .header__img
+    height: 120vw
+  .header__text
+    font-size: 18px
+    line-height: 24px
+  .header__note
+    width: 85%
+    font-size: 18px
+    line-height: 22px
+    font-weight: 500
+
+  .covenience__item
+    width: 100%
+    margin: 0 0 40px
+  .covenience__list
+    margin-left: 0
+    margin-right: 0
+
+  .gallery
+    margin-top: 48px
+  .gallery__item
+    width: 100%
+    margin: 0
+    &:last-child .gallery__description
+      margin-bottom: 0
+  .gallery
+    margin-left: 0
+    margin-right: 0
+    flex-wrap: wrap
+    &__img
+      height: 260px
+    &__description
+      font-size: 16px
+      line-height: 24px
+      margin-top: 16px
+      margin-bottom: 24px
+
+  .tec-slider__link
+    padding: 0px 10px
+  .tec-slider__img
+    height: 300px
+
+
+@media (max-width: 480px)
+  .section
+    padding-left: 16px
+    padding-right: 16px
+  .h1
+    margin-bottom: 8px
+
+  .header
+    padding-top: 64px
+  .header__title
+    left: 16px
+    top: 29px
+    right: 16px
+  .header__note
+    width: auto
+    left: 16px
+    bottom: 16px
+    right: 16px
+    font-size: 10px
+    line-height: 12px
+  .header__img
+    height: 530px
+
+  .main-s__img--0
+    margin-top: 30px
+    margin-bottom: 47px
+  .main-s__img--1
+    margin-top: 52px
+    margin-bottom: 43px
+
+  .potential__img
+    &--md
+      display: none
+    &--sm
+      display: block
+      margin: 25px auto
+
+  .gallery
+    &__img
+      height: 250px
+
+  .tec-slider
+    display: none
+    &--mobile
+      display: block
+      margin-left: -16px
+      margin-bottom: 22px
+      width: calc(100% + 32px)
+      overflow: hidden
+      position: relative
+      .tec-slider__header
+        width: 150%
+        position: relative
+        right: 0
+        transition: right 0.5s ease 0s
+        &.right
+          right: 50%
+      .tec-slider__link
+        width: 75%
+        padding: 0 20px
+  .tec
+    padding-bottom: 72px
+  .tec__title
+    margin-bottom: 21px
+
+  .swiper-container
+    width: 100%
+    height: 100%
+  .swiper-slide
+    text-align: center
+    font-size: 18px
+    background: #fff
+    display: -webkit-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex
+    -webkit-box-pack: center
+    -ms-flex-pack: center
+    -webkit-justify-content: center
+    justify-content: center
+    -webkit-box-align: center
+    -ms-flex-align: center
+    -webkit-align-items: center
+    align-items: center
+
+  .safety__title
+    margin-bottom: 12px
+
+  .covenience__title
+    font-size: 30px
+    line-height: 32px
+    margin-top: 24px
+    margin-bottom: 16px
+  .covenience__list
+    margin-top: 44px
+  .covenience__pic
+    height: 160px
+
+
+@media (max-width: 400px)
+  .header__img
+    height: auto
+    background-image: none
+  .header__img-mobile
+    display: block
+    width: 100%
+
+  .gallery
+    &__img
+      height: 200px
+
+
+@media (max-width: 320px)
+  .gallery
+    &__img
+      height: 160px
+    
+
+@import 'kona_safety.sass'
+@import '../english-version.sass'

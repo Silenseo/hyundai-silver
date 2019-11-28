@@ -1,0 +1,96 @@
+.map
+	display: flex
+	width: 100%
+	color: $text_black
+	overflow: hidden
+	&__left, &__right
+		width: 50%
+	&__left
+	&__body
+		padding: 48px 32px 0 32px
+	&__title
+		max-width: 410px
+		margin-bottom: 34px
+	&__addresses
+		display: flex
+		align-items: center
+		margin-bottom: 16px
+	&__address
+		&:not(:last-of-type)
+			margin-right: 24px
+	&__phone
+		margin-bottom: 16px
+		white-space: nowrap
+	&__time
+		margin-bottom: 30px
+	&__iconed
+		position: relative
+		font-size: 1.6rem
+		line-height: 1.5
+		padding-left: 28px
+		svg
+			position: absolute
+			display: block
+			left: 0
+			top: 50%
+			transform: translateY(-50%)
+	&__social
+		display: flex
+		a
+			display: block
+			position: relative
+			height: 64px
+			background-color: $sand_bg
+			transition: 0.3s
+			svg
+				position: absolute
+				display: block
+				top: 0
+				right: 0
+				bottom: 0
+				left: 0
+				margin: auto
+			&:hover
+				background-color: $gray_bg
+	&__insta, &__fb
+		width: 50%
+	&__right
+		position: relative
+	#map
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+	&__zoomIn, &__zoomOut, &__location
+		display: block
+		position: absolute
+		width: 40px
+		height: 40px
+		background-color: $white_bg
+		z-index: 10
+		transition: 0.3s
+		svg
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+		&:hover
+			opacity: 0.8
+	&__zoomIn
+		top: 56px
+		right: 24px
+	&__zoomOut
+		top: 112px
+		right: 24px
+	&__location
+		bottom: 40px
+		right: 24px
+	&__new-event
+		margin-bottom: 40px
+		button
+			margin-top: 20px
+

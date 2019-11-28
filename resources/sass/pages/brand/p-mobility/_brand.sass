@@ -1,0 +1,56 @@
+.brand
+	padding-top: 84px
+	padding-bottom: 50px
+	&.active
+		.brand__engine
+			opacity: 1
+			transform: translateY(0)
+		.brand__img
+			opacity: 1
+		.avards
+			&__img, &__title, &__text
+				opacity: 1
+				transform: translateY(0)
+	&__title
+		margin-bottom: 21px
+		text-align: center
+	&__subtitle
+		max-width: 992px
+		margin: 0 auto
+		text-align: center
+	&__line
+		position: relative
+		display: flex
+		justify-content: flex-end
+		align-items: center
+		margin-top: 65px
+		margin-bottom: -150px
+		padding-right: 110px
+		z-index: 1
+	&__engine
+		flex: none
+		max-width: 364px
+		width: 100%
+		transform: translateY(40px)
+		opacity: 0
+		transition: opacity 2s cubic-bezier(.19,1,.22,1), transform 3s cubic-bezier(.19,1,.22,1)
+	&__img
+		opacity: 0
+		transition: 0.5s
+		transition-delay: 1s
+
+.avards
+	flex: none
+	max-width: 210px
+	&__img
+		margin-bottom: 22px
+		transform: translateY(40px)
+		opacity: 0
+		transition: opacity 2s cubic-bezier(.19,1,.22,1), transform 3s cubic-bezier(.19,1,.22,1)
+	&__title
+		margin-bottom: 9px
+	&__title, &__text
+		opacity: 0
+		transition: opacity 2s cubic-bezier(.19,1,.22,1), transform 3s cubic-bezier(.19,1,.22,1)
+		transform: translateY(70px)
+		transition-delay: 0.5s

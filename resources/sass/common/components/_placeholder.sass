@@ -1,0 +1,76 @@
+.animation
+	animation-duration: 2s
+	animation-fill-mode: forwards
+	animation-iteration-count: infinite
+	animation-name: placeHolderShimmer
+	animation-timing-function: linear
+	background: #f6f7f8
+	background: #eeeeee
+	background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eeeeee), color-stop(18%, #dddddd), color-stop(33%, #eeeeee))
+	background: -webkit-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%)
+	background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%)
+	background-size: 50% 100%
+
+.placeholder
+	padding: 50px 16px
+	background-color: #fff
+	&__item
+		position: relative
+		display: flex
+		width: 100%
+		height: 100px
+		background-color: #F1F1F1
+		@extend .animation
+		margin-bottom: 50px
+	&__img
+		width: 30%
+		max-width: 100px
+		height: 100%
+	&__content
+		position: relative
+		padding-left: 20px
+		width: 100%
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			width: 20px
+			background-color: #fff
+	&__line
+		position: relative
+		width: 100%
+		height: 25%
+		border-bottom: 4px solid #fff
+		&::after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			background-color: #fff
+		&:nth-of-type(1)
+			&::after
+				width: 80%
+		&:nth-of-type(2)
+			&::after
+				width: 20%
+		&:nth-of-type(3)
+			&::after
+				width: 10%
+		&:nth-of-type(4)
+			&::after
+				width: 50%
+
+
+
+		
+
+@keyframes placeHolderShimmer
+	0%
+		background-position: -100% 0
+	100%
+		background-position: 100% 0

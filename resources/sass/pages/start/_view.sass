@@ -1,0 +1,143 @@
+.view
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	padding-left: 32px
+	padding-right: 32px
+	&__title
+		display: block
+		font-size: 42px
+		color: #000
+		font-weight: 500
+		text-align: center
+	&__body
+		flex: none
+		position: relative
+		margin: 0 auto
+		max-width: 910px
+		width: 100%
+		&::after
+			content: ''
+			display: block
+			top: 0
+			left: 0
+			padding-bottom: 45%
+		#spritespin
+			position: absolute!important
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+	&__back
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-size: 100%
+	&__next, &__prev
+		position: absolute
+		display: block
+		top: 50%
+		transform: translateY(-50%)
+		transition: 0.3s
+		svg
+			stroke: #000
+			transition: 0.3s
+		&:hover
+			svg
+				stroke: #B7B7B7
+	&__prev
+		left: 0px
+	&__next
+		right: 0px
+	&__preloader
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		margin: auto
+		width: 88px
+		height: 88px
+		border-radius: 50%
+		background-color: rgba(#000000, 0.7)
+		cursor: pointer
+		img
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+	&__progress
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		margin: auto
+		line-height: 88px
+		font-size: 20px
+		color: #fff
+		font-weight: 500
+		text-align: center
+	&__bottom
+    
+.colors
+	margin-top: 20px
+	&__group-name
+		font-size: 16px
+		line-height: 20px
+		margin-bottom: 7px
+		span
+			font-weight: 500
+	&__current
+		font-size: 14px
+		line-height: 17px
+		font-weight: 500
+		color: #000
+		margin-top: 20px
+	&__list, &__groups
+		display: flex
+		align-items: center
+	&__group
+		display: block
+		&:not(:last-of-type)
+			margin-right: 56px
+	&__color
+		position: relative
+		flex: none
+		width: 32px
+		height: 32px
+		cursor: pointer
+		&::after
+			content: ''
+			display: block
+			position: absolute
+			top: -7px
+			right: -4px
+			width: 20px
+			height: 20px
+			border-radius: 50%
+			background-color: #00AAD2
+			background-image: url('/images/start/icons/check.svg')
+			background-repeat: no-repeat
+			background-position: 50%
+			background-size: 50%
+			transform: scale(0)
+			transition: transform 0.3s
+		&:not(:last-of-type)
+			margin-right: 8px
+		&.active
+			&::after
+				transform: scale(1)
+                
+.preloader-arrow-enter
+    opacity: 0
+
+.preloader-leave-active
+    opacity: 0

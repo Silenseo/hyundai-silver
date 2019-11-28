@@ -1,0 +1,124 @@
+.compare
+	margin-top: 170px
+	padding-bottom: 101px
+	background-image: url('/images/brand/motorsport/img/BG3.png')
+	background-repeat: no-repeat
+	background-position: 100% 100%
+	background-size: 656px
+	&__title
+		text-align: center
+	&__description
+		margin-top: 114px
+		table
+			width: 100%
+			table-layout: fixed
+			font-size: 16px
+			line-height: 24px
+			tr
+				th
+					padding-bottom: 40px
+				td, th
+					width: 175px
+					text-align: center
+					vertical-align: top
+				td, th
+					&:first-of-type
+						width: 100%
+						text-align: right
+						padding-right: 33px
+					&:last-of-type
+						width: 100%
+						text-align: left
+						padding-left: 33px
+				td
+					&:nth-of-type(2)
+						font-weight: 500
+	&__wrapper
+		overflow: hidden
+		max-width: 500px
+		margin: 0 auto
+	&__m-description
+		display: none
+		transition: 0.3s
+		table
+			width: 100%
+			table-layout: fixed
+			font-size: 16px
+			line-height: 24px
+			th
+				padding-bottom: 16px
+				text-align: center
+			td
+				vertical-align: top
+				&:first-of-type
+					font-weight: 500
+					text-align: right
+					padding-right: 8px
+					overflow: hidden
+					text-overflow: ellipsis
+				&:last-of-type
+					text-align: left
+					padding-left: 8px
+	&__left, &__right
+		flex: none
+		width: 100%
+	.twentytwenty-wrapper
+		padding-left: 50px
+		padding-right: 50px
+		overflow: hidden
+	.twentytwenty-container
+		overflow: visible
+	.twentytwenty-handle
+		width: 68px
+		height: 68px
+		border: none
+		background-color: $second_blue
+		background-image: url('/images/brand/motorsport/icons/hand.png')
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: 35px
+		margin-left: -34px
+		margin-top: -34px
+		box-shadow: none
+		animation: hand 2s
+		animation-iteration-count: infinite
+		transition: 0.2s transform
+		&::after, &::before
+			width: 1px
+			box-shadow: none
+		&::before
+			margin-bottom: 34px
+		&::after
+			margin-top: 34px
+		&.move
+			animation: none
+			transform: scale(0.8)
+			.twentytwenty-left-arrow, .twentytwenty-right-arrow
+				opacity: 0
+
+		.twentytwenty-left-arrow, .twentytwenty-right-arrow
+			display: block
+			position: absolute
+			width: 16px
+			height: 36px
+			background-repeat: no-repeat
+			background-position: 50%
+			background-size: 100%
+			margin: 0
+			margin-top: -18px
+			border: none
+			transition: 0.2s
+		.twentytwenty-left-arrow
+			left: -27px
+			background-image: url('/images/brand/motorsport/icons/prev_arrow.png')
+		.twentytwenty-right-arrow
+			right: -27px
+			background-image: url('/images/brand/motorsport/icons/next_arrow.png')
+
+@keyframes hand
+	0%
+		background-position: 40% 50%
+	50%
+		background-position: 60% 50%
+	100%
+		background-position: 40% 50%

@@ -1,0 +1,191 @@
+.dynamics
+	position: relative
+	background-color: #ddd
+	overflow: hidden
+	&.isEntered
+		&::after
+			opacity: 0.2
+		.dynamics__title
+			span
+				transform: translateY(100%)
+		.dynamics__tabs
+			transform: translateY(0)
+		.dynamics__specs-w
+			transform: translateY(0)
+	&.view0
+		.dynamics__back--view0
+			opacity: 1
+		.dynamics__specs--0
+			opacity: 1
+		.dynamics__graph--0
+			opacity: 1
+	&.view1
+		.dynamics__back--view1
+			opacity: 1
+		.dynamics__specs--1
+			opacity: 1
+		.dynamics__graph--1
+			opacity: 1
+	&::after
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-color: #000
+		opacity: 0
+		transition: 0.5s
+	&--2
+		&::after
+			opacity: 0.2
+	&__video
+		display: none
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+	&__back
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+		transition: 0.3s
+		&--view0
+			opacity: 0
+		&--view1
+			opacity: 0
+	&__head
+		position: absolute
+		top: 48px
+		left: 32px
+		z-index: 10
+	&__title
+		font-size: 7.6rem
+		line-height: 1.05
+		font-weight: 500
+		color: #fff
+		overflow: hidden
+		span
+			display: block
+			transition: 0.5s
+		&--small
+			font-size: 2rem
+			line-height: 1.2
+			color: rgba(#C3BAB4, 0.6)
+	&__wrap
+		position: absolute
+		top: 0
+		left: 0
+		overflow: hidden
+	&__tabs
+		display: flex
+		align-items: center
+		transition: 0.5s
+		transition-delay: 0.5s
+		transform: translateY(100%)
+	&__link
+		display: block
+		line-height: 56px
+		width: 192px
+		text-align: center
+		background-color: rgba(#000, 0.25)
+		color: #ffffff
+		font-size: 1.8rem
+		font-weight: 500
+		transition: 0.3s
+		&:hover
+			color: #B7B7B7
+		&.active
+			background-color: #00AAD2
+	&__specs
+		position: absolute
+		left: 32px
+		bottom: 40px
+		opacity: 0
+		transition: 0.5s
+		z-index: 10
+	&__specs-w
+		transform: translateY(100%)
+		transition: 0.5s
+	&__spec
+		color: #fff
+		overflow: hidden
+		&:not(:last-of-type)
+			margin-bottom: 17px
+	&__description
+		font-size: 36px
+		line-height: 40px
+		color: #fff
+		font-weight: 500
+		span
+			display: inline-block
+			text-align: right
+	&__text
+		font-size: 16px
+		line-height: 24px
+		opacity: 0.7
+	&__graph
+		position: absolute
+		right: 32px
+		bottom: 40px
+		z-index: 10
+		opacity: 0
+		transition: 0.5s
+		img
+			display: block
+			max-width: 100%
+			height: auto
+
+#count1
+	width: 59px
+#count2
+	width: 37px
+#count3
+	width: 59px
+#count4
+	width: 37px
+
+@for $i from 1 through 10
+    .dynamics__specs-w--#{$i - 1}
+        transition-delay: $i * 0.2s
+
+.d-composition
+    position: absolute
+    left: 32px
+    bottom: 40px
+    color: #fff
+    max-width: 400px
+    z-index: 10
+    &__icon
+        position: relative
+        width: 64px
+        height: 64px
+        border-radius: 50%
+        background-color: #E4DCD3
+        margin-bottom: 15px
+        img
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            margin: auto
+            max-width: 80%
+            max-height: 80%
+    &__title
+        font-size: 36px
+        line-height: 1.11
+        font-weight: 500
+        margin-bottom: 15px
+    &__description
+        font-size: 18px
+        line-height: 1.33

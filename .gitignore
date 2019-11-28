@@ -1,0 +1,16 @@
+/node_modules
+/public
+/backstop_configs
+/storage/debugbar
+/storage/*.key
+/vendor
+/tests
+.env
+.idea
+worker.log
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+

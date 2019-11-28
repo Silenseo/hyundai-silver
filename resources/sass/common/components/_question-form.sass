@@ -1,0 +1,31 @@
+.question-form
+	color: #000
+	&__wrap
+		justify-content: flex-end
+	&__center
+		background-color: #fff
+		max-width: 288px
+		padding: 49px 16px 36px
+		margin-right: 69px
+	&__title
+		font-size: 1.6rem
+		line-height: 1.375
+		margin-bottom: 25px
+	&__message
+		resize: none
+		height: 96px
+		margin-bottom: 16px
+	&__input
+		margin-bottom: 16px
+		&:last-of-type
+			margin-bottom: 23px
+	&__button
+		display: block
+		margin-top: 25px
+		width: 100%
+
+@media only screen and (max-width : 640px)
+	.question-form
+		&__center
+			max-width: 100%
+			margin: 16px

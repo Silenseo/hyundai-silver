@@ -1,0 +1,165 @@
+.m-line
+	display: none
+	position: fixed
+	left: 0
+	right: 0
+	bottom: 0
+	color: $text_white
+	height: 144px
+	z-index: 500
+	&.isOpened
+		.m-line__overlay
+			visibility: visible
+			opacity: 1
+		.m-line__body
+			transform: translateY(-100%)
+			overflow: auto
+		.m-line__toggle
+			&::before
+				transform: rotate(0)
+		.m-line__button--collapse
+			transform: translateY(100%)
+	&__wrap
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		height: 144px
+	&__holder
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		height: 0
+		z-index: 5
+	&__overlay
+		visibility: hidden
+		position: absolute
+		left: 0
+		bottom: 0
+		right: 0
+		height: 100vh
+		background-color: rgba(0, 0, 0, 0.8)
+		opacity: 0
+		transition: 0.3s
+	&__body
+		padding: 0 40px
+		background-color: $bottom_bg
+		transition: 0.5s
+		transform: translateY(-144px)
+		max-height: calc(100vh - 150px)
+	&__top
+		position: relative
+		display: flex
+		align-items: center
+		height: 96px
+	&__img
+		flex: none
+		width: 136px
+		margin-right: 48px
+		img
+			display: block
+			max-width: 100%
+			height: auto
+	&__name
+		font-size: 14px
+		line-height: 1
+		color: $third_text
+		text-transform: uppercase
+		font-weight: 500
+	&__price
+		font-size: 24px
+		line-height: 1
+		font-weight: 500
+		color: $text_white
+		&.error
+			font-size: 16px
+			line-height: 24px
+	&__toggle
+		display: block
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translateY(-50%)
+		width: 36px
+		height: 36px
+		border: 1px solid $second_blue
+		border-radius: 50%
+		&::after, &::before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			width: 12px
+			height: 2px
+			background-color: $second_blue
+			transition: 0.3s
+		&::before
+			transform: rotate(90deg)
+	&__middle
+		padding-top: 25px
+		padding-bottom: 24px
+		border-top: 1px solid #527092
+		border-bottom: 1px solid #527092
+	&__line
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		font-size: 16px
+		line-height: 24px
+		margin-bottom: 8px
+		&--dropdown
+			margin-top: 25px
+	&__text
+		padding-right: 10px
+	&__value
+		flex: none
+		font-weight: 500
+		&--total
+			font-size: 42px
+			line-height: 48px
+			&.error
+				font-size: 16px
+				line-height: 24px
+	&__bottom
+		padding-top: 23px
+		padding-bottom: 48px
+	&__button
+		display: block
+		width: 100%
+		margin-top: 31px
+		margin-bottom: 24px
+		background-color: $second_blue
+		transition: 0.3s
+		&:disabled
+			background-color: $third_text
+		&:hover
+			background-color: #10B5DC
+		&--collapse
+			margin: 0
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			padding-top: 12px
+			padding-bottom: 12px
+			transition: 0.3s
+	&__find-dealer
+		position: relative
+		padding-left: 24px
+		svg
+			display: block
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translateY(-50%)
+			width: 16px
+			height: 15px
+			stroke: #fff
+        
+    
+

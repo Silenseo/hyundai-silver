@@ -1,0 +1,708 @@
+@import '../../common/variables'
+//Стили главной страницы
+
+//Слайдер
+.slider
+	position: relative
+	background-repeat: no-repeat
+	background-position: 50%
+	background-size: cover
+	height: 626px
+	color: #fff
+	&__wrap
+		max-width: 1792px
+		position: relative
+	&__item
+		position: relative
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+		height: 545px
+		overflow: hidden
+	&__link
+		display: block
+		height: 100%
+		&:hover, &:visited, &:focus
+			color: inherit
+	&__inner
+		position: absolute
+		top: 32px
+		left: 43px
+	&__title
+		font-size: 5.5rem
+		line-height: 1.23
+		font-weight: 500
+		margin-bottom: 10px
+	video
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+	.owl-nav
+		position: absolute
+		display: flex
+		justify-content: space-between
+		top: calc(50% - 50px)
+		height: 0
+		width: 100%
+	.owl-prev, .owl-next
+		position: relative
+		width: 40px
+		height: 40px
+		background-color: rgba(0, 0, 0, 0.4)!important
+		transition: 0.3s
+		svg
+			position: absolute
+			display: block
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			margin: auto
+			width: 9px
+			height: 18px
+		&:hover
+			opacity: 0.8
+	.owl-dots
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-top: 32px
+	.owl-dot
+		display: block
+		width: 12px
+		height: 12px
+		border-radius: 50%
+		background-color: #fff!important
+		transition: background-color 0.3s
+		&:not(:last-of-type)
+			margin-right: 10px
+		&.active
+			background-color: #00AAD2!important
+
+.blue-panel
+    position: absolute
+    left: 0
+    bottom: 48px
+    background-color: #002C5F
+    color: #fff
+    font-size: 2.0rem
+    line-height: 1.2
+    font-weight: 500
+    padding: 12px 32px 12px 43px
+    opacity: 0
+    transform: translateX(-100%)
+    transition: transform 0.5s
+    transition-delay: 0.3s
+    &__inner
+        div
+            line-height: 37px
+            transform: translateX(-100%)
+            transition: transform 0.5s
+            transition-delay: 0.8s
+            &:not(:last-of-type)
+                border-bottom: 1px solid #37608D
+    &__more
+        display: flex
+        align-items: center
+        color: #AACAE6
+        svg
+            display: block
+            width: 7px
+            height: 12px
+            margin-left: 8px
+
+@for $i from 1 through 5
+    .blue-panel__inner
+        div
+            &:nth-of-type(#{$i})
+                transition-delay: $i * 0.25s
+
+//Выезд панели при активном слайде
+.active
+    .blue-panel
+        transform: translateX(0)
+        opacity: 1
+        &__inner
+            div
+                transform: translateX(0)
+
+    &.fadeOut
+        transform: translateX(-100%)
+        opacity: 0
+
+.h-buttons
+	right: 0
+	bottom: 81px
+
+//Конфигуратор
+@import 'config_home'
+
+.config
+	padding: 70px 0
+	&__layer
+		position: relative
+		text-align: center
+	&__body
+		overflow: hidden
+	&__header
+		position: relative
+		padding-top: 25px
+		z-index: 2
+	&__banner
+		position: absolute
+		left: calc(50% + 160px)
+		top: 40px
+	&__button
+		display: inline-block
+		margin: 0 auto
+		margin-top: 27px
+		&:hover
+			color: #fff
+	&__holder
+		position: relative
+		height: 573px
+	&__nav
+		position: absolute
+		width: 100%
+		top: 40%
+		overflow: hidden
+		z-index: 20
+	&__nav-holder
+		position: relative
+		display: flex
+		justify-content: space-between
+	&__nav-item
+		display: flex
+		flex-direction: column
+		justify-content: flex-end
+		width: 200px
+		cursor: pointer
+		&--prev
+			align-items: flex-start
+			text-align: left
+			&:hover
+				.config__item-arrow
+					transform: translateX(0px)
+		&--next
+			align-items: flex-end
+			text-align: right
+			.config__item-arrow
+				transform: translateX(-5px)
+			&:hover
+				.config__item-arrow
+					transform: translateX(0px)
+	&__item-img
+		display: block
+		max-width: 100%
+		height: auto
+		flex: 0 0 auto
+		margin-bottom: 17px
+	&__item-arrow
+		display: inline-block
+		width: 32px
+		height: 14px
+		color: #002C5F
+		transition: transform 0.3s
+		transform: translateX(5px)
+		svg
+			display: block
+			max-width: 100%
+			max-height: 100%
+	&__item-title
+		display: inline-block
+		font-size: 42px
+		line-height: 40px
+		font-weight: 500
+		color: #F1F1F1
+		margin-bottom: 17px
+	.hc-title
+		text-align: left
+		left: 18%
+		right: auto
+	.hc-model
+		font-size: 55px
+		line-height: 68px
+		font-weight: 500
+		color: #000
+	.hc-cost
+		font-size: 20px
+		line-height: 24px
+		font-weight: 500
+		color: #B7B7B7
+	.df-pagination-dots
+		display: none
+	.df-pagination-dots__list
+		justify-content: center
+	.df-pagination-dots__button
+		background-color: rgba(0,0,0,0.1)
+		&.active
+			background-color: #00AAD2
+
+
+
+//Branches
+.branches
+    background-repeat: no-repeat
+    background-position: 50%
+    background-size: cover
+    padding-top: 88px
+
+//Motorstudio
+.motorstudio-b
+    background-repeat: no-repeat
+    background-position: 50%
+    background-size: cover
+    height: 100%
+    padding: 50px
+    &__center
+        padding: 48px 56px 32px 56px
+        background-color: #fff
+        max-width: 386px
+        margin: 0 auto
+        overflow: hidden
+    &__logo
+        display: block
+        width: 124px
+        height: 38px
+        margin-bottom: 65px
+        svg
+            display: block
+            max-width: 100%
+            max-height: 100%
+    &__title
+        font-size: 2.0rem
+        line-height: 1.2
+        max-width: 272px
+        margin: 0 auto
+        text-align: center
+        margin-bottom: 32px
+    &__list
+        display: flex
+        align-items: center
+        min-width: 100%
+        margin-left: -18px
+        margin-right: -18px
+        margin-bottom: 32px
+    &__item
+        position: relative
+        width: 33.333%
+        text-align: center
+        &:not(:last-of-type)
+            &::after
+                content: ''
+                display: block
+                position: absolute
+                right: 0
+                top: 0
+                bottom: 0
+                width: 1px
+                background-color: #B7B7B7
+    &__button
+        display: block
+        width: 100%
+        padding-left: 0
+        padding-right: 0
+
+//Mir
+.mir-b
+    background-image: url('/images/index/mir.jpg')
+    background-repeat: no-repeat
+    background-position: 50%
+    background-size: cover
+    color: #000
+    padding: 0 40px
+    padding-top: 54px
+    padding-bottom: 60px
+    &__top
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 77px
+    &__mir-link
+        display: block
+        width: 130px
+        height: 22px
+        svg
+            display: block
+            max-width: 100%
+            max-height: 100%
+    &__reg-m
+        display: none
+    &__center
+        margin-bottom: 68px
+        overflow: hidden
+    &__title
+        font-size: 3.0rem
+        line-height: 1.2
+        margin-bottom: 54px
+    &__list
+        display: flex
+        min-width: 100%
+        margin-left: -10px
+        margin-right: -10px
+    &__item
+        width: calc(33.33% - 20px)
+        margin: 0 10px
+    &__icon
+        margin-bottom: 20px
+        &.ic-gift
+            width: 32px
+            height: 39px
+        &.ic-fix
+            width: 36px
+            height: 37px
+        &.ic-pig
+            width: 40px
+            height: 36px
+        svg
+            display: block
+            width: 100%
+            height: 100%
+            fill: rgba(52, 52, 52, 0.7)
+    &__description
+        font-size: 2.0rem
+        line-height: 1.2
+        font-weight: 500
+        margin-bottom: 8px
+    &__bottom
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &__button
+        padding: 9px 21px
+    &__applications
+        display: flex
+        align-items: center
+    &__app
+        &:not(:last-of-type)
+            margin-right: 17px
+        a
+            display: block
+            transition: transform 0.3s
+            &:hover
+                transform: translateY(-5px)
+
+//Новости
+.news
+	padding: 80px 0
+	overflow: hidden
+	&__list
+		display: flex
+		position: relative
+		margin-bottom: 48px
+		.owl-stage
+			display: flex
+		.owl-dots
+			display: flex
+			align-items: center
+			justify-content: center
+			margin-top: 32px
+		.owl-dot
+			display: block
+			width: 12px
+			height: 12px
+			border-radius: 50%
+			background-color: rgba(0,0,0,0.1)!important
+			transition: background-color 0.3s
+			&:not(:last-of-type)
+				margin-right: 10px
+			&.active
+				background-color: #00AAD2!important
+		.owl-nav
+			position: absolute
+			display: flex
+			height: 0px
+			justify-content: space-between
+			top: 50%
+			transform: translateY(-50%)
+			left: -32px
+			right: -32px
+	&__prev, &__next
+		position: relative
+		width: 40px
+		height: 40px
+		background-color: rgba(0, 0, 0, 0.4)
+		svg
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			width: 70%
+			margin: auto
+			fill: #fff
+	&__next
+		transform: rotate(180deg)
+	&__item
+		height: 100%
+	&__link
+		display: block
+		position: relative
+		height: 100%
+		padding: 32px
+		padding-bottom: 15%
+		overflow: hidden
+		cursor: url("/images/icons/drag-h-red.cur") 21 21, pointer
+	&__img
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 1
+		background: #444
+		opacity: 0;
+		transition: opacity 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0s
+		img
+			position: absolute
+			top: 0
+			left: 50%
+			transform: translate(-50%, 0) scale(1.05)
+			width: auto!important
+			max-width: none
+			height: 110%
+			opacity: 0.5
+			image-rendering: crisp-edges;
+			transition: transform 0.5s cubic-bezier(0, 0.5, 0.5, 1) 0s
+	&__date
+		position: relative
+		z-index: 2
+		color: #002C5F
+		margin-bottom: 79px
+		transition: color 0.5s
+	&__text
+		position: relative
+		z-index: 2
+		color: #000
+		transition: color 0.5s
+
+
+@media only screen and (max-width : 1850px)
+	.slider
+		&__wrap
+			max-width: 1536px
+
+@media only screen and (max-width : $xl-max)
+	.slider
+		height: 521px
+		&__wrap
+			max-width: 1280px
+		&__item
+			height: 440px
+
+@media only screen and (min-width : 1263px)
+    .news
+        &__link
+            &:hover
+                .news__img
+                    opacity: 1
+                    img
+                        transition: transform 1.75s cubic-bezier(0.5, 0.5, 0.5, 1) 0.035s
+                        transform: translate(-50%, 0) scale(1)
+                .news__date
+                    color: #fff
+                .news__text
+                    color: #fff
+
+@media only screen and (max-width : $lg-max)
+	.slider
+		&__wrap
+			max-width: 1263px
+	.config
+		.hc-title
+			left: 0
+		&__nav
+			top: 43%
+		&__item-title
+			display: none
+		&__item-img
+			display: none
+
+	.motorstudio-b
+		padding-bottom: 200px
+	.mir-b
+		margin-top: 32px
+
+	.news
+		padding-bottom: 56px
+		&__list
+			padding: 0 8px
+
+@media only screen and (max-width : 1023px)
+	.slider
+		//height: 953px
+		&__item
+			//height: 872px
+		&__subtitle
+			font-size: 30px
+
+	.blue-panel
+		//bottom: 81px
+
+@media only screen and (max-width : $md-max)
+    .slider
+        //height: 473px
+        &__item
+           //height: 408px
+        &__inner
+            top: 24px
+            left: 16px
+        &__title
+            font-size: 38px
+            line-height: 40px
+        &__subtitle
+            font-size: 18px
+        .owl-dots
+            margin-top: 24px
+
+    .blue-panel
+        font-size: 16px
+        bottom: 48px
+        padding: 0px 13px 0px 18px
+        &__inner
+            div
+                line-height: 33px
+
+    .config
+        padding: 10px 0
+        padding-bottom: 56px
+        .hc-model
+            font-size: 38px
+            line-height: 40px
+        .hc-cost
+            color: #666666
+        .hc-bg
+            top: 45px
+            height: 84%
+            width: 90%
+        .hc-car-img
+            max-width: 455px
+            width: 100%
+        &__holder
+            height: 400px
+        &__nav
+            top: 67%
+        &__banner
+            top: 73px
+            left: auto
+            right: 0
+            width: 111px
+            height: 111px
+            &::after
+                left: 7px
+                bottom: 7px
+        &__banner-center
+            padding-top: 25px
+            padding-right: 18px
+        &__credit-price
+            font-size: 20px
+            line-height: 24px
+            margin-top: 3px
+        &__credit-rub
+            font-size: 14px
+            line-height: 5px
+        &__button
+            margin-top: 5px
+            margin-bottom: 40px
+        .df-pagination-dots
+            display: block
+
+
+    .branches
+        padding-top: 0
+
+    .motorstudio-b
+        padding: 40px 16px
+        min-width: 100%
+        margin-left: -16px
+        margin-right: -16px
+        padding-bottom: 124px
+        &__center
+            padding: 48px 16px 40px 16px
+        &__list
+            margin-right: -10px
+            margin-left: -10px
+        &__item
+            width: 33.33%
+            padding: 0 10px
+
+    .mir-b
+        padding-left: 16px
+        padding-right: 16px
+        min-width: 100%
+        margin-left: -16px
+        margin-right: -16px
+        margin-top: 0
+        padding-top: 41px
+        padding-bottom: 15px
+        &__reg
+            display: none
+        &__title
+            line-height: 32px
+            margin-bottom: 41px
+        &__top
+            margin-bottom: 45px
+        &__list
+            flex-wrap: wrap
+        &__item
+            width: calc(100% - 20px)
+            text-align: center
+            &:not(:last-of-type)
+                margin-bottom: 63px
+        &__icon
+            margin-right: auto
+            margin-left: auto
+            margin-bottom: 15px
+            &.ic-gift
+                width: 51px
+                height: 64px
+            &.ic-fix
+                width: 68px
+                height: 64px
+            &.ic-pig
+                width: 70px
+                height: 64px
+        &__bottom
+            flex-wrap: wrap
+            padding-top: 14px
+            padding-bottom: 14px
+        &__button
+            width: 100%
+        &__applications
+            justify-content: center
+            width: 100%
+            margin-top: 30px
+        &__app
+            a
+                &:hover
+                    transform: translateY(0)
+        &__reg-m
+            display: block
+            margin: 0 auto
+            margin-top: 24px
+
+    .news
+        &__link
+            padding-left: 8px
+            padding-right: 8px
+        &__list
+            padding: 0 24px
+            .owl-nav
+                left: -16px
+                right: -16px
+            .owl-stage
+                display: block
+
+@media only screen and (max-width : 640px)
+	.slider
+		height: calc(120vw + 81px)
+		&__item
+			height: 120vw
+
+
+

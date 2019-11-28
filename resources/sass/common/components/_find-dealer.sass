@@ -1,0 +1,276 @@
+.c-find-dealer
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-color: rgba(#000000, 0.8)
+	z-index: 1000
+	overflow: auto
+	// &.popup-enter
+	// 	.c-find-dealer__center
+	// 		opacity: 0
+	// 		transform: translateY(200px) scale(0.7)
+	&__wrap
+		display: flex
+		align-items: center
+		justify-content: center
+		min-height: 100vh
+	&__center
+		position: relative
+		width: 100%
+		max-width: 1008px
+		margin: 0 40px
+		height: 600px
+		background-color: $white_bg
+		overflow: hidden
+	&__close
+		position: absolute
+		display: block
+		top: 7px
+		right: 14px
+		padding: 10px
+		z-index: 10
+		svg
+			display: block
+			width: 16px
+			height: 16px
+			fill: $second_text
+			transition: 0.3s
+		&:hover
+			svg
+				fill: $third_text
+	&__map
+		width: 100%
+		height: 100%
+		z-index: 1
+	&__zoomIn, &__zoomOut, &__location, &__fullscreen
+		display: block
+		position: absolute
+		width: 40px
+		height: 40px
+		background-color: $white_bg
+		z-index: 10
+		transition: 0.3s
+		cursor: pointer
+		&::after, &::before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			background-color: $main_blue
+		&::after
+			width: 16px
+			height: 2px
+		&::before
+			height: 16px
+			width: 2px
+		&:hover
+			opacity: 0.8
+	&__cont
+		position: relative
+	&__zoomIn
+		top: 104px
+		right: 24px
+	&__zoomOut
+		top: 160px
+		right: 24px
+		&::before
+			display: none
+	&__fullscreen
+		bottom: 80px
+		right: 24px
+		background-image: url('/images/map/full_screen.png')
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: 50%
+		&::after, &::before
+			display: none
+	&__location
+		bottom: 24px
+		right: 24px
+		background-image: url('/images/map/Locate_button.png')
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: 100%
+		svg
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+		&::after, &::before
+			display: none
+
+.label
+	position: absolute
+	left: 24px
+	bottom: 24px
+	width: 38rem
+	min-width: 380px
+	background-color: $white_bg
+	color: $text_black
+	padding: 24px
+	z-index: 10
+	&.special
+		.label__title
+			background-color: #A36B4F
+			color: #fff
+			padding: 4px 0
+			padding-left: 8px
+			padding-right: 24px
+			&::after
+				content: ''
+				display: block
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				right: 0
+				width: 0
+				height: 0
+				border-top: 20px solid transparent;
+				border-right: 10px solid #fff;
+				border-bottom: 20px solid transparent;
+	&.star
+		.label__star
+			display: block
+	&.wa
+		.label__wa
+			display: block
+	&.citystore
+		.label__citystore
+			display: block
+	&__close
+		position: absolute
+		display: block
+		top: 14px
+		right: 14px
+		padding: 10px
+		z-index: 10
+		svg
+			display: block
+			width: 16px
+			height: 16px
+			fill: $second_text
+			transition: 0.3s
+		&:hover
+			svg
+				fill: $third_text
+
+	&__top
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		padding-right: 25px
+		margin-bottom: 8px
+	&__flags
+		display: flex
+		align-items: center
+		width: 100%
+		margin-bottom: 8px
+	&__star
+		display: none
+		flex: none
+		margin-right: 8px
+	&__wa
+		display: none
+		flex: none
+		width: 31px
+		margin-right: 8px
+	&__citystore
+		display: none
+		flex: none
+		width: 20px
+		height: 20px
+		border-radius: 50%
+		background-color: $sand_bg
+	&__title
+		position: relative
+		display: inline-block
+		font-size: 2rem
+		line-height: 1.2
+		font-weight: 500
+	&__line
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__address
+		width: 100%
+		margin-bottom: 16px
+	&__address, &__phone
+		font-size: 1.6rem
+		line-height: 1.5
+		color: $second_text
+	&__link
+		display: inline-block
+	&__button
+		display: block
+		width: 100%
+		margin-top: 24px
+
+.popup-enter-active
+	overflow: hidden
+	animation: enter-popup 0.3s
+	.c-find-dealer__center
+		animation: enter-center 0.5s
+
+
+.popup-leave-active
+	animation: enter-popup 0.3s reverse
+	.c-find-dealer__center
+		animation: enter-center 0.5s reverse
+
+@media only screen and (max-width : $lg-max)
+	.c-find-dealer
+		&__zoomIn, &__zoomOut, &__location, &__fullscreen
+			width: 48px
+			height: 48px
+
+@media only screen and (max-width : $md-max)
+	.c-find-dealer
+		&__center
+			margin: 16px
+			height: 536px
+		&__zoomIn
+			top: 72px
+			right: 16px
+		&__zoomOut
+			top: 144px
+			right: 16px
+		&__location
+			// top: 232px
+			// bottom: auto
+			right: 16px
+		&__fullscreen
+			right: 16px
+
+	.label
+		left: 0
+		right: 0
+		bottom: 0
+		width: 100%
+		min-width: 100%
+		padding: 16px
+		&__close
+			// top: 6px
+			right: 6px
+		&__top
+			display: block
+		&__flags
+			margin-bottom: 16px
+		&__line
+			display: block
+		&__phone
+			display: block
+		&__phone
+			margin-bottom: 4px
+		&__button
+			padding-top: 8px
+			padding-bottom: 8px

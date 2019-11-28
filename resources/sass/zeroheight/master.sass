@@ -1,0 +1,60 @@
+//Reset
+@import "../../libs/reset/minireset"
+@import "../_mixins/_font-face.sass"
+
++font-face("HyundaiSansHead", "https://www.hyundai.ru/media/downloads/fonts/HyundaiSans/HyundaiSansHead-Light", 300)
++font-face("HyundaiSansHead", "https://www.hyundai.ru/media/downloads/fonts/HyundaiSans/HyundaiSansHead-Regular")
++font-face("HyundaiSansHead", "https://www.hyundai.ru/media/downloads/fonts/HyundaiSans/HyundaiSansHead-Medium", 500)
++font-face("HyundaiSansHead", "https://www.hyundai.ru/media/downloads/fonts/HyundaiSans/HyundaiSansHead-Bold", 700)
+
++font-face("HyundaiSansText", "https://www.hyundai.ru/media/downloads/fonts/HyundaiSans/HyundaiSansText-Regular")
++font-face("HyundaiSansText", "https://www.hyundai.ru/media/downloads/fonts/HyundaiSans/HyundaiSansText-Medium", 500)
++font-face("HyundaiSansText", "https://www.hyundai.ru/media/downloads/fonts/HyundaiSans/HyundaiSansText-Bold", 700)
+
+//Убираем стрелки у инпутов с типом number
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button
+	-webkit-appearance: none
+	margin: 0
+
+input[type="number"]
+	-moz-appearance: textfield
+
+input[type="number"]:hover,
+input[type="number"]:focus
+	-moz-appearance: number-input
+	-moz-appearance: textfield
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+	-webkit-appearance: none;
+	margin: 0;
+
+//Стилизация яндекс карт
+[class*="ymaps-2-1"][class*="-ground-pane"]
+	filter: grayscale(100%) brightness(111%) contrast(90%) invert(0%)
+
+[class*="ymaps-2-1"][class*="-balloon__content"]
+	overflow: hidden !important
+	/* width: 220px !important; */
+	height: auto !important
+	padding: 25px !important
+	position: relative !important
+	box-sizing: content-box
+	margin: 0 !important
+
+[class*="ymaps-2-1"][class*="-balloon__layout"]
+	left: -20px !important
+
+[class*="ymaps-2-1"][class*="-balloon_layout_normal"]
+	box-shadow: none !important
+
+$default-font: "HyundaiSansHead", sans-serif;
+
+html
+    font-size: 10px
+
+body
+    font-family: $default-font
+    color: #000
+    font-size: 1.6rem

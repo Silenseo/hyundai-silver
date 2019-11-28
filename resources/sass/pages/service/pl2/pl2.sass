@@ -1,0 +1,376 @@
+@import '../../../common/_variables.scss'
+@import '../../../common/_common.sass'
+
+.head
+  padding-top: 80px
+  //background-image: url('/images/service/warranty/fon.jpg')
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+  &__composition
+    width: 620px
+    padding-top: 39px
+    padding-left: 43px
+  &__banner
+    position: relative
+    //background-image: url('/images/service/pl2/main.jpg')
+    background-repeat: no-repeat
+    background-position: 100% 50%
+    background-size: cover
+    min-height: 545px
+    padding-bottom: 30px
+  &__title
+    font-size: 5.5rem
+    line-height: 0.98
+    font-weight: 500
+    margin-bottom: 0.25em
+  &__subtitle
+    font-size: 4.2rem
+    line-height: 1.067
+    font-weight: 400
+    margin-bottom: 37px
+  &__signboard
+    width: 584px
+    background-color: #1d3564
+    padding: 11px 35px 15px 43px
+    font-size: 2.7rem
+    line-height: 1.2
+    color: #fff
+  &__advantages
+    display: flex
+    justify-content: space-between
+    margin-bottom: 15px
+    width: 520px
+  &__advantange-item
+    display: flex
+    flex-direction: column
+    align-items: center
+  &__advantage-text
+    color: #1d2f5c
+    font-size: 2.8rem 
+  &__advantage-pic
+    max-width: 80px
+    height: 80px
+    margin-bottom: 5px
+
+.advantages
+  background-color: $white_bg
+  padding-top: 56px
+  padding-bottom: 70px
+  &-inner
+    width: 100%
+    max-width: 1008px
+    margin: 0 auto
+  &-title
+    text-align: center
+    margin-bottom: 64px
+    font-size: 4.2rem
+    line-height: 1.143
+    font-weight: 500
+  &__items
+    justify-content: space-between
+    display: flex
+    margin-bottom: 56px
+  &__item
+    width: 280px
+    display: flex
+    flex-direction: column
+    align-items: center
+    &-circle
+      width: 80px
+      height: 80px
+      background-color: $gray_bg
+      border-radius: 50%
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-bottom: 23px
+    &-counter
+      font-size: 1.6rem
+      line-height: 1.5
+      text-align: center
+      color: $text_black
+      font-weight: 500
+    &-text
+      font-family: 'HyundaiSansText'
+      font-size: 1.6rem
+      line-height: 1.5
+      text-align: center
+      width: 100%
+  &-separate
+    border: none
+    border-bottom: 1px solid $sand_bg
+    width: 100%
+  &__triggers
+    display: flex
+    justify-content: space-between
+    margin-bottom: 82px
+    margin-top: 88px
+  &__trigger
+    max-width: 244px
+    display: flex
+    flex-direction: column
+    align-items: center
+    &-icon
+      width: 154px
+      height: 154px
+      margin-bottom: 22px
+    &-desc
+      font-size: 2rem
+      line-height: 1.2
+      text-align: center
+      font-weight: 500
+  &-buttons
+    display: flex
+    justify-content: center
+    .df-button
+      width: 270px
+      padding: 14px 50px
+      &--wh
+        border: 2px solid $main_blue
+        background-color: $white_bg
+        color: $main_blue
+        margin-left: 20px
+        transition: background-color 0.3s ease 0s, color 0.3s ease 0s
+        &:hover
+          background-color: $main_blue
+          color: $text_white
+
+.line
+  background-color: $gray_bg
+  padding-top: 56px
+  padding-bottom: 4px
+  &__title
+    text-align: center
+    margin-bottom: 22px
+    font-size: 4.2rem
+    line-height: 1.143
+    font-weight: 500
+  &__subtitle
+    max-width: 800px
+    margin-left: auto
+    margin-right: auto
+    font-size: 2.2rem
+    line-height: 1.455
+    text-align: center
+    color: $text_black
+    margin-bottom: 42px
+  &__button
+    text-align: center
+    margin-bottom: 72px
+  &__item
+    margin-bottom: 76px
+    &-img
+      margin-bottom: 16px
+    &-desc
+      font-size: 16px
+      line-height: 1.25
+      font-weight: 500
+  .df-button
+    display: inline-block
+    padding: 16px 20px
+    width: 188px
+
+@media (min-width: 1600px)
+  .advantages-inner
+    max-width: $large-cont
+  .advantages__item
+    width: 27.8%
+
+  .line__subtitle
+    max-width: 960px
+
+@media (max-width: 1600px)
+	.head
+		&__banner
+			//height: 440px
+
+@media (max-width: 1200px)
+  .head
+    &__banner
+      min-height: 440px
+    &__subtitle
+      margin-bottom: 15px
+    &__advantage-pic
+      height: 60px
+    &__advantage-text
+      font-size: 2.4rem
+    &__advantages
+      width: 440px
+    
+
+
+@media (max-width: 1023px)
+  .advantages 
+    padding-top: 56px
+    padding-bottom: 49px
+    &__item
+      width: 240px
+    &-inner
+      width: 100%
+    &__tiggers
+      margin-top: 64px 
+
+  .line
+    &__item
+      margin-bottom: 68px
+
+
+@media (max-width: 900px)
+  .head__composition
+    padding-top: 50px
+    padding-left: 34px
+    width: 580px
+  .head__title
+    margin-bottom: 0.3em
+
+  .advantages
+    &__triggers
+      flex-wrap: wrap
+      max-width: 452px
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 24px
+      margin-top: 64px
+    &__trigger
+      margin-bottom: 40px
+      max-width: none
+      width: calc(50% - 16px)
+      &:nth-child(odd)
+        margin-right: 16px
+      &:nth-child(even)
+        margin-left: 16px
+    &__item
+      width: 208px
+
+  .line__item
+    -ms-flex: 0 0 50%
+    flex: 0 0 50%
+    max-width: 50%
+
+
+@media (max-width: $md-max)
+  .head__composition
+    width: auto
+    padding-top: 50px
+    padding-right: 36px
+ 
+
+@media (max-width: 640px)
+  .head
+    padding-top: 64px
+    &__banner
+      background-image: url('/images/service/pl2/main-md.jpg')
+      background-position: bottom
+      height: 120vw
+    &__composition
+      padding: 24px 16px
+    &__title
+      font-size: 3rem
+      line-height: 1.067
+      margin-bottom: 14px
+    &__subtitle
+      font-size: 1.8rem
+      line-height: 1.25
+      max-width: 300px
+      margin-bottom: 20px
+    &__signboard
+      width: 400px
+      padding: 11px 20px 15px 20px
+      font-size: 2rem
+    &__advantages
+      margin-bottom: 0
+      width: 320px
+    &__advantage-text
+      font-size: 2rem
+
+  .advantages
+    padding-top: 38px
+    padding-bottom: 40px
+    &-title
+      line-height: 1.0667
+      font-size: 3rem
+      margin-bottom: 40px
+    &__items
+      flex-wrap: wrap
+      max-width: 288px
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 17px
+    &__item
+      width: 280px
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 32px
+    &__triggers
+      margin-top: 32px
+
+  .line
+    padding-bottom: 40px
+    padding-top: 38px
+    &__title
+      line-height: 1.0667
+      font-size: 3rem
+      margin-bottom: 16px
+    &__subtitle
+      font-size: 1.6rem
+      line-height: 1.5
+      margin-bottom: 24px
+    &__item
+      margin-bottom: 50px
+
+
+@media (max-width: 480px)
+  .head__banner
+    background-position: 50%
+  .head__signboard
+    width: 94%
+    
+  .advantages
+    &__triggers
+      margin-top: 56px
+      margin-bottom: 0
+      max-width: 244px
+    &__trigger
+      width: 100%
+      margin-left: 0!important
+      margin-right: 0!important
+      margin-bottom: 48px
+    &-buttons
+      flex-wrap: wrap
+      justify-content:  center
+      .df-button
+        padding: 16px 50px
+        width: 288px
+      .df-button--wh
+        margin-left: 0
+        margin-top: 16px
+        padding: 14px 50px
+
+  .line__button
+    margin-bottom: 50px
+  .line__item
+    -ms-flex: 0 0 100%
+    -webkit-box-flex: 0
+    flex: 0 0 100%
+    max-width: 320px
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 36px
+  .line .df-button
+    width: 288px
+
+
+@media (max-width: 400px)
+  .head__advantages
+    width: 260px
+  .head__signboard
+    width: 93%
+    font-size: 1.8rem
+  .head__advantage-text
+    font-size: 1.8rem
+  .head__advantage-pic
+    height: 55px
+
+
+@import '../service-signup.sass'

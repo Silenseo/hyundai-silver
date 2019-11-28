@@ -1,0 +1,36 @@
+//Стили секции highlight
+.highlight
+    &__list
+        display: flex
+        flex-wrap: wrap
+        background-color: #E4DCD3
+    &__item
+        width: 33%
+        &:not(:last-of-type)
+            border-right: 1px solid #B7B7B7
+    &__link
+        display: block
+        height: 100%
+        padding: 48px 32px 32px 32px
+    &__icon
+        display: block
+        margin-bottom: 16px
+        &.ic-car
+            width: 56px
+            height: 29px
+        &.ic-map
+            width: 45px
+            height: 39px
+        &.ic-steering-wheel
+            width: 40px
+            height: 40px
+        &.ic-calc
+            width: 37px
+            height: 40px
+    &__title
+        font-size: 20px
+        line-height: 24px
+        color: #000
+        margin-bottom: 8px
+    &__description
+        color: #666666

@@ -1,0 +1,58 @@
+@extends('admin.admin')
+
+@section('pageTitle', 'Пользователи')
+
+@section('sidebar')
+@include('admin.sidebar.main')
+@endsection
+
+@section('content')
+<table class="table">
+        <caption>
+            <div class="table__flex table__flex--caption">
+                <h2 class="h2">Список пользователей</h2>
+            <a href="{{ route('admin.users.create') }}" class="button button--small button--iconed">
+                    <span>
+                        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" width="2" height="8" fill="white" />
+                            <rect x="8" y="3" width="2" height="8" transform="rotate(90 8 3)" fill="white" />
+                        </svg>
+                    </span>
+                    Добавить
+                </a>
+            </div>
+        </caption>
+        <thead>
+            <tr>
+                <th data-sort-name="id">id</th>
+                <th data-sort-name="name">Имя пользователя</th>
+                <th data-sort-name="email">E-Mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($users as $row)
+            <tr>
+                <td>{{ $row->id }}</td>
+                <td align="center">{{ $row->name }}</td>
+                <td>
+                    <div class="table__flex">
+                        <div class="table__text">{{ $row->email }}</div>
+                        <ul class="table__controls">
+                            <li>
+                                <a href="{{ route('admin.users.edit', $row->id)}}" class="table__link">Изменить</a>
+                            </li>
+                            <li>
+                                    <form method="post" action="{{ route('admin.users.destroy', $row->id) }}">
+                                            @method('DELETE')
+                                            @csrf
+                                            <a href="javascript:void(0);" class="table__link" onclick="$(this).closest('form').submit();">Удалить</a>
+                                        </form>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    @endsection

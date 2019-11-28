@@ -1,0 +1,915 @@
+@import '../../../common/_variables.scss'
+@import '../../../common/_common.sass'
+
+.head
+  padding-top: 80px
+  background-image: url('/images/service/warranty/fon.jpg')
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+  &__composition
+    display: flex
+    flex-direction: column
+    width: 550px
+    height: 100%
+    padding-top: 37px
+    padding-left: 43px
+    padding-bottom: 50px
+  &__banner
+    position: relative
+    background-image: url('/images/service/bodyworks/pic.jpg')
+    background-repeat: no-repeat
+    background-position: 100% 50%
+    background-size: cover
+    height: 545px
+  &__title
+    font-size: 5.5rem
+    line-height: 0.98
+    font-weight: 500
+    margin-bottom: 0.2em
+  &__subtitle
+    font-size: 3rem
+    line-height: 1.067
+    font-weight: 400
+  .df-download-img-link
+    font-size: 1.6rem
+    margin-top: auto
+
+.advantages
+  background-color: $white_bg
+  padding-bottom: 68px
+  &-slider
+    max-width: 1280px
+    margin: 0 auto
+    position: relative
+  &-title
+    text-align: center
+    padding-top: 56px
+    padding-bottom: 72px
+    font-size: 4.2rem
+    line-height: 1.143
+    font-weight: 500
+  .swiper-container
+    max-width: 1138px
+    margin: 0 auto
+  .swiper-button-next, .swiper-button-prev
+    top: 100px
+    margin-top: 0
+
+.swiper-wrapper
+  transition-timing-function: ease-out
+.swiper-container 
+  width: 100%
+  height: 100%
+  margin-left: auto
+  margin-right: auto    
+.swiper-slide 
+  text-align: center
+  display: -webkit-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  -webkit-justify-content: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  -webkit-align-items: center
+  align-items: center  
+.swiper-button-next
+  background-image: url('/images/service/warranty/slider/arrow.svg')
+  background-size: cover
+  width: 16px
+  height: 36px
+  right: 0px
+  margin-top: -110px
+  outline: none!important
+  z-index: 10
+  transition: transform 0.3s ease 0s
+  &:hover
+    transform: translateX(8px)
+.swiper-button-prev
+  background-image: url('/images/service/warranty/slider/arrow.svg')
+  background-size: cover
+  width: 16px
+  height: 36px
+  left: 0px
+  transform: rotate(180deg)
+  margin-top: -110px
+  outline: none!important
+  z-index: 10
+  transition: transform 0.3s ease 0s
+  &:hover
+    transform: translateX(-8px) rotate(180deg)
+.swiper-pagination-bullet
+  width: 12px
+  height: 12px
+  background: rgba(0, 0, 0, 0.1)
+  opacity: 1
+  outline: none!important
+  transition: 0.3s background-color ease 0s
+.swiper-pagination-bullet-active
+  background-color: $second_blue
+  opacity: 1  
+.swiper-advantages
+  padding-bottom: 50px
+  & .swiper-slide
+    flex-direction: column
+.swiper-slide
+  &__img
+    width: 104px
+    height: 104px
+    margin-bottom: 25px
+  &__title
+    line-height: 1.2
+    font-size: 2rem
+    margin-bottom: 8px
+    font-weight: 500
+    width: 90%
+  &__text
+    width: 100%
+    font-size: 1.6rem
+    line-height: 1.5
+    font-family: 'HyundaiSansText'
+
+.repair
+  background-color: $gray_bg
+  padding-bottom: 72px
+  &-title
+    padding-top: 56px
+    padding-bottom: 39px
+    font-size: 4.2rem
+    line-height: 1.143
+    text-align: center
+    font-weight: 500
+  &-desc
+    line-height: 1.455
+    font-size: 2.2rem
+    text-align: center
+    width: 800px
+    margin: 0 auto 58px
+  &-slider
+    max-width: 1008px
+    margin: 0 auto 68px
+    position: relative
+    .swiper-container
+      padding-top: 72px
+    .swiper-button-next
+      background-image: url('/images/service/bodyworks/arrow-next.svg')
+      background-size: 16px 36px
+      width: auto
+      padding-right: 32px
+      background-position: 100%
+      height: 36px
+      display: flex
+      align-items: center
+      margin-top: -11px
+      right: 0
+      &:not(.swiper-button-disabled) span:hover
+        opacity: 0.8
+      &.swiper-button-disabled
+        background-image: url('/images/service/bodyworks/arrow-next-dis.svg')
+        opacity: 1
+        span
+          color: $third_text
+      transition: transform 0.3s ease 0s
+      span
+        transition: transform 0.3s ease 0s, opacity 0.3s ease 0s
+      &:hover
+        transform: translateX(8px)
+        span
+          transform: translateX(-8px)
+    .swiper-button-prev
+      background-image: url('/images/service/bodyworks/arrow-prev.svg')
+      transform: none
+      background-size: 16px 36px
+      width: auto
+      padding-left: 32px
+      background-position: 0%
+      height: 36px
+      display: flex
+      align-items: center
+      margin-top: -11px
+      left: 0
+      &:not(.swiper-button-disabled) span:hover
+        opacity: 0.8
+      &.swiper-button-disabled
+        background-image: url('/images/service/bodyworks/arrow-prev-dis.svg')
+        opacity: 1
+        span
+          color: $third_text
+      transition: transform 0.3s ease 0s
+      span
+        transition: transform 0.3s ease 0s, opacity 0.3s ease 0s
+      &:hover
+        transform: translateX(-8px)
+        span
+          transform: translateX(8px)
+  &-buttons
+    display: flex
+    justify-content: center
+    a
+      margin: 0 8px      
+      padding: 14px 0px
+      width: 270px
+    .df-button--white
+      background-color: transparent
+      border: 2px solid $main_blue
+      color: $main_blue
+      font-weight: 500
+      transition: background-color 0.3s ease 0s, color 0.3s ease 0s 
+      &:hover
+        background-color: $main_blue
+        color: $text_white
+  &__item
+    position: absolute
+    text-align: right
+    &[data-item="1"]
+      top: -70px
+      left: 210px
+      .repair__item-circle
+        top: 160px
+    &--active[data-item="1"] .repair__item-lane
+      height: 160px
+    &[data-item="2"]
+      top: -70px
+      left: 260px
+      .repair__item-circle
+        top: 260px
+    &--active[data-item="2"] .repair__item-lane
+      height: 260px
+    &[data-item="3"]
+      top: -70px
+      left: 380px
+      .repair__item-circle
+        top: 160px
+    &--active[data-item="3"] .repair__item-lane
+      height: 160px
+    &[data-item="4"]
+      top: -70px
+      left: 480px
+      .repair__item-circle
+        top: 210px
+    &--active[data-item="4"] .repair__item-lane
+      height: 210px
+    &[data-item="5"]
+      top: -70px
+      left: 230px
+      .repair__item-circle
+        top: 240px
+    &--active[data-item="5"] .repair__item-lane
+      height: 240px
+    &[data-item="6"]
+      top: -70px
+      left: 390px
+      & .repair__item-circle
+        top: 68px
+    &--active[data-item="6"] .repair__item-lane
+      height: 68px
+    &[data-item="7"]
+      top: -70px
+      left: 485px
+      & .repair__item-circle
+        top: 200px
+    &--active[data-item="7"] .repair__item-lane
+      height: 200px
+    &-lane
+      position: absolute
+      width: 1px
+      height: 0
+      background-color: $second_blue
+      top: 0
+      right: 24px      
+    &-name
+      font-size: 1.6rem
+      line-height: 1.5
+      color: $third_text
+      font-weight: 500
+      margin-bottom: 3px
+      visibility: hidden
+      margin-right: 35px
+    &-price
+      font-size: 3rem
+      line-height: 1.2
+      color: $main_blue
+      font-weight: 500
+      visibility: hidden
+      margin-right: 35px
+    &-circle
+      width: 48px
+      height: 48px
+      background-color: $third_text
+      border-radius: 50%
+      position: absolute
+      right: 0
+      cursor: pointer
+      &::after
+        content: ''
+        width: 16px
+        height: 16px
+        background-image: url('/images/service/bodyworks/plus.png')
+        position: absolute
+        background-repeat: no-repeat
+        background-size: cover
+        top: 16px
+        left: 16px
+      &--mobile
+        display: none
+    &--active
+      .repair__item-circle
+        background-color: $second_blue
+        cursor: default
+      .repair__item-name
+        visibility: visible
+      .repair__item-price
+        visibility: visible
+      .repair__item-lane
+        transition: height 0.4s ease 0s
+
+.insurance
+  background-color: $white_bg
+  padding-bottom: 136px
+  &-inner
+    max-width: 1008px
+    margin: 0 auto
+  &-title
+    padding-top: 56px
+    padding-bottom: 64px
+    font-size: 4.2rem
+    line-height: 1.143
+    text-align: center 
+    font-weight: 500
+  &-text
+    font-size: 1.6rem
+    line-height: 1.5
+    margin-bottom: 48px
+    font-family: 'HyundaiSansText'
+  &-subtitle
+    font-size: 2rem
+    line-height: 1.2
+    font-weight: 500
+    margin-bottom: 24px
+  .col-md-6:nth-child(even)
+    padding-left: 32px
+  .col-md-6:nth-child(odd)
+    padding-right: 32px
+  .df-link
+    font-size: 2rem
+    line-height: 1.2
+    font-weight: 500
+    text-decoration: none
+    transition: opacity 0.3s ease 0s
+    &:hover
+      opacity: 0.8
+  .df-list
+    padding-left: 0
+    margin-top: 24px
+    margin-bottom: 24px
+    &__item
+      font-family: 'HyundaiSansText'
+      font-weight: 400
+      padding-left: 28px
+      &::before
+        background-color: $second_blue
+        width: 10px
+        height: 10px
+      &:not(:last-of-type)
+        margin-bottom: 16px
+  .df-tabs__insurance
+    width: 300px
+    margin: 0 auto 32px
+  .df-tabs__button
+    border: 1px solid #444
+  // &-section
+  //   opacity: 0
+  //   transition: opacity 0.3s ease 0s
+  //   &--active
+  //     opacity: 1
+
+.service
+  background-color: $gray_bg
+  padding-bottom: 48px
+  padding-top: 50px
+  &-inner
+    max-width: 1038px
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &-left
+    display: flex
+  &-block
+    padding-right: 160px
+    width: calc(100% - 152px)
+  &__img
+    width: 104px
+    height: 104px
+    margin-right: 48px
+  &-title
+    font-size: 3rem
+    line-height: 1.2
+    margin-bottom: 18px
+  &-text
+    font-family: 'HyundaiSansText'
+    font-weight: 400
+    font-size: 1.6rem
+    line-height: 1.5
+  .df-link
+    text-decoration: none
+    white-space: nowrap
+    transition: opacity 0.3s ease 0s
+    &:hover
+      opacity: 0.8
+
+.note
+  background-color: $white_bg
+  padding-top: 47px
+  &-block
+    max-width: 1008px
+    padding-left: 32px
+    padding-bottom: 50px
+    position: relative
+    margin: 0 auto
+    line-height: 1.5
+    font-size: 1.2rem
+    color: $text_black
+    font-family: 'HyundaiSansText'
+  &-img
+    width: 16px
+    height: 16px
+    position: absolute
+    top: 0
+    left: 0
+
+.df-list__item
+  font-weight: 400
+  &::before
+    background-color: #00AAD2
+
+.rules
+  display: flex
+  align-items: center
+  justify-content: center
+  .df-popup__wrap
+    max-width: 1216px
+    background-color: #fff
+    padding: 48px
+    margin: 32px
+    height: auto
+    min-height: initial
+    position: relative
+  .df-popup__center
+    position: static
+
+@media (min-width: 1601px)
+  .advantages-slider
+    max-width: 100%
+  .advantages .swiper-container
+    max-width: $large-cont
+
+  .repair-slider
+    max-width: $large-cont 
+  .repair__item
+    &[data-item="1"]
+      left: 326px
+    &[data-item="2"]
+      left: 370px
+    &[data-item="3"]
+      left: 510px
+    &[data-item="4"]
+      left: 610px  
+    &[data-item="5"]
+      left: 300px  
+    &[data-item="6"]
+      left: 510px  
+    &[data-item="7"]
+      left: 618px
+
+  .insurance-inner
+    max-width: $large-cont
+
+  .service-inner
+    max-width: $large-cont
+
+  .note-block
+    max-width: $large-cont
+
+  
+@media (max-width: 1600px)
+  .head
+    &__banner
+      height: 440px
+  .repair__item
+    &[data-item="1"]
+      left: 230px
+    &[data-item="2"]
+      left: 260px
+    &[data-item="3"]
+      left: 400px
+    &[data-item="4"]
+      left: 500px
+    &[data-item="5"]
+      left: 230px
+    &[data-item="6"]
+      left: 390px
+    &[data-item="7"]
+      left: 500px
+
+@media (max-width: 1400px)
+  .advantages-slider
+    max-width: 100%
+    .swiper-container
+      width: calc(100% - 64px)
+
+
+@media (max-width: 1262px)
+  .rules .df-popup__wrap
+    margin: 40px
+
+
+@media (max-width: 1200px)
+  .repair__item
+    &[data-item="1"]
+      left: 20%
+    &[data-item="2"]
+      left: 22%
+    &[data-item="3"]
+      left: 38%
+    &[data-item="4"]
+      left: 50%
+    &[data-item="5"]
+      left: 20%
+    &[data-item="6"]
+      left: 38%
+    &[data-item="7"]
+      left: 50%
+
+  .advantages-slider
+    .swiper-slide__title
+      max-width: 250px
+      margin-left: auto
+      margin-right: auto
+    .swiper-slide__text
+      max-width: 250px
+      margin-left: auto
+      margin-right: auto
+
+  .service-left
+    padding-right: 30px
+
+
+@media (max-width: 1023px)
+  .head__composition 
+    padding-top: 47px
+    padding-left: 37px
+  .head__subtitle
+    margin-bottom: 32px
+
+  .advantages
+    padding-bottom: 40px
+
+  .insurance
+    padding-bottom: 60px
+    .col-md-6:nth-child(even)
+      padding-left: 16px
+    .col-md-6:nth-child(odd)  
+      padding-right: 16px
+
+  .service-inner
+    flex-wrap: wrap
+  .service-left
+    width: 100%
+    padding-right: 0
+    margin-bottom: 25px
+  .service .df-button
+    margin-left: 152px
+  .service__img
+    margin-right: 34px
+  .service-block
+    padding-right: 0
+  .service .df-button
+    margin-left: 138px
+  .df-list
+    padding-left: 0
+
+  .repair__item
+    &[data-item="1"]
+      left: 15%
+    &[data-item="2"]
+      left: 22%
+    &[data-item="3"]
+      left: 38%
+    &[data-item="4"]
+      left: 48%
+    &[data-item="5"]
+      left: 17%
+    &[data-item="6"]
+      left: 38%
+    &[data-item="7"]
+      left: 50%
+  .repair-desc
+    width: 90%
+  .repair-slider .swiper-button-next
+    width: 16px
+    height: 36px
+    font-size: 0
+    color: transparent
+    padding-right: 0
+    right: 0px
+  .repair-slider .swiper-button-prev
+    width: 16px
+    height: 36px
+    font-size: 0
+    color: transparent
+    padding-left: 0
+    left: 0px
+
+  .note
+    padding-top: 35px
+    &-block
+      padding-bottom: 42px
+
+
+@media (max-width: 900px)
+  .repair__item
+    &[data-item="1"]
+      left: 12%
+    &[data-item="2"]
+      left: 20%
+    &[data-item="3"]
+      left: 36%
+    &[data-item="4"]
+      left: 48%
+    &[data-item="5"]
+      left: 12%
+    &[data-item="6"]
+      left: 38%
+    &[data-item="7"]
+      left: 50%
+
+@media (max-width: $md-max)
+  .head__composition
+    width: auto
+    padding-top: 50px
+    padding-right: 24px
+
+  .repair-slider
+    .swiper-container
+      width: calc(100% - 64px)
+  .repair__item
+    &[data-item="1"]
+      left: 3%
+    &[data-item="2"]
+      left: 12%
+    &[data-item="3"]
+      left: 33%
+    &[data-item="4"]
+      left: 47%
+    &[data-item="5"]
+      left: 4%
+    &[data-item="6"]
+      left: 34%
+    &[data-item="7"]
+      left: 50%
+  .swiper-car__img
+    padding: 24px
+    box-sizing: border-box
+
+  .rules .df-popup__wrap
+    margin: 16px
+
+  .insurance 
+    .df-link
+      display: inline-block
+      margin-bottom: 40px
+    &-section
+      display: none
+      &--active
+        display: block
+    &-text
+      margin-bottom: 24px
+
+
+@media (max-width: 640px)
+  .head
+    padding-top: 64px
+    &__banner
+      background-image: url('/images/service/bodyworks/pic-sm.jpg')
+      background-position: bottom
+      height: 120vw
+    &__composition
+      padding: 26px 16px
+    &__title
+      font-size: 3rem
+      line-height: 1.067
+      margin-bottom: 0.5em
+    &__subtitle
+      font-size: 1.8rem
+      line-height: 1.25
+      max-width: 300px
+      margin-bottom: 24px
+    .df-download-img-link
+      font-size: 1.4rem
+
+  .advantages-title
+    line-height: 1.0667
+    font-size: 3rem
+    padding-top: 40px
+    padding-bottom: 48px
+  .advantages
+    padding-bottom: 45px
+  .swiper-advantages
+    padding-bottom: 30px
+  .swiper-container-horizontal>.swiper-pagination-bullets
+    bottom: 0
+
+  .repair
+    padding-bottom: 41px
+  .repair-title
+    line-height: 1.0667
+    font-size: 3rem
+    padding-top: 42px
+    padding-bottom: 28px
+    width: 80%
+    margin: 0 auto
+  .repair-buttons
+    flex-wrap: wrap
+    justify-content: center
+    a
+      width: 305px
+      &:first-of-type
+        margin-bottom: 16px
+
+  .insurance-title
+    line-height: 1.0667
+    font-size: 3rem
+    padding-top: 40px
+    padding-bottom: 26px
+    width: 80%
+    margin: 0 auto
+
+  .service-left
+    flex-wrap: wrap
+  .service-block
+    width: 100%    
+  .service .df-button
+    margin-left: 0  
+  .service__img
+    margin-bottom: 20px
+
+  .repair__item
+    &[data-item="1"]
+      left: 0%
+    &[data-item="2"]
+      left: 7%
+    &[data-item="3"]
+      left: 29%
+    &[data-item="4"]
+      left: 46%
+    &[data-item="5"]
+      left: 0%
+    &[data-item="6"]
+      left: 31%
+    &[data-item="7"]
+      left: 49%
+
+  .rules .df-popup__wrap
+    padding: 16px
+
+
+@media (max-width: 600px)
+  .repair-desc
+    margin-bottom: 25px
+  .repair__item
+    width: 100%
+    text-align: center
+    left: 0!important
+    &-lane
+      display: none
+    &-name
+      margin-right: 0
+    &-price
+      margin-right: 0
+    &-circle
+      display: none
+      right: auto
+      &--mobile
+        display: block
+        &[data-item="1"]
+          top: 35%
+          left: 17%
+        &[data-item="2"]
+          bottom: 16%
+          top: auto
+          left: 29%
+        &[data-item="3"]
+          top: 32%
+          left: 48%
+        &[data-item="4"]
+          top: auto
+          bottom: 33%
+          left: auto
+          right: 23%
+        &[data-item="5"]
+          top: auto
+          bottom: 20%
+          left: 15%
+        &[data-item="6"]
+          left: 49%
+          top: 0%
+        &[data-item="7"]
+          left: auto
+          right: 24%
+          bottom: 31%
+      &--active
+        background-color: $second_blue
+  .repair-slider
+    margin-bottom: 28px
+
+  .service
+    padding-top: 40px
+
+
+@media (max-width: 480px)
+  .head__subtitle
+    margin-bottom: 16px
+
+  .repair-slider
+    .swiper-container
+      width: calc(100% - 32px)
+  .repair-slider .swiper-button-next,
+  .repair-slider .swiper-button-prev
+    margin-top: 0
+  .repair-buttons a
+    width: 288px
+    margin-left: auto
+    margin-right: auto
+
+  .insurance .df-tabs__button
+    padding: 16px 0px
+  .insurance .df-tabs__insurance
+    margin: 0 auto 24px
+
+  .df-popup__close
+    right: 5px
+    top: 5px
+
+@media (max-width: 400px)
+  .head__composition
+    padding: 26px 12px 26px 16px
+
+  .advantages-slider
+    .swiper-container
+      width: calc(100% - 42px)
+
+  .swiper-car__img
+    padding: 24px 14px
+    box-sizing: border-box
+
+  .repair-buttons a
+    width: 100%
+  .repair-desc
+    width: 100%
+  .repair__item
+    &-circle
+      &--mobile
+        &[data-item="1"]
+          top: 30%
+          left: 12%
+        &[data-item="2"]
+          bottom: 8%
+          top: auto
+          left: 29%
+        &[data-item="3"]
+          top: 29%
+          left: 49%
+        &[data-item="4"]
+          top: auto
+          bottom: 22%
+          left: auto
+          right: 16%
+        &[data-item="5"]
+          top: auto
+          bottom: 15%
+          left: 11%
+        &[data-item="6"]
+          left: 45%
+          top: -3%
+        &[data-item="7"]
+          left: auto
+          right: 21%
+          bottom: 27%
+
+  .service .df-button
+    width: 100%
+
+  .insurance .df-tabs__insurance
+    width: 100%
+    margin: 0 auto 16px
+
+  @media (max-height: 540px)  // with max-width
+    .rules
+      display: block
+      .df-popup__wrap
+        top: 0px

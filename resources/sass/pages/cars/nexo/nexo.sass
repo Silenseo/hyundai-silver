@@ -1,0 +1,1022 @@
+@import '../../../common/_variables.scss'
+@import '../../../common/_common.sass'
+
+button
+  border: 0
+  padding: 0
+  overflow: hidden
+  background: none
+  outline: none
+  position: relative
+img
+  display: block
+.h1
+  font-size: 58px
+  color: $text_black
+  font-weight: 500
+  text-transform: uppercase
+  margin: 0
+.h2
+  font-size: 44px
+  color: $text_black
+  font-weight: 500
+  margin: 0
+  line-height: 1.2
+.default-text
+  font-size: 16px
+  line-height: 28px
+  color: $text_black
+.default-text--tac
+  text-align: center
+
+.section
+  font-family: 'HyundaiSansHead'
+  padding-left: 60px
+  padding-right: 60px
+  max-width: 100%
+  background-color: #f7f3f2
+.section--white
+  background-color: #fcfbfb
+.section__center
+  max-width: 1190px
+  width: 100%
+  margin: 0 auto
+
+.header
+  padding-top: 83px
+  background-image: url('/images/cars/nexo/nexo-highlights-stg-pc.jpg')
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+.header__center
+  position: relative
+  background-image: url('/images/cars/nexo/nexo-fe-highlights-kv-pc.jpg')
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+  height: 545px
+.header__title
+  position: absolute
+  top: 58px
+  left: 152px
+.header__note
+  position: absolute
+  left: 152px
+  bottom: 50px
+  font-size: 16px
+  color: #545454
+
+.for-you
+  text-align: center
+  padding-top: 77px
+.for-you__title
+  margin-bottom: 21px
+.for-you__text
+  width: 1000px
+  margin: 0 auto
+  margin-bottom: 77px
+.for-you__video
+  position: relative
+  width: 100%
+  max-width: 1920px
+  margin: 0 auto
+  &::after
+    content: ''
+    display: block
+    top: 0
+    left: 0
+    right: 0
+    padding-top: 55%
+  iframe
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+.for-you__preview
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-image: url('/images/cars/nexo/nexo-fe-because-of-you-preview-pc.jpg')
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+.for-you__button
+  display: block
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  margin: auto
+  width: 125px
+  height: 125px
+  -webkit-transition: 0.3s
+  transition: 0.3s
+  svg
+    display: block
+    max-width: 100%
+    max-height: 100%
+    *
+      stroke: #fff
+  &:hover
+    -webkit-transform: scale(1.1)
+    -ms-transform: scale(1.1)
+    transform: scale(1.1)
+.play-video .for-you__preview
+  visibility: hidden
+
+.for-every
+  padding-top: 118px
+  text-align: center
+.for-every__title
+  margin-bottom: 5px
+.for-every__text
+  width: 850px
+  margin: 0 auto
+  margin-bottom: 87px
+.for-every__img img
+  display: block
+  width: 100%
+  height: auto
+
+.hydrogen
+  padding-top: 118px
+  padding-bottom: 100px
+.item
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+.item--reverse
+  -webkit-box-orient: horizontal
+  -webkit-box-direction: reverse
+  -webkit-flex-direction: row-reverse
+  -ms-flex-direction: row-reverse
+  flex-direction: row-reverse
+.item:not(:last-of-type)
+  margin-bottom: 57px
+.item__text
+  width: 50%
+  padding-top: 28px
+  padding-right: 28px
+.item__text--right
+  padding-top: 0
+  padding-right: 0
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -webkit-flex-direction: column
+  -ms-flex-direction: column
+  flex-direction: column
+  -webkit-box-pack: center
+  -webkit-justify-content: center
+  -ms-flex-pack: center
+  justify-content: center
+  padding-left: 173px
+.item__title
+  margin-bottom: 10px
+.item__img
+  width: 50%
+  height: 395px
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+  -webkit-box-flex: 0
+  -webkit-flex: none
+  -ms-flex: none
+  flex: none
+
+.for-him
+  padding-top: 97px
+  text-align: center
+.for-him__title
+  margin-bottom: 16px
+.for-him__text
+  width: 730px
+  margin: 0 auto
+  margin-bottom: 57px
+.for-him__img img
+  display: block
+  width: 100%
+  height: auto
+
+.purification
+  padding-top: 65px
+  padding-bottom: 52px
+
+.for-them
+  padding-top: 108px
+  text-align: center
+.for-them__title
+  margin-bottom: 14px
+.for-them__text
+  width: 750px
+  margin: 0 auto
+  margin-bottom: 100px
+.for-them__img img
+  display: block
+  width: 100%
+  height: auto
+
+.fast
+  padding-top: 75px
+  padding-bottom: 68px
+
+.gallery
+  padding-top: 100px
+  padding-bottom: 25px
+  text-align: center
+.gallery__title
+  margin-bottom: 60px
+
+.en-page
+  background-color: $sand_bg
+.en-page__center
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -webkit-align-items: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: end
+  -webkit-justify-content: flex-end
+  -ms-flex-pack: end
+  justify-content: flex-end
+  height: 165px
+.en-page__link
+  position: relative
+  font-size: 30px
+  font-weight: 500
+  color: $text_black
+  border-bottom: 1px solid $text_black
+  margin-right: 38px
+  &::after
+    content: ''
+    position: absolute
+    display: block
+    top: 50%
+    right: -38px
+    margin-top: -5px
+    width: 9px
+    height: 15px
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAYAAAA2yOUNAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+nhxg7wAAAHFJREFUKJFjYGBgaGBgYHjLwMBQw4AHvGNgYPgPxR3YFDAzMDD8YmBgcIfybRgYGDgZGBj2YFNcgWQaThMpV8iMpugIAwPDZzQ3/sdl4gok095iU5CJZmUdIQUYji8lpICg94sIKWCAup5gADYxEEgFAJNuM4cCAz6+AAAAAElFTkSuQmCC')
+    background-repeat: no-repeat
+    background-size: cover
+
+.imgView2
+  .imgArea img
+    width: 544px
+    height: 360px
+    width: 544px
+    height: 360px
+  .txtArea .subTit
+    margin: 20px 0
+    font-size: 44px
+    margin: 20px 0
+    font-size: 44px
+.imgView2
+  .grid2
+    padding-left: 50px
+  .txtArea
+    padding-top: 30px
+
+.imgView1
+  .grid
+    margin-bottom: 84px
+    &.slider1
+      margin-bottom: 72px
+  .imgArea img
+    max-width: 1192px
+    height: 640px
+  .txtArea
+    margin: 0 auto
+    padding: 51px 160px 0 160px
+    max-width: 1192px
+    &.power-block
+      padding: 51px 160px 0 160px
+.imgView1 .txtArea .subTit
+  width: 872px
+  margin: 0 0 22px 0
+  font-size: 44px
+.imgView1 .txtArea .conArea
+  position: relative
+  width: 900px
+  text-align: center
+  margin-bottom: -6px
+
+.future-block
+  padding-top: 84px !important
+  .imgView1 .txtArea
+    margin: 0 auto
+    padding: 72px 160px 0 160px
+    max-width: 1192px
+    .subTit
+      line-height: 40px
+
+.conArea
+  color: $text_black
+  font-size: 16px
+  line-height: 28px
+
+.contentWrap .contWrap .contBox.gallery-block
+  padding-top: 69px
+
+.gallery-block .titArea
+  padding: 0 160px 5px 160px
+
+.bgG
+  background-color: #f7f3f2
+
+.contentWrap .contWrap .contBox
+  &.section-3
+    padding-top: 82px
+  &.slider1-block
+    position: relative
+    max-width: 1192px
+    margin: 0 auto
+    padding-top: 84px
+.contentWrap .contWrap .contBox.phz
+  padding-top: 0
+
+.slider1-block .imgView1
+  .txtArea .subTit
+    line-height: 52px
+  .grid
+    margin-bottom: 70px
+
+.imgViewFull
+  text-align: left
+  max-width: 1600px
+  margin: 0 auto
+  .gridRow
+    overflow: hidden
+    padding-bottom: 88px
+  .grid
+    overflow: hidden
+  .imgArea
+    position: relative
+    height: 510px
+    overflow: hidden
+    img
+      position: absolute
+      left: 50%
+      margin-left: -400px
+      width: 800px
+      height: 510px
+  .grid1 .txtArea
+    float: right
+  .txtArea
+    width: 597px
+    padding-right: 85px
+    .subTit
+      margin: 82px 0 21px 0
+      font-size: 44px
+    .conArea
+      margin-bottom: -6px
+  .grid2 .txtArea
+    float: left
+    padding-right: 0
+    padding-left: 47px
+
+.bgLB
+  background-color: $gray_bg !important
+
+.area-swiper, .slideWrap
+  position: relative
+  overflow: hidden
+.area-swiper .btn_prev, .slideWrap .btn_prev
+  position: absolute
+  left: 0
+  top: 297px
+  z-index: 10
+.area-swiper .btn_prev .prev, .slideWrap .btn_prev .prev
+  display: block
+  background: url('/images/cars/ioniq/btn_prev.png') no-repeat
+  width: 48px
+  height: 48px
+  background-size: cover
+  overflow: hidden
+  text-indent: -9999px
+.area-swiper .btn_next, .slideWrap .btn_next
+  position: absolute
+  right: 0
+  top: 297px
+  z-index: 10
+.galleryTy1 .btn_next
+  right: 0
+  bottom: auto
+  top: 50%
+  margin-top: -24px
+.area-swiper .btn_next .next, .slideWrap .btn_next .next
+  display: block
+  background: url('/images/cars/ioniq/btn_next.png') no-repeat
+  width: 48px
+  height: 48px
+  background-size: cover
+  overflow: hidden
+  text-indent: -9999px
+.list-swiper, .swiper-wrapper
+  position: relative
+  width: 100%
+  height: 100%
+  z-index: 1
+  display: -webkit-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-transition-property: -webkit-transform
+  -o-transition-property: -o-transform
+  transition-property: -webkit-transform
+  -o-transition-property: transform
+  transition-property: transform
+  transition-property: transform, -webkit-transform
+  -webkit-box-sizing: content-box
+  box-sizing: content-box
+.swiper-slide
+  -webkit-flex-shrink: 0
+  -ms-flex: 0 0 auto
+  -ms-flex-negative: 0
+  flex-shrink: 0
+  width: 100%
+  height: 100%
+  position: relative
+.imgView1 .slideArea1
+  img
+    max-width: 1192px
+    height: 640px
+  .swiper-pagination-bullets
+    margin-top: -24px
+.area-swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active, .slideWrap .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active
+  background-position: 0 0
+.area-swiper .swiper-pagination .swiper-pagination-bullet, .slideWrap .swiper-pagination .swiper-pagination-bullet
+  display: inline-block
+  background: url('/images/cars/ioniq/dot.png') no-repeat right 0
+  width: 16px
+  height: 16px
+  overflow: hidden
+  text-indent: -9999px
+  -webkit-background-size: cover
+  background-size: cover
+.area-swiper .swiper-pagination-bullet, .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet
+  margin: 0 9px
+.swiper-pagination-clickable .swiper-pagination-bullet
+  cursor: pointer
+button.swiper-pagination-bullet
+  border: none
+  margin: 0
+  padding: 0
+  -webkit-box-shadow: none
+  box-shadow: none
+  -moz-appearance: none
+  -ms-appearance: none
+  -webkit-appearance: none
+  appearance: none
+.swiper-pagination-bullet
+  width: 8px
+  height: 8px
+  display: inline-block
+  -webkit-border-radius: 100%
+  border-radius: 100%
+  background: #000
+  outline: none!important
+
+.titArea .topTit
+  margin-bottom: 37px
+
+.galleryTy1
+  max-width: 1192px
+  padding-bottom: 100px
+  .slideWrap
+    overflow: hidden
+    max-width: 1192px
+  .pageNum
+    position: absolute
+    max-width: 1192px
+    height: 90px
+    padding: 49px 30px 0 0
+    right: 0
+    bottom: 0
+    z-index: 2
+    color: $text_white
+    font-size: 16px
+    text-align: right
+    line-height: 1
+    strong
+      font-family: 'HyundaiSansHead'
+      font-weight: 500
+  .slideWrap.bigImg li img
+    max-width: 1192px
+    height: 650px
+  .btn_prev
+    left: 0
+    bottom: auto
+    top: 50%
+    margin-top: -22px
+  .thumbnail .slideArea
+    background: #000
+    li
+      width: 284px
+      vertical-align: top
+      font-size: 0
+      line-height: 0
+      button
+        position: relative
+      img
+        width: 284px
+        height: 148px
+      width: 284px
+      vertical-align: top
+      font-size: 0
+      line-height: 0
+      button::after
+        display: block
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        background: #000
+        opacity: 0.6
+      &.on button::after
+        opacity: 0
+
+.naviJumpWrap
+  background: $sand_bg
+  padding: 0 60px
+  .naviJump
+    overflow: hidden
+    display: table
+    max-width: 1192px
+    width: 100%
+    height: 167px
+    margin: 0 auto
+    vertical-align: top
+    .next
+      text-align: right
+    .prev, .next
+      position: relative
+      display: table-cell
+      height: 167px
+      padding: 0
+      font-size: 30px
+      line-height: 40px
+      color: #000
+      font-family: 'HyundaiSansHead'
+      font-weight: 500
+      vertical-align: middle
+.version__link
+  position: relative
+.naviJumpWrap .naviJump a
+  text-decoration: none
+  padding-right: 36px
+  &::before
+    content: ''
+    width: calc(100% - 36px)
+    height: 1px
+    background-color: #000
+    position: absolute
+    left: 0
+    bottom: -7px
+  &::after
+    display: block
+    content: ''
+    position: absolute
+    top: 13px
+    right: 0px
+    width: 9px
+    height: 15px
+    background-size: cover
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAYAAAA2yOUNAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+nhxg7wAAAHFJREFUKJFjYGBgaGBgYHjLwMBQw4AHvGNgYPgPxR3YFDAzMDD8YmBgcIfybRgYGDgZGBj2YFNcgWQaThMpV8iMpugIAwPDZzQ3/sdl4gok095iU5CJZmUdIQUYji8lpICg94sIKWCAup5gADYxEEgFAJNuM4cCAz6+AAAAAElFTkSuQmCC')
+
+.header__img-mobile
+  display: none
+
+
+@media (max-width: 1600px)
+  .header
+    &__center
+      height: 440px
+  .header__note
+    left: 123px
+  .header__title
+    left: 120px
+
+
+@media (max-width: 1400px)
+  .header__note
+    left: 103px
+  .header__title
+    left: 100px
+
+
+@media (max-width: 1262px)
+  .section
+    padding-left: 40px
+    padding-right: 40px
+
+  .header
+    padding-top: 56px
+  .header__note
+    left: 81px
+    width: 350px
+  .header__title
+    left: 78px
+
+  .for-you
+    padding-top: 56px
+    padding-bottom: 56px
+    background-color: $white_bg
+
+  .for-every
+    padding-top: 56px
+
+  .hydrogen
+    padding-top: 56px
+    padding-bottom: 56px
+    background-color: #fbfbfb
+  .item .default-text
+    font-family: 'HyundaiSansText'
+
+  .purification
+    background-color: $white_bg
+    padding-top: 56px
+
+  .for-him
+    padding-top: 56px
+
+  .for-them
+    padding-top: 56px
+    padding-bottom: 56px
+
+  .fast
+    background-color: $white_bg
+    padding-top: 56px
+    padding-bottom: 56px
+
+  .gallery
+    padding-top: 56px
+
+  .naviJumpWrap .naviJump
+    width: 100%
+  .naviJumpWrap
+    padding-left: 40px
+    padding-right: 40px
+
+  .galleryTy1 .slideWrap.bigImg li img
+    width: 100%
+    height: auto
+
+
+@media (max-width: 1200px)
+  .header__note
+    left: 73px
+  .header__title
+    left: 70px
+
+  .for-you__text
+    width: auto
+    margin: 0 56px 40px
+
+  .for-every__text
+    width: auto
+    margin: 0 56px 40px
+
+  .for-him__text
+    width: auto
+    margin: 0 56px 40px
+
+  .for-them__text
+    width: auto
+    margin: 0 56px 40px
+
+  .item__text
+    padding-right: 70px
+  .item__text--right
+    padding-left: 70px
+    padding-right: 0
+
+
+@media (max-width: 1023px)
+  .header
+    padding-top: 0
+  .header__title
+    left: 43px
+    top: 32px
+    font-size: 55px
+    line-height: 54px
+  .header__note
+    font-size: 20px
+    line-height: 24px
+    color: $text_white
+    left: 43px
+    bottom: 40px
+    width: 450px
+
+  .h2
+    font-size: 30px
+    line-height: 36px
+    margin-bottom: 8px
+  .default-text
+    line-height: 24px
+  .item__title
+    margin-bottom: 12px
+
+  .for-you__text
+    margin: 0 0 40px
+  .for-you__button
+    width: 90px
+    height: 90px
+  .for-you__title
+    margin-bottom: 17px
+
+  .for-every__text
+    margin: 0 0px 40px
+
+  .item__text
+    padding-top: 0
+    padding-right: 62px
+    &--right
+      padding-right: 0
+      padding-left: 62px
+      justify-content: flex-start
+  .item:not(:last-of-type)
+    margin-bottom: 40px
+
+  .hydrogen .default-text br
+    display: none
+  .item__img
+    height: 256px
+
+  .for-him__text
+    margin: 0 0px 40px
+
+  .for-them__text
+    margin: 0 0px 40px
+
+  .purification
+    padding-top: 56px
+    padding-bottom: 56px
+    .item
+      justify-content: space-between
+    .item__text
+      padding-right: 22px
+    .item__title
+      line-height: 32px
+      margin-bottom: 17px
+    .item__img
+      width: 47%
+
+  .fast
+    .item
+      justify-content: space-between
+    .item__text
+      padding-right: 22px
+    .item__title
+      line-height: 32px
+      margin-bottom: 17px
+    .item__img
+      width: 47%
+
+  .gallery__title
+    margin-bottom: 40px
+  .galleryTy1
+    padding-bottom: 56px
+  .gallery
+    padding-bottom: 0
+  .galleryTy1 .slideWrap.bigImg li img
+    width: 100%
+    height: auto
+  .galleryTy1 .pageNum
+    width: 100%
+  .galleryTy1 .slideWrap
+    width: 100%
+
+  .naviJumpWrap .naviJump
+    width: 100%
+  .area-swiper .btn_prev, .slideWrap .btn_prev
+    height: 48px
+    top: 50%
+    margin-top: -24px
+  .naviJumpWrap
+    margin-top: 0
+  .naviJumpWrap .naviJump
+    height: 96px
+  .naviJumpWrap .naviJump .prev, .naviJumpWrap .naviJump .next
+    font-size: 20px
+    line-height: 24px
+    height: 96px
+  .naviJumpWrap .naviJump a
+    padding-right: 18px
+  .naviJumpWrap .naviJump a::before
+    width: calc(100% - 18px)
+    bottom: 0
+    height: 2px
+  .naviJumpWrap .naviJump a::after
+    top: 8px
+  .bigImg .btn_next, .bigImg .btn_prev
+    display: none
+
+  .galleryTy1 .thumbnail .slideArea li
+    width: 213px
+  .galleryTy1 .thumbnail .slideArea li img
+    width: 213px
+    height: 120px
+
+
+@media (max-width: 767px)
+  .section
+    padding-left: 16px
+    padding-right: 16px
+
+  .item__img
+    height: 300px
+  .item__text
+    padding-right: 40px
+    &--right
+      padding-right: 0
+      padding-left: 40px
+
+  .hydrogen 
+    .item__img
+      background-position: 100%
+    .item--reverse
+      .item__img
+        background-position: 0%
+
+  .galleryTy1 .thumbnail .slideArea li
+    width: 150px
+  .galleryTy1 .thumbnail .slideArea li img
+    width: 150px
+    height: 80px  
+
+  .naviJumpWrap
+    padding-left: 16px
+    padding-right: 16px
+
+
+@media (max-width: 640px)
+  .header__center
+    background-image: url('/images/cars/nexo/main-md.jpg')
+    height: 120vw
+  .header__note
+    width: 85%
+    font-size: 18px
+    line-height: 22px
+    font-weight: 500
+
+  .for-you
+    padding-top: 40px
+    padding-bottom: 48px
+  .for-you__text
+    margin: 0 0 24px
+  
+  .for-every
+    padding-top: 40px
+  .for-every__text
+    margin: 0 0 24px
+
+  .item
+    flex-direction: column-reverse
+    &__text
+      width: 100%
+      padding-right: 0
+      &--right
+        padding-left: 0
+    &__img
+      width: 100%!important
+      margin: 0 auto
+  .hydrogen
+    padding-top: 40px
+    padding-bottom: 48px
+    .item__title
+      margin-top: 24px
+
+  .for-him
+    padding-top: 40px
+    padding-bottom: 0px
+  .for-him__text
+    margin: 0 0 24px
+
+  .for-them
+    padding-top: 40px
+    padding-bottom: 48px
+  .for-them__text
+    margin: 0 0 24px
+
+  .purification
+    padding-top: 40px
+    padding-bottom: 48px
+    .item
+      flex-direction: column
+      &__text
+        padding-right: 0px
+        margin-bottom: 25px
+      &__title
+        margin-bottom: 12px
+
+  .fast
+    padding-top: 40px
+    padding-bottom: 48px
+    .item
+      flex-direction: column
+      &__text
+        padding-right: 0px
+        margin-bottom: 25px
+      &__title
+        margin-bottom: 20px
+
+  .gallery
+    padding-top: 40px
+  .galleryTy1
+    padding-bottom: 48px
+
+  .naviJumpWrap .naviJump .prev, .naviJumpWrap .naviJump .next
+    padding-right: 20px
+    text-align: left
+  .naviJumpWrap .naviJump a::after
+    right: 0px
+    top: 50%
+    margin-top: -5px
+  .naviJumpWrap .naviJump a::before
+    display: none
+  .naviJumpWrap .naviJump a
+    text-decoration: underline
+    padding-right: 0
+    position: static
+  .naviJumpWrap .naviJump .next
+    position: relative
+
+  .galleryTy1 .thumbnail .slideArea li
+    width: 120px
+  .galleryTy1 .thumbnail .slideArea li img
+    width: 120px
+    height: 64px
+  .gallery__title
+    margin-bottom: 24px
+
+@media (max-width: 480px)
+  .header
+    padding-top: 64px
+  .header__title
+    left: 16px
+    top: 29px
+    color: #222
+  .header__note
+    width: auto
+    left: 16px
+    bottom: 16px
+    right: 16px
+    font-size: 10px
+    line-height: 12px
+  .header__center
+    height: 530px
+
+  .for-you__button
+    width: 60px
+    height: 60px
+
+  .item__img
+    height: 200px
+
+  .for-you__title
+    margin-bottom: 9px
+
+  .galleryTy1 .pageNum
+    font-size: 12px
+    line-height: 12px
+    padding: 0 16px 0 0
+    height: 28px
+  .galleryTy1 .thumbnail .slideArea li
+    width: 92px
+  .galleryTy1 .thumbnail .slideArea li img
+    width: 92px
+    height: 56px
+  .gallery
+    padding-left: 0
+    padding-right: 0
+
+  .naviJumpWrap .naviJump .next
+    height: 80px
+  .naviJumpWrap .naviJump
+    height: 80px
+
+
+@media (max-width: 400px)
+  .header__center
+    height: auto
+    background-image: none
+  .header__img-mobile
+    display: block
+    width: 100%
+
+  .item__img
+    height: 160px

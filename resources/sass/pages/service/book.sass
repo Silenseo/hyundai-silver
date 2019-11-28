@@ -1,0 +1,191 @@
+@import '../../common/_variables.scss'
+
+.head
+	padding-top: 80px
+	background-image: url('/images/service/background.jpg')
+	background-repeat: no-repeat
+	background-position: 50%
+	background-size: cover
+	color: #fff
+	&__banner
+		position: relative
+		background-image: url('/images/service/book/circles.jpg')
+		background-repeat: no-repeat
+		background-position: 100% 50%
+		background-size: cover
+		height: 545px
+		color: #000000
+	&__title
+		line-height: 1.1
+		margin-bottom: 10px
+
+.access
+	background-color: #F6F3F2
+	padding: 72px 0
+	&__title
+		width: 58%
+		margin: 0 auto
+		text-align: center
+	&__head
+		text-align: center
+		max-width: 730px
+		margin: 0 auto
+	&__block
+		&--bottom
+			margin-top: 44px
+		&__title
+			text-align: center
+			padding: 60px 0
+	hr
+		border: none
+		border-top: 1px solid $sand_bg
+	.df-button
+		display: inline-block
+		width: 228px
+		padding-left: 0
+		padding-right: 0
+
+.block-data
+    float: left
+    text-align: center
+
+.block-text
+    width: 80%
+    margin: 25px auto
+
+.circle
+    width: 80px
+    height: 80px
+    margin: 0 auto
+    background-color: #fff
+    border-radius: 50%
+    text-align: center
+    line-height: 80px
+    color: #000
+
+.circle-mobile
+	position: relative
+	width: 104px
+	height: 104px
+	margin: 0 auto
+	border-radius: 50%
+	background-color: $sand_bg
+	svg
+		display: block
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 0
+		left: 0
+		margin: auto
+
+.important-things
+	padding-bottom: 80px
+	.df-list
+		margin-top: 64px
+	.df-list__item
+		font-weight: 400
+		&::before
+			background-color: $second_blue
+
+.df-button
+    margin-bottom: 20px
+
+.hidden-desctop
+	display: none
+
+@media only screen and (min-width : $lg-min)
+	.collapsed
+		display: block!important
+
+@media only screen and (max-width : $xl-max)
+	.head
+		&__banner
+			height: 440px
+
+@media only screen and (max-width : $lg-max)
+	.access
+		&__title
+			width: auto
+			max-width: 622px
+
+	.access__block__title 
+		padding-top: 48px
+		padding-bottom: 43px
+
+@media only screen and (max-width : 1023px)
+	.access
+		.df-button
+			display: inline-block
+			width: 100%
+			padding-left: 0
+			padding-right: 0
+
+	.block-text
+		width: 100%
+
+@media only screen and (max-width : $md-max)
+	.head
+		padding-top: 64px
+		&__banner
+			background-position: 60% 100%
+			height: 408px
+
+	.access
+		padding-top: 40px
+		padding-bottom: 0px
+		.df-banner-subline
+			padding-left: 16px
+			padding-right: 16px
+		&__block
+			&--bottom
+				margin-top: 0
+
+	.access__block__title
+		font-size: 30px
+		padding-top: 40px
+		padding-bottom: 40px
+
+	.circle
+		width: 128px
+		height: 128px
+		line-height: 128px
+
+	.show-more
+		text-align: left
+		margin-bottom: 40px
+		.df-iconed-link
+			svg
+				transform: rotate(90deg) translateX(-5px)
+			&:hover
+				svg
+					transform: rotate(90deg) translateX(-5px)
+			&.active
+				svg
+					transform: rotate(-90deg) translateX(5px)
+
+	.collapsed
+		display: none
+		margin-bottom: 15px
+
+	.slider-1__title
+		margin-bottom: 40px
+
+	.important-things
+		padding-bottom: 40px
+		.df-list
+			margin-top: 7px
+			padding-left: 0
+
+	.hidden-desctop
+		display: block
+
+	.hidden-mobile
+		display: none
+
+@media only screen and (max-width : 640px)
+	.head
+		&__banner
+			height: 120vw
+
+

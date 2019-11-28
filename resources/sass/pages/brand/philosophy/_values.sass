@@ -1,0 +1,108 @@
+.values
+	background-color: $gray_bg
+	padding-top: 79px
+	padding-bottom: 67px
+	&.active
+		.values__carousel
+			transform: translateY(0)
+			opacity: 1
+	&__title
+		max-width: 466px
+		margin-bottom: 25px
+	&__carousel
+		position: relative
+		transform: translateY(120px)
+		opacity: 0
+		transition: 0.5s
+		transition-delay: 0.3s
+		&::after, &::before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			width: 10%
+			background: -moz-linear-gradient(left,  rgba(246,243,242,1) 0%, rgba(246,243,242,0) 100%)
+			background: -webkit-linear-gradient(left,  rgba(246,243,242,1) 0%,rgba(246,243,242,0) 100%)
+			background: linear-gradient(to right,  rgba(246,243,242,1) 0%,rgba(246,243,242,0) 100%)
+			z-index: 1
+			pointer-events: none
+		&::before
+			left: auto
+			right: 0
+			background: -moz-linear-gradient(left,  rgba(246,243,242,0) 0%, rgba(246,243,242,1) 100%)
+			background: -webkit-linear-gradient(left,  rgba(246,243,242,0) 0%,rgba(246,243,242,1) 100%)
+			background: linear-gradient(to right,  rgba(246,243,242,0) 0%,rgba(246,243,242,1) 100%)
+	&__item
+		display: flex
+		align-items: flex-start
+		justify-content: center
+		cursor: pointer
+		padding-top: 63px
+		height: 350px
+		transition: 0.5s
+	&__center
+		position: relative
+	&__img
+		position: relative
+		width: 90px
+		height: 90px
+		border-radius: 50%
+		background-color: $sand_bg
+		margin: 0 auto
+		transition: 0.3s
+		transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955)
+		transform-origin: 50% 100%
+		svg
+			position: absolute
+			display: block
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+	&__name
+		font-size: 20px
+		line-height: 24px
+		font-weight: 500
+		color: $second_text
+		margin-top: 31px
+		text-align: center
+		transition: 0.3s
+	&__holder
+		position: relative
+	&__description
+		visibility: hidden
+		position: absolute
+		top: 0
+		left: 50%
+		width: 480px
+		font-size: 16px
+		line-height: 24px
+		margin-top: 29px
+		opacity: 0
+		transform: translateX(-50%)
+		text-align: center
+		transition: 0.3s
+
+	.owl-item
+		&.active
+			&.center
+				.values__img
+					transform: scale(1.66)
+				.values__name
+					color: $main_blue
+				.values__description
+					visibility: visible
+					opacity: 1
+
+	.center-prev
+		.values__item
+			transform: translateX(-70px)
+
+	.center-next
+		.values__item
+			transform: translateX(70px)
+
+		

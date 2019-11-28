@@ -1,0 +1,39 @@
+.nav
+	display: flex
+	align-items: center
+	justify-content: space-between
+	flex-wrap: nowrap
+	padding-left: 32px
+	background-color: $light_grey_scroll_bar
+	overflow: hidden
+	z-index: 100
+	&__menu
+		display: flex
+		align-items: center
+		position: relative
+	&__item
+		&:not(:last-of-type)
+			margin-right: 40px
+	&__link
+		display: block
+		font-size: 1.6rem
+		color: $text_black
+		font-weight: 500
+		padding-top: 12px
+		padding-bottom: 12px
+		white-space: nowrap
+		transition: 0.3s
+		&:hover
+			color: $second_blue
+		&.active
+			color: $second_blue
+			box-shadow: inset 0px -3px 0 0px $second_blue
+	&__buttons
+		display: flex
+	&__button
+		padding: 12px 19px!important
+
+
+.overflow-hidden
+    .nav
+        z-index: 0

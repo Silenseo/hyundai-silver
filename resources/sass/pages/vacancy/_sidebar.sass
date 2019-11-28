@@ -1,0 +1,113 @@
+.sidebar
+	padding-top: 41px
+	padding-bottom: 80px
+	&__wrap
+		// padding-right: 136px
+	&__top
+		width: 176px
+		font-size: 16px
+		line-height: 24px
+		font-weight: 500
+		color: $main_blue
+		margin-bottom: 10px
+		#js-city-select
+			& + .selectize-control
+				.selectize-input, .selectize-input.input-active
+					background-color: transparent
+					padding-left: 0
+					input::-webkit-input-placeholder
+						color: #000
+						font-size: 1.6rem
+						font-weight: 500
+					input:-moz-placeholder
+						color: #000
+						font-size: 1.6rem
+						font-weight: 500
+					input::-moz-placeholder
+						color: #000
+						font-size: 1.6rem
+						font-weight: 500
+					input:-ms-input-placeholder
+						color: #000
+						font-size: 1.6rem
+						font-weight: 500
+					&::after
+						display: inline-block
+						position: relative
+						right: -10px
+					&.dropdown-active
+						box-shadow: none
+				.item
+					color: #000
+					font-size: 1.6rem
+					font-weight: 500
+				.selectize-dropdown-content
+					max-height: 100%
+				.option[data-value='Москва']
+					color: $second_blue
+	&__back
+		font-weight: 500
+	&__title
+		margin-top: 15px
+		margin-bottom: 32px
+		&--page
+			margin-top: 20px
+			margin-bottom: 2px
+	&__subtitle
+        display: none
+        font-size: 1.6rem
+        margin-bottom: 32px
+	&__controls
+		display: flex
+		align-items: center
+		margin-bottom: 24px
+	&__control
+		button
+			display: block
+			line-height: 40px
+			padding: 0 20px
+			color: $third_text
+			background-color: $white_bg
+			font-size: 1.4rem
+			transition: 0.3s
+			&.active, &.active:hover
+				background-color: $second_blue
+				color: $text_white
+			&:hover
+				color: $third_text
+				background-color: $white_bg
+	&__subdivision
+		font-size: 20px
+		line-height: 24px
+		font-weight: 500
+		color: #000
+		margin-top: 42px
+	&__address
+		position: relative
+		font-size: 16px
+		line-height: 24px
+		color: #666666
+		padding-left: 24px
+		margin-bottom: 24px
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: 0
+			transform: translateY(-50%)
+			width: 8px
+			height: 8px
+			border-radius: 50%
+			background-color: #1EBCEF
+	&__button
+		display: inline-block
+		padding-top: 12px
+		padding-bottom: 12px
+	&__description
+		margin-top: 26px
+	&__pay
+		font-size: 1.6rem
+		line-height: 1.5
+		color: $second_text
+	

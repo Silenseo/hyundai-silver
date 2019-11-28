@@ -1,0 +1,143 @@
+.form-section
+	padding-top: 24px
+	&__title
+		margin-bottom: 40px
+	&__top
+		padding-bottom: 16px
+		border-bottom: 1px solid $sand_bg
+		margin-bottom: 39px
+	&__group
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		min-width: 100%
+		margin-right: -16px
+		margin-left: -16px
+	&__item
+		width: calc(100% - 32px)
+		margin-bottom: 32px
+		margin-right: 16px
+		margin-left: 16px
+		&--50
+			width: calc(50% - 32px)
+	&__input
+		border: 1px solid transparent
+		&.invalid
+			border-color: $fire_Red
+	.df-select
+		border: 1px solid transparent
+		&.invalid
+			border-color: $fire_Red
+	&__rules
+		display: flex
+		margin-top: 16px
+		margin-bottom: 66px
+		input
+			display: none
+			&:checked
+				& + .form-section__square
+					&::after
+						transform: scale(1)
+			&.invalid
+				& + .form-section__square
+					border-color: #E63312
+	&__square
+		position: relative
+		width: 24px
+		height: 24px
+		background-color: #fff
+		margin-right: 16px
+		flex: none
+		cursor: pointer
+		border: 1px solid transparent
+		transition: 0.3s
+		&::after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			width: 12px
+			height: 12px
+			margin: auto
+			background-color: #103A71
+			transform: scale(0)
+			transition: transform 0.3s
+	&__rules-text
+		font-size: 14px
+		line-height: 16px
+	&__link
+		color: #00AAD2
+		&:hover, &:focus
+			color: #00AAD2
+
+/* Выбор файла */
+.file-upload
+	display: flex
+	align-items: center
+	flex-wrap: wrap
+	&.multiple
+		label
+			margin-right: 25px
+		.file-upload__remove
+			display: inline-block
+	&__input
+		display: none
+	&__name
+		font-size: 16px
+		color: #B7B7B7
+		margin-left: 25px
+		&--ml0
+			margin-left: 0
+	&__remove
+		display: none
+		margin-left: 10px
+	&__list
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		font-size: 16px
+		color: #B7B7B7
+	&__item
+		padding: 5px 0
+		&:not(:last-of-type)
+            margin-right: 20px
+	&.fileexist
+		.file-upload__button
+			color: #00AAD2
+			svg
+				stroke: #000
+	&.error
+		.file-upload__button
+			color: #E63312
+			svg
+				stroke: #E63312
+
+
+.file-upload__button
+	position: relative
+	font-size: 16px
+	line-height: 24px
+	font-weight: 500
+	padding-left: 24px
+	cursor: pointer
+	span
+		text-decoration: underline
+		transition: 0.3s
+	svg
+		display: block
+		position: absolute
+		left: 0
+		top: 50%
+		transform: translateY(-50%)
+		width: 8px
+		height: 18px
+		stroke: #000
+		transition: 0.3s
+	&:hover
+		span
+			opacity: 0.8
+		svg
+			stroke: $second_blue

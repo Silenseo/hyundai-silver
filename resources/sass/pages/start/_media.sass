@@ -1,0 +1,459 @@
+@media only screen and (min-width : $lg-min)
+	.help
+		&__item
+			&:hover
+				box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.16)
+				.help__circle
+					background-color: #E4DCD3!important
+
+	.options
+		&.hide
+			&:hover
+				.options__note
+					visibility: visible
+					transform: translate(-50%, -140%)
+					opacity: 1
+
+@media only screen and (max-width : $xl-max)
+	.banner
+		&__inner
+			height: 440px
+			
+@media only screen and (max-width : $lg-max)
+	.help
+		min-width: 100%
+		margin-right: -40px
+		padding-top: 48px
+		&__migel
+			width: 405px
+			height: 686px
+		&__title
+			margin-bottom: 32px
+		&__list
+			width: 100%
+			max-width: 566px
+		&__inner
+			min-height: 128px
+			flex-direction: column
+			justify-content: center
+			align-items: flex-start
+			flex-wrap: wrap
+			label
+				height: auto
+		&__name
+			margin-left: 24px
+			color: $text_black
+		&__more
+			margin-left: 96px
+		&__dd
+			padding: 31px 29px 32px 96px
+			&::before
+				left: 96px
+				right: 29px
+		&__footer
+			width: 100%
+			max-width: 566px
+			margin-top: 40px
+
+	.calc
+		margin-right: -40px
+
+	.colors
+		&__groups
+			flex-wrap: wrap
+	
+	.selector
+		hr
+			display: none
+		&__button
+			display: none
+
+@media only screen and (max-width : 1023px)
+	.banner
+		&__inner
+			height: 872px
+			background-image: url('/images/start/pics/768.jpg')
+		&__button
+			display: none!important
+		&__m-button
+			display: block
+		&__pass
+			top: auto
+			bottom: 100px
+			right: auto
+			left: 50%
+			padding: 12px 16px
+			background-color: rgba(#000, 0.25)
+			transform: translateX(-50%)
+
+	.about
+		padding-bottom: 48px
+		&__inner
+			min-width: 100%
+			margin-left: -40px
+			margin-right: -40px
+		&__back
+			background-color: $second_blue
+		&__migel
+			opacity: 1
+		.owl-stage
+			padding-bottom: 48px
+		.owl-dots
+			display: flex
+			align-items: center
+			justify-content: center
+			width: 100%
+		.owl-dot
+			display: block
+			width: 12px
+			height: 12px
+			border-radius: 50%
+			background-color: rgba(#000, 0.1)!important
+			transition: 0.3s
+			&.active
+				background-color: $second_blue!important
+			&:not(:last-of-type)
+				margin-right: 10px
+
+	.steps
+		&__top
+			padding: 32px 0
+
+	.cars
+		&__title
+			margin-bottom: 40px
+		&__item
+			width: 50%
+			padding: 16px 40px 24px
+		&__name
+			font-size: 16px
+		&__price, &__program, &__fp
+			font-size: 14px
+			line-height: 16px
+
+	.config
+		&__body
+			margin-top: 48px
+		&__left
+			display: none
+		&__right
+			display: flex
+			flex-wrap: wrap
+			padding-left: 0
+			width: auto
+			width: calc(100% + 32px)
+			margin-left: -16px
+			margin-right: -16px
+		&__item
+			width: calc(50% - 32px)
+			margin: 0 16px
+			margin-bottom: 24px
+			&--options, &--color
+				.selector__inner
+					max-height: 135px
+			&--color
+				display: block
+		&__footer
+			margin-top: 24px
+
+	.aside
+		display: none
+
+	.calc
+		margin-right: 0
+		&__main
+			width: 100%
+			padding: 0
+		&__list
+			display: flex
+			flex-wrap: wrap
+			padding-bottom: 36px
+		&__line
+			flex-wrap: wrap
+		&__item
+			width: 100%
+			margin-bottom: 0
+
+	.term
+		width: 100%
+
+	.options
+		padding: 26px
+		margin-left: 0
+		padding-left: 0
+		border: none
+		&.active
+			background-color: transparent
+			.options__description
+				color: #000
+			.info
+				background-color: #B7B7B7
+				svg
+					fill: #fff
+		&.hide
+			&.showNote
+				.options__note
+					visibility: visible
+					transform: translate(0%, -50%)
+					opacity: 1
+		&__note
+			left: 100%
+			top: 50%
+			transform: translate(-50%, -50%)
+			&::after
+				left: 0
+				bottom: 50%
+
+
+	.info
+		width: 20px
+		height: 20px
+
+	.range
+		width: 50%
+		padding-right: 16px
+		&--fp
+			padding-right: 0
+			padding-left: 16px
+		.noUi-handle
+			top: -9px
+			width: 24px
+			height: 24px
+			border: 7px solid #00AAD2
+		&__mark
+			top: 15px
+
+	.faq
+		padding-top: 47px
+		padding-bottom: 56px
+		&__title
+			margin-bottom: 49px
+		&__list
+			max-width: 100%
+
+	.question
+		font-size: 16px
+		line-height: 24px
+		min-height: 72px
+
+	.disclamers
+		&__inner
+			max-width: 100%
+
+	.widget
+		display: block
+
+
+@media only screen and (max-width : 900px)
+	.help
+		&__migel
+			right: -65px
+
+@media only screen and (max-width : $md-max)
+	.banner
+		&__inner
+			height: 408px
+		&__pass
+			bottom: 30px
+		&__title
+			top: 20px
+			left: 16px
+			right: 16px
+
+	.about
+		padding-top: 40px
+		padding-bottom: 52px
+		&__title
+			margin-bottom: 4px
+		&__inner
+			margin-left: -16px
+			margin-right: -16px
+		&__item
+			padding: 16px
+		&__back
+			top: -290px
+			right: -180px
+		&__description
+			font-size: 20px
+			line-height: 24px
+		.owl-stage
+			padding-bottom: 35px
+
+
+	.cars
+		padding-bottom: 0
+		&__title
+			padding-left: 16px
+			padding-right: 16px
+			margin-bottom: 29px
+		&__item
+			padding: 12px 17px 18px
+
+	.config
+		&__body
+			margin-top: 32px
+		&__right
+			width: 100%
+			margin: 0
+		&__item
+			margin: 0
+			margin-bottom: 24px
+			width: 100%
+		&__next
+			width: 100%
+
+	.widget
+		&__main
+			padding: 0 16px
+			transform: translateY(-120px)
+		&__top
+			height: 72px
+		&__img
+			width: 83px
+			height: 40px
+		&__info
+			margin-left: 10px
+		&__car-name
+			line-height: 21px
+			margin-bottom: 0
+		&__month-pay
+			font-size: 20px
+			line-height: 24px
+		&__toggle
+			width: 24px
+			height: 24px
+			&::after, &::before
+				width: 8px
+				height: 1px
+		&__line
+			font-size: 14px
+			line-height: 16px
+			&:not(:last-of-type)
+				margin-bottom: 16px
+		&__value
+			&--large
+				font-size: 30px
+				line-height: 32px
+		&__button
+			padding: 12px 0
+			margin-top: 24px
+			&--statick
+				margin-top: 0
+		&__footer
+			padding-bottom: 24px
+
+	.help
+		margin: 0
+		padding-top: 24px
+		padding-bottom: 9px
+		&__title
+			margin-bottom: 19px
+		&__migel
+			display: none
+		&__list
+			max-width: 100%
+		&__circle
+			width: 32px
+			height: 32px
+		&__name
+			font-size: 16px
+			line-height: 24px
+			margin-left: 16px
+		&__inner
+			min-height: 104px
+			label
+				height: auto
+				padding-left: 16px
+				margin-bottom: 0
+		&__more
+			margin-top: 12px
+			margin-left: 64px
+		&__dd
+			padding: 24px 16px
+			&::before
+				right: 16px
+				left: 16px
+		&__footer
+			flex-direction: column-reverse
+			max-width: 100%
+			margin-top: 16px
+		&__next, &__pass
+			display: block
+			width: 100%
+			padding-top: 12px
+			padding-bottom: 12px
+		&__pass
+			margin-top: 8px
+			margin-right: 0
+			text-align: center
+			font-size: 14px
+
+	.range
+		width: 100%
+		padding: 0
+		margin-bottom: 20px
+		&--fp
+			margin-bottom: 0
+
+	.options
+		&.hide
+			&.showNote
+				.options__note
+					visibility: visible
+					transform: translate(-50%, -90%)
+					opacity: 1
+		&__note
+			left: 50%
+			top: 0
+			transform: translate(-50%, -100%)
+			&::after
+				left: 50%
+				bottom: 0
+
+
+	.p-info
+		&__center
+			margin: 16px
+			padding: 32px 16px
+		&__title
+			font-size: 20px
+			line-height: 24px
+			margin-bottom: 24px
+
+	.faq
+		padding-top: 40px
+		padding-bottom: 40px
+		&__title
+			margin-bottom: 31px
+		&__button
+			width: 100%
+			max-width: 400px
+			margin-top: 16px
+		&__more
+			width: 100%
+			max-width: 400px
+			display: block
+
+	.question
+		padding-left: 16px
+		padding-right: 65px
+		line-height: 18px
+		&__dropdown
+			padding: 32px
+			&::before
+				left: 16px
+
+@media only screen and (max-width : 640px)
+	.filters
+		padding-left: 20px
+		padding-right: 20px
+		
+@media only screen and (max-width : 500px)
+	.cars
+		&__item
+			width: 100%
+
+@media only screen and (max-width : 400px)
+	.banner
+		&__inner
+			background-image: url('/images/start/pics/320.jpg')

@@ -1,0 +1,143 @@
+.en-page
+  background-color: $sand_bg
+.en-page__center
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -webkit-align-items: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: end
+  -webkit-justify-content: flex-end
+  -ms-flex-pack: end
+  justify-content: flex-end
+  height: 165px  
+.en-page__link
+  position: relative
+  font-size: 30px
+  font-weight: 500
+  color: $text_black
+  border-bottom: 1px solid $text_black
+  margin-right: 38px
+  &::after
+    content: ''
+    position: absolute
+    display: block
+    top: 50%
+    right: -38px
+    margin-top: -5px
+    width: 9px
+    height: 15px
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAYAAAA2yOUNAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+nhxg7wAAAHFJREFUKJFjYGBgaGBgYHjLwMBQw4AHvGNgYPgPxR3YFDAzMDD8YmBgcIfybRgYGDgZGBj2YFNcgWQaThMpV8iMpugIAwPDZzQ3/sdl4gok095iU5CJZmUdIQUYji8lpICg94sIKWCAup5gADYxEEgFAJNuM4cCAz6+AAAAAElFTkSuQmCC')
+    background-repeat: no-repeat
+    background-size: cover
+
+.naviJumpWrap
+  background: $sand_bg
+  padding: 0 60px
+  .naviJump
+    overflow: hidden
+    display: table
+    max-width: 1192px
+    width: 100%
+    height: 167px
+    margin: 0 auto
+    vertical-align: top
+    .next
+      text-align: right
+    .prev, .next
+      position: relative
+      display: table-cell
+      height: 167px
+      padding: 0
+      font-size: 30px
+      line-height: 40px
+      color: $text_black
+      font-family: 'HyundaiSansHead'
+      font-weight: 500
+      vertical-align: middle  
+.version__link
+  position: relative
+.naviJumpWrap .naviJump a
+  text-decoration: none
+  padding-right: 36px
+  &::before
+    content: ''
+    width: calc(100% - 36px)
+    height: 1px
+    background-color: #000
+    position: absolute
+    left: 0
+    bottom: -7px
+  &::after
+    display: block
+    content: ''
+    position: absolute
+    top: 13px
+    right: 0px
+    width: 9px
+    height: 15px
+    background-size: cover
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAYAAAA2yOUNAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+nhxg7wAAAHFJREFUKJFjYGBgaGBgYHjLwMBQw4AHvGNgYPgPxR3YFDAzMDD8YmBgcIfybRgYGDgZGBj2YFNcgWQaThMpV8iMpugIAwPDZzQ3/sdl4gok095iU5CJZmUdIQUYji8lpICg94sIKWCAup5gADYxEEgFAJNuM4cCAz6+AAAAAElFTkSuQmCC')
+
+
+@media (max-width: 1262px)
+  .naviJumpWrap .naviJump
+    width: 100%
+  .naviJumpWrap
+    padding-left: 40px
+    padding-right: 40px
+
+
+@media (max-width: 1023px)
+  .naviJumpWrap .naviJump
+    width: 100%
+  .naviJumpWrap
+    margin-top: 0
+  .naviJumpWrap .naviJump
+    height: 96px
+  .naviJumpWrap .naviJump .prev, .naviJumpWrap .naviJump .next
+    font-size: 20px
+    line-height: 24px
+    height: 96px
+  .naviJumpWrap .naviJump a
+    padding-right: 18px
+  .naviJumpWrap .naviJump a::before
+    width: calc(100% - 18px)
+    bottom: 0
+    height: 2px
+  .naviJumpWrap .naviJump a::after
+    top: 8px
+
+
+@media (max-width: 767px)
+  .naviJumpWrap
+    padding-left: 16px
+    padding-right: 16px
+    
+
+@media (max-width: 640px)
+  .naviJumpWrap .naviJump .prev, .naviJumpWrap .naviJump .next
+    padding-right: 20px
+    text-align: left
+  .naviJumpWrap .naviJump a::after
+    right: 0px
+    top: 50%
+    margin-top: -5px
+  .naviJumpWrap .naviJump a::before
+    display: none
+  .naviJumpWrap .naviJump a
+    text-decoration: underline
+    padding-right: 0
+    position: static
+  .naviJumpWrap .naviJump .next
+    position: relative
+
+
+@media (max-width: 480px)
+  .naviJumpWrap .naviJump .next
+    height: 80px
+  .naviJumpWrap .naviJump
+    height: 80px

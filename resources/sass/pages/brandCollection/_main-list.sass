@@ -1,0 +1,72 @@
+.main-list
+	display: flex
+	padding-top: 48px
+	padding-bottom: 32px
+
+.filters
+	width: 344px
+	flex: none
+	padding-right: 32px
+	&__top
+		display: flex
+		align-items: center
+		margin-bottom: 32px
+	&__title
+		margin-right: 32px
+	&__reset
+		display: none
+		position: relative
+		color: $third_text
+		padding-right: 16px
+		svg
+			position: absolute
+			top: 50%
+			margin-top: -4px
+			right: 0
+			fill: #B7B7B7
+			transition: 0.3s
+		&:hover
+			svg
+				fill: $second_blue
+	&__item
+		label
+			display: flex
+			align-items: center
+			cursor: pointer
+		input
+			display: none
+			&:checked
+				& + .filters__box
+					background-size: 80%
+					border-color: $second_blue
+		&:not(:last-of-type)
+			margin-bottom: 18px
+	&__box
+		flex: none
+		width: 16px
+		height: 16px
+		border: 2px solid $third_text
+		margin-right: 12px
+		background-image: url('/images/brandCollection/icons/check.svg')
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: 0
+		transition: 0.3s
+	&__name
+		font-size: 1.4rem
+		line-height: 1.5
+		font-weight: 500
+
+.products
+	width: 100%
+	overflow: hidden
+	&__list
+		display: flex
+		flex-wrap: wrap
+		min-width: 100%
+		margin-left: -16px
+		margin-right: -16px
+	&__item
+		width: calc(33.33% - 32px)
+		margin: 0 16px
+		margin-bottom: 40px

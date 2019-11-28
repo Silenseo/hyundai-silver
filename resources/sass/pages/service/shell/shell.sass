@@ -1,0 +1,1005 @@
+@import '../../../common/_variables.scss'
+@import '../../../common/_common.sass'
+
+.head
+  padding-top: 80px
+  background-image: url('/images/service/shell/fon.jpg')
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+  &__composition
+    width: 550px
+    padding-top: 38px
+    padding-left: 43px
+  &__banner
+    position: relative
+    background-image: url('/images/service/shell/pic.jpg')
+    background-repeat: no-repeat
+    background-position: 100% 50%
+    background-size: cover
+    height: 545px
+  &__title
+    font-size: 5.5rem
+    line-height: 1
+    font-weight: 500
+    margin-bottom: 0.2em
+    color: $text_white
+  &__subtitle
+    font-size: 3rem
+    line-height: 1.067
+    font-weight: 400
+    color: $text_white
+.shell-logo
+  position: absolute
+  top: 40px
+  right: 0
+
+.brand
+  background-color: $gray_bg
+  padding-top: 28px
+  padding-bottom: 42px
+  &-inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    max-width: 930px
+    margin-left: 10%
+  &__title
+    font-weight: 500
+    font-size: 4.2rem
+    line-height: 1.143
+    margin-bottom: 10px
+  &__subtitle
+    color: #797979
+    font-size: 1.6rem
+    line-height: 1.5
+    margin-bottom: 32px
+    font-weight: 400
+  &__text
+    font-size: 1.6rem
+    line-height: 1.5
+    font-weight: 400
+  &__img--mobile
+    display: none
+  &__desc
+    margin-left: 32px
+    margin-right: 32px
+
+.map-oil
+  &__mobile
+    display: none
+
+.selection
+  background-color: $bottom_bg
+  padding-top: 53px
+  padding-bottom: 55px
+  color: $text_white
+  &__title
+    font-weight: 500
+    font-size: 4.2rem
+    line-height: 1.143
+    margin-bottom: 32px
+  &-car__title
+    font-weight: 500
+    font-size: 2rem
+    line-height: 1.2
+    text-transform: uppercase
+    // margin-bottom: 40px
+  &-car__img
+    max-height: 280px
+    padding-top: 32px
+    padding-bottom: 32px
+  .row
+    max-width: 1008px
+    margin: 0 auto
+  .col-md-5
+    padding-left: 0
+    padding-right: 0
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+  .col-md-7
+    padding-left: 100px
+    padding-right: 0
+  .df-select
+    margin-bottom: 32px
+    .selectize-input
+      &::after
+        border-bottom-color: #fff!important
+  .selectize-input
+    background-color: transparent
+    border: 2px solid #fff!important
+    color: #fff!important
+    padding: 10px 20px!important
+    transition: border 0.2s ease 0s
+    &:hover
+      border: 2px solid rgba(255, 255, 255, 0.8)!important
+    & > .item
+      color: #fff!important
+    &.dropdown-active
+      color: #000!important
+    &.focus
+      color: #000!important
+    &.input-active::after 
+      border-bottom-color: #000!important
+    input
+      color: #000!important
+  .input-active .item
+    color: #000!important
+  .df-tabs
+    border: 1px solid #ffffff
+    margin-bottom: 60px
+  .df-tabs__button
+    padding: 10px 0
+    border: 1px solid #fff
+    background-color: $bottom_bg
+    color: #fff
+    font-size: 1.6rem
+    line-height: 1.5
+    &:not(.df-tabs__button--active):hover
+      background-color: $gray_bg
+      color: $main_blue
+    &--active
+      background-color: #fff
+      color: $main_blue
+      cursor: default
+  .df-button
+    background-color: $second_blue
+    color: $text_white    
+    padding: 16px 72px
+    margin-bottom: 3px
+    transition: background-color 0.3s ease 0s
+    &:hover
+      background-color: #10B5DC
+  .select-button
+    display: block
+    margin-left: auto
+  .df-download-link
+    color: $second_blue
+    text-decoration: underline
+    font-weight: 400
+    font-size: 1.6rem
+    span
+      transition: opacity 0.3s ease 0s
+    svg
+      color: #fff
+      transition: color 0.3s ease 0s
+    &:hover
+      span
+        opacity: 0.8
+      svg
+        color: $second_blue
+#selection-form
+  margin-top: 9px
+  .df-label
+    margin-bottom: 10px
+    &.label-materials
+      margin-bottom: 4px
+body .df-select .selectize-input::after
+  //border-bottom-color: #fff!important
+.df-select input::-webkit-input-placeholder
+  color: $third_text!important
+.df-select input:-ms-input-placeholder
+  color: $third_text!important
+.df-select input::-ms-input-placeholder
+  color: $third_text!important
+.df-select input::placeholder
+  color: $third_text!important
+
+.choice
+  display: none
+  background-color: $gray_bg
+  padding-top: 48px
+  padding-bottom: 56px
+  &[data-oil="1,2,3"]
+    .choice__item[data-product="4"]
+      display: none
+  &[data-oil="1"]
+    .choice__item[data-product="2"], .choice__item[data-product="3"], .choice__item[data-product="4"]
+      display: none
+  &[data-oil="4"]
+    .choice__item[data-product="1"], .choice__item[data-product="2"], .choice__item[data-product="3"]
+      display: none
+  &__title
+    color: $third_text
+    font-size: 3rem
+    line-height: 1.2
+    margin-bottom: 28px
+    font-weight: 500
+  &__img
+    max-width: 144px
+  &__img--mobile
+    display: none
+  &__item
+    background-color: $sand_bg
+    padding: 21px 200px 15px 72px
+    display: flex
+    align-items: center
+    margin-bottom: 16px
+    cursor: pointer
+    transition: background-color 0.3s ease 0s
+    &:hover
+      background-color: #fff
+    &-desc
+      display: flex
+    &-img
+      margin-right: 197px
+      position: relative
+    &-name
+      font-size: 3rem
+      line-height: 1.2
+      margin-bottom: 15px
+    &-text
+      font-size: 1.6rem
+      // width: 250px
+      color: $second_text
+      line-height: 1.25
+      margin-right: 19px
+      position: relative
+      &::after
+        content: ''
+        width: 1px
+        // height: 100%
+        position: absolute
+        right: -20px
+        top: 2px
+        bottom: 7px
+        background-color: $third_text
+    &-chars
+      padding-left: 20px
+      position: relative
+      top: -2px
+    &-value
+      font-size: 2rem
+      line-height: 1.2
+      font-weight: 500
+      color: $text_black
+      // display: block
+    &-unit
+      font-size: 1.6rem
+      line-height: 1.5
+      color: $second_text
+      margin-left: 5px
+      // display: block
+  .df-credit-banner
+    width: 90px
+    height: 90px
+    font-size: 1.6rem
+    line-height: 0.875
+    text-align: right
+    position: absolute
+    top: 4px
+    right: -32px
+    &__center
+      text-align: center
+      display: flex
+      justify-content: center
+      align-items: center
+      height: 100%
+      padding-right: 0
+      padding-top: 0
+    &::after
+      display: none
+  &__btn
+    margin-top: 40px
+    text-align: center
+    .df-button
+      padding: 16px 40px
+
+.advantages
+  background-color: $white_bg
+  padding-top: 52px
+  padding-bottom: 30px
+  &__title
+    text-align: center
+    font-size: 4.2rem
+    line-height: 1.43
+    margin-bottom: 56px
+  &__item
+    display: flex
+    margin-bottom: 48px
+  &__img
+    width: 104px
+    height: 104px
+    margin-right: 32px
+  &__desc
+    width: calc(100% - 136px)
+    &-title
+      font-size: 2rem
+      line-height: 1.2
+      margin-bottom: 8px
+    &-text
+      font-size: 1.6rem
+      line-height: 1.5
+      font-family: 'HyundaiSansText'
+  .col-md-6
+    padding-left: 16px
+    padding-right: 40px
+.footnote
+  color: $second_blue
+  font-size: 1.2rem
+  line-height: 1.5
+  font-weight: 500
+
+.tech
+  background-color: $gray_bg
+  padding-top: 83px
+  padding-bottom: 56px
+  &__title
+    text-align: center
+    margin-bottom: 46px
+  &__content
+    visibility: visible
+    position: relative
+    cursor: pointer
+    transition: height 0.3s ease 0s
+    width: 1008px
+    margin-left: auto
+    margin-right: auto
+    &::before
+      content: ''
+      display: block
+      padding-top: 56.25%
+    &:hover .video-play
+      transform: scale(1.1)
+  .video-play
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 60px
+    height: 60px
+    margin-top: -30px
+    margin-left: -30px
+    transition: transform 0.3s ease 0s
+    will-change: transform
+  .video-container
+    display: none
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    height: 100%
+    width: 100%
+    text-align: center
+  .video-preview
+    display: block
+    margin: 0 auto
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+  .video-item
+    width: 100%
+    video
+      object-fit: cover
+
+.questions
+  background-color: $gray_bg
+  padding-bottom: 56px
+  &__title
+    margin-bottom: 44px
+    text-align: center
+  &__items
+    max-width: 1008px
+    margin: 0 auto
+  .df-accordion__item
+    border: none!important
+    margin-bottom: 20px
+    background-color: #fff
+    position: relative
+    &.active .df-accordion__header::after
+      transform: rotate(180deg) translateY(50%)
+  .df-accordion__header
+    height: 120px
+    padding: 0 32px
+    display: flex
+    align-items: center
+    &::after
+      background-image: url('/images/service/shell/arrow.svg')
+      width: 9px
+      height: 6px
+      transition: transform 0.3s ease 0s
+    h5
+      font-size: 2rem
+      line-height: 1.2
+      max-width: 550px
+  .df-accordion__dropgown
+    padding: 48px 0 83px
+    max-width: 800px
+    margin: 0 auto
+    &::before
+      content: ''
+      position: absolute
+      top: 121px
+      left: 32px
+      right: 32px
+      height: 1px
+      background-color: #F5F5F5
+
+.note
+  padding-top: 76px
+  &-block
+    max-width: 1008px
+    padding-left: 32px
+    position: relative
+    margin: 0 auto
+    line-height: 1.5
+    font-size: 1.2rem
+    color: $second_text
+    font-family: 'HyundaiSansText'
+  &-img
+    width: 16px
+    height: 16px
+    position: absolute
+    top: 0
+    left: 0
+
+.product-wrap 
+  display: none
+.overlayed 
+  display: none
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0,0,0,0.8)
+  position: fixed
+  z-index: 600
+.product-popup
+  background-color: $white_bg
+  position: absolute
+  width: 1072px
+  min-height: 648px
+  top: 50%
+  left: 0
+  right: 0
+  margin: -324px auto 30px
+  z-index: 600
+  box-sizing: border-box
+  display: flex
+  .df-accordion__header
+    display: flex
+    align-items: center
+  .df-accordion__item.active .df-accordion__header::after
+    transform: rotate(180deg)
+  .df-accordion__item .df-accordion__header::after
+    transition: transform 0.3s ease 0s
+
+.product__img
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: $gray_bg
+  max-width: 416px
+.product__info
+  background-color: $white_bg
+  padding: 20px 32px 32px 32px
+  width: 61%
+.product__desc
+  width: 82%
+  font-size: 1.6rem
+  line-height: 1.5
+  margin-bottom: 32px
+.product__title
+  position: relative
+  font-weight: 500
+  font-size: 3rem
+  line-height: 1.2
+  margin-bottom: 20px
+  margin-top: 20px
+  display: inline-block
+  padding-right: 82px
+  margin-right: 30px
+  .popup-logo
+    position: absolute
+    top: -20px
+    right: 0px
+.popup-logo
+  display: inline-block
+  margin-left: 12px
+  vertical-align: top
+.closeIt
+  box-sizing: border-box
+  cursor: pointer
+  text-align: center
+  line-height: 0
+  height: 16px
+  position: absolute
+  right: 24px
+  top: 25px
+  width: 16px
+  z-index: 155
+  svg
+    fill: $second_text
+    transition: fill 0.3s ease 0s
+    &:hover
+      fill: $third_text
+
+
+@media (min-width: 1600px)
+  .selection .row
+    max-width: $large-cont
+  .brand-inner
+    max-width: 72%
+  .questions__items
+    max-width: $large-cont
+  .note-block
+    max-width: $large-cont
+  .brand__title
+    width: 80%
+
+@media (max-width: 1600px)
+	.head
+    &__banner
+      height: 440px
+
+@media (max-width: 1262px)
+  .tech__content
+    width: 100%
+  .choice__item
+    padding-right: 90px
+
+
+@media (max-width: 1200px)
+  .choice
+    &__item
+      &-img
+        margin-right: 100px
+      &-name
+        margin-bottom: 17px
+      &-chars
+        padding-left: 28px
+      &-unit
+        margin-left: 0
+      &-value
+        margin-right: 4px
+  
+
+  .product-popup
+    width: calc(100% - 80px)
+    height: auto
+    margin-top: 0
+    top: 40px
+    margin-bottom: 40px
+    .df-accordion__dropgown
+      padding-top: 10px
+
+  .brand-inner
+    margin: 0 auto
+  .brand__desc
+    margin: 0
+  .brand
+    .container
+      padding-left: 18px
+      padding-right: 40px
+    .col-md-12
+      padding: 0
+
+
+@media (max-width: 1023px)
+  .head__composition
+    padding-top: 48px
+    padding-left: 36px
+  .shell-logo
+    position: relative
+    margin-top: 40px
+    margin-left: -36px
+
+  .brand__title
+    width: 75%
+    margin-bottom: 0
+  .brand
+    padding-bottom: 39px
+    padding-top: 31px
+    &__subtitle
+      margin-bottom: 25px
+
+  .selection
+    padding-top: 48px
+    &__title
+      margin-bottom: 56px
+    .col-md-7
+      padding-left: 50px
+    &-car__img
+      padding-top: 16px
+      padding-bottom: 16px
+
+  .advantages
+    padding-top: 53px
+    padding-bottom: 20px
+    .col-md-6
+      max-width: 100%
+      padding: 0 16px
+      flex: 0 0 100%
+    &__title
+      margin-bottom: 40px
+    &__item
+      margin-bottom: 41px
+      align-items: center
+
+  .questions
+    padding-bottom: 14px
+    .df-accordion__dropgown
+      max-width: 100%
+      padding: 48px 75px 64px 91px
+
+  .note
+    padding-top: 67px
+    &-block
+     padding-bottom: 42px
+
+  .tech
+    padding-top: 56px
+    &__title
+      margin-bottom: 39px
+
+  .product-popup
+    flex-wrap: wrap
+  .product
+    &__info
+      width: 100%
+      padding-top: 28px
+      padding-bottom: 64px
+      padding-left: 48px
+      padding-right: 48px
+    &__img
+      width: 100%
+      max-width: 100%
+      img
+        max-height: 296px
+
+@media (max-width: 850px)
+  .selection
+    .col-md-5
+      max-width: 100%
+      padding: 0
+      flex: 0 0 100%
+    .col-md-7
+      max-width: 100%
+      padding: 0
+      flex: 0 0 100%
+    &-car__title
+      margin-bottom: 22px
+    &-car__img
+      margin: 0 auto 37px
+      display: block
+      padding: 0
+      max-height: initital
+    &__tablet
+      display: flex
+      justify-content: space-between
+      fieldset
+        width: calc(50% - 16px)
+    .df-button
+      width: 100%
+      margin-bottom: 88px
+      &::after
+        content: ''
+        position: absolute
+        bottom: 40px
+        left: 0
+        right: 0
+        width: 100%
+        height: 1px
+        background-color: #527092
+    .df-tabs
+      margin-bottom: 48px
+    fieldset
+      position: relative
+    .map-oil
+      display: none
+      &__mobile
+        display: block
+
+  .choice
+    &__img
+      display: block
+      margin-left: auto
+      max-width: 167px
+    &__item
+      padding: 28px 90px 28px 16px
+      margin-bottom: 8px
+      &-img
+        margin-right: 65px
+        width: calc(100% - 360px - 65px)
+      &-name
+        margin-bottom: 17px
+      &-chars
+        padding-left: 28px
+      &-unit
+        margin-left: 0
+      &-info
+        width: 360px
+      .df-credit-banner
+        right: -18px
+    &__btn
+      margin-top: 48px
+
+
+@media (max-width: $md-max)
+  .head__composition
+    width: auto
+    padding-top: 50px
+    padding-right: 50px
+
+  .brand
+    &-inner
+      flex-wrap: wrap
+    &__img
+      display: none
+    &__img--mobile
+      margin: 0 auto 20px
+      display: block
+    &-desc
+      width: 100%
+    &__title
+      width: 100%
+
+  .choice
+    &__item
+      padding-right: 80px
+    &__item-img
+      width: 140px
+    &__item-info
+      width: calc(100% - 200px)
+  .choice .df-credit-banner
+    right: -40px
+
+  .brand .container
+    padding-left: 16px
+    padding-right: 16px
+  .brand .col-md-12
+    padding-left: 16px
+    padding-right: 16px
+
+  .product-popup
+    width: calc(100% - 32px)
+    top: 16px
+    margin-top: 16px!important
+
+
+@media (max-width: 640px)
+  .head
+    padding-top: 64px
+    &__banner
+      background-image: url('/images/service/shell/pic-md.jpg')
+      height: 120vw
+    &__composition
+      padding: 24px 16px
+    &__title
+      font-size: 3rem
+      line-height: 1.067
+      margin-bottom: 0.5em
+      max-width: 300px
+    &__subtitle
+      font-size: 1.8rem
+      line-height: 1.25
+      max-width: 300px
+  .shell-logo
+    margin-left: -16px
+    margin-top: 80px
+
+  .selection
+    padding-top: 40px
+    &__title
+      font-size: 3rem
+      line-height: 1.067
+      margin-bottom: 32px
+    &__tablet
+      flex-wrap: wrap
+      fieldset
+        width: 100%
+    &-car__title
+      font-size: 1.6rem
+      line-height: 1.125
+    &-car__img 
+      margin: 0 auto 24px
+      padding-right: 30px
+      padding-left: 30px
+
+  .brand
+    padding-top: 8px
+    padding-bottom: 48px
+    .container
+      padding-left: 16px
+      padding-right: 16px
+    .col-md-12
+      padding-left: 16px
+      padding-right: 16px
+    &__img
+      display: none
+      &--mobile
+        display: block
+        margin-bottom: 23px
+    &__title
+      font-size: 3rem
+      line-height: 1.0667
+      margin-bottom: 10px
+    &__subtitle
+      margin-bottom: 16px
+
+  .choice
+    padding-top: 32px
+    padding-bottom: 52px
+    &__item
+      padding: 0 16px 16px 16px
+      flex-wrap: wrap
+      &-info
+        width: 100%
+      &-img
+        width: auto
+        margin: 0 auto 21px
+        &-text
+          width: auto
+          max-width: 350px
+    &__btn
+      margin-top: 24px
+      .df-button
+        padding: 12px 40px
+    &__title
+      font-size: 2rem
+      line-height: 1.2
+      margin-bottom: 24px
+    &__img
+      max-width: 216px
+    .df-credit-banner
+      top: 19px
+      right: 0px
+
+  body .df-select .selectize-input
+    padding: 10px 20px  
+  .selection
+    .df-tabs
+      margin-bottom: 43px
+    .df-tabs__button
+      padding: 11px 0
+    .df-download-link
+      font-size: 1.6rem
+    .df-button
+      padding: 12px 50px
+
+  .advantages
+    padding-top: 40px
+    &__title
+      font-size: 3rem
+      line-height: 1.067
+      margin-bottom: 48px
+
+  .product-popup
+    .df-accordion__header
+      padding: 14px 48px 14px 16px
+      height: 76px
+      &::after
+        right: 16px
+      h5
+        font-size: 1.4rem
+        line-height: 1.143
+    .product__desc
+      width: 100%
+    .product__info
+      padding: 28px 16px 40px
+
+
+@media (max-width: 480px)
+  .head
+    &__title
+      font-weight: 500
+    &__composition
+      padding: 24px 14px 0 16px      
+  .shell-logo
+    display: none
+
+  .selection
+    &-car__img
+      padding-right: 30px
+      padding-left: 30px
+      padding-bottom: 20px
+    .df-select 
+      margin-bottom: 24px
+
+  .choice
+    &__item
+      padding: 16px
+      &-name
+        font-size: 2rem
+        line-height: 1.2
+        margin-bottom: 12px
+      &-desc
+        flex-wrap: wrap
+      &-text
+        width: 100%
+        margin-right: 0
+        padding-bottom: 17px
+        &::after
+          width: 45px
+          height: 1px
+          right: auto
+          left: 0
+          bottom: 0
+          top: auto
+      &-chars
+        padding-left: 0
+        width: 100%
+        display: flex
+        margin-top: 19px
+      &-value
+        margin-right: 11px
+
+  .advantages
+    padding-bottom: 0
+    &__item
+      flex-wrap: wrap
+      margin-bottom: 40px
+    &__desc
+      width: 100%
+    &__pic
+      margin-right: 0
+      margin-bottom: 16px
+
+  .tech
+    padding-top: 40px
+    &__title
+      margin-bottom: 36px
+      width: 80%
+      margin-left: auto
+      margin-right: auto
+
+  .questions
+    padding-bottom: 0
+    &__title
+      margin-bottom: 40px
+      margin-left: auto
+      margin-right: auto
+    .df-accordion__header 
+      padding: 0 56px 0 16px
+      &::after
+        right: 24px
+      h5
+        font-size: 1.6rem
+        line-height: 1.125
+    .df-accordion__dropgown
+      padding: 40px 16px
+      font-size: 1.6rem
+      line-height: 1.5
+      &::before
+        right: 16px
+        left: 16px
+    .df-accordion__item
+      margin-bottom: 16px
+    .note
+      padding-top: 24px
+
+  .product__title .popup-logo 
+    display: none
+  .product__title
+    padding-right: 0
+    margin-right: 0
+    &::after
+      content: ''
+      width: 60px
+      height: 34px
+      background-image: url('/images/service/shell/shell_logo.jpg')
+      background-size: cover
+      background-repeat: no-repeat
+      display: inline-block
+      margin-left: 12px
+      vertical-align: text-top
+  .product-popup
+    .df-accordion__dropgown
+      padding: 10px 24px 24px 24px
+
+
+@media (max-width: 400px)
+  .choice
+    .df-button
+      width: 100%
+  
+  .note-block
+    padding-left: 16px
+  .note-img
+    width: 10px
+    height: 10px

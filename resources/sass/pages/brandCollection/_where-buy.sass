@@ -1,0 +1,74 @@
+//Стилизуем элемент find-dealer с картой для этой страницы
+#buy
+	position: relative
+	.c-find-dealer
+		position: relative
+		background-color: transparent
+		top: auto
+		right: auto
+		left: auto
+		bottom: auto
+		z-index: 1
+		height: 100%
+		&__wrap
+			display: block
+			min-height: 0
+			height: 100%
+		&__center
+			max-width: 100%
+			margin: 0
+			height: 100%
+		&__close
+			display: none
+		&__zoomIn
+			top: 56px
+		&__zoomOut
+			top: 112px
+		&__location
+			bottom: 40px
+	.label
+		&__button
+			display: none
+	
+.where-buy
+	display: flex
+	color: $text_black
+	&__left
+		position: relative
+		flex: none
+		width: 416px
+		height: 480px
+		padding: 40px 32px 32px
+		background-color: $sand_bg
+	&__map
+		width: 100%
+		overflow: hidden
+	&__title
+		margin-bottom: 16px
+	&__text
+		font-size: 1.6rem
+		line-height: 1.5
+		margin-bottom: 28px
+	&__footer
+		position: absolute
+		display: flex
+		align-items: center
+		left: 32px
+		right: 32px
+		bottom: 32px
+	&__icon
+		width: 32px
+		height: 40px
+		margin-right: 16px
+		img
+			display: block
+			max-width: 100%
+			height: auto
+	&__description
+		max-width: 190px
+	&__mobile
+		display: none
+		align-items: center
+		background-color: $sand_bg
+		padding: 16px
+		

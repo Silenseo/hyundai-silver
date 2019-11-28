@@ -1,0 +1,56 @@
+.cars
+	color: #000
+	padding-bottom: 32px
+	&.isDealer
+		padding-bottom: 0
+	&.loading
+		cursor: progress
+		.cars__item
+			pointer-events: none
+			&:not(.active)
+				opacity: 0.5
+			&.active
+				background-color: #064e89
+				& *
+					color: #fff
+	&__title
+		margin-bottom: 48px
+		text-align: center
+	&__list
+		display: flex
+		flex-wrap: wrap
+		&.isDealer
+			background-color: #fff
+	&__item
+		padding: 24px 48px 31px
+		width: calc(100% / 3)
+		border: 1px solid #E3E3E3
+		margin: -1px -1px 0 0
+		cursor: pointer
+		transition: 0.3s
+		&:hover
+			background-color: #064e89
+			& *
+				color: #fff
+	&__name, &__fp
+		font-size: 20px
+		line-height: 24px
+		font-weight: 500
+		transition: 0.3s
+	&__price
+		font-size: 16px
+		line-height: 24px
+		color: #666666
+		margin-bottom: 24px
+		transition: 0.3s
+	&__img
+		margin-bottom: 16px
+		img
+			display: block
+			max-width: 100%
+			height: auto
+	&__program
+		font-size: 16px
+		line-height: 24px
+		color: #666666
+		transition: 0.3s

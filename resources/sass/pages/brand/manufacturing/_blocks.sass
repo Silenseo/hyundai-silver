@@ -1,0 +1,248 @@
+.xmmp
+	padding-top: 99px
+	margin-bottom: 106px
+	overflow: hidden
+	&.active
+		.power
+			svg
+				path
+					opacity: 1
+			&__number
+				opacity: 1
+		.xmmp__back
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.xmmp__img
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+	&__back
+		width: 750px
+		height: 579px
+	&__wrapper
+		position: relative
+		margin-top: -500px
+		margin-left: 136px
+	&__img
+		width: 690px
+		height: 577px
+	&__description
+		position: absolute
+		top: 132px
+		left: 768px
+
+.power
+	position: absolute
+	top: -100px
+	right: 30px
+	max-width: 280px
+	text-align: center
+	&__number
+		position: absolute
+		left: 50%
+		font-size: 60px
+		line-height: 1.4
+		color: $main_blue
+		font-weight: 500
+		transform: translateX(-56%)
+		text-align: center
+		opacity: 0
+		transition: 0.3s
+		transition-delay: 0.8s
+	svg
+		display: block
+		margin: 0 auto
+		path
+			opacity: 0
+			transition: 0.1s
+	&__text
+		font-size: 20px
+		line-height: 24px
+		font-weight: 500
+		margin-top: 10px
+		transition-delay: 1s
+		
+@for $i from 1 through 20
+	.power__left
+		path
+			&:nth-of-type(#{$i})
+				transition-delay: 0.05s * (20 - $i)
+
+@for $i from 1 through 20
+	.power__right
+		path
+			&:nth-of-type(#{$i})
+				transition-delay: 0.05s * (20 - $i)
+
+@keyframes stroke
+	100%
+    	stroke-dashoffset: 100
+
+.equipment
+	padding-top: 100px
+	overflow: hidden
+	&.active
+		.equipment__back
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.equipment__img
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.specialists
+			&__value, &__text
+				transform: translate3d(0, 0, 0)
+				opacity: 1
+			svg
+				opacity: 1
+	&__inner
+		position: relative
+		display: flex
+		justify-content: flex-end
+	&__back
+		width: 736px
+		height: 600px
+		margin-right: 128px
+	&__wrapper
+		position: relative
+		margin-top: -494px
+		margin-left: 131px
+	&__img
+		width: 733px
+		height: 570px
+	&__description
+		position: absolute
+		top: 54px
+		left: -642px
+		max-width: 586px
+
+.specialists, .auto
+	position: absolute
+	top: -100px
+	left: 125px
+	max-width: 400px
+	padding-left: 130px
+	svg
+		position: absolute
+		display: block
+		left: 0
+		top: 50%
+		transform: translateY(-50%)
+		opacity: 0
+		transition: opacity 2s cubic-bezier(.19,1,.22,1)
+	&__value
+		font-size: 72px
+		line-height: 1
+		font-weight: 500
+		color: $main_blue
+		margin-bottom: 6px
+		transition-delay: 0.5s
+	&__text
+		font-size: 20px
+		line-height: 22px
+		font-weight: 500
+		transition-delay: 0.5s
+
+.auto
+	left: auto
+	right: 0
+	top: -220px
+	&__value
+		span
+			font-size: 24px
+
+.technology
+	padding-top: 323px
+	padding-bottom: 116px
+	overflow: hidden
+	&.active
+		.technology__back
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.technology__img
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.auto
+			&__value, &__text
+				transform: translate3d(0, 0, 0)
+				opacity: 1
+			svg
+				opacity: 1
+	&__inner
+		position: relative
+	&__back
+		width: 828px
+		height: 648px
+		margin-left: 128px
+	&__wrapper
+		position: relative
+		margin-top: -732px
+	&__img
+		width: 812px
+		height: 604px
+	&__description
+		position: absolute
+		top: 195px
+		left: 896px
+
+.work
+	position: relative
+	padding-top: 100px
+	padding-bottom: 233px
+	&.active
+		.work__back
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.work__img
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+	&__back
+		width: 734px
+		height: 706px
+		margin-left: 183px
+	&__wrapper
+		position: relative
+		margin-top: -783px
+	&__img
+		width: 813px
+		height: 656px
+	&__description
+		position: absolute
+		top: 185px
+		left: 896px
+	&__bottom
+		margin-top: 32px
+		font-size: 16px
+		a
+			font-size: inherit
+

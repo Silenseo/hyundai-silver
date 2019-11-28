@@ -1,0 +1,74 @@
+.sidebar
+	width: 33%
+	flex: none
+	background-color: $main_blue
+	padding: 40px
+	color: $text_white
+	&__title
+		font-size: 2.6rem
+		line-height: 1.53
+		font-weight: 500
+		margin-bottom: 34px
+		text-transform: uppercase
+	&__image
+		max-width: 88%
+		margin: 0 auto
+		margin-bottom: 38px
+	&__line
+		display: flex
+		justify-content: space-between
+		font-size: 1.6rem
+		line-height: 1.5
+		margin-bottom: 8px
+		&--dropdown
+			margin-top: 39px
+	&__text
+		margin-right: 20px
+	&__value
+		font-weight: 500
+		white-space: nowrap
+		&--total
+			font-size: 4.2rem
+			line-height: 1.14
+			&.error
+				font-size: 1.6rem
+				line-height: 1.5
+				max-width: 100%
+				overflow: hidden
+				text-overflow: ellipsis
+	hr
+		border-color: #527092
+		margin-top: 33px
+		margin-bottom: 24px
+	&__button
+		display: block
+		width: 100%
+		text-align: center
+		background-color: $second_blue
+		margin-top: 31px
+		&:disabled
+			background-color: $third_text
+		&:not([disabled]):hover
+			background-color: #10B5DC
+	&__find-dealer
+		@extend .df-text-radio-button-14px
+		position: relative
+		display: block
+		padding-left: 24px
+		margin-top: 24px
+		span
+			transition: 0.3s
+		svg
+			display: block
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translateY(-50%)
+			width: 16px
+			height: 15px
+			stroke: #fff
+		&:hover
+			span
+				opacity: 0.8
+			svg
+				stroke: $second_blue

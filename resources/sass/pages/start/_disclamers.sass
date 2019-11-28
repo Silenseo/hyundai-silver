@@ -1,0 +1,27 @@
+.disclamers
+	font-size: 11px
+    line-height: 13px
+	&__inner
+		max-width: 83%
+		margin: 0 auto
+	&__list
+		padding-bottom: 50px
+	&__item
+		&:not(:last-of-type)
+			margin-bottom: 10px
+	&__opener
+		display: flex
+		align-items: center
+		justify-content: space-between
+		color: $third_text
+		font-size: 16px
+		line-height: 24px
+		font-weight: 500
+		padding: 26px 0
+		cursor: pointer
+		span
+			display: block
+			margin-right: 20px
+		&.open
+			svg
+				transform: rotate(180deg)

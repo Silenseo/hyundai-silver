@@ -1,0 +1,74 @@
+// variables
+
+// typography
+$base-font-size:        13;
+$base-font-size--at-md: 13;
+$body-font-family:      'HyundaiSans', 'Hevetica', Arial, sans-serif;
+$head-font-family:      'HyundaiSansHead', 'Hevetica', Arial, sans-serif;
+$base-line-height:      1.6;
+
+// sizes
+// breakpoints
+// [desktop-first]
+
+// desktops
+$break-lg--max:     1920px;
+$break-lg--xxl:     1600px;
+$break-lg--xl:      1580px;
+$break-lg--l:       1440px;
+$break-lg--m:       1380px;
+$break-lg--s:       1280px;
+
+// tablets
+$break-md:          1240px;
+$break-md--xxl:     1180px;
+$break-md--xl:      1080px;
+$break-md--l:       980px;
+$break-md--m:       840px;
+$break-md--s:       768px;
+// phones
+$break-sm--xxl:     680px;
+$break-sm--xl:      640px;
+$break-sm--l:       560px;
+$break-sm--m:       480px;
+$break-sm--s:       320px;
+
+// limits
+// $base-min-width: $break-md--s;
+$base-min-width: $break-md--xxl;
+$base-max-width: 1200px;
+
+// layout
+$layout-width:          auto;
+$gutter:                30px;
+$layout-padding:        20px;
+$layout-padding--md:    1.6%;
+
+// colours
+$bright-red:        #e63312;
+$deep-blue:         #103a71;
+$deep-blue--dark:   #003469;
+$deep-blue--washy:  #193e69;
+$blue-violet:       #334880;
+$brown--light:      #af9c91;
+$brown--lighter:    #ccc5b9;
+$brown--lightest:   #f1efee;
+$mid-gray:          #4f4f4f;
+$light-gray:        #bdbdbd;
+
+$text-color--base:  #222;
+
+// inputs
+$input-color: rgba(#8d8d8d, .6);
+$input-color-active: #8d8d8d;
+$input-row-height: 40px;
+$input-font-size: 11px;
+// transitions
+$tr-fast: .15s ease-out 0s;
+$tr-fast-2: .05s ease-out 0s;
+$tr-long-out: .6s cubic-bezier(0.2, 1, 0.3, 1) 0s;
+
+
+// conf
+$sky: #00aed5;
+$hollow: #013368;

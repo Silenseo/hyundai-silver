@@ -1,0 +1,105 @@
+.advantages
+	position: relative
+	padding-top: 80px
+	overflow: hidden
+	background-color: #fff
+	&__title
+		text-align: center
+		color: #070707
+	&__icon
+		position: relative
+		width: 168px
+		height: 168px
+		background-color: #E4DCD3
+		border-radius: 50%
+		margin: 0 auto
+		margin-bottom: 24px
+		img
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			max-width: 90%
+			max-height: 90%
+			margin: auto
+	&__description
+		font-size: 2.0rem
+		line-height: 1.2
+		font-weight: 500
+		color: #000
+	&__list
+		display: flex
+		flex-wrap: wrap
+		min-width: 100%
+		margin-left: -40px
+		margin-right: -40px
+		margin-top: 76px
+	&__item
+		width: calc(50% - 80px)
+		margin: 0 40px
+		text-align: center
+		margin-bottom: 96px
+
+.advantages-slider
+	display: none!important
+	margin-top: 80px
+	margin-bottom: 53px
+	&__item
+		padding: 0 35px
+	&__icon
+		@extend .advantages__icon
+		width: 104px
+		height: 104px
+		img
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			max-width: 90%
+			max-height: 90%
+			width: 55%!important
+			margin: auto
+	&__description
+		@extend .advantages__description
+		text-align: center
+	.owl-dots
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-top: 70px
+		.owl-dot
+			width: 12px
+			height: 12px
+			border-radius: 50%
+			background-color: rgba(#000000, 0.1)
+			transition: 0.3s
+			&:not(:last-of-type)
+				margin-right: 10px
+			&.active
+				background-color: $second_blue
+	.owl-nav
+		position: absolute
+		display: flex
+		justify-content: space-between
+		align-items: center
+		height: 0
+		width: 100%
+		top: 14%
+		right: 0
+		.owl-prev, .owl-next
+			width: 16px
+			height: 36px
+			background-repeat: no-repeat!important
+			background-position: 50%!important
+			background-size: 100%!important
+			span
+				display: none
+		.owl-next
+			background-image: url('/images/vacancy/icons/next_a.svg')!important
+		.owl-prev
+			background-image: url('/images/vacancy/icons/prev_a.svg')!important
+

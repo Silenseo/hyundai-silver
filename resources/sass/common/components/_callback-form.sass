@@ -1,0 +1,93 @@
+.callback-form
+	color: #000
+	&__center
+		background-color: #fff
+		width: 100%
+		max-width: 982px
+		padding: 40px 60px 52px
+		margin: 16px
+	&__title
+		max-width: 616px
+		text-align: center
+		margin: 0 auto
+		margin-bottom: 58px
+	&__body
+		display: flex
+	&__left
+		width: calc(50% - 16px)
+		margin-right: 16px
+	&__right
+		width: calc(50% - 16px)
+		margin-left: 16px
+	&__label
+		font-size: 20px
+		line-height: 24px
+		font-weight: 500
+		margin-bottom: 22px
+	&__line
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-top: 26px
+		margin-bottom: 35px
+	&__footer
+		padding-top: 35px
+		border-top: 1px solid $sand
+	&__later
+		font-size: 1.2rem
+		font-weight: 500
+		color: $main_blue
+		transition: 0.3s
+		&:hover
+			color: #103A71
+	&__time
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		margin-top: 36px
+		.callback-form__dropdown
+			display: inline-block
+			margin-right: 10px
+			.selectize-input
+				input
+					width: 0!important
+					margin: 0!important
+	&__dropdown
+		&--center
+			display: block
+			width: 100%
+	&__note
+		width: 100%
+		font-size: 12px
+		font-weight: 500
+		margin-top: 16px
+		color: #B7B7B7
+
+@media only screen and (max-width : $md-max)
+	.callback-form
+		&__center
+			padding: 50px 16px
+		&__body
+			display: block
+		&__left, &__right
+			width: 100%
+			margin: 0
+		&__left
+			&--mb
+				margin-bottom: 25px
+		&__title
+			max-width: 100%
+			margin-bottom: 31px
+			text-align: left
+		&__label
+			font-size: 16px
+			line-height: 18px
+			margin-bottom: 13px
+		&__line
+			flex-direction: column-reverse
+		&__button
+			width: 100%
+			margin-bottom: 24px
+		&__footer
+			padding-top: 20px
+

@@ -1,0 +1,118 @@
+.ic-svg {
+	user-select: none;
+	display: inline-block;
+	vertical-align: middle;
+	fill: currentColor;
+	width: 1em;
+	height: 1em;
+  pointer-events: none;
+  user-select: none;
+	&.ic-phone {
+		width: 21px;
+		height: 19px;
+	}
+	&.ic-mail {
+		width: 16px;
+		height: 12px;
+	}
+	&.ic-arrow-s {
+		width: 13px;
+		height: 9px;
+	}
+	&.ic-arrow-m {
+		width: 33px;
+		height: 10px;
+	}
+	&.ic-arrow-b {
+		width: 30px;
+		height: 12px;
+	}
+	&.ic-ru {
+		width: 21px;
+		height: 14px;
+	}
+	&.ic-tw {}
+	&.ic-fb {}
+	&.ic-vk {}
+	&.ic-ok {}
+	&.ic-car {
+		width: 51px;
+		height: 36px;
+	}
+	&.ic-calc {
+		width: 30px;
+		height: 33px;
+	}
+	&.ic-map {
+		width: 36px;
+		height: 41px;
+	}
+	&.ic-steering-wheel {
+		width: 33px;
+		height: 33px;
+	}
+	&.ic-gift {
+		height: 52px;
+		width: 42px;
+	}
+	&.ic-fix {
+		height: 47px;
+		width: 50px;
+	}
+	&.ic-pig {
+		height: 59px;
+		width: 62px;
+	}
+	&.ic-key {
+		height: 30px;
+		width: 30px;
+		transform: rotate(90deg);
+	}
+	&.ic-shield {
+		height: 30px;
+		width: 30px;
+	}
+	&.ic-steering-wheel-thin {
+		height: 30px;
+		width: 30px;
+	}
+	&.ic-fix-w-gear {
+		height: 30px;
+		width: 30px;
+	}
+	&.ic-gear {
+		height: 30px;
+		width: 30px;
+	}
+	&.ic-case {
+		height: 30px;
+		width: 30px;
+	}
+	&.ic-car-2 {
+		height: 30px;
+		width: 30px;
+	}
+	&.ic-close-sm {
+		height: 15px;
+		width: 15px;
+	}
+}
+.ic-video {
+	display: inline-block;
+	background: $bright-red;
+	width: 19px;
+	height: 19px;
+	position: relative;
+	vertical-align: middle;
+	&::after {
+		content: '';
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 5px;
+		left: 7px;
+		border: 5px solid;
+		border-color: transparent transparent transparent #fff;
+		transform: scale(1);
+	}
+}

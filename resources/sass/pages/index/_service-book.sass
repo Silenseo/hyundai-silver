@@ -1,0 +1,35 @@
+.service-book
+	background-color: #F8F8F8
+	background-repeat: no-repeat
+	background-position: 100% 50%
+	color: #000
+	&__inner
+		height: 723px
+		padding-top: 211px
+	&__title
+		margin-bottom: 8px
+	&__text
+		font-size: 1.6rem
+		line-height: 1.5
+		margin-bottom: 32px
+	&__button
+		display: inline-block
+
+@media only screen and (max-width : $lg-max)
+	.service-book
+		background-position: 67% 50%
+
+@media only screen and (max-width : 640px)
+	.service-book
+		background-position: 81% -524%
+		&__inner
+			display: flex
+			flex-direction: column
+			height: 784px
+			padding: 40px 0
+		&__title
+			margin-bottom: auto
+			text-align: center
+		&__text
+			text-align: center
+			margin-bottom: 24px

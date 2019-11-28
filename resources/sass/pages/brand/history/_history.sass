@@ -1,0 +1,526 @@
+.year
+	position: absolute
+	top: 100px
+	left: calc((100vw - 1504px) / 2 + 180px)
+	pointer-events: none
+	z-index: 10
+	&--ru
+		width: 362px //Иначе не работает в IE11
+		margin-top: 40px
+		left: auto
+		right: calc((100vw - 1504px) / 2 + 130px)
+	&__centuries, &__decades
+		display: flex
+		height: 230px
+		overflow: hidden
+	&__digit
+		display: flex
+		flex-direction: column
+		align-items: center
+		font-size: 288px
+		line-height: 231px
+		font-weight: 500
+		color: $main_blue
+		&--second, &--fourth
+			margin-left: -15px
+
+
+.history
+	position: relative
+	&__main-wrapper
+		overflow: hidden
+	&--ww
+		padding-top: 164px
+	&--ru
+		background: linear-gradient(180deg, #F6F3F2 0%, rgba(246, 243, 242, 0) 100%)
+	&__inner
+		display: flex
+		justify-content: flex-end
+		padding-right: 144px
+		padding-bottom: 71px
+		&--ru
+			justify-content: flex-start
+			padding-top: 94px
+			padding-left: 248px
+			padding-right: 0
+	&__line
+		flex: none
+		width: 100%
+		max-width: 904px
+	&__item
+		position: relative
+		width: 100%
+		transform-origin: center top
+		transition: 0.8s
+		opacity: 0
+		transform: translate(0,30px) scale(1.08)
+		&:not(:last-of-type)
+			margin-bottom: 84px
+		article
+			position: relative
+			display: flex
+			justify-content: flex-end
+		&--ru
+			article
+				justify-content: flex-start
+				align-items: center
+		&.active
+			opacity: 1
+			transform: translate(0,0) scale(1)
+		&--17
+			margin-bottom: 0!important
+		&--23
+			z-index: 1
+	&__description
+		&--6, &--11
+			width: 592px
+		&--17
+			margin-left: 313px
+	&__back
+		position: absolute
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+		&--1
+			top: 0
+			left: 0
+			width: 676px
+			height: 451px
+		&--2
+			top: 0
+			right: 0
+			width: 696px
+			height: 400px
+		&--3
+			top: 55px
+			left: 0
+			width: 312px
+			height: 362px
+		&--4
+			top: 0
+			left: 104px
+			width: 592px
+			height: 368px
+		&--7
+			top: 0
+			left: 208px
+			width: 592px
+			height: 375px
+			z-index: 1
+		&--9
+			top: 0
+			left: 0
+			width: 731px
+			height: 449px
+		&--10
+			top: 0
+			right: -76px
+			width: 564px
+			height: 315px
+		&--12
+			top: 0
+			left: 192px
+			width: 608px
+			height: 376px
+		&--15
+			top: 0
+			left: 0
+			width: 384px
+			height: 432px
+		&--16
+			top: 0
+			left: 0
+			width: 703px
+			height: 321px
+		&--18
+			top: 0
+			left: -97px
+			width: 384px
+			height: 545px
+		&--21
+			top: 0
+			left: 0
+			width: 600px
+			height: 433px
+		&--23
+			top: 0
+			left: -97px
+			width: 663px
+			height: 456px
+	&__wrapper
+		position: relative
+		&--1
+			width: 592px
+			margin-top: 76px
+		&--2
+			width: 696px
+			margin-top: 128px
+			margin-right: 104px
+		&--3
+			width: 488px
+			margin-top: 232px
+			margin-right: 208px
+		&--4
+			width: 592px
+			margin-top: 72px
+		&--7
+			width: 592px
+			margin-top: 51px
+		&--9
+			width: 592px
+			margin-top: 113px
+		&--10
+			width: 488px
+			margin-right: 208px
+			margin-top: 56px
+		&--12
+			width: 592px
+			margin-top: 63px
+		&--15
+			width: 488px
+			margin-top: 128px
+			margin-left: 90px
+		&--16
+			width: 488px
+			margin-top: 88px
+			margin-left: -97px
+		&--18
+			width: 488px
+			margin-top: 142px
+			margin-left: 111px
+		&--21
+			width: 592px
+			margin-top: 95px
+			margin-left: -104px
+		&--23
+			width: 546px
+			margin-top: 112px
+			margin-left: 111px
+	&__img
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: 100%
+		&--1
+			width: 100%
+			height: 375px
+		&--2
+			width: 100%
+			height: 391px
+		&--3
+			width: 100%
+			height: 264px
+		&--4
+			width: 100%
+			height: 375px
+		&--7
+			width: 100%
+			height: 390px
+		&--9
+			width: 100%
+			height: 336px
+			background-size: cover
+		&--10
+			width: 100%
+			height: 366px
+		&--12
+			width: 100%
+			height: 313px
+			background-size: cover
+		&--15
+			width: 100%
+			height: 351px
+		&--16
+			width: 100%
+			height: 336px
+			background-size: cover
+		&--18
+			width: 100%
+			height: 546px
+			background-size: 225%
+		&--21
+			width: 100%
+			height: 400px
+		&--23
+			width: 100%
+			height: 344px
+			background-size: cover
+	&__subtitle
+		margin-top: 40px
+		margin-bottom: 24px
+		line-height: 1
+		&--2
+			max-width: 488px
+			margin-top: 0
+			margin-left: 104px
+		&--4
+			max-width: 488px
+		&--12	
+			span
+				position: relative
+				display: inline-block
+				&::after
+					content: ''
+					display: block
+					position: absolute
+					right: -37px
+					top: 0
+					width: 31px
+					height: 20px
+					background-image: url('/images/brand/history/img/flag.png')
+					background-repeat: no-repeat
+					background-position: 50%
+					background-size: cover
+		&--15
+			margin-top: 0
+		&--16
+			margin-left: 104px
+		&--21
+			margin-left: 104px
+	&__text
+		font-size: 22px
+		line-height: 32px
+		&--2
+			max-width: 488px
+			margin-left: 104px
+		&--4
+			max-width: 488px
+		&--5
+			max-width: 384px
+		&--6
+			max-width: 265px
+			font-size: 16px
+			line-height: 24px
+		&--8
+			max-width: 384px
+			font-size: 16px
+			line-height: 24px
+		&--9, &--12
+			max-width: 488px
+		&--11, &--13, &--17, &--19, &--20
+			max-width: 206px
+			font-size: 16px
+			line-height: 24px
+		&--14
+			max-width: 384px
+		&--15
+			max-width: 363px
+		&--16
+			margin-left: 104px
+		&--21
+			margin-left: 104px
+		&--22
+			max-width: 384px
+	&__icon
+		flex: none
+		position: relative
+		width: 128px
+		height: 128px
+		margin-right: 32px
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: 100%
+		&--5
+			background-image: url('/images/brand/history/img/5.png')
+			background-size: 190%
+			opacity: 0.9
+		&--8
+			width: 137px
+			height: 102px
+			background-image: url('/images/brand/history/img/8.png')
+			background-size: contain
+		&--14
+			background-image: url('/images/brand/history/img/14.jpg')
+			background-size: 165%
+			margin-left: 102px
+		&--20
+			background-image: url('/images/brand/history/img/20.jpg')
+			background-size: 165%
+			margin-left: 152px
+		&--22
+			background-image: url('/images/brand/history/img/22.jpg')
+			background-size: 165%
+			margin-left: 152px
+		&--circle
+			border-radius: 50%
+			overflow: hidden
+		img
+			display: block
+	&__year
+		font-size: 42px
+		line-height: 48px
+		font-weight: 500
+		margin-bottom: 8px
+	&__title-year
+		display: none
+		position: absolute
+		left: 0
+		top: 20px
+		font-size: 42px
+		line-height: 48px
+		color: $main_blue
+		font-weight: 500
+		z-index: 1
+		&--white
+			color: #fff
+		&--1985
+			top: 80px
+		&--1990
+			top: 20px
+		&--1999
+			top: -60px
+		&--2007, &--2016
+			top: 5px
+		&--2011
+			top: 20px
+
+.time-line
+	position: absolute
+	left: 0
+	top: 300px
+	width: 86px
+	font-size: 20px
+	line-height: 24px
+	font-weight: 500
+	padding-left: 32px
+	color: $third_text
+	transform: translateY(-50%)
+	z-index: 10
+	&__list
+		&--ww
+			padding-bottom: 14px
+			border-bottom: 1px solid $third_text
+		&--ru
+			padding-top: 16px
+			.time-line__item
+				&:first-of-type
+					&::after
+						content: ''
+						display: block
+						position: absolute
+						top: 0
+						right: 5px
+						width: 21px
+						height: 13px
+						background-image: url('/images/brand/history/img/flag.png')
+						background-repeat: no-repeat
+						background-position: 50%
+						background-size: cover
+						transition: 0.3s
+		&.active
+			.time-line__item
+				transform: translateY(-3px)
+	&__item
+		position: relative
+		transition: 0.3s
+		&:not(:last-of-type)
+			margin-bottom: 6px
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			top: 50%
+			left: -32px
+			width: 16px
+			height: 2px
+			margin-top: -1px
+			background-color: $main_blue
+			transform: translateX(-120%)
+			transition: 0.3s
+		&.active
+			transform: translateY(0)!important
+			&::before
+				transform: translateX(0)
+			&::after
+				transform: translateX(25px)
+			& ~ .time-line__item
+				transform: translateY(3px)
+			.time-line__link
+				color: $main_blue
+				pointer-events: none
+				transform: scale(1.5)
+				transform-origin: 0 50%
+	&__link
+		display: inline-block
+		transition: 0.3s
+
+.canada
+	position: absolute
+	top: 0
+	right: 0
+	display: flex
+	&__img
+		flex: none
+		margin-right: 14px
+	&__year
+		font-size: 42px
+		line-height: 48px
+		font-weight: 500
+		margin-bottom: 8px
+	&__text
+		width: 384px
+		font-size: 22px
+		line-height: 32px
+
+.m-time-line
+	display: none
+	position: absolute
+	right: 0px
+	top: 100px
+	height: 48px
+	width: 50px
+	font-size: 16px
+	line-height: 24px
+	font-weight: 500
+	transform: translateY(-50%)
+	z-index: 10
+	&__wrapper
+		position: relative
+		height: 100%
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			height: 400px
+			top: 50%
+			margin-top: -200px
+			left: 0
+			right: 0
+			background-color: #fff
+			opacity: 0.7
+		&::after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			border: 2px solid $main_blue
+	&__list
+		height: 100%
+	&__item
+		position: relative
+		display: inline-block
+		width: 100%
+		text-align: center
+		padding: 12px 0px
+		opacity: 0
+		color: $third_text
+		transition: 0.3s
+		z-index: 1
+
+.opa-0
+	opacity: 1
+	color: $main_blue
+.opa-1
+	opacity: 0.8
+.opa-2
+	opacity: 0.6
+.opa-3
+	opacity: 0.4
+.opa-4
+	opacity: 0.2
+.opa-5
+	opacity: 0.1
+.opa-6
+	opacity: 0.05

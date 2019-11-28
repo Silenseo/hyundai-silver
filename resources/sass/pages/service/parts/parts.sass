@@ -1,0 +1,521 @@
+@import '../../../common/_variables.scss'
+@import '../../../common/_common.sass'
+
+.head
+  padding-top: 80px
+  background-image: url('/images/service/warranty/fon.jpg')
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+  &__composition
+    display: flex
+    flex-direction: column
+    width: 550px
+    height: 100%
+    padding-top: 41px
+    padding-left: 43px
+    padding-bottom: 50px
+  &__banner
+    position: relative
+    background-image: url('/images/service/parts/pic.jpg')
+    background-repeat: no-repeat
+    background-position: 100% 50%
+    background-size: cover
+    height: 545px
+  &__title
+    font-size: 5.5rem
+    line-height: 0.98
+    font-weight: 500
+    margin-bottom: 0.2em
+  &__subtitle
+    font-size: 3rem
+    line-height: 1.067
+    font-weight: 400
+  .df-download-link
+    font-size: 1.6rem
+    margin-top: auto
+    span
+      transition: opacity 0.3s ease 0s
+    &:hover span
+      opacity: 0.8
+
+.swiper-wrapper
+  transition-timing-function: ease-out
+.swiper-container
+  width: 100%
+  height: 100%
+  margin-left: auto
+  margin-right: auto
+.swiper-slide
+  text-align: center
+  display: -webkit-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  -webkit-justify-content: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  -webkit-align-items: center
+  align-items: center
+.swiper-button-next
+  background-image: url('/images/service/warranty/slider/arrow.svg')
+  background-size: cover
+  width: 16px
+  height: 36px
+  right: 0px
+  top: 50px
+  margin-top: 0
+  outline: none!important
+  z-index: 10
+  display: none
+  transition: transform 0.3s ease 0s
+  &:hover
+    transform: translateX(8px)
+.swiper-button-prev
+  background-image: url('/images/service/warranty/slider/arrow.svg')
+  background-size: cover
+  width: 16px
+  height: 36px
+  left: 0px
+  top: 50px
+  transform: rotate(180deg)
+  margin-top: 0
+  outline: none!important
+  z-index: 10
+  display: none
+  transition: transform 0.3s ease 0s
+  &:hover
+    transform: translateX(-8px) rotate(180deg)
+.swiper-pagination-bullet
+  width: 12px
+  height: 12px
+  background: rgba(0, 0, 0, 0.1)
+  opacity: 1
+  outline: none!important
+  transition: 0.3s background-color ease 0s
+.swiper-pagination-bullet-active
+  background-color: $second_blue
+.swiper-advantages
+  margin-bottom: 60px
+  .swiper-slide
+    flex-direction: column
+.swiper-slide
+  cursor: pointer
+  &__img
+    height: 106px
+    margin-bottom: 32px
+    transition: opacity 0.3s ease 0s
+  &__title
+    line-height: 1.2
+    font-size: 2rem
+    margin-bottom: 8px
+    font-weight: 500
+    width: 90%
+  &__text
+    width: 100%
+    font-size: 1.6rem
+    line-height: 1.5
+    font-family: 'HyundaiSansText'
+  &__name
+    font-weight: 500
+    font-size: 1.6rem
+    line-height: 1.125
+    width: 80%
+    margin: 0 auto
+    transition: opacity 0.3s ease 0s
+
+.advantages
+  background-color: $gray_bg
+  padding-top: 56px
+  padding-bottom: 56px
+  overflow-x: hidden
+  &__title
+    font-size: 4.2rem
+    line-height: 1.143
+    margin-bottom: 18px
+    text-align: center
+    font-weight: 500
+  &__subtitle
+    max-width: 800px
+    margin: 0 auto 75px
+    font-size: 1.6rem
+    line-height: 1.5
+    text-align: center
+    font-weight: 400
+  &__slider
+    max-width: 1008px
+    margin: 0 auto
+    position: relative
+    .swiper-slide
+      // transition: opacity 0.3s ease 0s
+      &:hover
+        .swiper-slide__img
+          opacity: 0.5
+        .swiper-slide__name
+          opacity: 0.75
+
+.description
+  &__title
+    margin-bottom: 17px
+  &__text
+    line-height: 1.5
+    margin-bottom: 32px
+    font-family: 'HyundaiSansText'
+  &-top
+    display: flex
+    justify-content: space-between
+    padding-bottom: 30px
+  &-bottom
+    padding-top: 40px
+  &__icon
+    width: 104px
+    height: 104px
+    margin-bottom: 32px
+  &__info
+    width: 48%
+  &__pic
+    width: 46%
+    // max-width: 416px
+    position: relative
+    &-img
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+    &-nav
+      display: flex
+      justify-content: space-between
+      color: $third_text
+      font-size: 1.2rem
+      line-height: 1.5
+      font-weight: 500
+  &-block
+    max-width: 1008px
+    margin: 0 auto
+    background-color: $white_bg
+    padding: 50px 56px 72px
+    position: relative
+    &__pointer
+      position: absolute
+      padding: 11px
+      color: $text_white
+      left: 0
+      top: -22px
+      width: 22px
+      &::after
+        content: ''
+        position: absolute
+        left: 0px
+        bottom: 0px
+        border: 11px solid transparent
+        border-bottom: 11px solid #fff
+      &--mobile
+        display: none
+    .col-md-6:nth-child(odd)
+      padding-right: 32px
+    .col-md-6:nth-child(even)
+      padding-left: 32px
+    .df-download-link
+      font-size: 1.6rem
+      span
+        transition: opacity 0.3s ease 0s
+      &:hover span
+        opacity: 0.8
+    .df-list
+      padding-left: 0
+      margin-top: 30px
+      &__title
+        padding-left: 0
+      &__item
+        font-weight: 400
+        font-family: 'HyundaiSansText'
+        padding-left: 26px
+        &:not(:last-of-type)
+          margin-bottom: 1em
+        &::before
+          width: 10px
+          height: 10px
+          background-color: $second_blue
+
+.twentytwenty-overlay
+  display: none
+.twentytwenty-horizontal .twentytwenty-handle::before,
+.twentytwenty-horizontal .twentytwenty-handle::after
+  width: 1px
+  margin-left: -0.5px
+.twentytwenty-handle
+  height: 68px
+  width: 68px
+  position: absolute
+  left: 50%
+  top: 50%
+  margin-left: -34px
+  margin-top: -34px
+  border: none
+  border-radius: 0
+  box-shadow: none
+  z-index: 40
+  background-image: url('data:image/png;base64,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')
+  background-repeat: no-repeat
+  background-size: cover
+  &:active
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAABECAYAAAA4E5OyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAaxSURBVHgB7ZzLbxNHHMe/u+tEvFQZFaiKhDCV4EBLbR/aQ3vAHHomqcRLHEguPfSS5C8gOfaU5NgTyYkWimIuvXDAufRQDraVNlKhoo6oQDzaWFUDFLOeznfWQxw/0rV3dmUn/UjBu14bJd/9ze81M2shKq7mE4CTQQxJCMhjpGpXEg2fLAFWGZYoy+OC/GwRFbuAix8UEAEWwuJKPo4dzhAGcBJVDMl34ggGBcrJn5tYc7MYTZcRAuYFubokrUCclnd2BMFFaI+NOfxjz5q2HHOCeEJclkJkECWWtJrX7hQupHMwQHBBruVTsJzpyIVoJgvXnZDClBCA7gWhj9gTG4MQk+glLGsSZ05MoUu6E4QRw4ktACKF3qQkreVUN9Zio1O+++kSHCffw2KQhPodvymOo0M6E+T60mVUq3MIM3qYIw7bmla/cwf4HzL8j3vNX/ilA7/iT5B+FkPjU5T/FmQriKHxIcrmglxbGpPOcwZbCSFGcC453+5ye0FUaGU06QsH2gllGZLT7UJy+yjjOLex9cQgcZVDMbFsQWtBvFCVwJZF5lC77JY5SvOQ8YbKb9gOVOTQuZjeUC03W4gjC7XtwmDz37rRQq7mMzXfsX3wap6cPo1tuBiLMedAFMQHbIwd24+RxF4kdg2gtPYKcytlzN59hnLFRWTEHPrLnD5dtxD2NaDCbOhQjNuZ95CK72y6Vii/xKnc/WhFqbOSdQuxnTHZ+4wEWgbFKK1VMHrnAXJP1+T5Dix8mlCv06l3kdg9qI7jAw6yD//CROGh+nwoWDZ7vjl1qN5YkDG54qzCMO2GxUgiLs8Hkb71q7SIF28+n9m/W1lOK2gx6Vv3whKlLBvXR9i49qJMxRmCYfSwmDx+QIlBeNe980F1Xi8GoaVo5kur2JtdxpHvf1HHtJQrHx1CSMSx29PAE8TGaRimfljQJ1jXl7w7/NzfHZ5cfqKsglY1Xnik3uMQosirQ8chzpyQQ+ywFHkAhjjJfzxBquYbxBwWZPiHlTd3ng5z9McHvr5PITTawdJKOKz4SoYOvoX8Z0dNiVKzEBVdzNcsfoZFN4Q4lOK4sXxYWojTy73RJtoNJSO4r0/ZPd4sbqLdUDJCVaRsGYOTMIxBRxc1CSZmRv0HxWiXS2gYcTq9ttl3jGFbSVvWLsYE0WJoh9qPMOwmYAAmYgufHFZihJZih0+i85m7NuhiTSVii/fRrxgRZDp1cIMY9ZGg3wgsCP3G+NG31XG/i0EoSAkByOzfo17nZNbY72JISjEEhLUFKTak6JGESeMIWf7bMLJGq1yJqLsUJpYlBamKFQSg/MpLn3XPo69xRVH6ECuQhbC9Ry7JrljU6BrGWP9VWAVbNlhzCADLeTZ92A1jLzRKdJXLPosRqq4UxJv0DbQIVjd9xo/uw+X330FUaEGKqy9ggDJn8bw8RIibCACtZPTO7+qYPdOoRNHDNGjTSVEVi3zxBLGsHALCPCRKURjudXas/VgghJXliyfIgMuTwGvHoxSF5QKZL/0JI7x06wQZ5kJ6MQ8DUJSJWmsvLFHGju1T/oPWwXkeA8zpzQTrtYxbzcIQM/eeYernx+rYtCgUYibpRbOp5cdmyoWKO6sP15uRN74u4eyXGRjqj9DRcVowc2CPl95bFhYDOj89L7PDsZXgM/f+QGC4eeB86it9urE7+/kXK7DtERjCpCgcJlnZgKIYnH4YLz6CEVx3VBlDjeYVRNeXbsswnIFB6ocNTZyO12+opJD8ri4iaRmcijBEFmc/HK5/o1mQkJZF8A+68vGhNzUPhZmVJs+JLP7o4pD9FbYhT9asSgtBB8oVAEZCrMaVE9wNqxFbL8v8tjgpzbujNeJ+YTOJ875+i0EKNXv3qfIXRteMCDGFc8nJxrdbC8LlEa9tOXSs0CaxOC/Lu5/cu1MlWGxSE9ZFrKAXn/ytrMFIFtqEkAEkeaTVlf8X7jbQvqfKL3DL1lajKqY221i0eZP5QnpOjbWtAv+W88lN1+772x4SopONjDZOtBH/G4j6WRSfYpDONiH2oygdiEE635XJjX22EqXXow+r1wmZic518qUA21RlngIrgZ5EFGT1PtzNNtVgO7t7cQhxiDyvznT7sITgW929BI67Coyvde0IlvFC5k1n04GmVQw+DCGfqW0eyCBKeu5hCI2wWhb2uBxKlxAeZZlxzkPILp8hITThP1DFUaukMzDxQBVb9i8qWFQN4b55oEo7aDmuk4IlUjJCJWVREZfVNEVKNHyyVHstqHlnwalWObsY8DEYfvkXxxze4pboyy8AAAAASUVORK5CYII=')
+.twentytwenty-horizontal .twentytwenty-handle::before
+  margin-bottom: 34px
+  box-shadow: none
+.twentytwenty-horizontal .twentytwenty-handle::after
+  margin-top: 34px
+  box-shadow: none
+.twentytwenty-right-arrow
+  background-image: url('/images/service/parts/arrow.svg')
+  background-size: cover
+  background-repeat: no-repeat
+  height: 36px
+  width: 16px
+  border: none
+  right: -24px
+  margin: -18px 0 0 0
+.twentytwenty-left-arrow
+  background-image: url('/images/service/parts/arrow.svg')
+  background-size: cover
+  background-repeat: no-repeat
+  height: 36px
+  width: 16px
+  border: none
+  left: -24px
+  margin: -18px 0 0 0
+  transform: rotate(180deg)
+.compare-pic
+  margin-bottom: 17px
+
+.service
+  background-color: $white_bg
+  padding-bottom: 48px
+  padding-top: 50px
+  &-inner
+    max-width: 1008px
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &-left
+    display: flex
+  &-block
+    padding-right: 160px
+    width: calc(100% - 152px)
+  &__img
+    width: 104px
+    height: 104px
+    margin-right: 48px
+  &-title
+    font-size: 3rem
+    line-height: 1.2
+    margin-bottom: 18px
+  &-text
+    font-family: 'HyundaiSansText'
+    font-weight: 400
+    font-size: 1.6rem
+    line-height: 1.5
+  .df-link
+    text-decoration: none
+    white-space: nowrap
+    transition: opacity 0.3s ease 0s
+    &:hover
+      opacity: 0.8
+
+
+@media (min-width: 1600px)
+  .advantages__slider
+    max-width: $large-cont
+
+  .description-block
+    max-width: $large-cont
+
+  .service-block
+    padding-right: 100px
+  .service-inner
+    max-width: $large-cont
+
+  .twentytwenty-container img
+    width: 100%
+
+@media (max-width: 1600px)
+  .head
+    &__banner
+      height: 440px
+
+@media (max-width: 1200px)
+  .head
+    .df-download-link
+      display: none
+
+  .swiper-slide__name
+    width: 80%
+    margin: 0 auto
+  .swiper-button-prev,
+  .swiper-button-next
+    display: block
+  .advantages__slider
+    .swiper-container
+      width: calc(100% - 84px)
+
+  .service-left
+    padding-right: 30px
+
+
+@media (max-width: 1023px)
+  .head__banner
+    &__composition
+      padding-top: 48px
+      padding-left: 34px
+
+  .description
+    &-block
+      padding: 32px 32px 56px
+      .col-md-6:nth-child(even)
+        padding-left: 16px
+      .col-md-6:nth-child(odd)
+        padding-right: 16px
+    &__title
+      font-size: 2rem
+      line-height: 1.2
+      margin-bottom: 8px
+    &__text
+      margin-bottom: 20px
+    &-top
+      padding-bottom: 40px
+    &-bottom
+      padding-top: 44px
+
+  .service-inner
+    flex-wrap: wrap
+  .service-left
+    width: 100%
+    padding-right: 0
+    margin-bottom: 43px
+  .service .df-button
+    margin-left: 152px
+  .service__img
+    margin-right: 34px
+  .service-block
+    padding-right: 0
+  .service .df-button
+    margin-left: 138px
+
+
+@media (max-width: $md-max)
+  .head__composition
+    width: auto
+    padding-top: 50px
+
+  .description
+    &-top
+      flex-wrap: wrap
+    &__info
+      width: 100%
+    &__pic
+      width: 400px
+      margin: 0 auto 24px
+      order: -1
+    &-bottom
+      .col-md-6:not(:last-child)
+        margin-bottom: 48px
+
+  .df-list__title
+    font-size: 2rem
+    line-height: 1.2
+    margin-bottom: 32px
+
+
+@media (max-width: 640px)
+  .head
+    padding-top: 64px
+    &__banner
+      background-image: url('/images/service/parts/pic-md.jpg')
+      background-position: bottom
+      height: 120vw
+    &__composition
+      padding: 26px 16px
+    &__title
+      font-size: 3rem
+      line-height: 1.067
+      margin-bottom: 15px
+    &__subtitle
+      font-size: 1.8rem
+      line-height: 1.25
+      max-width: 300px
+
+  .advantages
+    padding-top: 40px
+    padding-bottom: 38px
+    &__title
+      font-size: 3rem
+      line-height: 1.0667
+      margin-bottom: 22px
+    &__subtitle
+      margin-bottom: 36px
+      font-weight: 400
+  .swiper-advantages
+    margin-bottom: 48px
+
+  .description-top
+    padding-bottom: 30px
+  .description-bottom
+    padding-top: 40px
+  .description__pic
+    margin: 0 auto 20px
+  .description-block .df-download-link
+    font-size: 1.6rem
+  .description__text
+    margin-bottom: 23px
+
+  .compare-pic
+    margin-bottom: 6px
+
+  .service
+    padding-bottom: 38px
+  .service-left
+    flex-wrap: wrap
+    margin-bottom: 30px
+  .service-block
+    width: 100%
+  .service .df-button
+    margin-left: 0
+  .service__img
+    margin-bottom: 25px
+
+
+@media (max-width: 480px)
+  .description
+    &-block
+      padding: 16px 16px 26px
+    &__pic
+      width: 100%
+      max-width: 400px
+    &__pointer
+      display: none
+      &--mobile
+        display: block
+        position: absolute
+        padding: 16px
+        color: $text_white
+        left: calc(50% - 16px)
+        top: -32px
+        width: 32px
+        &::after
+          content: ''
+          position: absolute
+          left: 0px
+          bottom: 0px
+          border: 16px solid transparent
+          border-bottom: 16px solid #fff
+
+  .service
+    padding-top: 40px
+
+@media (max-width: 400px)
+  .service .df-button
+    width: 100%

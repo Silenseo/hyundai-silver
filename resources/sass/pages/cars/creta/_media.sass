@@ -1,0 +1,397 @@
+@media only screen and (max-width : $lg-max)
+	.section
+		min-height: 0
+		height: auto
+
+	.nav
+		padding: 0 40px
+		&__buttons
+			display: none
+
+	.banner
+		height: 520px
+		&__head
+			left: 40px
+
+	.blue-label
+		&__top
+			font-size: 30px
+
+	.design
+		.presentation
+			height: 41vw
+			&__icon
+				&--0
+					top: 35%
+					left: 28%
+				&--1
+					top: 55%
+					left: 40%
+				&--2
+					top: 60%
+					left: 57%
+				&--3
+					top: 33%
+					left: 85%
+
+	.s-parallax
+		padding: 107px 40px 32px 40px
+		&__head
+			left: 40px
+		&__list
+			&--left
+				display: flex
+				flex-direction: column
+				width: 100%
+				margin-right: 0
+			&--right
+				display: none
+		&__item
+			width: 100%
+		&__video
+			display: none
+		&__back
+			display: block
+
+	.dynamics
+		height: 624px
+		&__head
+			top: 30px
+			left: 40px
+		&__video
+			display: none
+		&__back
+			display: block
+
+	.comfort
+		.presentation
+			&__icon
+				&--0
+					top: 55%
+					left: 49%
+				&--1
+					top: 24%
+					left: 10%
+				&--2
+					top: 89%
+					left: 8%
+				&--3
+					top: 89%
+					left: 75%
+
+	.safety
+		// height: 624px
+		&__head
+			left: 40px
+		&.isEntered
+			.safety__back--3
+				transform: translate(34%, 0%) scale(1)
+			.safety__back--4
+				transform: translate(49%, 0px) scale(1)
+		&--5
+			height: auto
+		&__circles
+			width: 1200px
+			height: 1200px
+			right: 35%
+			bottom: 25%
+		&:not(.s-parallax)
+			.safety__main
+				&--small
+					display: none
+		&__back
+			&--1
+				// background-size: 640px
+			&--2
+				background-position: 100% 85%
+				background-size: 80%
+			&--3
+				transform: translate(23%, 0%) scale(1)
+				background-size: 60%
+			&--4
+				background-position: 0 100%
+				background-size: 640px
+				transform: translate(53%, 0px) scale(1)
+
+
+	.marker
+		&--2
+			bottom: 7%
+			left: 6%
+		&--3
+			right: 10%
+			bottom: -2%
+			transform: scale(-1, 1)
+		&--4
+			left: 0
+			top: 200px
+			transform: scale(1)
+
+	.s-beep
+		top: 47px
+		left: 40px
+		bottom: auto
+
+	.schema
+		display: none
+
+	.s-exit
+		top: 47px
+		left: 40px
+		right: auto
+		height: auto
+		max-width: 400px
+		transform: translate(0, 0)
+		&__circle1, &__circle2, &__center
+			display: none
+		&__description
+			margin: 0
+
+	.s-back
+		top: 47px
+		left: 40px
+		&__img
+			display: none
+
+	.gallery
+		padding-top: 40px
+		padding-bottom: 59px
+		&__download
+			margin-top: 33px
+
+@media only screen and (max-width : $md-max)
+	.nav
+		padding: 0 16px
+		overflow: auto
+		&__item
+			margin-right: 24px
+			&:not(:last-of-type)
+				margin-right: 24px
+
+	.banner
+		height: 472px
+		&.isEntered
+			.preloader__circle
+				display: none
+		&__head
+			top: 29px
+			left: 16px
+		&__title
+			font-size: 38px
+			margin-bottom: 11px
+		&__subtitle
+			font-size: 18px
+			font-weight: 400
+		&__circle
+			display: none
+
+	.blue-label
+		padding: 14px 10px 14px 16px
+		&__top
+			font-size: 20px
+		&__bottom
+			font-size: 16px
+
+	.h-buttons
+		right: 16px
+
+	.s-parallax
+		padding: 88px 16px 32px 16px
+		&__head
+			top: 25px
+			left: 16px
+			h2
+				font-size: 16px
+		&__description
+			top: 19px
+			left: 16px
+			bottom: auto
+			font-size: 14px
+			//max-width: 216px
+		&__item
+			margin-bottom: 16px
+			min-height: 200px
+
+	.dynamics
+		height: 472px
+		&__head
+			top: 21px
+			left: 16px
+			right: 16px
+		&__title
+			font-size: 38px
+			&--small
+				font-size: 16px
+		&__wrap
+			width: 100%
+		&__link
+			width: 100%
+			font-size: 16px
+			line-height: 48px
+		&__tab
+			width: 50%
+		&__graph
+			display: none
+		&__specs
+			left: 16px
+			bottom: 22px
+		&__spec:not(:last-of-type)
+			margin-bottom: 6px
+
+	.d-composition
+		&__icon
+			width: 48px
+			height: 48px
+		&__title
+			font-size: 20px
+		&__description
+			font-size: 14px
+
+	.safety
+		// height: 472px
+		&__head
+			left: 16px
+		&.isEntered
+			.safety__back--3
+				transform: translate(15%, 0%) scale(1)
+			.safety__back--4
+				transform: translate(5%, 0px) scale(1)
+		&--5
+			height: auto
+		&__head
+			left: 16px
+			top: 21px
+		&__main
+			font-size: 38px
+			line-height: 40px
+			&--small
+				font-size: 16px
+				line-height: 18px
+		&__circles
+			width: 760px
+			height: 760px
+		&__back
+			&--1
+				// background-size: 440px
+				background-size: cover
+				// transform: translateX(10%)
+				background-position: 0 100%
+			&--2
+				background-size: 400px
+				background-position: 100% 100%
+			&--3
+				background-size: 500px
+				background-position: 100% 100%
+			&--4
+				background-size: 400px
+				background-position: 100% 100%
+		&__title
+			font-size: 20px
+			line-height: 24px
+			margin-bottom: 1px
+		&__text
+			font-size: 14px
+			line-height: 21px
+
+	.s-beep, .s-exit, .s-back
+		top: 30px
+		left: 16px
+		right: 16px
+		width: auto
+
+	.marker
+		width: 256px
+		height: 256px
+		&--3
+			right: 9%
+			bottom: 0%
+		&__center
+			width: 112px
+			height: 112px
+		&__text
+			font-size: 14px
+			line-height: 16px
+		&__composition
+			img
+				max-width: 48px
+
+	.gallery
+		padding-top: 0px
+		padding-bottom: 42px
+		&__wrapper, &__nav
+			min-width: 100%
+			margin-left: -16px
+			margin-right: -16px
+		&__download
+			margin-top: 26px
+			margin-left: 16px
+		&__item
+			height: 65vw
+		&__nav-item
+			height: 56px
+
+@media only screen and (max-width : 639px)
+	.banner__title
+		color: #fff
+	.banner__subtitle
+		color: #fff
+	.design
+		.presentation
+			height: 542px;
+			&__back
+				background-position: 67% 100%
+				background-size: 100%
+			&__icon
+				&--0
+					top: auto
+					bottom: 77vw
+					left: 7%
+				&--1
+					top: auto
+					bottom: 56vw
+					left: 38%
+				&--2
+					top: auto
+					bottom: 32vw
+					left: 78%
+				&--3
+					top: 33%
+					left: 85%
+
+	.comfort
+		.presentation
+			&__back
+				background-position: 50% 53%
+				background-size: 100%
+			&__icon
+				&--0
+					top: 53%
+					left: 52%
+				&--1
+					top: 25%
+					left: 8%
+				&--2
+					top: 87%
+					left: 15%
+				&--3
+					top: 87%
+					left: 80%
+
+	.safety
+		&__back--2
+			background-size: 290px
+		&__back--3
+			background-size: 400px
+		&__back--4
+			background-size: 320px
+		.isEntered
+			.safety__back--3
+					transform: translate(20px, 0) scale(1)
+		.isEntered
+			.safety__back--4
+					transform: translate(20px, 0) scale(1)
+
+@media only screen and (max-width : 370px)
+	.design
+		.presentation
+			height: 400px;

@@ -1,0 +1,62 @@
+.s-dropdown
+    width: 100%
+    position: relative
+    transition: 0.3s
+    &.isOpened
+        background-color: #fff
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.16)
+        .s-dropdown__head
+            color: $main_blue
+            border: 1px solid transparent
+            svg
+                stroke: #002C5F
+                transform: translateY(-50%) rotate(0)
+        .s-dropdown__drop
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.16)
+    &__head
+        position: relative
+        display: block
+        font-size: 1.6rem
+        line-height: 1.25
+        color: #fff
+        font-weight: 500
+        padding: 16px 0
+        padding-left: 16px
+        padding-right: 40px
+        border: 1px solid #527092
+        svg
+            display: block
+            position: absolute
+            right: 17px
+            top: 50%
+            transform: translateY(-50%) rotate(180deg)
+            stroke: #fff
+            transition: 0.3s
+    &__holder
+        position: relative
+    &__drop
+        display: none
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        border-top: 1px solid $light_grey_scroll_bar
+        background-color: #fff
+        z-index: 10
+    &__list
+        padding: 20px 16px
+    &__item
+        position: relative
+        @extend .df-text-input-14px
+        color: $main_blue
+        padding-left: 24px
+        &:not(:last-of-type)
+            margin-bottom: 16px
+        svg
+            display: block
+            position: absolute
+            top: 2px
+            left: 0
+    &__more
+        padding: 21px 40px
+        border-top: 1px solid $light_grey_scroll_bar

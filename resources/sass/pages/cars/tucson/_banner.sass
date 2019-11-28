@@ -1,0 +1,87 @@
+.banner
+	position: relative
+	background-repeat: no-repeat
+	background-position: 50%
+	background-size: cover
+	min-height: 100%
+	&.isEntered
+		.blue-label
+			transform: translateX(0)
+		.banner__title, .banner__subtitle
+			span
+				transform: translateY(0)
+		.banner__circle
+			opacity: 1
+	&__head
+		position: absolute
+		top: 38px
+		left: 32px
+	&__title
+		font-size: 7.6rem
+		line-height: 1
+		font-weight: 500
+		color: $text_white
+		margin: 0
+		overflow: hidden
+		span
+			display: block
+			transform: translateY(100%)
+			transition: transform 0.5s
+	&__subtitle
+		color: $text_white
+		overflow: hidden
+		span
+			display: block
+			transform: translateY(100%)
+			transition: transform 0.5s
+	&__circle
+		position: absolute
+		bottom: 40px
+		left: 50%
+		margin-left: -30px
+		display: block
+		width: 60px
+		height: 60px
+		border-radius: 50%
+		border: 3px solid #fff
+		opacity: 0
+		transition: 0.3s
+		&::after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			width: 30%
+			height: 30%
+			border-right: 3px solid #fff
+			border-bottom: 3px solid #fff
+			transform: translateY(-5px) rotate(45deg)
+
+.blue-label
+    position: absolute
+    left: 0
+    bottom: 40px
+    background-color: $main_blue
+    color: $text_white
+    padding: 16px 32px
+    transform: translateX(-100%)
+    transition: 0.5s
+    &__top
+        font-size: 3.2rem
+        font-weight: 500
+    &__bottom
+        font-size: 1.8rem
+        font-weight: 500
+    hr
+        border-color: #37608D
+        margin-top: 6px
+        margin-bottom: 14px
+
+.h-buttons
+	position: absolute
+	right: 40px
+	bottom: 40px

@@ -1,0 +1,102 @@
+.slider-1
+	padding-top: 56px
+	padding-bottom: 68px
+	color: #000
+	&__center
+		max-width: 1240px
+		margin: 0 auto
+	&__title
+		display: block
+		max-width: 55%
+		margin: 0 auto
+		text-align: center
+	&__list
+		margin-top: 72px
+	&__item
+		padding: 0 32px
+	&__img
+		position: relative
+		width: 10.4rem
+		height: 10.4rem
+		margin: 0 auto
+		border-radius: 50%
+		background-color: #E4DCD3
+		margin-bottom: 25px
+		img
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			max-width: 50%
+			max-height: 50%
+	&__sub-title
+		@extend h4
+		margin-bottom: 8px
+		text-align: center
+	&__description
+		text-align: center
+	.owl-nav
+		position: absolute
+		display: flex
+		justify-content: space-between
+		top: 23%
+		height: 0
+		width: 100%
+	.owl-prev
+		display: block
+		width: 18px
+		height: 38px
+		transition: 0.3s
+		&:hover
+			transform: translateX(-8px)
+		svg
+			display: block
+	.owl-next
+		display: block
+		width: 18px
+		height: 38px
+		transition: 0.3s
+		&:hover
+			transform: translateX(8px)
+		svg
+			display: block
+	.owl-dots
+		display: flex
+		align-items: center
+		justify-content: center
+		margin-top: 70px
+	button.owl-dot
+		width: 12px
+		height: 12px
+		border-radius: 50%
+		background-color: rgba(#000000, 0.1)
+		transition: 0.3s
+		&.active
+			background-color: $second_blue
+		&:not(:last-of-type)
+			margin-right: 10px
+
+@media only screen and (min-width : $xl-min)
+	.slider-1
+		.owl-prev
+			margin-left: -123px
+		.owl-next
+			margin-right: -123px
+
+@media only screen and (max-width : $lg-max)
+    .slider-1
+        &__title
+            max-width: 100%
+
+@media only screen and (max-width : $md-max)
+	.slider-1
+		padding-top: 40px
+		padding-bottom: 52px
+		&__list
+			margin-top: 48px
+		&__sub-title
+			font-size: 20px
+		&__item
+			padding: 0 20px

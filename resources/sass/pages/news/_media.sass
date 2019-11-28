@@ -1,0 +1,123 @@
+@media only screen and (max-width : $lg-max)
+    .head
+        padding-top: 45px
+    .head__center
+        padding-top: 60px
+        padding-bottom: 56px
+    .head__title
+        font-size: 30px
+        line-height: 36px
+
+    .filters__center
+        justify-content: center
+        flex-wrap: wrap
+        padding-bottom: 32px
+    .filters__search, .filters__date
+        margin-right: 0
+        width: calc(50% - 16px)
+    .filters__search
+        margin-right: 16px
+    .filters__date
+        margin-left: 16px
+    .filters__button
+        width: 208px
+        margin-top: 32px
+
+    .body
+        padding-top: 40px
+
+    .pagination
+        padding-bottom: 59px
+
+    .max-width
+        width: 75%
+
+    .news-content
+        &__top
+            padding-bottom: 0
+            img
+                margin-bottom: 0
+        &__all
+            padding-bottom: 64px
+        h1
+            font-size: 3rem
+        h2
+            margin-top: 19px
+        ul
+            li
+                &:not(:last-of-type)
+                    margin-bottom: 16px
+        img
+            max-width: 100%
+            margin-top: 46px
+        p
+            width: 74%
+            &.disclamer
+                margin-bottom: 49px
+
+@media only screen and (max-width : $md-max)
+    .head
+        padding-top: 33px
+    .head__center
+        padding-top: 40px
+        padding-bottom: 46px
+    .head__title
+        font-size: 26px
+        line-height: 40px
+
+    .filters__center
+        padding-top: 24px
+    .filters__search, .filters__date, .filters__button
+        width: 100%
+        margin: 0
+        margin-bottom: 16px
+    .filters__button
+        margin-bottom: 0
+    .filters
+        .df-datepicker__body, .df-search-simple__body, .df-button
+            padding: 12px 16px
+
+    .body
+        padding-top: 24px
+
+    .max-width
+        width: 100%
+
+    .back
+        padding-top: 15px
+    .news-content
+        position: relative
+        &__bottom
+            padding-top: 25px
+        &__all
+            padding-bottom: 48px
+        h1
+            font-size: 2rem
+        h2
+            margin-top: 19px
+        ul
+            margin-top: 36px
+            li
+                &:not(:last-of-type)
+                    margin-bottom: 16px
+        img
+            max-width: calc(100% + 32px)
+            min-width: 100%
+            margin-left: -16px
+            margin-right: -16px
+            margin-bottom: 42px
+        &__top
+            padding-top: 27px
+            img
+                margin-bottom: 0
+        p
+            width: 100%
+            &.disclamer
+                margin-top: 28px
+                margin-bottom: 43px
+        .df-button
+            width: 100%
+            max-width: 400px
+            text-align: center
+            padding-top: 12px
+            padding-bottom: 12px

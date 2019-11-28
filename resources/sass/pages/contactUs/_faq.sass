@@ -1,0 +1,95 @@
+.faq
+	background-color: $gray_bg
+	color: $text_black
+	padding-top: 56px
+	padding-bottom: 48px
+	&__center
+		max-width: calc(100% - 64px)
+		margin: 0 auto
+	&__title
+		text-align: center
+		margin-bottom: 48px
+	&__item
+		&:not(:last-of-type)
+			border-bottom: 1px solid $sand_bg
+	&__head
+		position: relative
+		display: flex
+		align-items: center
+		min-height: 88px
+		padding: 32px 32px
+		padding-right: 200px
+		background-color: $white_bg
+		h4
+			font-size: 16px
+			line-height: 20px
+		svg
+			display: block
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			right: 32px
+			transition: 0.3s
+		&.active
+			svg
+				transform: translateY(-50%) rotate(180deg)
+	&__body
+		display: none
+		position: relative
+		padding: 48px 75px 64px 91px
+		background-color: $white_bg
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 32px
+			right: 32px
+			height: 1px
+			background-color: #F5F5F5
+	&__text
+		a
+			color: $second_blue
+	&__dropdown
+		&:not(:last-of-type)
+			margin-bottom: 8px
+	&__wrapper
+		display: none
+		max-width: 1008px
+		margin: 0 auto
+		margin-top: 16px
+		margin-bottom: 68px
+	&__main
+		display: flex
+		align-items: center
+		justify-content: space-between
+		width: 100%
+		padding: 15px 32px
+		min-height: 104px
+		&.active
+			.faq__toggle
+				background-color: $third_text
+				&::before
+					transform: rotate(0)
+	&__toggle
+		position: relative
+		width: 40px
+		height: 40px
+		border-radius: 50%
+		background-color: $main_blue
+		transition: 0.3s
+		&::after, &::before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			width: 16px
+			height: 2px
+			background-color: #fff
+			transition: 0.3s
+		&::before
+			transform: rotate(90deg)

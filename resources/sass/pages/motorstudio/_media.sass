@@ -1,0 +1,388 @@
+@media only screen and (min-width : $lg-min)
+	.map
+		&__body
+			padding-left: calc((100vw - 1233px) / 2)
+			
+@media only screen and (min-width : $xl-min)
+	.layout
+		max-width: $large-cont
+
+	.slider
+		&__card
+			padding-right: calc((100vw - 1240px) / 2)
+
+	.map
+		&__body
+			padding-left: calc((100vw - 1521px) / 2)
+
+
+@media only screen and (min-width : $md-min)
+	.nav
+		&__menu
+			display: flex!important
+			
+@media only screen and (max-width : $lg-max)
+	.banner
+		&__center
+			height: 872px
+		&__video
+			video
+				display: none
+
+	.nav
+		&.fixed
+			top: 56px!important
+			border-top: 1px solid #F1F1F1
+
+	.layout
+		width: 100%
+		max-width: 100%
+		min-width: 0
+		padding-left: 40px
+		padding-right: 40px
+	
+	.calendar-section
+		padding-top: 39px
+		&__title
+			margin-bottom: 40px
+			padding: 0 16px
+
+	.month-selector
+		&__wrap
+			width: 175px
+
+	.day
+		pointer-events: auto
+		&__event
+			pointer-events: none
+			&.short
+				height: 21px
+				span
+					display: none
+			&.altLong
+				height: 47px
+
+	.calendar-list
+		margin-left: 0
+		&__list
+			display: none!important
+			&--mobile
+				display: block!important
+
+	.event
+		width: 100%
+		padding: 32px 0
+		border-bottom: 1px solid $light_grey_scroll_bar
+		&:first-of-type
+			border-top: 1px solid $light_grey_scroll_bar
+		&__link
+			display: flex
+			width: 100%
+		&__img
+			flex: none
+			width: 176px
+			margin-bottom: 0
+			margin-right: 64px
+		&__line
+			margin-bottom: 14px
+		&__name
+			font-size: 20px
+			margin-bottom: 8px
+		&.promo
+			width: 100%
+			border-bottom: none
+			&:first-of-type
+				border-top: none
+			.event__img
+				width: 328px
+				height: 184px
+				margin-bottom: 0
+				margin-right: 32px
+
+	.slider
+		display: none
+		&__title
+			padding: 0 16px
+
+	.m-slider
+		display: block
+
+	.map
+		&__body
+			padding: 40px 40px 0px 40px
+		&__title
+			margin-bottom: 20px
+		&__addresses
+			display: block
+			margin-bottom: 12px
+		&__address
+			&:not(:last-of-type)
+				margin-right: 0
+				margin-bottom: 8px
+		&__phone
+			margin-bottom: 12px
+		&__time
+			margin-bottom: 48px
+		&__fb
+			border-right: 1px solid $white_bg
+
+	.p-event
+		top: 56px
+		&__wrap
+			align-items: flex-start
+		&__center
+			margin: 0
+			max-width: 100%
+		&__event
+			display: block
+		&__img
+			width: 100%
+			min-height: 0
+			background-position: 0 0
+			&::after
+				content: ''
+				display: block
+				position: relative
+				padding-bottom: 50%
+		&__description
+			width: 100%
+			padding: 40px
+			padding-bottom: 88px
+		&__text
+			margin-bottom: 56px
+		&__nav
+			display: flex
+
+	.p-event
+		&__close
+			svg
+				fill: $third_text
+
+@media only screen and (max-width : $md-max)
+	.banner
+		padding-top: 64px
+		&__center
+			padding: 24px 16px
+			height: 408px
+		&__title
+			font-size: 30px
+		&__subtitle
+			font-size: 18px
+			margin-top: 17px
+
+	.nav
+		&__center
+			cursor: pointer
+			&.isOpened
+				.nav__arrow
+					transform: rotate(180deg)
+		&__wrap
+			position: absolute
+			bottom: 0
+			left: -16px
+			right: -16px
+			height: 0
+		&__menu
+			display: none
+			background-color: $white_bg
+			padding: 5px 16px
+		&__item
+			&:not(:last-of-type)
+				margin-right: 0
+			a
+				line-height: 40px
+		&__arrow
+			display: block
+			right: 9px
+
+	.layout
+		padding-left: 16px
+		padding-right: 16px
+
+	.month-selector
+		&__wrap
+			width: 120px
+		&__item
+			font-size: 20px
+			line-height: 36px
+		
+	.calendar
+		&__head
+			background-color: transparent
+			color: $second_text
+			margin-bottom: 8px
+			li
+				line-height: 35px
+				padding-right: 0
+				text-align: center
+				font-size: 14px
+
+	.day
+		height: 53px
+		border-right: none
+		border-bottom: none
+		color: $text_black
+		&:first-of-type, &:nth-of-type(8n), &:nth-of-type(15n), &:nth-of-type(22n), &:nth-of-type(29n), &:nth-of-type(36n)
+			border-left: none
+		&.weekEnd
+			border-right: none
+			border-bottom: none
+		&.today
+			background-color: transparent
+			&::before
+				content: ''
+				display: block
+				position: absolute
+				left: 0
+				top: 0
+				right: 0
+				height: 28px
+				background-color: $sand_bg
+		&__number
+			top: 4px
+			right: auto
+			left: 50%
+			transform: translateX(-50%)
+			font-size: 14px
+		&__event
+			&.short
+				left: 0
+				right: 0
+				height: 6px
+				bottom: 18px
+			&.long
+				height: 18px
+				bottom: 0
+				left: 0
+				span
+					display: none
+			&.altLong
+				height: 18px
+				bottom: 0px
+	
+	.calendar-list
+		margin-top: 12px
+
+	.event
+		padding: 24px 0
+		&.promo
+			.event__img
+				position: relative
+				width: 100%
+				height: auto
+				margin-bottom: 16px
+				&::after
+					content: ''
+					display: block
+					top: 0
+					left: 0
+					padding-bottom: 55%
+			.event__line
+				margin-bottom: 6px
+		&__link
+			display: block
+		&__img
+			margin-bottom: 16px
+		&__name
+			font-size: 16px
+
+	.slider
+		&__title
+			margin-top: 40px
+			margin-bottom: 24px
+
+	.m-slider
+		&__img
+			position: relative
+			height: auto
+			&::after
+				content: ''
+				display: block
+				top: 0
+				left: 0
+				padding-bottom: 62%
+		&__content
+			padding: 32px 16px 40px 16px
+		&__line
+			margin-bottom: 16px
+		&__number
+			margin-right: 16px
+		&__head
+			padding: 0 16px
+			svg
+				right: 25px
+		
+	.map
+		display: block
+		&__left, &__right
+			width: 100%
+		&__right
+			height: 408px
+		&__body
+			padding: 32px 16px 0
+		&__time
+			margin-bottom: 38px
+
+	.p-event
+		&__img
+			min-height: 320px
+			&::after
+				padding-bottom: 50%
+		&__description
+			display: flex
+			flex-direction: column
+			padding: 28px 16px
+			padding-top: 0
+		&__top
+			margin-top: 28px
+			margin-bottom: 16px
+			order: 1
+		&__button
+			min-width: 100%
+			margin-left: -16px
+			margin-right: -16px
+			padding-top: 12px
+			padding-bottom: 12px
+			order: 0
+		&__name
+			order: 2
+		&__text
+			order: 3
+			margin-bottom: 0
+
+	.p-lang
+		&__center
+			padding: 48px 16px 24px 16px
+		&__subtitle
+			margin-bottom: 30px
+		&__buttons
+			display: block
+		&__button
+			width: 100%
+			&:first-of-type
+				margin-right: 0
+				margin-bottom: 16px
+	.new-event
+		&__inner
+			flex-wrap: wrap
+			min-height: 0
+			padding-top: 16px
+			padding-bottom: 16px
+		&__text
+			width: 100%
+			margin-bottom: 15px
+			font-size: 16px
+			padding-right: 0
+
+	.p-new
+		&__center
+			padding: 48px 16px 24px 16px
+
+@media only screen and (max-width : 640px)
+	.new-event
+		&__button
+			width: 100%
+			
+	.p-new
+		&__input, &__accept, &__catering
+			width: calc(100% - 16px)

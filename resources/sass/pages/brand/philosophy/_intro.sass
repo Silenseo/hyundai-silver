@@ -1,0 +1,42 @@
+.intro
+	color: #000
+	&__inner
+		display: flex
+		justify-content: space-between
+		margin-top: -101px
+		padding-left: 128px
+	&__year
+		font-size: 20px
+		line-height: 24px
+		color: $third_text
+		margin-bottom: 32px
+		font-weight: 500
+	&__title
+		margin-bottom: 16px
+		line-height: 1
+	&__subtitle
+		font-size: 22px
+		line-height: 32px
+	&__left
+	&__right
+		max-width: 481px
+		width: 100%
+		margin-top: 212px
+		transition-delay: 0.5s
+	&__text
+		font-size: 16px
+		line-height: 22px
+		color: $third_text
+		margin-top: 13px
+		max-width: 322px
+	&__footer
+		display: flex
+		justify-content: flex-end
+	&__img
+		display: block
+
+body.loaded
+	.intro
+		&__left, &__right
+			transform: translate3d(0,0,0)
+			opacity: 1

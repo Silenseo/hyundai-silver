@@ -1,0 +1,41 @@
+.calendar-list
+	margin-left: 32px
+	margin-top: 24px
+	transition: 0.3s
+	&__list
+		&--mobile
+			display: none
+	.owl-nav
+		display: none
+
+.event
+	width: 176px
+	color: $text_black
+	&__link
+		display: block
+	&.promo
+		width: 592px
+		.event__img
+			height: 336px
+			margin-bottom: 20px
+		.event__name
+			max-width: 400px
+			font-size: 3rem
+			line-height: 1.2
+	&__img
+		height: 176px
+		background-repeat: no-repeat
+		background-position: 50% 0
+		background-size: cover
+		margin-bottom: 16px
+	&__line
+		display: flex
+		align-items: center
+		margin-bottom: 6px
+	&__name
+		font-size: 1.6rem
+		line-height: 1.25
+		font-weight: 500
+	&__description
+		font-size: 1.6rem
+		line-height: 1.25

@@ -1,0 +1,42 @@
+.rules
+	color: #000
+	&__center
+		display: flex
+		flex-wrap: wrap
+		position: relative
+		width: 100%
+		padding: 64px 72px
+		padding-bottom: 56px
+		margin: 0 32px
+		max-width: 1216px
+		background-color: $white_bg
+		transition: 0.5s
+		p
+			margin-bottom: 32px
+	&__title
+		margin-bottom: 32px
+	&__left, &__right
+		width: calc(50% - 16px)
+	&__left
+		margin-right: 16px
+	&__right
+		margin-left: 16px
+
+@media only screen and (max-width : $lg-max)
+	.rules
+		&__center
+			display: block
+		&__left, &__right
+			margin: 0
+			width: 100%
+
+@media only screen and (max-width : $md-max)
+	.rules
+		&__center
+			padding: 32px 16px
+			margin: 16px
+		&__close
+			top: 10px
+			right: 16px
+		&__title
+			margin-bottom: 24px

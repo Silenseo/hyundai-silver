@@ -1,0 +1,113 @@
+$dark-blue: #222;
+$green: #2CD892;
+$action-color: $green;
+
+.svg-filters {
+  position: absolute;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+%button {
+  -webkit-font-smoothing: antialiased;
+  background-color: $dark-blue;
+  border: none;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85em;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  letter-spacing: 0.1em;
+  color: white;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  transition: background-color 0.1s ease-out;
+
+  &:hover {
+    background-color: $action-color;
+    color: #fff;
+  }
+
+  &:focus {
+    outline: none;
+    color: #fff;
+  }
+}
+
+.button,
+.button__bg {
+  .safari & {
+    -webkit-filter: none!important;
+    filter: none!important;
+  }
+}
+
+.button--4 {
+  position: relative;
+  z-index: 1;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  padding: 0;
+  @extend %button;
+  background: none;
+
+  &:hover {
+    background: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active .button__bg {
+    transform: scale(0.8);
+  }
+
+  
+}
+
+.circle__bg {
+    outline: 90px solid transparent!important; // this makes the area of effect of the filter bigger. This doesn't change anything on Firefox.
+    transform: translateZ(0);
+    background: none;
+    font-weight: bold;
+    z-index: -2;
+    transition: 0.1s;
+
+    &:hover {
+      background: none;
+    }
+  }
+
+  .blob {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0.3;
+	background: rgba($sand, 0.7);
+	
+    transition: 0.1s;
+    z-index: -1;
+    pointer-events: none;
+
+    &:first-child {
+      opacity: 1;
+    }
+    &:not(:first-child) {
+
+    }
+
+    &:nth-child(n+2) {
+      width: 100%;
+      height: 100%;
+    }
+  }

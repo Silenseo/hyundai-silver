@@ -1,0 +1,171 @@
+@import '../common/components/_s-contacts.sass'
+
+//Стили футера
+.footer
+    width: 100%
+    background-color: $main_blue
+    color: $text_white
+    &__top
+        padding-top: 50px
+        padding-bottom: 54px
+    &__nav
+        display: flex
+        flex-wrap: wrap
+        overflow: hidden
+        min-width: 100%
+        margin-right: -16px
+        margin-left: -16px
+    &__column
+        width: calc(16% - 32px)
+        margin: 0 16px
+        &--logo
+            width: calc(7% - 32px)
+        &--last
+            width: calc(29% - 32px)
+        &--combologo
+            width: calc(100% - 32px)
+            padding-top: 24px
+    &__main-link
+        display: inline-block
+        svg
+            display: block
+            width: 41px
+            height: 21px
+            fill: #ffffff
+    &__sub-nav
+        margin-top: 11px
+    &__item
+        &:not(:last-of-type)
+            margin-bottom: 0.9rem
+    &__link
+        @extend .df-text-input-14px
+        color: $third_text
+        transition: color 0.3s
+        &:hover, &:focus
+            color: $sand
+    &__support
+        color: $third_text
+    &__phone
+        display: block
+        @extend .df-banner-subline
+        white-space: nowrap
+        margin-top: 12px
+        &:hover, &:focus
+            color: $text_white
+    &__mail
+        display: block
+        position: relative
+        @extend .df-text-radio-button-14px
+        padding-left: 25px
+        margin-top: 12px
+        transition: 0.3s
+        svg
+            display: block
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            width: 17px
+            height: 13px
+            stroke: $text_white
+            fill: transparent
+            transition: 0.3s
+        &:hover, &:focus
+            color: $sand
+            svg
+                stroke: $sand
+                
+                   
+    &__combologo
+        width: 176px
+        height: auto
+
+.footer-social
+    display: flex
+    align-items: center
+    margin-top: 36px
+    &__item
+        flex: none
+        &:not(:last-of-type)
+            margin-right: 32px
+    &__link
+        display: block
+        color: #B7B7B7
+        transition: 0.3s
+        &:hover, &:focus
+            color: $text_white
+        svg
+            display: block
+            max-width: 100%
+            max-height: 100%
+        &--fb
+            width: 18px
+            height: 18px
+        &--vk
+            width: 22px
+            height: 12px
+        &--twitter
+            width: 20px
+            height: 16px
+        &--instagram
+            width: 16px
+            height: 16px
+        &--youtube
+            width: 22px
+            height: 16px
+            
+.footer-bottom
+	background-color: $bottom_bg
+	padding-top: 26px
+	padding-bottom: 38px
+	&__top-line
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__world
+		@extend .df-text-small-12px
+		display: flex
+		align-items: center
+		&:hover, &:focus
+			color: $text_white
+	&__flag
+		display: block
+		width: 21px
+		height: 15px
+		flex: none
+		margin-right: 8px
+	&__arrow
+		display: block
+		width: 9px
+		height: 6px
+		flex: none
+		margin-left: 5px
+		*
+			fill: $white_bg
+	&__menu
+		display: flex
+		align-items: center
+		line-height: 1
+	&__item
+		position: relative
+		display: block
+		padding-left: 12px
+		padding-right: 18px
+		&:not(:last-of-type)
+			border-right: 1px solid $white_bg
+	&__link
+		@extend .df-text-small-12px
+		line-height: 1
+		transition: color 0.3s
+		&:hover, &:focus
+			color: $sand
+	&__disclamer
+		@extend .df-text-small-12px
+		color: $third_text
+		padding-top: 30px
+	&__copyright
+		@extend .df-text-small-12px
+		color: $third_text
+		padding-top: 24px
+
+

@@ -1,0 +1,95 @@
+.cards
+	padding: 56px 0
+	background-color: #E5E5E5
+	color: #000
+	&__list
+		display: flex
+		flex-wrap: wrap
+		min-width: 100%
+		margin-left: -16px
+		margin-right: -16px
+	&__card
+		position: relative
+		width: calc(25% - 32px)
+		margin: 0 16px
+		padding: 33px 27px
+		padding-top: 45px
+		background-color: #fff
+		overflow: hidden
+		&:hover
+			.cards__circle
+				img
+					opacity: 1
+	&__circle
+		position: absolute
+		top: -205px
+		right: -60px
+		width: 316px
+		height: 316px
+		border-radius: 50%
+		background-color: $sand
+		overflow: hidden
+		img
+			display: block
+			position: absolute
+			left: 0
+			bottom: 0
+			opacity: 0
+			transition: 0.3s
+	&__icon
+		position: relative
+		width: 68px
+		height: 68px
+		border-radius: 50%
+		background-color: #F1F1F1
+		margin-bottom: 20px
+		img
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			max-width: 45px
+			height: auto
+	&__title
+		font-size: 1.6rem
+		line-height: 1.5
+		font-weight: 500
+	&__text
+		font-size: 1.4rem
+		line-height: 1.14
+
+@media only screen and (min-width : $lg-min)
+	.cards
+		&__card
+			&:hover
+				.cards__circle
+					img
+						opacity: 1
+
+@media only screen and (max-width : $lg-max)
+	.cards
+		&__circle
+			img
+				opacity: 1
+
+@media only screen and (max-width : 1023px)
+	.cards
+		&__card
+			width: calc(50% - 32px)
+			&:nth-of-type(1), &:nth-of-type(2)
+				margin-bottom: 32px
+
+@media only screen and (max-width : 640px)
+	.cards
+		&__list
+			margin: 0
+		&__card
+			width: 100%
+			margin: 0
+			&:nth-of-type(1), &:nth-of-type(2)
+				margin-bottom: 0px
+			&:not(:last-of-type)
+				margin-bottom: 24px

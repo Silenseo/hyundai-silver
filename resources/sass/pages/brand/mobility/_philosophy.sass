@@ -1,0 +1,246 @@
+.philosophy
+	padding-top: 103px
+	padding-bottom: 194px
+	background-color: $gray_bg
+	overflow: hidden
+	&.active
+		.philosophy__title, .philosophy__subtitle, .philosophy__body
+			transform: translate3d(0,0,0)
+			opacity: 1
+	&__body
+		display: flex
+		align-items: center
+		justify-content: center
+		text-align: center
+		width: 100%
+		transition: opacity 3s cubic-bezier(.19,1,.22,1), transform 3s cubic-bezier(.19,1,.22,1)
+		will-change: opacity,transform
+		transform: translate3d(0,40px,0)
+		opacity: 0
+		transition-delay: 1s
+	&__title
+		max-width: 600px
+		margin: 0 auto
+		margin-bottom: 11px
+		text-align: center
+		font-size: 42px
+		line-height: 48px
+		transition: opacity 1s cubic-bezier(.19,1,.22,1), transform 3s cubic-bezier(.19,1,.22,1)
+		will-change: opacity,transform
+		transform: translate3d(0,100px,0)
+		opacity: 0
+	&__subtitle
+		margin: 0 auto
+		max-width: 801px
+		text-align: center
+		margin-bottom: 128px
+		font-size: 22px
+		line-height: 32px
+		transition: opacity 1s cubic-bezier(.19,1,.22,1), transform 3s cubic-bezier(.19,1,.22,1)
+		will-change: opacity,transform
+		transform: translate3d(0,100px,0)
+		opacity: 0
+	&__wrapper
+		position: relative
+
+.circle
+	display: flex
+	align-items: center
+	justify-content: center
+	position: relative
+	width: 288px
+	height: 288px
+	border-radius: 50%
+	// background-color: rgba($sand, 0.7)
+	cursor: pointer
+	text-align: center
+	transition: opacity 0.5s, transform 0.5s
+	transition-delay: 0s, 0s, 0s
+	will-change: transform, opacity
+	&:hover
+		.circle__back
+			transform: scale(1.1)
+	&:not(.active)
+		&:hover
+			.circle__body
+				transform: scale(1.1)!important
+	&.active
+		transition-delay: 0s, 0s, 0s
+		&.circle--1
+			transform: translateX(60px) scale(0.79)!important
+			opacity: 0
+			& ~ .subcircle
+				transform: scale(1)
+				opacity: 1
+				transition-delay: 0.25s, 0s, 0s
+				&--11
+					transform: scale(1) translate(-140px, -140px)
+				&--12
+					transform: scale(1) translate(-140px, 140px)
+			.circle__title
+				opacity: 0
+		&.circle--3
+			transform: translateX(-60px) scale(0.79)!important
+			opacity: 0
+			& ~ .subcircle
+				transform: scale(1)
+				opacity: 1
+				transition-delay: 0.25s, 0s, 0s
+				&--21
+					transform: scale(1) translate(140px, -140px)
+				&--22
+					transform: scale(1) translate(140px, 140px)
+			.circle__title
+				opacity: 0
+		&.circle--2
+			.circle__title
+				transform: scale(1.5)
+			.circle__body
+				background-image: url('/images/brand/philosophy/img/circle.jpg')
+		.circle__text--2
+			margin-top: 15px
+			max-height: 200px
+			opacity: 1
+		.circle__title
+			color: #000
+	&__body
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba($sand, 0.7)
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+		border-radius: 50%
+		//z-index: -1
+		transition: 0.5s
+	&__back
+		position: absolute
+		display: block
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border-radius: 50%
+		transition: 0.3s
+	&__inner
+		position: relative
+		z-index: 1
+	&__title
+		display: inline-block
+		font-size: 20px
+		line-height: 24px
+		color: #777673
+		transition: 0.3s
+	&__text
+		font-size: 16px
+		line-height: 24px
+		transition: 0.3s
+		overflow: hidden
+		&--2
+			margin-top: 0px
+			max-height: 0
+			opacity: 0
+	&--1
+		transform: translateX(30px)
+	&--3
+		transform: translateX(-30px)
+		& ~ .subcircle
+			margin-left: -170px
+	&--2
+		background-color: transparent
+	&--1, &--2, &--3
+		z-index: 1
+		&:hover
+			.circle__title
+				color: #000
+
+.subcircle
+	display: flex
+	align-items: center
+	justify-content: center
+	position: absolute
+	top: 50%
+	left: 50%
+	margin-top: -114px
+	margin-left: -55px
+	width: 228px
+	height: 228px
+	border-radius: 50%
+	background-repeat: no-repeat
+	background-position: 50%
+	background-size: cover
+	text-align: center
+	z-index: 2
+	transition: opacity 0.2s, transform 0.5s
+	transition-delay: 0s, 0s, 0s
+	transform: scale(0)
+	opacity: 0
+	will-change: transform, opacity
+	cursor: pointer
+	&__back
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-repeat: no-repeat!important
+		background-position: 50%!important
+		background-size: cover!important
+		background-color: $sand
+		border-radius: 50%
+		opacity: 0.7
+		&--11
+			background: linear-gradient(209.83deg, rgba(202, 185, 124, 0.24) 13.43%, rgba(127, 85, 61, 0) 83.55%), url('/images/brand/philosophy/img/circle1.jpg')
+		&--12
+			background-image: url('/images/brand/philosophy/img/circle2.jpg')
+		&--13
+			background: linear-gradient(234.32deg, rgba(147, 141, 91, 0.24) 29.94%, rgba(141, 98, 98, 0.1368) 70.9%), url('/images/brand/philosophy/img/circle3.jpg')
+		&--21
+			background: linear-gradient(209.83deg, rgba(202, 185, 124, 0.24) 13.43%, rgba(127, 85, 61, 0) 83.55%), url('/images/brand/philosophy/img/circle1.jpg')
+		&--22
+			background-image: url('/images/brand/philosophy/img/circle2.jpg')
+		&--23
+			background: linear-gradient(234.32deg, rgba(147, 141, 91, 0.24) 29.94%, rgba(141, 98, 98, 0.1368) 70.9%), url('/images/brand/philosophy/img/circle3.jpg')
+	&__title
+		position: relative
+		font-size: 20px
+		line-height: 24px
+
+.philosophy__wrapper
+	svg
+		height: 0
+		width: 0
+		visibility: hidden
+
+.circle--1
+	.circle__back
+		background-color: rgba($sand, 0.7)
+		filter: url(#noise1)
+.circle--2
+	.circle__body
+		filter: url(#noise2)
+.circle--3
+	.circle__back
+		background-color: rgba($sand, 0.7)
+		filter: url(#noise3)
+
+.subcircle
+	&__back
+		&--11
+			filter: url(#noise11)
+		&--12
+			filter: url(#noise12)
+		&--13
+			filter: url(#noise13)
+.subcircle
+	&__back
+		&--21
+			filter: url(#noise21)
+		&--22
+			filter: url(#noise22)
+		&--23
+			filter: url(#noise23)
+

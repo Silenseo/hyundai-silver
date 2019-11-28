@@ -1,0 +1,66 @@
+.p-event
+	color: $text_black
+	&__center
+		max-width: 1248px
+		width: 100%
+		height: 100%
+		margin: 32px
+		background-color: #fff
+		overflow: hidden
+	&__list
+		display: flex
+		position: relative
+		transition: 0.5s
+	&__event
+		display: flex
+		flex: none
+		width: 100%
+	&__img
+		position: relative
+		width: 50%
+		min-height: 800px
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+	&__description
+		width: 50%
+		padding: 56px 48px
+	&__top
+		display: flex
+		align-items: center
+		margin-bottom: 26px
+	&__separator
+		margin: 0 5px
+	&__name
+		margin-bottom: 22px
+	&__text
+		font-size: 1.6rem
+		line-height: 1.5
+		margin-bottom: 80px
+	&__nav
+		display: none
+		align-items: center
+		justify-content: space-between
+		position: absolute
+		top: 50%
+		height: 0
+		width: 100%
+		left: 0
+	&__prev, &__next
+		visibility: hidden
+		display: block
+		position: relative
+		width: 40px
+		height: 40px
+		background-color: rgba(0, 0, 0, 0.4)
+		z-index: 10
+		svg
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+		&.visible
+			visibility: visible

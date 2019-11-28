@@ -1,0 +1,93 @@
+//для 2х страниц: засись на сервис и на тест-драйв
+@import '../../common/_variables.scss'
+@import '../../common/components/_placeholder.sass'
+
+.form
+	padding-top: 80px
+	background-image: url('/images/signUpForm/background.jpg')
+	background-repeat: no-repeat
+	background-position: 50%
+	background-size: cover
+	&__wrap
+		padding: 56px 72px 64px 72px
+		background-color: #fff
+
+	.td-form
+		&__title
+			width: 70%
+			font-size: 4.2rem
+			line-height: 1.14
+			margin-bottom: 72px
+		&__left
+			padding-right: 34px
+		&__right
+			padding-left: 34px
+		&__center
+			padding-left: 34px
+			padding-right: 34px
+		&__footer
+			margin-top: 31px
+			border-top: 1px solid $sand_bg
+			padding-top: 49px
+
+	.service-form
+		&__title
+			width: 70%
+			font-size: 4.2rem
+			line-height: 1.14
+			margin-bottom: 72px
+		&__left
+			padding-right: 32px
+		&__right
+			padding-left: 32px
+		&__footer
+			margin-top: 31px
+			border-top: 1px solid $sand_bg
+			padding-top: 49px
+
+@media only screen and (max-width : $lg-max)
+	.form
+		&__wrap
+			padding: 0 32px
+			padding-top: 56px
+			padding-bottom: 64px
+
+		.td-form
+			&__title
+				width: 100%
+				margin-bottom: 56px
+			&__left, &__right, &__center
+				padding: 0
+			&__right, &__center
+				padding-top: 20px
+
+		.service-form
+			&__title
+				width: 100%
+				margin-bottom: 56px
+			&__left, &__right
+				padding: 0
+			&__right
+				padding-top: 20px
+
+
+
+@media only screen and (max-width : $md-max)
+	.form
+		padding-top: 65px
+		&__wrap
+			padding: 31px 16px
+
+		.td-form
+			&__title
+				font-size: 30px
+				margin-bottom: 32px
+			&__label
+				font-size: 20px
+
+		.service-form
+			&__title
+				font-size: 30px
+				margin-bottom: 32px
+			&__label
+				font-size: 20px

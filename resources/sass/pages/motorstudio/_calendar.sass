@@ -1,0 +1,207 @@
+.layout
+	max-width: 1008px
+	margin: 0 auto
+
+.calendar-section
+	padding: 47px 0
+	padding-bottom: 0
+	&__title
+		text-align: center
+		margin-bottom: 48px
+
+.calendar-nav
+	&__center
+		@extend .layout
+
+.month-selector
+	display: flex
+	align-items: center
+	&.disabled
+		visibility: hidden
+	&__wrap
+		position: relative
+		width: 200px
+		height: 36px
+		overflow: hidden
+	&__item
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		text-align: center
+		font-size: 3rem
+		line-height: 1.2
+		color: $main_blue
+		font-weight: 500
+		text-transform: capitalize
+		transition: 0.5s
+	&__next, &__prev
+		position: relative
+		display: block
+		width: 20px
+		height: 36px
+		svg
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			transition: 0.3s
+	.owl-prev, .owl-next
+		position: relative
+		display: block
+		width: 20px
+		height: 36px
+		-webkit-appearance: none
+		box-shadow: none
+		border: none
+		background-color: transparent
+		svg
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			transition: 0.3s
+		&.disabled
+			opacity: 0.3
+			pointer-events: none
+	.owl-prev
+		margin-right: 35px
+	&__prev
+		&--pr
+			margin-right: 35px
+
+.calendar-nav
+	&__center
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__calendar, &__list
+		transition: 0.3s
+		svg
+			stroke: $third_text
+			transition: 0.3s
+		&.active
+			svg
+				stroke: $second_blue
+		&:hover
+			opacity: 0.8
+
+	&__calendar
+		margin-right: 16px
+
+.month-prev-enter
+	transform: translateX(-100%)
+.month-prev-leave-to
+	transform: translateX(100%)
+
+.month-next-enter
+	transform: translateX(100%)
+.month-next-leave-to
+	transform: translateX(-100%)
+
+.calendar
+	margin-top: 28px
+	transition: 0.3s
+	&__center
+		@extend .layout
+	&__head
+		display: flex
+		align-items: center
+		background-color: $light_grey_scroll_bar
+		color: $third_text
+		li
+			width: calc(100% / 7)
+			padding-right: 16px
+			line-height: 48px
+			text-align: right
+			border-bottom: 1px solid $white_bg
+			border-right: 1px solid $white_bg
+				
+	&__body
+		display: flex
+		flex-wrap: wrap
+		overflow: hidden
+
+.day
+	position: relative
+	width: calc(100% / 7)
+	height: 145px
+	border-right: 1px solid $light_grey_scroll_bar
+	border-bottom: 1px solid $light_grey_scroll_bar
+	color: $text_black
+	pointer-events: none
+	&:first-of-type, &:nth-of-type(8n), &:nth-of-type(15n), &:nth-of-type(22n), &:nth-of-type(29n), &:nth-of-type(36n)
+		border-left: 1px solid $light_grey_scroll_bar
+	&.nextMonth
+		color: $third_text
+	&.past
+		color: $third_text
+		.day__event
+			&.long:not(.pastFuture)
+				background-color: $light_grey_scroll_bar
+				color: $third_text
+	&.weekEnd
+		background-color: $gray_bg
+		border-right: 1px solid $white_bg
+		border-bottom: 1px solid $white_bg
+	&.today
+		background-color: $sand_bg
+	&__number
+		position: absolute
+		top: 8px
+		right: 16px
+	&__holder
+
+	&__event
+		display: flex
+		align-items: center
+		justify-content: center
+		padding: 5px
+		pointer-events: auto
+		span
+			display: block
+			max-width: 100%
+			max-height: 100%
+			overflow: hidden
+			text-overflow: ellipsis
+			white-space: nowrap
+			text-align: center
+		&.short
+			position: absolute
+			bottom: 46px
+			left: -1px
+			right: -1px
+			height: 41px
+			background-color: $second_blue
+			color: $text_white
+			font-size: 1.2rem
+			line-height: 1.25
+			font-weight: 500
+			span
+				white-space: initial
+		&.altLong
+			@extend .short
+			bottom: 0
+			height: 47px
+			border-top: 1px solid $white_bg
+		&.long
+			visibility: hidden
+			position: absolute
+			left: -1px
+			bottom: -1px
+			height: 47px
+			background-color: $main_blue
+			color: $text_white
+			font-size: 1.6rem
+			line-height: 1.5
+			font-weight: 500
+			z-index: 10
+			&.monday, &.start
+				visibility: visible
+		
+.calendar-anim-leave-to
+	opacity: 0

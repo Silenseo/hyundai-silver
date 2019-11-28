@@ -1,0 +1,97 @@
+@import '../../common/_variables.scss'
+@import '../../common/_common.sass'
+
+.head
+  padding-top: 80px
+  background-image: url('/images/common/become-dealer-bg.jpg')
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+  &__composition
+    width: 570px
+    padding-top: 37px
+    padding-left: 43px
+  &__banner
+    position: relative
+    background-image: url('/images/common/become-dealer.jpg')
+    background-repeat: no-repeat
+    background-position: 100% 50%
+    background-size: cover
+    height: 440px
+  &__title
+    font-size: 5.5rem
+    line-height: 0.98
+    font-weight: 500
+    margin-bottom: 0.2em
+    color: #fff
+
+.info
+  padding-top: 89px
+  padding-bottom: 82px
+  background-color: #fff
+  &-block
+    max-width: 800px
+    margin: 0 auto
+  &-text
+    margin-bottom: 47px
+  h5
+    margin-bottom: 14px
+  &-item
+    max-width: 200px
+    margin-top: 54px
+    margin-bottom: 12px
+    color: #666
+    font-size: 12px
+    line-height: 15px
+    &__span
+      line-height: 24px
+      display: block
+      margin-bottom: 5px
+    &__text
+      margin-bottom: 12px
+
+
+@media (max-width: 1023px)
+  .head__banner
+    height: 872px
+    background-position: 50% 50%
+  .head__composition 
+    padding-top: 47px
+    padding-left: 37px
+
+  .info
+    padding-top: 48px
+    padding-bottom: 48px
+ 
+
+@media (max-width: $md-max)
+  .head__composition
+    width: auto
+    padding-top: 50px
+    padding-right: 24px
+
+
+@media (max-width: 640px)
+  .head
+    padding-top: 64px
+    &__banner
+      // background-image: url('/images/service/bodyworks/pic-sm.jpg')
+      background-position: bottom
+      height: 408px
+    &__composition
+      padding: 26px 16px
+    &__title
+      font-size: 3rem
+      line-height: 1.067
+      margin-bottom: 0.5em
+  
+
+// @media (max-width: 600px)
+ 
+
+// @media (max-width: 480px)
+
+
+@media (max-width: 400px)
+  .head__composition
+    padding: 26px 12px 0 16px

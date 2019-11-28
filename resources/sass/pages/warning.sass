@@ -1,0 +1,80 @@
+@import '../common/_variables.scss'
+@import '../common/_common.sass'
+@import 'service/_service-signup'
+
+
+.service
+  background-color: $gray_bg
+  padding-top: 73px
+  padding-bottom: 208px
+  &-inner
+    background-color: #fff
+    padding: 104px 104px 106px 72px
+  &-block
+    padding-right: 0
+  &-title
+    margin-bottom: 22px
+  &__img
+    margin-right: 32px
+  &-left
+    padding-right: 0
+    margin-bottom: 0
+  &-link
+    color: $second_blue
+    text-decoration: underline
+    transition: opacity 0.3s ease 0s
+    &:hover
+      text-decoration: underline
+      opacity: 0.8
+
+
+@media (max-width: 1023px)
+  .service
+    padding-top: 40px
+    &-inner
+      padding: 80px 70px 88px
+    &-title
+      font-size: 2rem
+    &__img
+      margin-right: 38px
+
+
+@media (max-width: 767px)
+  .service
+    &-inner
+      padding: 60px 40px
+    &__img
+      width: 80px
+      height: 80px
+      margin-right: 32px
+
+
+@media (max-width: 640px)
+  .service
+    &-left
+      flex-wrap: nowrap
+    &-title
+      font-size: 1.6rem
+    &-inner
+      padding: 40px 32px
+    &__img
+      width: 60px
+      height: 60px
+      margin-right: 32px
+
+
+@media (max-width: 480px)
+  .service
+    &-title
+      font-size: 1.2rem
+      line-height: 1.5
+      margin-bottom: 16px
+    &-inner
+      padding: 32px 24px
+    &__img
+      width: 48px
+      height: 48px
+      margin-right: 9px
+    &-link
+      font-size: 1.2rem
+    

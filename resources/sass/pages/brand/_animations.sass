@@ -1,0 +1,95 @@
+.bp
+	background-repeat: no-repeat
+	background-position: 50%
+	background-size: cover
+
+.pl
+	position: absolute
+	top: 0%
+	left: 0
+	right: 0
+	bottom: 0%
+	transition: opacity 1.3s cubic-bezier(.19,1,.22,1), transform 1.3s cubic-bezier(.19,1,.22,1)
+
+.df-description
+	transition: opacity 1s cubic-bezier(.19,1,.22,1), transform 3s cubic-bezier(.19,1,.22,1)
+	will-change: opacity,transform
+	transform: translate3d(0,30px,0)
+	opacity: 0
+	&.active
+		transform: translate3d(0,0,0)
+		opacity: 1
+
+.df-slideUp
+	@extend .df-description
+
+.df-back
+	position: relative
+	transform: translateY(250px)
+	transition: 3s cubic-bezier(.19,1,.22,1)
+	will-change: transform
+	overflow: hidden
+	&__wrap
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		transform: scale(0.8)
+		transition: 0.5s linear
+		transition-delay: 0.5s
+		will-change: transform
+		overflow: hidden
+	&__img
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		width: 100%
+		height: 100%
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+		opacity: 0
+		transform: scale(1.5)
+		transition: 0.5s linear
+		will-change: transform, opacity
+		transition-delay: 0.5s
+
+.df-img
+	position: relative
+	overflow: hidden
+	transform: translateY(100px)
+	transition: 3s cubic-bezier(.19,1,.22,1)
+	will-change: transform
+	&__parallax
+		@extend .pl
+	&__wrap
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		transform: scale(0.8)
+		transition: 0.5s linear
+		transition-delay: 0.5s
+		will-change: transform
+		overflow: hidden
+	&__img
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+		opacity: 0
+		transform: scale(1.5)
+		transition: 0.5s linear
+		transition-delay: 0.5s
+		will-change: transform, opacity

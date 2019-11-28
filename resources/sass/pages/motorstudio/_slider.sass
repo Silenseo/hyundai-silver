@@ -1,0 +1,135 @@
+.slider
+	color: $text_black
+	&__title
+		text-align: center
+		margin-top: 72px
+		margin-bottom: 48px
+	&__body
+		display: flex
+		flex-wrap: wrap
+		width: 100%
+		height: 34vw
+		overflow: hidden
+	&__wrap
+		position: relative
+		overflow: hidden
+		height: 80%
+		&--card
+			height: 100%
+	&__images
+		width: 50%
+	&__img
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+		&--next
+			transform: translateY(100%)
+	&__cards
+		position: relative
+		width: 50%
+	&__card
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: $gray_bg
+		padding: 40px 80px
+		transform: translateY(0px)
+		transition: 0.5s
+		&.active
+			transform: translateY(0px)
+		&.next
+			transform: translateY(80%)
+			background-color: $sand_bg
+			padding-top: 30px
+			& ~ .slider__card
+				transform: translateY(160%)
+	&__top
+		display: flex
+		align-items: center
+		margin-bottom: 32px
+	&__name
+		transition: 0.3s
+	&__small-name
+		transition: 0.3s
+	&__number
+		color: $third_text
+		margin-right: 16px
+	&__description
+		margin-top: 20px
+		transition: 0.3s
+
+.m-slider
+	display: none
+	color: $text_black
+	.isOpened
+		.m-slider__body
+			max-height: 900px
+	&__body
+		max-height: 80px
+		transition: 0.5s
+		overflow: hidden
+	&__img
+		width: 100%
+		height: 440px
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+	&__content
+		padding: 32px 40px
+		padding-bottom: 60px
+	&__line
+		display: flex
+		align-items: center
+		margin-bottom: 24px
+	&__number
+		color: $third_text
+		margin-right: 24px
+		&--small
+			margin-right: 16px
+	&__description
+		font-size: 1.6rem
+		line-height: 1.5
+	&__head
+		position: relative
+		display: flex
+		align-items: center
+		height: 80px
+		background-color: $sand_bg
+		padding: 0 40px
+		svg
+			position: absolute
+			top: 50%
+			right: 40px
+			transform: translateY(-50%)
+
+.slide-down-enter
+	transform: translateY(100%)
+.slide-down-enter-active, .slide-down-leave-active
+	transition: 0.5s
+	transition-delay: 0.5s
+.slide-down-leave-to
+	transform: translateY(0%)
+
+.slide-up-enter
+	transform: translateY(0%)
+.slide-up-enter-active, .slide-up-leave-active
+	transition: 0.5s
+	transition-delay: 0.5s
+.slide-up-leave-to
+	transform: translateY(100%)
+
+.fade-enter
+	opacity: 0
+
+.fade-leave-to
+	opacity: 0
+
+.highlight
+	display: none

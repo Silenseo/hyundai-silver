@@ -1,0 +1,161 @@
+@media only screen and (max-width : $xl-max)
+	.head
+		&__banner
+			height: 440px
+
+@media only screen and (max-width : $lg-max)
+	.service-calculator
+		display: block
+	.sidebar
+		display: none
+
+	.main-s
+		&__wrapper
+			width: 100%
+			padding-left: 0px
+			padding-right: 0px
+
+	.m-line
+		display: block
+
+	.find-dealer
+		display: block
+		&__left, &__right
+			width: 100%
+		&__left
+			height: 472px
+		&__right
+			padding: 40px
+			min-height: 352px
+
+	.sign-up-service
+		&__center
+			padding-left: 136px
+		&__body
+			display: block
+		&__text
+			max-width: 100%
+			margin-bottom: 43px
+		&__buttons
+			display: flex
+			align-items: center
+		&__button
+			margin-bottom: 0
+			margin-right: 33px
+			padding-left: 60px
+			padding-right: 60px
+
+// @media only screen and (max-width : 1023px)
+// 	.head
+// 		&__banner
+// 			height: 872px
+// 			background-position: 80% 50%
+    
+@media only screen and (max-width : $md-max)
+	.head
+		padding-top: 64px
+		&__composition
+			top: 24px
+			left: 14px
+		&__title
+			font-size: 28px
+			margin-bottom: 12px
+
+	.main-s
+		&__item
+			margin-bottom: 22px
+			&--title
+				margin-bottom: 38px
+			&--50
+				width: calc(100% - 32px)
+			&--map
+				margin-top: -16px
+				margin-bottom: 6px
+
+	.m-line
+		height: 120px
+		&__wrap
+			height: 120px
+		&__body
+			padding: 0 16px
+			transform: translateY(-120px)
+		&__top
+			height: 72px
+		&__img
+			width: 83px
+			margin-right: 21px
+		&__price
+			font-size: 20px
+		&__toggle
+			width: 24px
+			height: 24px
+			&::after, &::before
+				width: 8px
+				height: 1px
+		&__line, &__find-dealer
+			font-size: 14px
+		&__value
+			&--total
+				font-size: 30px
+
+	.s-dropdown
+		&__list
+			max-height: 166px
+			overflow: auto
+		&__item
+			&:not(:last-of-type)
+				margin-bottom: 8px
+		&__more
+			padding-top: 17px
+			padding-bottom: 17px
+
+	.find-dealer
+		&__left
+			height: 200px
+			min-height: 100%
+			background-position: 50% 0
+		&__right
+			min-height: 100%
+			padding-left: 16px
+			padding-right: 16px
+		&__text
+			margin-bottom: 30px
+
+	.sign-up-service
+		padding-top: 0
+		&__center
+			padding-left: 0
+			padding-top: 170px
+		&__icon
+			top: 40px
+		&__title
+			font-size: 30px
+		&__buttons
+			display: block
+		&__button
+			margin-right: 0
+			max-width: 400px
+			margin-bottom: 18px
+		&__text
+			margin-bottom: 32px
+
+	.disclamer
+		padding: 24px 0
+		&__center
+			padding-left: 16px
+		&__star
+			width: 10px
+			height: 10px
+
+@media only screen and (max-width : 640px)
+	.head
+		&__banner
+			background-image: url('/images/service/test/test-2.jpg')
+			height: 120vw
+
+@media only screen and (max-width : 450px)
+	.m-line
+		&__price
+			&.error
+				font-size: 14px
+				line-height: 1

@@ -1,0 +1,252 @@
+.feel
+	&.active
+		.power
+			svg
+				path
+					opacity: 1
+			&__text
+				opacity: 1
+				transform: translateY(0)
+			&__number
+				opacity: 1
+		.feel__back
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.feel__img
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.feel-img-text
+			opacity: 1
+			transform: translateY(0)
+	&__inner
+		position: relative
+		display: flex
+		justify-content: flex-end
+	&__graph
+		position: relative
+		height: 884px;
+	&__wrapper
+		position: relative
+		margin-top: -100px
+		margin-left: 0px
+	&__back
+		width: 768px
+		height: 464px
+	&__img
+		width: 733px
+		height: 874px
+		overflow: visible
+	&__wrap
+		overflow: visible
+	&__title
+		font-size: 42px;
+		line-height: 48px;
+	&__parallax
+
+	&__description
+		position: absolute
+		left: 128px
+		top: 200px
+		max-width: 526px
+		transition-delay: 1.5s
+		&.label
+		    margin-bottom: 31px;
+
+.power
+	position: absolute
+	top: -33px
+	left: 0px
+	max-width: 280px
+	text-align: center
+	transition-delay: 1.5s
+
+
+.respect
+	margin-top: 80px
+	padding-bottom: 205px
+	&__inner
+		position: relative
+	&.active
+		.position
+			&__top
+				opacity: 1
+				transform: translateY(0)
+			&__text
+				opacity: 1
+				transform: translateY(0)
+		.respect__back
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.respect__img
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+	&__wrapper
+		position: relative
+		margin-top: -420px
+	&__back
+		width: 721px
+		height: 476px
+		margin-left: 197px
+	&__img
+		width: 721px
+		height: 476px
+	&__description
+		position: absolute
+		top: 55px
+		left: 956px
+		max-width: 607px
+
+.r2
+	margin-top: 149px
+	padding-bottom: 98px
+	&__inner
+		position: relative
+	&.active
+		.position
+			&__top
+				opacity: 1
+				transform: translateY(0)
+			&__text
+				opacity: 1
+				transform: translateY(0)
+		.r2__back
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+		.r2__img
+			transform: translateY(0)
+			div
+				transform: scale(1)
+				div
+					opacity: 1
+					transform: scale(1)
+	&__wrapper
+		position: relative
+		margin-top: -620px
+	&__back
+		width: 740px
+		height: 708px
+		margin-left: 135px
+	&__img
+		width: 740px
+		height: 708px
+		margin-left: 0px
+	&__description
+		position: absolute
+		top: 200px
+		left: 906px
+		max-width: 586px
+	&__adas
+		position: absolute
+		display: flex
+		justify-content: center
+		align-items: center
+		left: 240px
+		bottom: -98px
+		width: 196px
+		height: 196px
+		border-radius: 50%
+		font-size: 16px
+		line-height: 24px
+		color: #fff
+		background-color: $second_blue
+		font-weight: 500
+		z-index: 1
+	&__adas-center
+		max-width: 80%
+		text-align: center
+
+.position
+	position: absolute
+	top: -150px
+	right: 0
+	width: 280px
+	&__top
+		display: flex
+		align-items: flex-end
+		justify-content: center
+		font-size: 72px
+		line-height: 71px
+		color: $main_blue
+		transition-delay: 1s
+	&__under
+		color: $sand
+		font-size: 36px
+		line-height: 36px
+		margin-left: 5px
+		font-weight: 500
+	&__text
+		font-size: 20px
+		line-height: 24px
+		color: #000
+		font-weight: 500
+		margin-top: 15px
+		text-align: center
+		transition-delay: 1.5s
+
+
+.feel-img-text
+	position: relative
+	font-family: HyundaiSansHead;
+	font-size: 30px;
+	line-height: 36px;
+	text-align: center;
+	color: $main_blue
+	cursor: pointer;
+	transition: opacity 1s cubic-bezier(.19,1,.22,1), transform 3s cubic-bezier(.19,1,.22,1)
+	will-change: opacity,transform
+	transform: translate3d(0,30px,0)
+	opacity: 0
+	transition-delay: 1s
+
+.feel-img-text.active
+	color: $third_text
+	cursor: default
+
+.feel__img
+	height: 884px;
+
+.feel-img-pic
+    position: relative;
+    width: 733px;
+    height: 733px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+.feel-img-hidden
+    display: none;
+
+
+.feel-car-img
+	position: absolute;
+	left: calc(50% - 110px);
+	top: calc(50% - 240px);
+	width: 220px;
+	cursor: pointer
+	transition: 0.5s;
+
+.feel-car-img.rotated
+	transform: rotate(180deg);
+	transition: 0.5s;
+
+.intro__year
+    color: #000;

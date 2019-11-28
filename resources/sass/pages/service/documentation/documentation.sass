@@ -1,0 +1,287 @@
+@import '../../../common/_variables.scss'
+@import '../../../common/_common.sass'
+
+.head
+  padding-top: 80px
+  background-image: url('/images/service/warranty/fon.jpg')
+  background-repeat: no-repeat
+  background-position: 50%
+  background-size: cover
+  &__composition
+    width: 550px
+    padding-top: 32px
+    padding-left: 43px
+    padding-right: 16px
+  &__banner
+    position: relative
+    background-image: url('/images/service/documentation/pic.jpg')
+    background-repeat: no-repeat
+    background-position: 100% 50%
+    background-size: cover
+    height: 545px
+  &__title
+    font-size: 5.5rem
+    line-height: 0.98
+    font-weight: 500
+    margin-bottom: 0.2em
+  &__subtitle
+    font-size: 3rem
+    line-height: 1.067
+    font-weight: 400
+
+.calculate
+  background-color: $white_bg
+  &__title
+    font-size: 4.2rem
+    line-height: 1.143
+    text-align: center
+    padding-top: 56px
+    padding-bottom: 72px
+    font-weight: 500
+  &__slider
+    padding-bottom: 39px
+    position: relative
+    .swiper-container
+      max-width: 1008px
+
+.swiper-wrapper
+  transition-timing-function: ease-out
+.swiper-container 
+  width: 100%
+  height: 100%   
+  padding-bottom: 107px 
+  width: calc(100% - 32px)
+  padding-top: 18px
+.swiper-slide
+  text-align: center
+  // opacity: 0.5
+  transition: opacity 0.3s ease 0s
+  cursor: pointer
+  &::after
+    content: ''
+    background-color: transparent
+    transition: background-color 0.3s ease 0s
+  &__desc
+    text-align: center
+    font-size: 2rem
+    line-height: 1.2
+    font-weight: 500
+    position: relative
+    z-index: 1
+    margin-top: 38px
+    transition: color 0.3s ease 0s
+  &:not(.car-active):hover
+    opacity: 0.8
+  &__img
+    position: relative
+    z-index: 1
+.car-active
+  opacity: 1
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    background-color: #f1f1f1
+    top: 0
+    left: 50%
+    width: 150px
+    height: 150px
+    border-radius: 50%
+    margin-left: -75px
+    margin-top: -18px
+  .swiper-slide__desc
+    color: $second_blue
+.swiper-button-next
+  background-image: url('/images/service/warranty/slider/arrow.svg')
+  background-size: cover
+  width: 16px
+  height: 36px
+  right: 0px
+  top: 60px
+  margin-top: 0
+  outline: none!important
+  z-index: 10
+  transition: transform 0.3s ease 0s
+  &:hover
+    transform: translateX(8px)
+.swiper-button-prev
+  background-image: url('/images/service/warranty/slider/arrow.svg')
+  background-size: cover
+  width: 16px
+  height: 36px
+  left: 0px
+  top: 60px
+  transform: rotate(180deg)
+  margin-top: 0
+  outline: none!important
+  z-index: 10
+  transition: transform 0.3s ease 0s
+  &:hover
+    transform: translateX(-8px) rotate(180deg)
+.swiper-pagination-bullet
+  width: 12px
+  height: 12px
+  background: rgba(0, 0, 0, 0.1)
+  opacity: 1
+  outline: none!important
+  transition: 0.3s background-color ease 0s
+  &-active
+    opacity: 1
+    background-color: $second_blue
+
+.materials
+  background-color: $gray_bg
+  padding-top: 32px
+  padding-bottom: 56px
+  &-title
+    font-weight: 500
+    font-size: 4.2rem
+    line-height: 1.143
+    text-align: center
+    padding-top: 56px
+    padding-bottom: 64px
+  &__item
+    background-color: $white_bg
+    padding: 18px 24px 26px
+    margin-bottom: 32px
+    height: 21rem
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    transition: box-shadow 0.3s ease 0s
+    &-title
+      font-size: 3rem
+      line-height: 1.2
+    &:hover
+      box-shadow: 3px 5px 20px #ccc
+  &__bottom
+    display: flex
+    justify-content: space-between
+  &__model
+    color: $third_text
+    font-size: 1.6rem
+    line-height: 1.5
+    font-weight: 500
+
+.df-download-link
+  font-size: 1.6rem
+  line-height: 1.5
+  span
+    transition: opacity 0.3s ease 0s
+  &:hover span
+    opacity: 0.8
+
+
+@media (max-width: 1600px)
+  .head
+    &__banner
+      height: 440px
+      
+@media (min-width: 1600px)
+  .calculate__slider
+    .swiper-container
+      max-width: $large-cont
+
+
+@media (max-width: 1024px)
+  .car-active::after
+    margin-top: -3px
+    width: 15vw
+    height: 15vw
+    margin-left: -7.5vw
+
+
+@media (max-width: 1023px)
+  .head
+    &__banner
+      background-position: 50% 50%
+  .head__composition
+    padding-top: 49px
+    padding-left: 36px
+
+  .calculate__title
+    padding-top: 48px
+    padding-bottom: 24px
+  .calculate__slider
+    padding-bottom: 36px
+
+  .materials-title
+    padding-bottom: 56px
+  .materials
+    padding-top: 40px
+    padding-bottom: 80px
+
+
+@media (max-width: 900px)
+  .swiper-button-next, .swiper-button-prev
+    top: 95px
+
+  .car-active::after
+    margin-top: 10px
+    width: 18vw
+    height: 18vw
+    margin-left: -9vw
+
+
+@media (max-width: 768px)
+  .car-active
+    &::after
+      display: none
+    .swiper-slide__desc
+      color: #000
+
+
+@media (max-width: $md-max)
+  .head__composition
+    width: auto
+
+  .swiper-slide
+    opacity: 1
+
+
+@media (max-width: 640px)
+  .head
+    padding-top: 64px
+    &__banner
+      background-image: url('/images/service/documentation/pic-md.jpg')
+      background-position: bottom
+      height: 120vw
+    &__composition
+      padding: 24px 16px
+    &__title
+      font-size: 3rem
+      line-height: 1.067
+      margin-bottom: 0.5em
+    &__subtitle
+      font-size: 1.8rem
+      line-height: 1.25
+      max-width: 300px
+
+  .calculate__title
+    font-size: 3rem
+    line-height: 1.067
+    padding-top: 42px
+  .calculate__slider 
+    padding-bottom: 26px
+    width: 100%  
+  .swiper-slide__desc
+    margin-top: 8px
+  .swiper-container
+    padding-bottom: 76px
+  .swiper-pagination-bullet
+    width: 12px
+    height: 12px
+  
+  .materials
+    padding-top: 24px
+    padding-bottom: 40px
+    &-title
+      font-size: 3rem
+      line-height: 1.067
+      padding: 44px 16px 37px
+    &__item
+      margin-bottom: 15px
+      padding: 18px 24px 27px
+      &-title
+        font-size: 3rem
+        line-height: 1.2

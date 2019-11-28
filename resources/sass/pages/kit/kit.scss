@@ -1,0 +1,19 @@
+// Variables
+@import '../../common/variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Fonts
+@import '../../common/fonts';
+
+// Reset
+@import '../../../libs/reset/minireset';
+
+//Общие стили компонентов
+@import '../../common/common';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}

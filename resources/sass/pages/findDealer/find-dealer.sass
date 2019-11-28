@@ -1,0 +1,42 @@
+@import '../../common/_variables.scss'
+@import '../../common/components/_contact-form.sass'
+@import '../../common/components/_placeholder.sass'
+@import './_find-dealer-list.sass'
+
+//Стилизуем элемент find-dealer с картой для этой страницы
+#finddealerpage
+	position: relative
+	.c-find-dealer
+		position: relative
+		background-color: transparent
+		top: auto
+		right: auto
+		left: auto
+		bottom: auto
+		z-index: 1
+		&__wrap
+			display: block
+			min-height: 0
+		&__center
+			max-width: 100%
+			margin: 0
+			height: 600px
+		&__close
+			display: none
+
+.cities-list
+	position: absolute
+	width: 360px
+	top: 32px
+	left: 32px
+	z-index: 2
+
+.bc-form
+	&__line
+		display: flex
+		input
+			margin-bottom: 0
+			&:first-of-type
+				margin-right: 32px
+
+@import './_media.sass'
