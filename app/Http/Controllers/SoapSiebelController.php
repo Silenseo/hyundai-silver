@@ -411,11 +411,18 @@ class SoapSiebelController extends Controller
 		// 	return response('N');
 		// }
 
-        $to = env('DEALER_EMAIL');
+				// $to = env('DEALER_EMAIL');
+				$users_temp = explode(',', 'web@investmarketing.ru,silvermotorshyundai@gmail.com');
+				$email_to = [];
+				foreach($users_temp as $key => $ut){
+					$ua = [];
+					$ua['email'] = $ut;
+					$email_to[$key] = (object)$ua;
+				}
         $subject = 'Запрос из формы обратной связи';
         $from = 'webmaster@hyundai.ru';
 
-        Mail::to($to)->send(new \App\Mail\ContactUs($subject, $post));
+        Mail::to($post['email'])->bcc($email_to)->send(new \App\Mail\ContactUs($subject, $post));
 
         $success = 'Y';
 
