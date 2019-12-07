@@ -173,5 +173,4 @@
 @section('scripts')
 	<script src="{{ mix('/js/lazypreview.js') }}"></script>
 	<script src="{{ mix('/js/special/libs.js') }}"></script>
-	<script src="{{ mix('/js/special/detail.js') }}"></script>
 @endsection

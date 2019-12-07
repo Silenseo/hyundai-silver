@@ -250,7 +250,7 @@
                         </div>
                         <div class="mir-b__center">
                             <h2 class="mir-b__title">
-                                Программа привилегий для текущих и&nbsp;будущих клиентов Hyundai
+                                Платформа для владельцев автомобилей Hyundai и всех, кто хочет познакомиться с брендом.
                             </h2>
                             <ul class="mir-b__list">
                                 <li class="mir-b__item">

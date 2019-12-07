@@ -9,92 +9,53 @@
                         </svg>
                     </a>
                     <ul class="showroom__list">
-                        
-                        <li class="showroom__line">
-                            <h4 class="showroom__title">Новинки</h4>
-                            <ul class="showroom__cars">
-                                  <li class="showroom__car showroom__car first-place">
-                                        <a href="/promo/creta-rock" class="d-car">
-                                            <div class="d-car__top-line">
-                                                <h5 class="d-car__title">ROCK EDITION</h5>
-                                                <div class="d-car__name">/ CRETA</div>
-                                            </div>
-                                            <div class="d-car__price">от {{ number_format(1405000, 0, '.', ' ') }} ₽</div>
-                                            <div class="d-car__m-name">ROCK EDITION</div>
-                                            <div class="d-car__img">
-                                                <img class="showroom-lazyload" data-showroomsrc="/assets/ss/new/creta_rock.png" alt="ROCK EDITION">
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="showroom__car showroom__car" style="display: block;">
-                                        <a href="/promo/solaris_super_series" class="d-car">
-                                            <div class="d-car__top-line">
-                                                <h5 class="d-car__title">СУПЕР СЕРИЯ</h5>
-                                                <div class="d-car__name">/ SOLARIS</div>
-                                            </div>
-                                            <div class="d-car__price">от {{ number_format(880000, 0, '.', ' ') }} ₽</div>
-                                            <div class="d-car__m-name">СУПЕР СЕРИЯ</div>
-                                            <div class="d-car__img">
-                                                <img class="showroom-lazyload" data-showroomsrc="/assets/ss/ss_pic.png" alt="СУПЕР СЕРИЯ">
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                <li class="showroom__car showroom__car">
-                                    <a href="/NewSonata" class="d-car" aria-label="NEWSONATA">
-                                        <div class="d-car__top-line">
-                                            <h5 class="d-car__title">Новая СОНАТА</h5>
-                                            <div class="d-car__name">/ SONATA</div>
-                                        </div>
-                                        <div class="d-car__price">от 1 725 000 ₽</div>
-                                        <div class="d-car__m-name">SONATA</div>
-                                        <div class="d-car__img">
-                                            <img class="showroom-lazyload" data-showroomsrc="/storage/cars/1574242069.png" alt="Новая SONATA" src="/storage/cars/1574242069.png">
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="showroom__car showroom__car"></li>
-                            </ul>
-                        </li>                        
-                        
-                        
-                        <?php 
-                          $f = false; 
-                          
-                          echo "<!--  333333333";
-                          print_r($menu_cars);
-                          echo "-->";
-                          
-                        ?>
-                        
-                        
+                        <?php
+                        $f = true;
+                        $k = 0;?>
                         @foreach($menu_cars as $menu_car)
-                            @if(isset($menu_car['items']) && isset($menu_car['title']))
+                            @if(isset($menu_car['items']))
+                                <?php $k++; ?>
                             <li class="showroom__line">
-                                <h4 class="showroom__title">{{ $menu_car['title'] }}</h4> 
+                                <h4 class="showroom__title">{{ $menu_car['title'] }}</h4>
                                 <ul class="showroom__cars">
                                     @if($f)
-                                    	<li class="showroom__car showroom__car first-place">
+                                        <li class="showroom__car showroom__car">
+                                            <a href="/promo/solaris_super_series_2" class="d-car">
+                                                <div class="d-car__top-line">
+                                                    <h5 class="d-car__title">СУПЕР СЕРИЯ II</h5>
+                                                    <div class="d-car__name">/ SOLARIS</div>
+                                                </div>
+    											<div class="d-car__price">от {{ number_format(857000, 0, '.', ' ') }} ₽</div>
+    											<div class="d-car__m-name">СУПЕР СЕРИЯ II</div>
+                                                <div class="d-car__img">
+                                                    <img class="showroom-lazyload" data-showroomsrc="/assets/ss/ss2_pic.png" alt="СУПЕР СЕРИЯ">
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <li class="showroom__car showroom__car first-place">
                                             <a href="/promo/creta-rock" class="d-car">
                                                 <div class="d-car__top-line">
                                                     <h5 class="d-car__title">ROCK EDITION</h5>
                                                     <div class="d-car__name">/ CRETA</div>
                                                 </div>
-                                                <div class="d-car__price">от {{ number_format(1405000, 0, '.', ' ') }} ₽</div>
-                                                <div class="d-car__m-name">ROCK EDITION</div>
+    											<div class="d-car__price">от {{ number_format(1405000, 0, '.', ' ') }} ₽</div>
+    											<div class="d-car__m-name">ROCK EDITION</div>
                                                 <div class="d-car__img">
                                                     <img class="showroom-lazyload" data-showroomsrc="/assets/ss/new/creta_rock.png" alt="ROCK EDITION">
                                                 </div>
                                             </a>
                                         </li>
+                                    @endif
+                                    @if($k == 2)
                                         <li class="showroom__car showroom__car">
                                             <a href="/promo/solaris_super_series" class="d-car">
                                                 <div class="d-car__top-line">
                                                     <h5 class="d-car__title">СУПЕР СЕРИЯ</h5>
                                                     <div class="d-car__name">/ SOLARIS</div>
                                                 </div>
-                                                <div class="d-car__price">от {{ number_format(880000, 0, '.', ' ') }} ₽</div>
-                                                <div class="d-car__m-name">СУПЕР СЕРИЯ</div>
+    											<div class="d-car__price">от {{ number_format(880000, 0, '.', ' ') }} ₽</div>
+    											<div class="d-car__m-name">СУПЕР СЕРИЯ</div>
                                                 <div class="d-car__img">
                                                     <img class="showroom-lazyload" data-showroomsrc="/assets/ss/ss_pic.png" alt="СУПЕР СЕРИЯ">
                                                 </div>
@@ -102,15 +63,14 @@
                                         </li>
                                     @endif
                                     @foreach($menu_car['items'] as $car)
-
-                                    <li class="showroom__car showroom__car<?=$car->id == 3 || $car->id == 6 ? ' first-place' : '';?>"> 
+                                    <li class="showroom__car showroom__car<?=$car->id == 3 || $car->id == 6 ? ' first-place' : '';?>">
                                         <a href="/{{ $car->id_text }}" class="d-car" aria-label="{{ strtoupper($car->id_text) }}">
                                             <div class="d-car__top-line">
                                                 <h5 class="d-car__title">{{ $car->name_menu_rus }}</h5>
                                                 <div class="d-car__name">/ {{ $car->name_menu_en }}</div>
                                             </div>
-                                            <div class="d-car__price">от {{ number_format($car->price_min, 0, '.', ' ') }} ₽</div>
-                                            <div class="d-car__m-name">{{ $car->name_menu_en }}</div>
+											<div class="d-car__price">от {{ number_format($car->price_min, 0, '.', ' ') }} ₽</div>
+											<div class="d-car__m-name">{{ $car->name_menu_en }}</div>
                                             <div class="d-car__img">
                                                 <img class="showroom-lazyload" data-showroomsrc="{{ $car->getImageUrl() }}" alt="{{ $car->name }}">
                                             </div>
@@ -122,7 +82,7 @@
                             <?php $f = false; ?>
                             @endif
                         @endforeach
-                        {{-- <li class="showroom__line">
+                        <li class="showroom__line">
                             <h4 class="showroom__title">Коммерческие</h4>
                             <ul class="showroom__cars">
                                 <li class="showroom__car showroom__car">
@@ -154,7 +114,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li> --}}
+                        </li>
                     </ul>
                 </div>
             </div>
