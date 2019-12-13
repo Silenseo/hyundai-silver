@@ -119,11 +119,11 @@
                         </div>
                         <nav class="main-nav" role="navigation">
                             <ul class="main-nav__list">
-                                <li class="main-nav__item">
+                                {{-- <li class="main-nav__item">
                                     <a href="https://hyundai-berezniki.ru" class="main-nav__link" target="_blank">
                                         Мы в Березниках
                                     </a>
-                                </li>
+                                </li> --}}
                                 <li class="main-nav__item">
                                     <a href="#" class="main-nav__link main-nav__link--contains-submenu js-main-submenu-open">
                                         Модельный ряд

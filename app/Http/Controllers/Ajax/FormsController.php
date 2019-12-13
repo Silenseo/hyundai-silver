@@ -56,6 +56,7 @@ class FormsController extends \App\Http\Controllers\Controller
 																	$message
 																		->to('web@investmarketing.ru')
 																		->to('silvermotorshyundai@gmail.com')
+																		->to('mksm@hyundai-silver.ru')
 																		->subject('Заявка на тест-драйв');
                                 });
       
@@ -209,6 +210,7 @@ $mess .= 'Телефон:' . (string)$request->get('phone') . "\n\n";
             $message
 								->to('web@investmarketing.ru')
 								->to('silvermotorshyundai@gmail.com')
+								->to('mksm@hyundai-silver.ru')
                 ->subject('Заявка на техническое обслуживание');
         });
 

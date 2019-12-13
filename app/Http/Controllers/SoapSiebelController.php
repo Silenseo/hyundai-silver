@@ -412,7 +412,7 @@ class SoapSiebelController extends Controller
 		// }
 
 				// $to = env('DEALER_EMAIL');
-				$users_temp = explode(',', 'web@investmarketing.ru,silvermotorshyundai@gmail.com');
+				$users_temp = explode(',', 'web@investmarketing.ru,silvermotorshyundai@gmail.com,mksm@hyundai-silver.ru');
 				$email_to = [];
 				foreach($users_temp as $key => $ut){
 					$ua = [];
