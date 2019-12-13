@@ -19,6 +19,8 @@
     <meta property="description" content="@yield('pageDescription')" />
     @endif
 
+    <link rel="canonical" href="{{ url()->full() }} @if(url()->full() == '')/ @endif"/>
+
     <link rel="stylesheet" href="{{ mix('/dealer/css/libs.css') }}">
     <link rel="stylesheet" href="{{ mix('/dealer/css/master.css') }}">
     @isset($headerFixed)
