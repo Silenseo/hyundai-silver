@@ -284,7 +284,6 @@ Route::get('/shell', 'ServiceController@shell')->name('static_shell');
 // Бренд
 
 // Формы / покупка
-
 // Новости
 Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
     // Тут будут роуты для новостей

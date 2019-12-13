@@ -14,26 +14,26 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul class="slider__body js-main-slider owl-carousel">
-						<div class="slider__item">
-							<a id="start-link" href="/promo/creta-rock" class="slider__link">
-								<div class="slider__video"></div>
-								<div class="slider__inner">
-                                    <h2 class="slider__title">Hyundai CRETA Rock Edition.</h2>
-                                    <div class="slider__subtitle df-banner-subline">В моторах – чистый рок.</div>
-                                </div>
-								<div class="blue-panel">
-									<div class="blue-panel__inner">
-										<div>Уникальная комплектация</div>
-										<div class="blue-panel__more">
-											подробнее
-											<svg>
-												<use xlink:href="#arrow-link"></use>
-											</svg>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
+{{--						<div class="slider__item">--}}
+{{--							<a id="start-link" href="/promo/creta-rock" class="slider__link">--}}
+{{--								<div class="slider__video"></div>--}}
+{{--								<div class="slider__inner">--}}
+{{--                                    <h2 class="slider__title">Hyundai CRETA Rock Edition.</h2>--}}
+{{--                                    <div class="slider__subtitle df-banner-subline">В моторах – чистый рок.</div>--}}
+{{--                                </div>--}}
+{{--								<div class="blue-panel">--}}
+{{--									<div class="blue-panel__inner">--}}
+{{--										<div>Уникальная комплектация</div>--}}
+{{--										<div class="blue-panel__more">--}}
+{{--											подробнее--}}
+{{--											<svg>--}}
+{{--												<use xlink:href="#arrow-link"></use>--}}
+{{--											</svg>--}}
+{{--										</div>--}}
+{{--									</div>--}}
+{{--								</div>--}}
+{{--							</a>--}}
+{{--						</div>--}}
                         @foreach($banners as $banner)
                         <li class="slider__item lazyload lazypreview" data-bgset="{{ $banner->getImageMobileUrl() }} [(max-width: 640px)] | {{ $banner->getImageUrl() }}">
                             <a class="slider__link" href="{{ $banner->link }}" {{ $banner->target == 1 || strpos($banner->link, '"//') !== false ? 'target="_blank"' : '' }} aria-label="{{ $banner->title }}">

@@ -30,8 +30,13 @@ class AppServiceProvider extends ServiceProvider
                 'address' => 'г. Пермь, ул. Спешилова, 109', //env('DEALER_ADDRESS'),
                 'sap' => 'C40AF01010',//env('DEALER_SAP'),
             ];
+            $seo = [];
+            $item = \App\SEO::where('url', '/' . \Request::path())->first();
+            if($item) {
+                $seo = $item->toArray();
+            }
 
-            $view->with('is_crawler', $is_crawler)->with('dealerData', $dealerData);
+            $view->with('is_crawler', $is_crawler)->with('dealerData', $dealerData)->with('u_seo_info', $seo);
         });
 
         view()->composer(['components.dropdown-showroom', 'frontend.pages.sitemap'], function($view) {
