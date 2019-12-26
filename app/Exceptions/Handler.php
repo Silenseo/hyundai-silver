@@ -50,7 +50,7 @@ class Handler extends ExceptionHandler
             $statusCode = $exception->getStatusCode();
             switch ($statusCode) {
                 case '404':
-                    return response()->view('frontend/pages/warning', ['message' => '404 Страница не найдена']);
+                    return response()->view('frontend/pages/warning', ['message' => '404 Страница не найдена'], 404);
                 case '500':
                     return response()->view('frontend/pages/warning', ['message' => 'При загрузке страницы произошла ошибка']);
             }
