@@ -19,7 +19,7 @@
     <meta property="description" content="@yield('pageDescription')" />
     @endif
     @if(strpos(url()->full(),'/promo/creta-rock') !== false || strpos(url()->full(),'/promo/solaris_super_series') !== false)
-    <link rel="canonical" href="{{ url()->full() }}/"/>
+        <link rel="canonical" href="{{ url()->full()."/" }} @if(url()->full() == ''){{'/'}}@endif"/>
     @endif
     <link rel="stylesheet" href="{{ mix('/css/libs.css') }}">
     <link rel="stylesheet" href="{{ mix('/css/master.css') }}">
