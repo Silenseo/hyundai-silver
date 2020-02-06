@@ -26,6 +26,8 @@ class HomeController extends Controller
     {
         // return view('home');
 
+        dump(1);
+
         $news = \Cache::remember('home_index_news', 3600, function() {
             $news = \App\News::where('visible', 1)->orderBy('date', 'desc')->limit(12)->get();
             return $news;

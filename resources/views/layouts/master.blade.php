@@ -7,7 +7,7 @@
 
 	<link rel="icon" href="/images/favicon.ico">
 	<meta property="og:image" content="/images/og_image1.jpg">
-
+    <meta name="yandex-verification" content="56f1889c87dc5b32" />
     @if(!empty($u_seo_info))
     <title>{{ $u_seo_info['meta_title'] }}</title>
     <meta property="title" content="{{ $u_seo_info['meta_title'] }}" />
