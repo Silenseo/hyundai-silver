@@ -71,6 +71,7 @@
 
 <script>
 import axios from 'axios'
+import Inputmask from "inputmask";
 
 export default {
 	name: 'NewEventPopup',
@@ -80,8 +81,12 @@ export default {
 			required: true
 		},
 	},
-    components: {
-
+    directives: {
+		mask: {
+			bind: function(el, binding) {
+				Inputmask(binding.value).mask(el);
+			}
+		}
 	},
     data () {
         return {
@@ -290,7 +295,7 @@ export default {
 			this.blur[name] = true;
 		},
 		openRules: function () {
-			this.$store.dispatch('OPEN_RULES', true);
+			this.$emit('show-rules')
 		},
 		checkout: function () {
 			var that = this;

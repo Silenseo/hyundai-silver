@@ -1,0 +1,72 @@
+.step2
+	&__accept
+		display: flex
+		align-items: center
+		margin-right: auto
+		padding-right: 30px
+		cursor: pointer
+		input
+			display: none
+			&:checked
+				& + .step2__box
+					svg
+						transform: scale(1)
+			&.invalid
+				& + .step2__box
+					border-color: $fire_Red
+	&__box
+		flex: none
+		position: relative
+		width: 24px
+		height: 24px
+		border: 1px solid $sand_bg
+		background-color: #fff
+		margin-right: 16px
+		svg
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			transform: scale(0)
+			transition: 0.3s
+	&__description
+		font-size: 1.4rem
+		a
+			color: $second_blue
+
+.requirements
+	&__center
+		max-width: 1217px
+		margin: 16px
+		padding: 81px 92px 41px
+		background-color: $gray_bg
+	&__title
+		text-align: center
+		margin-bottom: 25px
+	&__list
+		display: flex
+		flex-wrap: wrap
+		min-width: 100%
+		margin: 0 -30px
+	&__item
+		width: calc(100% / 3 - 60px)
+		margin: 30px
+	&__number
+		width: 80px
+		line-height: 80px
+		background-color: #fff
+		text-align: center
+		font-size: 1.6rem
+		color: #000
+		margin: 0 auto
+		margin-bottom: 25px
+		border-radius: 50%
+		font-weight: 500
+	&__description
+		font-size: 1.6rem
+		line-height: 1.5
+		color: #000
+		text-align: center

@@ -130,7 +130,7 @@
 							<div class="s-contacts__title s-contacts__title--footer">Контакты салонов</div>
 							<ul class="s-contacts__list">
         						<li class="s-contacts__item">
-        							<a href="tel:{{ $dealerData['phone'] }}" class="s-contacts__phone">{{ $dealerData['phone'] }}</a>
+        							<a href="tel:" class="s-contacts__phone">{{ $dealerData['phone'] }}</a>
         							<div class="s-contacts__address">{{ $dealerData['address'] }}</div>
         						</li>
         					</ul>
@@ -144,23 +144,16 @@
                         <noindex>
                             <ul class="footer-social">
                                 <li class="footer-social__item">
-                                    <a href="https://vk.com/hyundai_silver" rel="nofollow" target="_blank" class="footer-social__link footer-social__link--vk" role="button" aria-label="вконтакте">
+                                    <a href="https://www.facebook.com/HyundaiRussia" rel="nofollow" target="_blank" class="footer-social__link footer-social__link--fb" role="button" aria-label="facebook">
                                         <svg role="img" aria-hidden="true">
-                                            <use xlink:href="#vk-icon"></use>
+                                            <use xlink:href="#facebook-icon"></use>
                                         </svg>
                                     </a>
                                 </li>
                                 <li class="footer-social__item">
-                                    <a href="https://www.instagram.com/hyundai_silver/" rel="nofollow" target="_blank" class="footer-social__link footer-social__link--instagram" role="button" aria-label="instagram">
+                                    <a href="https://vk.com/HyundaiRussia" rel="nofollow" target="_blank" class="footer-social__link footer-social__link--vk" role="button" aria-label="вконтакте">
                                         <svg role="img" aria-hidden="true">
-                                            <use xlink:href="#instagram-icon"></use>
-                                        </svg>
-                                    </a>
-                                </li>
-                                {{-- <li class="footer-social__item">
-                                    <a href="https://www.facebook.com/HyundaiRussia" rel="nofollow" target="_blank" class="footer-social__link footer-social__link--fb" role="button" aria-label="facebook">
-                                        <svg role="img" aria-hidden="true">
-                                            <use xlink:href="#facebook-icon"></use>
+                                            <use xlink:href="#vk-icon"></use>
                                         </svg>
                                     </a>
                                 </li>
@@ -172,12 +165,19 @@
                                     </a>
                                 </li>
                                 <li class="footer-social__item">
+                                    <a href="http://instagram.com/HyundaiRussia" rel="nofollow" target="_blank" class="footer-social__link footer-social__link--instagram" role="button" aria-label="instagram">
+                                        <svg role="img" aria-hidden="true">
+                                            <use xlink:href="#instagram-icon"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="footer-social__item">
                                     <a href="http://www.youtube.com/hyundairussia" rel="nofollow" target="_blank" class="footer-social__link footer-social__link--youtube" role="button" aria-label="youtube">
                                         <svg role="img" aria-hidden="true">
                                             <use xlink:href="#youtube-icon"></use>
                                         </svg>
                                     </a>
-                                </li> --}}
+                                </li>
                             </ul>
                         </noindex>
                     </li>
@@ -230,22 +230,15 @@
                 </div>
             </div>
             <div class="row">
-                <div class="footer-bottom__disclamer col-md-12">
-                    Вся представленная на&nbsp;сайте информация, касающаяся автомобилей и&nbsp;сервисного обслуживания, носит информационный характер и&nbsp;не&nbsp;является публичной офертой, определяемой положениями&nbsp;ст.&nbsp;437 (2) ГК&nbsp;РФ. Все цены указанные на&nbsp;данном сайте носят информационный характер и&nbsp;являются максимально рекомендуемыми розничными ценами по&nbsp;расчетам дистрибьютора (ООО &laquo;Хендэ Мотор СНГ&raquo;). Для получения подробной информации просьба обращаться к&nbsp;ближайшему официальному дилеру ООО &laquo;Хендэ Мотор СНГ&raquo;. Опубликованная на&nbsp;данном сайте информация может быть изменена в&nbsp;любое время без предварительного уведомления.
-                </div>
+				<noindex>
+					<div class="footer-bottom__disclamer col-md-12">
+						Вся представленная на&nbsp;сайте информация, касающаяся автомобилей и&nbsp;сервисного обслуживания, носит информационный характер и&nbsp;не&nbsp;является публичной офертой, определяемой положениями&nbsp;ст.&nbsp;437 (2) ГК&nbsp;РФ. Все цены указанные на&nbsp;данном сайте носят информационный характер и&nbsp;являются максимально рекомендуемыми розничными ценами по&nbsp;расчетам дистрибьютора (ООО &laquo;Хендэ Мотор СНГ&raquo;). Для получения подробной информации просьба обращаться к&nbsp;ближайшему официальному дилеру ООО &laquo;Хендэ Мотор СНГ&raquo;. Опубликованная на&nbsp;данном сайте информация может быть изменена в&nbsp;любое время без предварительного уведомления.
+					</div>
+				</noindex>
             </div>
             <div class="row">
                 <div class="footer-bottom__copyright col-md-12">
-                    {{-- {{ date('Y') }} © ООО “Хендэ Мотор СНГ” --}}
-                    <input type="checkbox" id="footer__checkbox">
-                    <label for="footer__checkbox" class="p_div" itemscope="" itemtype="http://schema.org/Organization">
-                        {{ date('Y') }} © ООО "<span itemprop="name">Практик-А</span>" официальный дилер ООО "Хендэ Мотор СНГ"
-                            <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-                                <span itemprop="addressLocality">Пермь</span>
-                                <span itemprop="streetAddress">ул. Спешилова, 109</span>
-                            </div>
-                            <span itemprop="telephone">{{ $dealerData['phone'] }}</span>
-                    </label>
+                    {{ date('Y') }} © ООО “Хендэ Мотор СНГ”
                 </div>
             </div>
         </div>

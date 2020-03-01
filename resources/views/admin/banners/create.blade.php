@@ -47,9 +47,14 @@
 		<div class="content__line">
 			{{ Form::adminFile('image', '', ['publicName' => 'Картинка основная (1760 x 650 px)']) }}
 		</div>
-
 		<div class="content__line">
 			{{ Form::adminFile('image_mobile', '', ['publicName' => 'Картинка мобильная (640 x 800 px)']) }}
+		</div>
+		<div class="content__line">
+			{{ Form::adminFile('video_desktop', '', ['publicName' => 'Видео десктопное (mp4, 1760 x 650 px)']) }}
+		</div>
+		<div class="content__line">
+			{{ Form::adminFile('video_mobile', '', ['publicName' => 'Видео мобильное (mp4, 640 x 800 px)']) }}
 		</div>
 		<div class="content__line">
 			{{ Form::adminInput('order', $item->order ?? 50, ['placeholder' => 'Введите индекс сортировки', 'publicName' => 'Индекс сортировки']) }}

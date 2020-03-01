@@ -147,11 +147,27 @@ export default {
 				}
 			})
 		},
-		foFiltersList: function () {
+		activeFilters: function () {
+			return {
+				name: this.currentModels,
+				year: this.currentYears,
+				gearBox: this.currentGearboxes,
+				engine: this.currentEngines,
+				complectation: this.currentComplectations,
+				transmission: this.currentTransmissions,
+				exteriorColor: this.currentExteriorColors,
+				interiorColor: this.currentInteriorColors
+			}
+		},
+		forFiltersList: function () {
 			return this.list
 			.filter(item=>{
 				if (
 					(this.currentAge === item.age || this.currentAge === 'all')
+					&&
+					(item.minPrice >= this.proxyPriceFrom && (item.minPrice <= this.proxyPriceTo ||  this.proxyPriceTo === 0))
+					&&
+					((item.milleage >= this.proxyMilleageFrom || this.proxyMilleageFrom === 0) && (item.milleage <= this.proxyMilleageTo || this.proxyMilleageTo === 0))
 				) {
 					return true
 				} else {
@@ -199,8 +215,18 @@ export default {
 	methods: {
 		getOptions: function(name) {
 			let result = [];
+			let list = this.forFiltersList.map(item=>item);
 
-			this.foFiltersList.forEach(item=>{
+			//Скрываем опции, которые не доступны из-за применения других фильтров
+			for (var filter in this.activeFilters) {
+				if (filter !== name && this.activeFilters[filter].length > 0) {
+					list = list.filter(item=>
+						this.activeFilters[filter].indexOf(item[filter]) >= 0
+					)
+				}
+			}
+
+			list.forEach(item=>{
 				if (result.indexOf(item[name]) < 0 && typeof item[name] !== 'undefined' && item[name] !== '') {
 					result.push(item[name])
 				}

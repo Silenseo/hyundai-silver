@@ -2,7 +2,7 @@
 	<div class="widget" :class="{ show: isShow, active: isOpened }">
 		<div class="widget__overlay" @click.self="isOpened = false"></div>
 		<div class="widget__holder">
-			<div class="widget__main">
+			<div class="widget__main" :class="{ noButton: !creditApprove && ENV === 'dealer' }">
 				<div class="widget__top" ref="top">
 					<div class="widget__img">
 						<img :src="activeColorObj.carImage" alt="">
@@ -36,7 +36,7 @@
 						<div class="widget__label">Итого</div>
 						<div class="widget__value widget__value--large">{{ creditPack.pay | currencyFormat }} ₽/мес<sup>*</sup></div>
 					</div>
-					<a href="#" class="widget__button" @click.prevent = "openCreditForm">Предодобрение кредита</a>
+					<a v-if="creditApprove || ENV !== 'dealer'" href="#" class="widget__button" @click.prevent = "openCreditForm">Предодобрение кредита</a>
 					<div class="widget__line widget__line--bottom">
 						<div class="widget__line-l">
 							<a href="#" class="widget__mail" @click.prevent = "openSendForm">
@@ -64,7 +64,7 @@
 					</div>
 				</div>
 			</div>
-			<a href="#" class="widget__button widget__button--statick" @click.prevent = "openCreditForm" ref="button">Предодобрение кредита</a>
+			<a v-if="creditApprove || ENV !== 'dealer'" href="#" class="widget__button widget__button--statick" @click.prevent = "openCreditForm" ref="button">Предодобрение кредита</a>
 		</div>
 	</div>
 </template>
@@ -74,7 +74,7 @@ import { mapGetters } from "vuex";
 
 export default {
 	name: "StartMobileLine",
-	props: ['isShow', 'dealerTel'],
+	props: ['isShow', 'dealerTel', 'creditApprove', 'dealerCreditApprove'],
 	data() {
 		return {
 			isOpened: false
@@ -115,16 +115,20 @@ export default {
 		},
 		openCreditForm: function () {
 			// this.$store.dispatch('OPEN_SEND_APPROVAL_POPUP', true);
-			this.$emit('open-credit-form');
+			
+			if (this.ENV === 'dealer') {
+				window.open('https://credit-approval.ecredit.one/?car=' + this.currentCar.name + '&fee=' + this.creditPack.prepay + '&sum=' + this.creditPack.sum + '&term=' + this.currentTerm + '&dealer=' + this.dealerCreditApprove, '_blank');
+			} else {
+				this.$emit('open-credit-form');
 
-			this.lastPositionLastPayment();
-
-			dataLayer.push({
-              "event": "custom_event",
-              "category": "Страница программы start",
-              "action": "Ваш расчет",
-              "label": "Клик по кнопке Предодобрение кредита " + this.currentCar.name + ', ' + this.modification.id
-  			});
+				this.lastPositionLastPayment();
+				dataLayer.push({
+					"event": "custom_event",
+					"category": "Страница программы start",
+					"action": "Ваш расчет",
+					"label": "Клик по кнопке Предодобрение кредита " + this.currentCar.codeName + ', ' + this.modification.id
+				});
+			}
 		},
 		lastPositionLastPayment: function () {
 			dataLayer.push({
@@ -138,7 +142,13 @@ export default {
 	mounted() {
 		this.$nextTick(()=>{
 			setTimeout(()=>{
-				var lineHeight = $(this.$refs['top']).outerHeight() + $(this.$refs['button']).outerHeight();
+				var buttonHeight = 0;
+
+				if (this.$refs['button']) {
+					buttonHeight = $(this.$refs['button']).outerHeight()
+				}
+
+				var lineHeight = $(this.$refs['top']).outerHeight() + buttonHeight;
 
 				this.$emit('line-height', lineHeight)
 			}, 1000)

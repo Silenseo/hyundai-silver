@@ -79,7 +79,7 @@ function scrollNav (to) {
 
 function _analyticsHandler (to, from) {
   if (typeof to.meta.confState !== 'undefined') {
-    analytics.sendGtmConfig('Смена шага', to.meta.gtm, to.meta.confState)
+	analytics.sendGtmConfig('Смена шага', to.meta.gtm, to.meta.confState)
   }
 }
 

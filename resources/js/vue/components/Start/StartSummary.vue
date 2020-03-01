@@ -106,7 +106,7 @@
 				<div class="aside__label">Итого</div>
 				<div class="aside__value aside__value--large">{{ totalMonthPay | currencyFormat }} ₽/мес</div>
 			</div>
-			<a href="#" class="aside__button" @click.prevent = "openCreditForm">Предодобрение кредита</a>
+			<a v-if="creditApprove || ENV !== 'dealer'" href="#" class="aside__button" @click.prevent = "openCreditForm">Предодобрение кредита</a>
 			<div class="aside__bottom">
 				<a href="#" class="aside__mail" @click.prevent = "openSendForm">
 					<svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -142,7 +142,7 @@ import { mapGetters } from "vuex";
 
 export default {
 	name: "StartSummary",
-	props: ['dealerTel'],
+	props: ['dealerTel', 'creditApprove', 'dealerCreditApprove'],
 	data() {
 		return {
 			termsList: [24, 36],
@@ -373,16 +373,20 @@ export default {
 		},
 		openCreditForm: function () {
 			// this.$store.dispatch('OPEN_SEND_APPROVAL_POPUP', true);
-			this.$emit('open-credit-form');
 
-			this.lastPositionLastPayment();
+			if (this.ENV === 'dealer') {
+				window.open('https://credit-approval.ecredit.one/?car=' + this.currentCar.name + '&fee=' + Math.round(this.firstPaymentPercent*100) + '&sum=' + this.totalCost + '&term=' + this.currentTerm + '&dealer=' + this.dealerCreditApprove, '_blank');
+			} else {
+				this.$emit('open-credit-form');
 
-			dataLayer.push({
-              "event": "custom_event",
-              "category": "Страница программы start",
-              "action": "Ваш расчет",
-              "label": "Клик по кнопке Предодобрение кредита " + this.currentCar.codeName + ', ' + this.modification.id
-  			});
+				this.lastPositionLastPayment();
+				dataLayer.push({
+					"event": "custom_event",
+					"category": "Страница программы start",
+					"action": "Ваш расчет",
+					"label": "Клик по кнопке Предодобрение кредита " + this.currentCar.codeName + ', ' + this.modification.id
+				});
+			}
 		},
 		toggleNote: function () {
 			if ($(window).outerWidth() < 1263) {

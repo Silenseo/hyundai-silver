@@ -26,15 +26,6 @@ $(function () {
 		}
 	});
 
-	//Открыть попап записи на тестдрайв
-	$('.js-open-p-td').on('click', function (e) {
-		e.preventDefault();
-
-		//Установим активной модель. Св-во code!!!!!!
-		vueStore.dispatch('SET_SAVED_MODEL', 'santa fe');
-		vueStore.dispatch('OPEN_TEST_DRIVE_POPUP', true);
-	})
-
 	var controller = new ScrollMagic.Controller();
 
 	if ($(window).outerWidth() >  1262) {
@@ -257,11 +248,29 @@ $(function () {
 		}
 	};
 
+	var count5 = { 
+		score: 0,
+		update: function() {
+			$('#count5').text(this.score);
+		}
+	};
+
+	var count6 = { 
+		score: 0,
+		update: function() {
+			$('#count6').text(this.score);
+		}
+	};
+
 	var counterAnim = new TimelineMax({
 		paused: true
 	})
 
 	var counterAnim2 = new TimelineMax({
+		paused: true
+	})
+
+	var counterAnim3 = new TimelineMax({
 		paused: true
 	})
 
@@ -274,6 +283,11 @@ $(function () {
 		.add('start')
 		.to(count3, 2, { score: "+=188", roundProps: "score", onUpdate: count3.update.bind(count3), ease: Linear.easeNone }, 'start')
 		.to(count4, 2, { score: "+=10", roundProps: "score", onUpdate: count4.update.bind(count4), ease: Linear.easeNone }, 'start')
+
+	counterAnim3
+		.add('start')
+		.to(count5, 2, { score: "+=249", roundProps: "score", onUpdate: count5.update.bind(count5), ease: Linear.easeNone }, 'start')
+		.to(count6, 2, { score: "+=7", roundProps: "score", onUpdate: count6.update.bind(count6), ease: Linear.easeNone }, 'start')
 	
 	$('.js-change-view').on('click', function (e) {
 		e.preventDefault();
@@ -288,6 +302,9 @@ $(function () {
 
 		if (view === 'view1') {
 			counterAnim2.play()
+		}
+		if (view === 'view2') {
+			counterAnim3.play()
 		}
 	})
 	
@@ -345,6 +362,13 @@ $(function () {
 		safety1.destroy();
 	});
 
+	var animS = new TimelineMax({repeat:-1, yoyo:false, repeatDelay: 0})
+
+	animS
+		.staggerFrom('.schema img', 0.5, {
+				visibility: 'hidden'
+		}, 0.25)
+
 	var safety3 = new ScrollMagic.Scene({ triggerElement: ".safety--3", duration: '0', triggerHook: '0.45' })
 	//.addIndicators({ name: "design" })
 	.addTo(controller);
@@ -362,4 +386,30 @@ $(function () {
 		$('.safety--4').addClass('isEntered');
 		safety1.destroy();
 	});
+
+	//Hint Popup Start
+    $('.js-show-df-hint-popup').on('click', function(e){
+        e.preventDefault();
+        var popup = $(this).parent('.df-help').find('.df-hint-popup');
+
+        if (popup.hasClass('df-hint-popup--left') || popup.hasClass('df-hint-popup--right')) {
+            return null;
+        }
+
+        popup.addClass('df-hint-popup--right');
+    })
+
+    $('.js-close-df-hint-popup').on('click', function (e) {
+        e.preventDefault();
+        var popup = $(this).parent('.df-hint-popup');
+
+        popup.removeClass('df-hint-popup--right');
+    })
+
+    $(window).on('click', function(e){
+        if ($(e.target).closest('.df-hint-popup').length === 0 && $(e.target).closest('.js-show-df-hint-popup').length === 0) {
+            $('.df-hint-popup').removeClass('df-hint-popup--right');
+        }
+    })
+    //Hint Popup End
 })

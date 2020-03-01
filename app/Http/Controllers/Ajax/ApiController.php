@@ -34,6 +34,43 @@ class ApiController extends \App\Http\Controllers\Controller
 			];
 		}
 
+		if($request->get('oldCars') == 1) {
+
+    		$oldCarsHardcodeArray = [
+        		'Accent' => 'Accent',
+        		'Coupe' => 'Coupe',
+        		'Equus' => 'EQUUS',
+        		'Genesis' => 'Genesis',
+        		'Genesis Coupe' => 'Genesis Coupe',
+        		'Getz' => 'Getz',
+        		'Grandeur' => 'Grandeur',
+        		'i20' => 'i20',
+        		'i30' => 'i30',
+        		'i40' => 'i40',
+        		'ix35' => 'ix35',
+        		'ix55' => 'ix55',
+        		'Matrix' => 'Matrix',
+        		'Grand Santa Fe' => 'Grand SANTA FE',
+        		'Sonata' => 'NF/SONATA',
+        		'Terracan' => 'Terracan',
+        		'Trajet' => 'Trajet',
+        		'Veloster' => 'Veloster',
+        		'Verna' => 'Verna/Accent',
+        		'Other' => 'Другая модель'
+    		];
+
+    		foreach($oldCarsHardcodeArray as $code=>$name)
+    		{
+        		$cars[] = [
+    				'id' => 0,
+    				'name' => $name,
+    				'code' => $code,
+    				'image' => '',
+    				'link' => '',
+    			];
+    		}
+        }
+
 		return response()->json($cars);
 	}
 
@@ -56,6 +93,8 @@ class ApiController extends \App\Http\Controllers\Controller
 					'address' => $dealer->address,
 					'phone' => $dealer->phone,
 					'email' => $dealer->email,
+					'legal_name' => $dealer->legal_name,
+					'legal_address' => $dealer->legal_address
 				];
 			}
 

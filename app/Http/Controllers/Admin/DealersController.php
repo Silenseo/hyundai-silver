@@ -128,6 +128,7 @@ class DealersController extends Controller
         $item->i30n = (bool)$request->get('i30n');
         $item->token = $request->get('token');
         $item->legal_name = $request->get('legal_name');
+        $item->legal_address = $request->get('legal_address');
 
         $item->save();
 
@@ -193,6 +194,7 @@ class DealersController extends Controller
         $item->i30n = (bool)$request->get('i30n');
         $item->token = $request->get('token');
         $item->legal_name = $request->get('legal_name');
+        $item->legal_address = $request->get('legal_address');
 
         $item->save();
 

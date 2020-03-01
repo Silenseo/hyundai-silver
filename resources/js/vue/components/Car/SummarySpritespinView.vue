@@ -1,28 +1,19 @@
 <template>
-  <div class="summary-spritespin" :class="{ 'is-loading': !isLoaded }">
-    <transition name="fade">
-      <div class="summary-spritespin-backstage" v-show="!isLoaded">
-        <loader></loader>
+  <div class="summary-spritespin" @touchstart="show360icon = false" @mousedown="show360icon = false" :class="{ 'is-loading': !isLoaded }">
+    <div id="summary-spritespin" class="summary-spritespin-instance"></div>
+    <transition v-if="isLoaded">
+      <div class="view__preloader" v-if="show360icon">
+        <img  class="view__img" src="/images/icons/360.svg">
       </div>
     </transition>
-    <transition name="fade" v-on:after-leave="set">
-      <div class="summary-spritespin-element" v-show="isLoaded">
-        <div id="summary-spritespin" class="summary-spritespin-instance"></div>
-        <!-- <div class="spritespin-slider"> -->
-          <!-- <span class="spritespin-slider__point" :style="pointStyle"> -->
-          <!-- <span class="spritespin-slider__point">
-            <svg tabindex="-1" aria-visible="false" class="ic-svg"><use xlink:href="#ic-dropdown-corner"></use></svg>
-            <svg tabindex="-1" aria-visible="false" class="ic-svg"><use xlink:href="#ic-dropdown-corner"></use></svg>
-          </span> -->
-        <!-- </div> -->
-      </div>
+    <transition v-else>
+       <loader></loader>
     </transition>
   </div>
 </template>
 
 <script>
-import 'jquery'
-import '@/assets/lib/spritespin.min.js'
+import * as SpriteSpin from "spritespin"
 import Loader from '@/components/Loader'
 import { setTimeout } from 'timers';
 
@@ -32,69 +23,81 @@ export default {
   components: { Loader },
   data () {
     return {
+      spritespinAPI: null,
       isLoaded: false,
       $spritespin: null,
       progress: 0,
       frame: 0,
-      currentID: 0
+      currentID: 0,
+      show360icon: true
     }
   },
   computed: {
-    // pointStyle () {
-    //   let X = this.progress * 670 / 50
-    //   let Y = 30 * Math.cos((X + 200) / 200 - 9) - 30
-    //   // console.log(Y)
-    //   return {
-    //     'transform': 'translate(' + X + 'px,' + Y + 'px)'
-    //     // 'transform': 'translate(' + X + 'px, 0)'
-    //   }
-    // }
-  },
-  methods: {
-    sourceArray () {
-      let folder = this.sources[this.ID].folder
-      let ext = this.sources[this.ID].extension
+     sourceArray () {
       let result = []
-      for (var i = 0; i < 36; i++) {
-        result.push(folder + '/' + i + '.' + ext)
+      if (this.sources[this.ID]) {
+        let folder = this.sources[this.ID].folder
+        let ext = this.sources[this.ID].extension
+        let sum = (this.sources[this.ID].sum ? this.sources[this.ID].sum : 36)
+        for (var i = 0; i < sum; i++) {
+          result.push(folder + '/' + i + '.' + ext)
+        }
+      } else {
+        let folder = this.sources.folder
+        let ext = this.sources.extension
+        let sum = (this.sources.sum ? this.sources.sum : 36)
+
+        for (var j = 0; j < sum; j++) {
+          result.push(folder + '/' + j + '.' + ext)
+        }
       }
       return result
-    },
+    }
+  },
+  methods: {
     set () {
-      const vm = this
-      this.$spritespin = this.$spritespin && this.$spritespin.length > 0 ? this.$spritespin : $('#summary-spritespin')
-      if (this.$spritespin.length === 0) {
-        this.$spritespin = $('#summary-spritespin')
+      var that = this;
+
+      if (that.sources[that.ID]) {
+
+          this.$spritespin = $("#summary-spritespin").spritespin({
+            source: that.sourceArray,
+            animate: false,
+            frames: (that.sources[that.ID].sum ? that.sources[that.ID].sum : 36),
+            frameTime: 40,
+            // frame: that.frame,
+            lanes: 1,
+            module: null,
+            renderer: 'canvas',
+            reverse: false,
+            scrollThreshold: 500,
+    				responsive: true,
+            onLoad: function () {
+              that.isLoaded = true
+              that.currentID = that.ID
+            }
+          });
+      } else {
+          this.$spritespin = $("#summary-spritespin").spritespin({
+            source: that.sourceArray,
+            animate: false,
+            frames: (that.sources.sum ? that.sources.sum : 36),
+            frameTime: 40,
+            // frame: that.frame,
+            lanes: 1,
+            module: null,
+            renderer: 'canvas',
+            reverse: false,
+            scrollThreshold: 500,
+    				responsive: true,
+            onLoad: function () {
+              that.isLoaded = true
+              that.currentID = that.ID
+            }
+          });
       }
-      this.$spritespin.spritespin({
-        source: vm.sourceArray(),
-        height: 411,
-        width: 910,
-        animate: false,
-        behavior: 'drag',
-        frame: 0,
-        frames: 36,
-        frameTime: 40,
-        lanes: 1,
-        mods: ['drag', '360'],
-        module: null,
-        renderer: 'canvas',
-        reverse: false,
-        scrollThreshold: 500,
-        //responsive: true,
-        onInit: function () {
-          vm.isLoaded = false
-        },
-        onLoad: function () {
-          vm.currentID = vm.ID
-          vm.isLoaded = true
-        }
-      })
-      // let api = this.$spritespin.spritespin('api')
-      // this.$spritespin.bind('onFrame', function (ev) {
-      //   vm.frame = api.data.frame
-      //   vm.progress = Math.ceil(vm.frame / 36 * 100)
-      // })
+
+      this.spritespinAPI = $("#summary-spritespin").spritespin('api');
     },
     unset () {
       if (this.$spritespin.length > 0) {
@@ -104,7 +107,9 @@ export default {
     }
   },
   mounted () {
-    this.set()
+    this.$nextTick(()=>{
+      this.set()
+    })
   },
   beforeDestroy () {
     this.unset()
@@ -117,18 +122,69 @@ export default {
 }
 </script>
 
+<style lang="sass">
+@import '../../../../sass/common/variables'
+
+#summary-spritespin
+  position: absolute!important
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+
+.view
+  &__preloader
+    display: block
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    margin: auto
+    width: 88px
+    height: 88px
+    border-radius: 50%
+    background-color: rgba(#000000, 0.7)
+    pointer-events: none
+    img
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      margin: auto
+    &__progress
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      margin: auto
+      line-height: 88px
+      font-size: 20px
+      color: #fff
+      font-weight: 500
+      text-align: center
+
+@media only screen and (max-width : $lg-max)
+  .view
+    &__preloader
+      width: 72px
+      height: 72px
+
+</style>
 <style lang="scss">
 @import '../../assets/_mixins.scss';
 @import '../../../../sass/common/variables';
 
-.summary-car-view {
-  height: calc((100vw - 144px) * 0.45);
-  max-height: calc(910px * 0.45);
-}
 .summary-spritespin {
   position: relative;
   width: 100%;
   height: 100%;
+  max-width: 910px;
+  margin: 0 auto;
   .loader-overlay {
     background: transparent;
   }
@@ -136,6 +192,13 @@ export default {
     font-size: 8px;
     margin-top: -20px;
   }
+}
+.summary-spritespin::after {
+  content: '';
+  display: block;
+  top: 0;
+  left: 0;
+  padding-top: 45%;
 }
 .summary-spritespin-element {
   transition: opacity .15s ease-in;
@@ -221,12 +284,11 @@ export default {
   }
 }
 
-#summary-spritespin {
-  width: 100% !important;
-  height: 100% !important;
+@media only screen and (max-width : $xl-max) {
+  .summary-spritespin {
+    max-width: 720px;
+  }
 }
-
-
 @media only screen and (max-width : $md-max) {
   .car-view-item.summary {
     padding-top: 40px;

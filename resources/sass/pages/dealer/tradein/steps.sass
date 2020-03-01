@@ -1,0 +1,45 @@
+@import '../../../common/_variables.scss'
+
+@import './_menu.sass'
+@import './_step1.sass'
+@import './_step2.sass'
+@import './_step4.sass'
+
+.steps
+	&__body
+		display: flex
+		flex-wrap: wrap
+		min-width: 100%
+		margin: 0 -16px
+		padding-bottom: 24px
+	&__dropdown, &__input
+		width: calc(100% / 3 - 32px)
+		margin: 16px
+		label
+			font-size: 1.6rem
+			line-height: 1.5
+			font-weight: 500
+			color: #000
+			margin-bottom: 7px
+		&.df-select-bordered
+			.selectize-input
+				border-color: #E3E3E3
+	&__footer
+		display: flex
+		align-items: center
+		padding-top: 39px
+		border-top: 1px solid #E3E3E3
+	&__button
+		flex: none
+		width: 188px
+		line-height: 53px
+		padding: 0
+		border: 2px solid $main_blue
+		&--back
+			background-color: transparent
+			color: $main_blue
+			margin-right: 10px
+			&:hover
+				color: #fff
+	
+@import './_media.sass'

@@ -3,24 +3,22 @@
 		<h3 class="td-form__title">Тест-драйв автомобилей Hyundai</h3>
 		<div class="td-form__left" :class="{ isDealer: ENV === 'dealer' }">
 			<div class="td-form__label">Автомобиль</div>
-
-			<template v-if="typeof page === 'undefined' || page !== 'isStartPage'">
-				<div class="td-form__dropdown df-select-bordered" :class="{ 'invalid' : !validation.model }">
-					<selectize v-model="model" :settings="settingsModel">
-						<option :value="model.code" v-for="model in data">{{ model.name }}</option>
-					</selectize>
-				</div>
-				<div class="td-form__img">
-					<img :src="carImg" alt="">
-				</div>
-			</template>
 			<template v-if="page === 'isStartPage'">
 				<div class="td-form__label">{{ carName }}</div>
 				<div class="td-form__img">
 					<img :src="activeColorObj.carImage" alt="">
 				</div>
 			</template>
-			
+			<template v-else>
+				<div class="td-form__dropdown df-select-bordered" :class="{ 'invalid' : !validation.model }">
+					<selectize v-model="model" :settings="settingsModel">
+						<option :value="_model.code" v-for="_model in data">{{ _model.name }}</option>
+					</selectize>
+				</div>
+				<div class="td-form__img">
+					<img :src="carImg" alt="">
+				</div>
+			</template>
 			
 			<div v-if="typeof carLink !== 'undefined'" class="td-form__info">
 				<a :href="carLink" class="df-iconed-link">
@@ -72,7 +70,7 @@
 			</ul>
 			<input type="text" class="df-input-bordered td-form__input capitalize" name="name" id="name" placeholder="Имя" v-model="user.name" :class="{ 'invalid' : !validation.name }" @blur="focusLost('name')">
 			<input type="text" class="df-input-bordered td-form__input capitalize" name="surname" id="surname" placeholder="Фамилия" v-model="user.surname" :class="{ 'invalid' : !validation.surname }" @blur="focusLost('surname')">
-			<input type="tel" v-mask="'+7(999)-999-99-99'" class="df-input-bordered td-form__input" name="tel" id="tel" placeholder="Телефон" v-model="phone" :class="{ 'invalid' : !validation.phone }" @blur="focusLost('phone')">
+			<input type="tel" v-mask="'+7(999) 999-99-99'" class="df-input-bordered td-form__input" name="tel" id="tel" placeholder="Телефон" v-model="phone" :class="{ 'invalid' : !validation.phone }" @blur="focusLost('phone')">
 			<input type="email" class="df-input-bordered td-form__input" name="email" id="email" placeholder="E-mail" v-model="user.email" :class="{ 'invalid' : !validation.email }" @blur="focusLost('email')">
 		</div>
 		<div class="td-form__footer">
@@ -94,6 +92,7 @@
 import Selectize from 'vue2-selectize'
 import axios from 'axios'
 import { mapGetters } from "vuex";
+import Inputmask from "inputmask";
 
 export default {
 	name: "SignUpTestDriveForm",
@@ -182,6 +181,13 @@ export default {
 			utm_campaign: '',
 			utm_term: ''
 		};
+	},
+	directives: {
+		mask: {
+			bind: function(el, binding) {
+				Inputmask(binding.value).mask(el);
+			}
+		}
 	},
 	computed: {
 		...mapGetters({
@@ -297,6 +303,18 @@ export default {
 
 			if (this.utm_campaign === 'enileev' && this.utm_term === 'i30n') {
 				campaignCode = 'HMCIS0007016'
+			}
+			if (this.utm_campaign === 'mir_creta_rock_sep_oct_2019' || this.page === 'isCretaRockPage') {
+				campaignCode = 'HMCIS0007029'
+			}
+			if (this.utm_campaign === 'dud') {
+				campaignCode = 'HMCIS0007141'
+			}
+			if (this.utm_campaign === 'mir_santafe_rock_oct_2019') {
+				campaignCode = 'HMCIS0007151'
+			}
+			if (this.utm_campaign === 'mir_tucson_rock_oct_2019') {
+				campaignCode = 'HMCIS0007150'
 			}
 
 			if (this.isValid) {
@@ -473,30 +491,10 @@ export default {
 			}
 			
 			return obj;
-		}
-	},
-	filters: {},
-	mounted() {
-		var that = this;
-
-		this.$nextTick(function() {
-			that.utm_campaign = that.getAllUrlParams().utm_campaign;
-			that.utm_term = that.getAllUrlParams().utm_term;
-			
-			//Scrollbars
-			$('.selectize-control .selectize-dropdown-content').each(function(){
-				var psb = new PerfectScrollbar(this, {
-					wheelSpeed: 1,
-					minScrollbarLength: 20
-				});
-
-				that.ps.push(psb);
-			})
-		})
-	},
-	watch: {
-		model: function() {
+		},
+		checkI30n: function () {
 			if (this.model === 'i30n') {
+
 				var cities = [];
 
 				this.i30nDealers = this.dealers.filter(item=>item.i30n == '1');
@@ -521,6 +519,33 @@ export default {
 				//Обновим карту
 				this.$emit('set-i30n', false);
 			}
+		}
+	},
+	mounted() {
+		var that = this;
+
+		this.$root.$emit('form-init');
+
+		this.$root.$on('updateI30n', this.checkI30n)
+
+		this.$nextTick(function() {
+			that.utm_campaign = that.getAllUrlParams().utm_campaign;
+			that.utm_term = that.getAllUrlParams().utm_term;
+			
+			//Scrollbars
+			$('.selectize-control .selectize-dropdown-content').each(function(){
+				var psb = new PerfectScrollbar(this, {
+					wheelSpeed: 1,
+					minScrollbarLength: 20
+				});
+
+				that.ps.push(psb);
+			})
+		})
+	},
+	watch: {
+		model () {
+			this.checkI30n();
 		}
 	}
 };

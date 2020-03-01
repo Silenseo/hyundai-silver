@@ -26,37 +26,42 @@ class HomeController extends Controller
     {
         // return view('home');
 
-        dump(1);
-
-        $news = \Cache::remember('home_index_news', 3600, function() {
+        $news = \Cache::remember('home_index_news', 3600, function () {
             $news = \App\News::where('visible', 1)->orderBy('date', 'desc')->limit(12)->get();
             return $news;
         });
-        $banners = \Cache::remember('home_index_banners1', 3600, function() {
+        $banners = \Cache::remember('home_index_banners1', 3600, function () {
             $banners = \App\Banner::where('visible', 1)->orderBy('order')->get();
             return $banners;
         });
 
-        $key = 'json_config2';
+        $key = 'json_config4';
 
-        if(!Cache::has($key))
-        {
+        if (!Cache::has($key)) {
             $configSON = file_get_contents('http://configurator.hyundai.ru/exportdata/main/');
 
             Cache::put($key, $configSON, 3600);
-        }
-        else
-        {
+        } else {
             $configSON = Cache::get($key);
         }
 
+        $arConfig = json_decode($configSON);
+        foreach ($arConfig as $key => $car) {
+            if ($car->name == 'i30 N')
+                break;
+        }
+        unset($arConfig[$key]);
+        foreach ($arConfig as $rr)
+        {
+            $new[] = (array)$rr;
+        }
         return view('index', [
             'news_items' => $news,
             'banners' => $banners,
-            'configJSON' => $configSON
+            'configJSON' => json_encode($new)
         ]);
-	}
-	
+    }
+
     public function indexDealer()
     {
         // return view('home');

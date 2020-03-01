@@ -9,7 +9,7 @@
 							<rect x="1.45459" width="20.5702" height="2.05702" transform="rotate(45 1.45459 0)"/>
 						</svg>
 					</a>
-					<sign-up-forms :noDefaultCar="noDefaultCar" form="test-drive" :page="page"></sign-up-forms>
+					<sign-up-forms :noDefaultCar="noDefaultCar" form="test-drive" :page="page" @modules-loaded="modulesLoaded = true"></sign-up-forms>
 				</div>
 			</div>
 		</div>
@@ -27,13 +27,20 @@ export default {
 	props: ['page', 'noDefaultCar'],
 	data() {
 		return {
-		
+			modulesLoaded: false
 		};
 	},
 	computed: {
 		...mapGetters({
-			isOpened: "OPEN_TEST_DRIVE_POPUP",
+			isOpenedTD: "OPEN_TEST_DRIVE_POPUP",
 		}),
+		isOpened: function () {
+			if (this.isOpenedTD && this.modulesLoaded) {
+				return true
+			} else {
+				return false
+			}
+		}
 	},
 	methods: {
 		closeThis: function () {

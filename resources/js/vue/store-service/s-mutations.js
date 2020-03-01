@@ -32,9 +32,10 @@ export default {
 		state.city = data;
 	},
 	SET_COST (state, data) {
-		state.cost.works = data.works;
-		state.cost.parts = data.parts;
-		state.cost.total = data.total;
+		state.cost = Object.assign({},data)
+	},
+	SET_SERVICE_PARTS (state, data) {
+		state.serviceParts = data
 	},
 	SET_DATA (state, data) {
 		state.data = data;
@@ -122,6 +123,24 @@ export default {
 	},
 	SET_START_CREDIT_PACK (state, data) {
 		Object.assign(state.start.creditPack, data);
+	},
+	SET_DEALER_CARS_CAR_ID (state, data) {
+		state.dealerCars.carId = data;
+	},
+	SET_TRADEIN_STATE (state, data) {
+		Object.assign(state.tradein.state, data);
+	},
+	SET_TRADEIN_CURRENT_CAR (state, data) {
+		state.tradein.currentCar = data;
+	},
+	SET_TRADEIN_STEP2 (state, data) {
+		Object.assign(state.tradein.step2, data);
+	},
+	SET_TRADEIN_STEP3 (state, data) {
+		Object.assign(state.tradein.step3, data);
+	},
+	SET_TRADEIN_URL (state, data) {
+		state.tradein.sendUrl = data;
 	},
 	OPEN_START_MOBILE_LINE (state, data) {
 		state.start.openMobileLine = data;

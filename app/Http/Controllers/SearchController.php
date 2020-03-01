@@ -153,7 +153,7 @@ class SearchController extends Controller
 			}
 		}
 		else {
-			$result['message'] = 'Запрос слишком короткий';
+			$$result['message'] = 'Запрос слишком короткий';
 		}
 
 		$result['items'] = $searchResults;

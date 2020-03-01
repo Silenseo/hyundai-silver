@@ -10,9 +10,9 @@
 @section('content')
 <div class="offers-container">
 	<div class="content_area">
-		<div class="offers-video"></div>
-		<!-- <img class="promo-head lazyload" src="/getPicThumb/assets/ss/creta_desc.jpg?w=100&h=0" data-src="/assets/ss/creta_desc.jpg" style="">
-		<img class="promo-head-mobile lazyload" src="/getPicThumb/assets/ss/creta_mob.jpg?w=100&h=0" width="640px" height="700px" data-src="/assets/ss/creta_mob.jpg" style=""> -->
+		<!-- <div class="offers-video"></div> -->
+		<img class="promo-head lazyload" src="/getPicThumb/assets/ss/creta_desc.jpg?w=100&h=0" data-src="/assets/ss/creta_desc.jpg" style="">
+		<img class="promo-head-mobile lazyload" src="/getPicThumb/assets/ss/creta_mob.jpg?w=100&h=0" width="640px" height="700px" data-src="/assets/ss/creta_mob.jpg" style="">
 
 		<div class="offers-content">
 
@@ -39,7 +39,7 @@
 
                 	</div>
                 	<div class="mlr">
-<a href="/test-drive/Creta" target="_blank" class="request-service-btn">Тест-драйв</a> <a href="/configurator/car/22" target="_blank" class="inverse-service-btn">Конфигуратор</a>
+<a href="/test-drive/Creta" target="_blank" class="request-service-btn">Тест-драйв</a> <a href="/configurator/car/22" target="_blank" class="inverse-service-btn">Конфигуратор</a> <a href="/find-dealer" target="_blank" class="inverse-service-btn">Найти дилера</a>
 </div>
                 </div>
 			</div>
@@ -161,7 +161,7 @@
                 <div class="offers-block">
 <br><br>
 <div class="mlr">
-<a href="/test-drive/Creta" target="_blank" class="request-service-btn">Тест-драйв</a> <a href="/configurator/car/22" target="_blank" class="inverse-service-btn">Конфигуратор</a>
+<a href="/test-drive/Creta" target="_blank" class="request-service-btn">Тест-драйв</a> <a href="/configurator/car/22" target="_blank" class="inverse-service-btn">Конфигуратор</a> <a href="/find-dealer" target="_blank" class="inverse-service-btn">Найти дилера</a>
 </div>
 
 

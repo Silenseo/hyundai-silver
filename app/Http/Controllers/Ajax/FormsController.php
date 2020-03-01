@@ -17,15 +17,20 @@ use App\SiebelLog;
 
 class FormsController extends \App\Http\Controllers\Controller
 {
+	use \App\Traits\MirTrait;
+
 	public function sendTestDrive(Request $request) {
 		$rdata = $request->all();
+
+// 		var_dump($rdata); exit;
 
 		if(!isset($rdata['modelId']) && !isset($rdata['modelCode'])) {
 			return response()->json([
 				'status' => 0,
-				'error' => '',
+				'error' => 'Model not set',
 			]);
 		}
+
 
 		$validator = Validator::make($rdata, [
 //			'dealer' => 'required|exists:dealers,code',
@@ -43,23 +48,21 @@ class FormsController extends \App\Http\Controllers\Controller
 			]);
 		}
 
-      $emailTo = env('DEALER_EMAIL');
+//		$emailTo = env('DEALER_EMAIL');
 
-      $mess = 'Оставлена заявка на тест-драйв' . "\n\n";
-      $mess .= 'Модель авто: ' . $rdata['modelCode'] . "\n\n";
-      $mess .= 'ФИО:' . (string)$request->get('name') . ' ' . (string)$request->get('sirname') . "\n\n";
-      $mess .= 'E-Mail: ' . (string)$request->get('email') . "\n\n";
-      $mess .= 'Телефон:' . (string)$request->get('phone') . "\n\n";
-      
-      
-      Mail::raw($mess, function ($message){
-																	$message
-																		->to('web@investmarketing.ru')
-																		->to('silvermotorshyundai@gmail.com')
-																		->to('mksm@hyundai-silver.ru')
-																		->subject('Заявка на тест-драйв');
-                                });
-      
+$mess = 'Оставлена заявка на тест-драйв' . "\n\n";
+
+$mess .= 'Модель авто: ' . $rdata['modelCode'] . "\n\n";
+$mess .= 'ФИО:' . (string)$request->get('name') . ' ' . (string)$request->get('sirname') . "\n\n";
+$mess .= 'E-Mail: ' . (string)$request->get('email') . "\n\n";
+$mess .= 'Телефон:' . (string)$request->get('phone') . "\n\n";
+
+		Mail::raw($mess, function ($message){
+            $message
+                ->to(explode(',',env('DEALER_EMAIL')))
+                ->subject('Заявка на тест-драйв');
+        });
+
 /*
 		$siebel_code = $rdata['modelCode'] ?? '';
 		if(isset($rdata['modelId']) && $rdata['modelId'] > 0) {
@@ -141,10 +144,17 @@ class FormsController extends \App\Http\Controllers\Controller
 			]
 		];
 
+        $f = fopen($_SERVER['DOCUMENT_ROOT'] . '/td.log', 'a+');
+        fwrite($f, serialize($input) . "\n");
+        fclose($f);
+
+        //return response()->json(['status' => 1]);
+
 		try {
 			$response = $client->ProcessMessage($input);
 		}
 		catch(\Exception $e) {
+
 			return response()->json([
 				'status' => 0,
 				'error' => $e->getMessage()
@@ -159,6 +169,8 @@ class FormsController extends \App\Http\Controllers\Controller
 			'logId' => $response->Payload->Response->LogId,
 			'data' => json_encode($input),
 		]);
+
+		$this->sendMirTD($request);
 
 		if(!$is_success) {
 			return response()->json([
@@ -204,14 +216,10 @@ $mess .= 'ФИО:' . (string)$request->get('name') . ' ' . (string)$request->get
 $mess .= 'E-Mail: ' . (string)$request->get('email') . "\n\n";
 $mess .= 'Телефон:' . (string)$request->get('phone') . "\n\n";
 
-    $emailTo = env('DEALER_EMAIL');
-
 		Mail::raw($mess, function ($message){
             $message
-								->to('web@investmarketing.ru')
-								->to('silvermotorshyundai@gmail.com')
-								->to('mksm@hyundai-silver.ru')
-                ->subject('Заявка на техническое обслуживание');
+                ->to(explode(',',env('DEALER_EMAIL')))
+                ->subject('Заявка на технчиеское обслуживание');
         });
 
 /*
@@ -296,6 +304,12 @@ $mess .= 'Телефон:' . (string)$request->get('phone') . "\n\n";
 			]
 		];
 
+		$f = fopen($_SERVER['DOCUMENT_ROOT'] . '/to.log', 'a+');
+        fwrite($f, serialize($input) . "\n");
+        fclose($f);
+
+        //return response()->json(['status' => 1]);
+
 		try {
 			$response = $client->ProcessMessage($input);
 		}
@@ -328,6 +342,8 @@ $mess .= 'Телефон:' . (string)$request->get('phone') . "\n\n";
 
 		Mail::to($to)->send(new \App\Mail\ServiceRequest($subject, $rdata));
 */
+
+//		$this->sendMirTO($request);
 
 		return response()->json(['status' => 1]);
 	}
@@ -595,6 +611,12 @@ $mess .= 'Телефон:' . (string)$request->get('phone') . "\n\n";
 
 
 	public function jobseeker(Request $request) {
+		$item = Jobseeker::where('email', '=', $request->get('email'))->first();
+
+		if(!empty($item)) {
+			return response()->json(['status' => 2]);
+		}
+
 		$item = new Jobseeker();
 		$item->name = $request->get('name');
 		$item->surname = $request->get('surname');
@@ -611,7 +633,8 @@ $mess .= 'Телефон:' . (string)$request->get('phone') . "\n\n";
 		if ($request->hasFile('file')) {
 			$file = $request->file('file');
 			$filename = time() . '.' . $file->getClientOriginalExtension();
-			$path = $file->storeAs('main/jobseeker', $filename);
+			//$path = $file->storeAs('main/jobseeker', $filename);
+			$path = $file->storeAs("jobseeker", $filename, 'public');
 			$item->file = $filename;
 		}
 
@@ -621,7 +644,14 @@ $mess .= 'Телефон:' . (string)$request->get('phone') . "\n\n";
 	}
 
 	public function sendMotorstudioRequest(Request $request) {
-		$item = new MotorstudioRequest();
+		$item = MotorstudioRequest::where('email', '=', $request->get('email'))->where('phone', '=', $request->get('tel'))->where('event_id', '=', $request->get('id'))->first();
+
+		$event = \App\MotorstudioEvent::where('id', $request->get('id'))->first();
+		if(!empty($item) && !$event->check_registrations) {
+			return response()->json(['status' => 2]);
+		}
+
+		$item = new \App\MotorstudioRequest();
 		$item->name = $request->get('name');
 		$item->sirname = $request->get('surname');
 		$item->email = $request->get('email');
@@ -631,6 +661,22 @@ $mess .= 'Телефон:' . (string)$request->get('phone') . "\n\n";
 		$item->event_id = $request->get('id');
 
 		$result = $item->save() ? 1 : 0;
+
+		$event = \App\MotorstudioEvent::where('id', $request->get('id'))->first();
+		$rdata = [
+			'email' => $request->get('email'),
+			'event' => $event->name,
+			'name' => $request->get('name'),
+			'surname' => $request->get('surname'),
+			'date_start' => date('d.m.Y', $event->date_start),
+			'time_start' => date('H:i', $event->date_start),
+			'date_end' => date('d.m.Y', $event->date_end),
+		];
+		$to = $rdata['email'];
+		$subject = 'Регистрация на мероприятие в Hyundai Motorstudio';
+		$from = 'webmaster@hyundai.ru';
+
+		Mail::to($to)->send(new \App\Mail\MotorstudioRequest($subject, $rdata));
 
 		return response()->json(['status' => $result]);
 	}
@@ -659,13 +705,41 @@ $mess .= 'Телефон:' . (string)$request->get('phone') . "\n\n";
 
 		$result = $item->save() ? 1 : 0;
 
-		$fields = $item->toArray();
-		$ch = curl_init();
-		curl_setopt($ch,CURLOPT_URL, 'https://old.hyundai.ru/requestnew/sendEventRequest');
-		curl_setopt($ch,CURLOPT_POST, true);
-		curl_setopt($ch,CURLOPT_POSTFIELDS, $fields);
-		curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
-		$curl_result = curl_exec($ch);
+		// $fields = $item->toArray();
+		// $ch = curl_init();
+		// curl_setopt($ch,CURLOPT_URL, 'https://old.hyundai.ru/requestnew/sendEventRequest');
+		// curl_setopt($ch,CURLOPT_POST, true);
+		// curl_setopt($ch,CURLOPT_POSTFIELDS, $fields);
+		// curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
+		// $curl_result = curl_exec($ch);
+
+		$to = 'TAMitina@hyundai.ru';
+		$subject = 'Запрос на проведение мероприятия';
+
+		Mail::to($to)->send(new \App\Mail\EventRequest($subject, $item));
+
+		$to = 'ZAMedvedeva@hyundai.ru';
+		$subject = 'Запрос на проведение мероприятия';
+
+		Mail::to($to)->send(new \App\Mail\EventRequest($subject, $item));
+
+		$to = 'zakfor@gmail.com';
+		$subject = 'Запрос на проведение мероприятия';
+
+		Mail::to($to)->send(new \App\Mail\EventRequest($subject, $item));
+
+
+		$to = 'ep@familyagency.ru';
+		$subject = 'Запрос на проведение мероприятия';
+
+		Mail::to($to)->send(new \App\Mail\EventRequest($subject, $item));
+
+
+
+		$to = 'IVPletnev@hyundai.ru';
+		$subject = 'Запрос на проведение мероприятия';
+
+		Mail::to($to)->send(new \App\Mail\EventRequest($subject, $item));
 
 		return response()->json(['status' => $result]);
 	}

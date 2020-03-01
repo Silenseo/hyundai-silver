@@ -27,7 +27,7 @@
                         <a href="/news" class="df-dropdown__link">Пресс-центр</a>
                     </li>
                     <li class="df-dropdown__submenu-item">
-                        <a href="/vacancy" class="df-dropdown__link vacancy__link">Вакансии</a>
+                        <a href="/CareersMoscow" class="df-dropdown__link vacancy__link">Вакансии</a>
                     </li>
                     <li class="df-dropdown__submenu-item">
                         <a href="/customer-services" class="df-dropdown__link">Сервисы для клиентов</a>
@@ -68,7 +68,7 @@
                         <a href="/perfection-mobility" class="df-dropdown__link">Совершенство передвижений</a>
                     </li>
                     <li class="df-dropdown__submenu-item">
-                        <a href="/i30n" class="df-dropdown__link">i30N</a>
+                        <a href="/i30n" class="df-dropdown__link">i30 N</a>
                     </li>
                     <li class="df-dropdown__submenu-item">
                         <a href="/veloster-n" class="df-dropdown__link">Veloster N</a>
@@ -90,7 +90,7 @@
                         <a href="https://www.hyundai.com/worldwide/en/innovation/design/design-philosophy" target="_blank" class="df-dropdown__link"><span>Концепт-дизайн Hyundai</span></a>
                     </li>
                     <li class="df-dropdown__submenu-item">
-                        <a href="http://worldwide.hyundai.com/" target="_blank" class="df-dropdown__link"><span>Международный сайт</span></a>
+                        <a href="http://stgwww.hyundai.com/worldwide" target="_blank" class="df-dropdown__link"><span>Международный сайт</span></a>
                     </li>
                 </ul>
             </li>

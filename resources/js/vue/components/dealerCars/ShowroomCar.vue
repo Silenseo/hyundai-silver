@@ -1,5 +1,5 @@
 <template>
-	<div class="s-car" @click="goToCar">
+	<div class="s-car" @click="goToCar" :ref="specifications.id">
 		<div class="s-car__line s-car__line--1">
 			<div class="s-car__name">{{ specifications.name | output }}</div>
 			<div class="s-car__year">{{ specifications.year | output }}</div>
@@ -9,7 +9,7 @@
 			<div class="s-car__credit">от {{ specifications.monthPayment | currencyFormat }} ₽/мес.</div>
 		</div>
 		<div class="s-car__img">
-			<car-preview :images="previewImages"></car-preview>
+			<car-preview v-if="isVisible" :images="previewImages"></car-preview>
 		</div>
 		<div class="s-car__description">
 			{{ description }}
@@ -35,7 +35,7 @@ export default {
 	},
 	data () {
 		return {
-
+			isVisible: false
 		}
 	},
 	computed: {
@@ -64,6 +64,13 @@ export default {
 		},
 		toCredit: function() {
 			console.log('credit')
+		},
+		checkPosition: function () {
+			var obj = this.$refs[this.specifications.id]
+
+			if ($(window).scrollTop() + $(window).outerHeight() > $(obj).offset().top) {
+				this.isVisible = true
+			}
 		}
 	},
 	filters: {
@@ -71,8 +78,12 @@ export default {
 			return typeof value !== 'undefined' ? value : ''
 		}
 	},
-	mounted () {
-		
+	beforeDestroy () {
+		this.$root.$off('on-scroll', this.checkPosition)
+	},
+	mounted() {
+		this.checkPosition();
+		this.$root.$on('on-scroll', this.checkPosition)
 	}
 }
 </script>

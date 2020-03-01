@@ -106,7 +106,8 @@
 								<input type="text" class="df-input-bordered" name="mileage" id="mileage" placeholder="Текущий пробег" v-model="mileage" :class="{ 'invalid' : !validation.mileage }" @blur="focusLost('mileage')">
 							</div>
 							<div class="form-section__item">
-								<textarea type="text" class="df-input-bordered form-section__message" name="message" id="message" placeholder="Сообщение" v-model="user.message" :class="{ 'invalid' : !validation.message }" @blur="focusLost('message')"></textarea>
+								<textarea type="text" class="df-input-bordered form-section__message" name="message" id="message" placeholder="Сообщение" v-model="user.message" :class="{ 'invalid' : !validation.message }" @blur="focusLost('message')" maxlength="2000"></textarea>
+								<span class="form-section__counter">{{user.message.length}}/2000</span>
 							</div>
 							<!-- <div class="form-section__item">
 								<input type="text" class="df-input-bordered" name="wish" id="wish" placeholder="Ваши пожелания" v-model="wish">
@@ -128,6 +129,7 @@ import Selectize from 'vue2-selectize'
 import FormAccept from '@/components/common/FormAccept.vue'
 import axios from 'axios'
 import { setTimeout } from 'core-js';
+import Inputmask from "inputmask";
 
 import { mapGetters } from "vuex";
 
@@ -314,6 +316,16 @@ export default {
 				message: '',
 				company: ''
 			},
+			defaultUser: {
+				name: '',
+				surname: '',
+				patronymic: '',
+				tel: '',
+				email: '',
+				city: '',
+				message: '',
+				company: ''
+			},
 			cityDealer: '',
 			model: '',
 			dealer: '',
@@ -329,9 +341,17 @@ export default {
 			ps: [],
 			sending: false
 		}
-    },
+	},
+	directives: {
+		mask: {
+			bind: function(el, binding) {
+				Inputmask(binding.value).mask(el);
+			}
+		}
+	},
     computed: {
 		...mapGetters({
+			ENV: "GET_ENV",
 			dealersCities: 'GET_DEALERS_CITIES',
 			dealers: 'GET_DEALERS',
 			data: 'GET_DATA'
@@ -449,13 +469,15 @@ export default {
 						//wish: this.wish,
 						date_buy: this.date,
 						date_request: this.dateRequest,
-						dealer_solve: this.dealerSolve
+						dealer_solve: this.dealerSolve,
+						mileage: this.mileage
 					}
 				})
 					.then(function (response) {
 						if (response.data.status === 1) {
 							that.$store.dispatch('OPEN_SUCCESS', true);
 							that.sending = false;
+							that.clearForm();
 
 							dataLayer.push({
 								"event": "custom_event",
@@ -475,7 +497,11 @@ export default {
 			} else {
 				//Скролл к первому не валидному полю
 				setTimeout(()=>{
-					var st = $('.invalid').eq(0).offset().top - 200;
+					var st = $('.invalid:not([type="checkbox"])');
+
+					if (st.length > 0) {
+						st = st.eq(0).offset().top - 200;
+					}
 
 					if (st > 0) {
 						$('html, body').animate({ scrollTop: st }, 500);
@@ -494,10 +520,29 @@ export default {
 		},
 		openRules: function () {
 			this.$emit('show-rules');
-		}
-    },
-    filters: {
+		},
+		clearForm () {
+			this.user = Object.assign({}, this.defaultUser);
 
+			for (var name in this.blur) {
+				this.blur[name] = false
+			}
+
+			this.appeal = 'Физическое лицо'
+			this.theme = 'Вакансии'
+			this.cityDealer = ''
+			this.model = ''
+			this.dealer = ''
+			this.vin = ''
+			this.date = ''
+			this.cityQuestion = ''
+			this.dateRequest = ''
+			this.dealerSolve = ''
+			this.mileage = ''
+			this.wish = ''
+			this.agreement = true
+			this.process = false
+		}
     },
     mounted () {
 		var that = this;
@@ -513,9 +558,6 @@ export default {
 				that.ps.push(psb);
 			})
 		})
-    },
-    watch: {
-
     }
 }
 </script>

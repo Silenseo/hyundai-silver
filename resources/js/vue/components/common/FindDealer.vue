@@ -1,6 +1,6 @@
 <!-- Компонент поиск дилера на карте
 Зависимости: Яндекс карты, axios.
-Вход: 
+Вход:
 	-город,
 	-дилер (могут отсутствовать, если есть, то карта соответственно центрируется),
 	-isFindDealerPage - для страницы Найти дилера (Вместо кнопки Выбрать дилера, кнопка Тест-драйв)
@@ -23,10 +23,10 @@
 					</a>
 					<div id="c-find-dealer-map" :ref="id" class="c-find-dealer__map"></div>
 					<!-- <a href="#" @click.prevent="zoomIn" class="c-find-dealer__zoomIn">
-						
+
 					</a>
 					<a href="#" @click.prevent="zoomOut" class="c-find-dealer__zoomOut">
-						
+
 					</a> -->
 					<!-- <a href="#" @click.prevent="whereIAm" class="c-find-dealer__location">
 						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +72,7 @@
 							<div class="label__address">{{ label.address }}</div>
 							<div class="label__line">
 								<a :href="'tel:'+label.phone" class="label__phone">{{ label.phone }}</a>
-								<a :href="label.site" class="df-iconed-link df-iconed-link--small label__link">
+								<a :href="label.site" class="df-iconed-link df-iconed-link--small label__link" target="_blank">
 									Перейти на сайт
 									<svg>
 										<use xlink:href="#arrow-link"></use>
@@ -129,7 +129,7 @@ export default {
 		};
 	},
 	computed: {
-		
+
 	},
 	methods: {
 		closeDealer: function () {
@@ -142,7 +142,7 @@ export default {
 			axios.get(findDealerState.API.DEALERS_LIST)
 			.then(function (response) {
 				that.dealers = response.data;
-				
+
 				that.ready = true;
 
 				that.dealers.forEach(function(item){
@@ -200,7 +200,7 @@ export default {
 					that.objectManager.objects.setObjectOptions(objectId, {
 						iconImageHref: '/images/map/PointSelected.png'
 					});
-					
+
 					that.dealers.forEach((item) => {
 						if (item.id === objectId) {
 							that.label.title = item.name;
@@ -311,7 +311,7 @@ export default {
 				var obj = that.objectManager.setFilter(function (object) {
 									return  that.dealer === object.properties.dealerCode;
 								}).getBounds()
-				
+
 				this.drawMap(obj);
 			}
 		},
@@ -329,7 +329,7 @@ export default {
 
 			//Отображаем правильную область и зум
 			if (obj) {
-				this.myMap.setBounds(obj, {checkZoomRange: true, duration: 500 }).then(function(){ 
+				this.myMap.setBounds(obj, {checkZoomRange: true, duration: 500 }).then(function(){
 					if(that.myMap.getZoom() > 14) {
 						that.myMap.setZoom(14);
 					}
@@ -388,8 +388,8 @@ export default {
 					ymaps.ready(init);
 				})
 
-			function init() { 
-				// Создание карты.    
+			function init() {
+				// Создание карты.
 				that.myMap = new ymaps.Map(that.$refs[that.id], {
 					center: userLocation,
 					controls: [],
@@ -420,9 +420,9 @@ export default {
 
 				//Запретить перетаскивание пальцем на мобилках
 				// if ($(window).width() < 768) {
-				// 	that.myMap.behaviors.disable('drag'); 
+				// 	that.myMap.behaviors.disable('drag');
 				// }
-				
+
 				that.objectManager = new ymaps.ObjectManager();
 
 				that.myMap.geoObjects.add(that.objectManager);
@@ -432,7 +432,7 @@ export default {
 					// var fullscreenControl = new ymaps.control.FullscreenControl();
 					// that.myMap.controls.add(fullscreenControl);
 
-					var FullLayout = ymaps.templateLayoutFactory.createClass("<div class='c-find-dealer__cont'>" + 
+					var FullLayout = ymaps.templateLayoutFactory.createClass("<div class='c-find-dealer__cont'>" +
 						"<div id='full' class='c-find-dealer__fullscreen'></div>"
 						+ "</div>", {
 					});
@@ -449,7 +449,7 @@ export default {
 				}
 
 				// Создадим пользовательский макет ползунка масштаба.
-				var ZoomLayout = ymaps.templateLayoutFactory.createClass("<div class='c-find-dealer__cont'>" + 
+				var ZoomLayout = ymaps.templateLayoutFactory.createClass("<div class='c-find-dealer__cont'>" +
 					"<div id='zoom-in' class='c-find-dealer__zoomIn'></div>" +
 					"<div id='zoom-out' class='c-find-dealer__zoomOut'></div>"
 					+ "</div>", {
@@ -490,7 +490,7 @@ export default {
 					}
 				});
 
-				var LocationLayout = ymaps.templateLayoutFactory.createClass("<div class='c-find-dealer__cont'>" + 
+				var LocationLayout = ymaps.templateLayoutFactory.createClass("<div class='c-find-dealer__cont'>" +
 					"<div id='location' class='c-find-dealer__location'></div>"
 					+ "</div>", {
 
@@ -523,7 +523,7 @@ export default {
 					}
 				});
 
-				
+
 				var zoomControl = new ymaps.control.ZoomControl({options: {layout: ZoomLayout}});
 				var locationControl = new ymaps.control.ZoomControl({options: {layout: LocationLayout}});
 
@@ -585,7 +585,7 @@ export default {
 					}, 500)
 				})
 				.then(()=>{
-					setTimeout(initMap.bind(this), 500)	
+					setTimeout(initMap.bind(this), 500)
 				}, ()=>{
 					this.$root.$emit('notify', { type: 'error', text: 'Ошибка загрузки данных, повторите попытку позднее' })
 				})

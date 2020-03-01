@@ -12,7 +12,7 @@
 									<div class="faq__toggle"></div>
 								</a>
 								<div class="faq__wrapper" :ref="'master'+index">
-									<div class="faq__dropdown" v-for="(dropdown, index1) in item" :key="index1">
+									<div class="faq__dropdown" v-for="(dropdown, index1) in item" :key="index1" v-if="!(ENV === 'dealer' && dropdown.question === 'Где я могу узнать список официальных дилеров Hyundai?')">
 										<a href="#" class="faq__head" @click.prevent="toggleSlide(index+'.'+index1)" :class="{ 'active': currentSlide === index+'.'+index1}">
 											<h4 v-html="dropdown.question"></h4>
 											<svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,11 +34,10 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
     name: 'QuestionsAndAnswers',
-    components: {
-
-    },
     data () {
         return {
 			currentSlide: '',
@@ -324,7 +323,9 @@ export default {
         }
     },
     computed: {
-		
+		...mapGetters({
+			ENV: "GET_ENV",
+		}),
     },
     methods: {
 		toggleMaster: function(id) {

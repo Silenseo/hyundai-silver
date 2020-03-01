@@ -1,5 +1,6 @@
 $(document).ready(function () {
-	var oldWindowWidth = 0;
+	var oldWindowWidth = 0,
+		videosList = document.querySelectorAll('.slider__video');
 
 	videoInit()
 
@@ -15,53 +16,53 @@ $(document).ready(function () {
 
 		oldWindowWidth = windowWidth;
 
-		if (windowWidth > 1599) {
-			if ($('.large-video').length > 0) {
-				return null;
-			}
-			$('.slider__video').html('');
+		[].forEach.call(videosList, (video)=>{
+			let $video = $(video);
+			let desctopSRC = video.dataset.desctopVideo;
+			let mobileSRC = video.dataset.mobileVideo;
 
-			$('.slider__video').append(
-				'<video id="video" class="large-video" muted autoplay playsinline loop data-object-fit="cover">' +
-				'<source src="/video/CretaRockEdition/Ready-to-go_compressed.mp4">' +
-				'</video>'
-			)
-		} else if (windowWidth > 640) {
-			if ($('.medium-video').length > 0) {
-				return null;
-			}
-			$('.slider__video').html('');
+			if (windowWidth > 640) {
+				if ($video.find('.desctop-video').length > 0) {
+					return null;
+				}
+				$video.html('');
 
-			$('.slider__video').append(
-				'<video id="video" class="medium-video" muted autoplay playsinline loop data-object-fit="cover">' +
-				'<source src="/video/CretaRockEdition/Ready-to-go_compressed.mp4">' +
-				'</video>'
-			)
-		} else {
-			if ($('.mobile-video').length > 0) {
-				return null;
-			}
-			$('.slider__video').html('');
+				$video.append(
+					'<video class="desctop-video" muted autoplay playsinline loop data-object-fit="cover">' +
+					'<source src="' + desctopSRC + '">' +
+					'</video>'
+				)
+			} else {
+				if ($video.find('.mobile-video').length > 0) {
+					return null;
+				}
+				$video.html('');
 
-			$('.slider__video').append(
-				'<video id="video" class="mobile-video" muted autoplay loop playsinline>' +
-				'<source src="/video/CretaRockEdition/Ready-to-go-mobile_compressed.mp4">' +
-				'</video>'
-			)
-		}
+				$video.append(
+					'<video class="mobile-video" muted autoplay loop playsinline>' +
+					'<source src="' + mobileSRC + '">' +
+					'</video>'
+				)
+			}
+		})
 	}
 
 	objectFitPolyfill();
 
     $(".js-main-slider").owlCarousel({
         items: 1,
-        autoplay: false,
+        autoplay: true,
         animateOut: 'fadeOut',
 		animateIn: 'fadeIn',
 		loop: true,
 		nav: true,
 		navText: ['<svg viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 1L1.57619 8.3415C1.24629 8.71852 1.24629 9.28148 1.57619 9.6585L8 17" stroke="white" stroke-width="2"/></svg>', '<svg viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 17L7.42381 9.6585C7.75371 9.28148 7.75371 8.71852 7.42381 8.3415L1 0.999999" stroke="white" stroke-width="2"/></svg>']
-    });
+	});
+
+	// Остановить автоматическую смену слайдов при клике
+	$(".js-main-slider").on('click', function() {
+		$(".js-main-slider").trigger('stop.owl.autoplay')
+	})
 
 	if (process.env.MIX_BUILD !== 'dealer') {
 		$(".js-news-slider").owlCarousel({
@@ -93,7 +94,6 @@ $(document).ready(function () {
 //	homepage model
 // components
 // homepage configurator
-if (process.env.MIX_BUILD !== 'dealer') {
 	var homeVM = new Vue({
 		el: '#config',
 		data: {
@@ -330,4 +330,3 @@ if (process.env.MIX_BUILD !== 'dealer') {
 			})
 		}
 	})
-}

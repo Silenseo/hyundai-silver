@@ -1,0 +1,36 @@
+.gallery
+	position: relative
+	overflow: hidden
+	color: #000
+	padding-top: 120px
+	padding-bottom: 190px
+	&__back
+		display: block
+		position: absolute
+		top: 0
+		left: 11%
+		right: 0
+		bottom: 0
+		&--m
+			display: none
+	&__center
+		position: relative
+		margin-left: 64px
+	&__title
+		margin-bottom: 12px
+	&__hashtags
+		max-width: 450px
+		font-size: 30px
+		line-height: 32px
+	&__wrap
+		width: calc(100% + (50vw - 50%))
+		margin-top: 55px
+	&__slide
+		width: 312px
+	.owl-item
+		&:nth-of-type(odd)
+			.gallery__slide
+				padding-top: 48px
+	.owl-carousel
+		.owl-stage-outer
+			overflow: visible

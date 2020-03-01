@@ -26,11 +26,13 @@ export default {
 		}
 	},
 	mounted () {
-		
+		$(window).on('scroll', function() {
+			this.$root.$emit('on-scroll')
+		}.bind(this))
 	}
 }
 </script>
 
 <style lang="sass">
-@import '../../../../sass/pages/dealerCars/showroom.sass'
+@import '../../../../sass/pages/dealer/cars/showroom.sass'
 </style>

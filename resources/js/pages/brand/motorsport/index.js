@@ -54,6 +54,23 @@ $(function() {
 		
 	})
 
+	//Появление блока Чемпионат
+	var sceneChamp1 = new ScrollMagic.Scene({triggerElement: '.champ1', triggerHook: 1, offset: 150 })
+		//.addIndicators({name: id + " (duration: 0)"})
+		.addTo(controller);
+
+	sceneChamp1.on('enter', function (event) {
+		$(event.currentTarget.triggerElement()).addClass("active");
+	});
+
+	var sceneChamp2 = new ScrollMagic.Scene({triggerElement: '.champ2', triggerHook: 1, offset: 150 })
+	//.addIndicators({name: id + " (duration: 0)"})
+	.addTo(controller);
+
+	sceneChamp2.on('enter', function (event) {
+		$(event.currentTarget.triggerElement()).addClass("active");
+	});
+
 	//Появление блока с командой
 	var scene = new ScrollMagic.Scene({triggerElement: '.team', triggerHook: 1, offset: 150 })
 			//.addIndicators({name: id + " (duration: 0)"})

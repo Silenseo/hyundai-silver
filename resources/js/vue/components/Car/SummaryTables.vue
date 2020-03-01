@@ -21,7 +21,7 @@
                       <svg tabindex="-1" aria-visible="false" class="ic-svg ic-checkmark"><use xlink:href="#ic-checkmark"></use></svg>
                     </template>
                     <template v-else>
-                      {{ item.value }}
+						{{ item.value }}
                     </template>
                   </td>
                 </tr>
@@ -29,8 +29,7 @@
                   <td>
                     <table>
                       <tr>
-                        <td class="sm-td-m sm-td-m--name">
-                        {{ item.name }}
+                        <td class="sm-td-m sm-td-m--name" v-html="item.name">
                         </td>
                       </tr>
                       <tr>
@@ -42,7 +41,7 @@
                             <svg tabindex="-1" aria-visible="false" class="ic-svg ic-checkmark"><use xlink:href="#ic-checkmark"></use></svg>
                           </template>
                           <template v-else>
-                            {{ item.value }}
+							  {{ item.value }}
                           </template>
                         </td>
                       </tr>

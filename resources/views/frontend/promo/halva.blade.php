@@ -1,4 +1,4 @@
-@extends('layouts.master-dealer')
+@extends('layouts.master')
 
 @section('pageTitle', 'Hyundai: модельный ряд, цены на автомобили, где купить Хендэ')
 
@@ -188,7 +188,7 @@
 					</div>
 					<ul class="disclamers__list" style="display: none;">
 						<li class="disclamers__item">
-						&laquo;Карта &laquo;Халва&raquo;: Клиентам от&nbsp;20&nbsp;до&nbsp;75&nbsp;лет по&nbsp;паспорту РФ. Обслуживание&nbsp;&mdash; 0&nbsp;руб. Ставка в&nbsp;течение льготного периода (36&nbsp;мес.)&nbsp;&mdash; 0%&nbsp;год. При его нарушении, по&nbsp;окончании&nbsp;&mdash; 10% годовых на&nbsp;задолженность с&nbsp;даты возникновения. Срок рассрочки от&nbsp;1&nbsp;до&nbsp;18&nbsp;мес.&nbsp;на&nbsp;покупки в&nbsp;сети партнёров с&nbsp;учетом базового срока рассрочки, срока рассрочки по&nbsp;купонам, акциям, тарифным планам. Лимит в&nbsp;течение 10&nbsp;лет до&nbsp;350&nbsp;000&nbsp;руб., по&nbsp;решению Банка до&nbsp;4&nbsp;900&nbsp;000&nbsp;руб.&nbsp;на&nbsp;покупку новых транспортных средств Hyundai Solaris, Creta, Elantra, Sonata, Tucson, Santa Fe, H-1, i30&nbsp;N 2018, 2019 года выпуска и&nbsp;дополнительного оборудования в&nbsp;официальных дилерских центрах при подключении Тарифного плана &laquo;Специальная рассрочка&raquo; на&nbsp;срок 12&nbsp;или 18&nbsp;мес.&nbsp;с&nbsp;уплатой комиссией согласно Тарифам Банка. Комиссия за&nbsp;тарифный план на&nbsp;12&nbsp;мес.&nbsp;не&nbsp;взимается при выполнении условия ежемесячного совершения от&nbsp;5&nbsp;покупок по&nbsp;&laquo;Карта &laquo;Халва&raquo; на&nbsp;общую сумму от&nbsp;10&nbsp;000&nbsp;руб. Залоговое обеспечение&nbsp;&mdash; залог приобретаемого транспортного средства. При просрочке: неустойка на&nbsp;просроченную задолженность с&nbsp;1&nbsp;по&nbsp;5&nbsp;день&nbsp;&mdash; 0%, далее&nbsp;19% годовых, штраф за&nbsp;выход на&nbsp;просрочку 590&nbsp;руб.&nbsp;/ 590&nbsp;руб.+&nbsp;1%&nbsp;/ 590&nbsp;руб.+&nbsp;2%&nbsp;от&nbsp;задолженности за&nbsp;1&nbsp;/ 2&nbsp;/ 3&nbsp;мес.&nbsp;и&nbsp;далее соответственно. Предложение действует с&nbsp;01.12.2019 по&nbsp;31.12.2019г.. ПАО &laquo;Совкомбанк&raquo;. Генеральная лицензия Банка России &#8470;&nbsp;963 от&nbsp;05&nbsp;декабря 2014&nbsp;года. Не&nbsp;является публичной офертой
+						«Карта «Халва»: Клиентам от 20 до 75 лет по паспорту РФ. Обслуживание – 0 руб. Ставка в течение льготного периода (36 мес.) - 0% год. При его нарушении, по окончании - 10% годовых на задолженность с даты возникновения. Срок рассрочки от 1 до 18 мес. на покупки в сети партнёров с учетом базового срока рассрочки, срока рассрочки по купонам, акциям, тарифным планам. Лимит в течение 10 лет до 350 000 руб., по решению Банка до 4 900 000 руб. на покупку новых транспортных средств Hyundai Solaris, Creta, Elantra, Sonata, Tucson, Santa Fe, H-1, i30 N 2018, 2019 года выпуска и дополнительного оборудования в официальных дилерских центрах при подключении Тарифного плана «Специальная рассрочка» на срок 12 или 18 мес с уплатой комиссии согласно Тарифов Банка. При невыполнении условия ежемесячного совершения от 5 покупок по «Карта «Халва» на общую сумму от 10 000 руб. взимается единоразовая комиссия согласно тарифам Банка. Залоговое обеспечение – залог приобретаемого транспортного средства. При просрочке: неустойка на просроченную задолженность с 1 по 5 день - 0%, далее 19% годовых, штраф за выход на просрочку 590 руб. / 590 руб.+ 1% / 590 руб.+ 2% от задолженности за 1 / 2 / 3 мес. и далее соответственно. Предложение действует с 01.01.2020 по 31.01.2020г.. ПАО «Совкомбанк». Генеральная лицензия Банка России № 963 от 05 декабря 2014 года. Не является публичной офертой.
 						</li>
 					</ul>
 				</div>
@@ -197,9 +197,24 @@
 	</div>
 </section>
 @endsection
-
+<!-- Smartpoint Code Start -->
+<script type="text/javascript">
+    (function(w, p) {
+        var a, s;
+        (w[p] = w[p] || []).push(
+            "uid=45141",
+            "site="+encodeURIComponent(window.location.href)
+        );
+        a = document.createElement('script'); a.type = 'text/javascript'; a.async = true;	a.charset='utf-8';
+        a.src = 'https://panel.smartpoint.pro/collectwidgets/?'+window.SMP_params.join('&');
+        s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(a, s);
+    })(window, 'SMP_params');
+</script>
+<!-- Smartpoint Code End -->
 @section('scripts')
-		<script src="/js/lazypreview.js"></script>
-    <script src="/js/promo/halva/libs.js"></script>
-		<script src="/js/promo/halva/halva.js"></script>
+		<script src="{{ mix('/js/lazypreview.js') }}"></script>
+    <script src="{{ mix('/js/promo/halva/libs.js') }}"></script>
+		<script src="{{ mix('/js/promo/halva/halva.js') }}"></script>
 @endsection
+
+

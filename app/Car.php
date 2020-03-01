@@ -32,7 +32,8 @@ class Car extends Model
         'is_promo',
         'ga_modelcode',
         'conf_car_id',
-        'is_old_model'
+        'is_old_model',
+        'tradein'
     ];
     protected $picPath = '/storage/cars/';
     protected $urlPrefix = '';

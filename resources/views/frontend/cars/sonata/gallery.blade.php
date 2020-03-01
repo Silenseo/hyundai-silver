@@ -1,4 +1,4 @@
-﻿@extends('layouts.master-dealer')
+@extends('layouts.master-dealer')
 
 @section('pageTitle', 'Sonata')
 
@@ -11,32 +11,32 @@
 <section class="nav">
     <ul class="nav__menu">
         <li class="nav__item">
-            <a href="{{ route('static_car24') }}#design" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car24', null, false) }}#design" class="nav__link scroll">
                 Дизайн
             </a>
         </li>
         <li class="nav__item">
-            <a href="{{ route('static_car24') }}#dynamics" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car24', null, false) }}#dynamics" class="nav__link scroll">
                 Динамика
             </a>
         </li>
         <li class="nav__item">
-            <a href="{{ route('static_car24') }}#comfort" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car24', null, false) }}#comfort" class="nav__link scroll">
                 Комфорт
             </a>
         </li>
         <li class="nav__item">
-            <a href="{{ route('static_car24') }}#safety" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car24', null, false) }}#safety" class="nav__link scroll">
                 Безопасность
             </a>
         </li>
         <li class="nav__item">
-            <a href="{{ route('static_car24') }}#specs" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car24', null, false) }}#specs" class="nav__link scroll">
                 Характеристики
             </a>
         </li>
         <li class="nav__item">
-            <a target="_blank" href="{{ route('static_car24') }}/gallery" class="nav__link active">
+            <a target="_blank" href="{{ route('static_dealerapi_car24', null, false) }}/gallery" class="nav__link active">
                 Галерея
             </a>
         </li>
@@ -58,7 +58,6 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-                <h1 class="h2 mb-5 text-center">Галерея Sonata</h1>
 				<div class="gallery__wrapper">
 					<ul id="gallery" class="gallery__list">
 						<li class="gallery__item" data-image="/images/cars/sonata/slider/gallery_01.jpg" style="background-image: url(/images/cars/sonata/slider/gallery_01.jpg)"></li>

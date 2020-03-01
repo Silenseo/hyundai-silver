@@ -126,7 +126,7 @@
                   <svg tabindex="-1" aria-visible="false"><use xlink:href="#ic-arrow-down"></use></svg>
                 </a><br/>
 -->
-                <a href="#" class="df-button offer__button" @click.prevent="toggleSendCredit" v-if="!isDealer">Предодобрение кредита</a>
+                <a href="#" class="df-button offer__button" @click.prevent="toggleSendCredit" v-if="creditApprove || !isDealer">Предодобрение кредита</a>
               </div>
             </div>
           </div>
@@ -388,8 +388,10 @@ export default {
       isSpecialSaleActive: false,
       specialSaleInfoTarget: '',
       isLineOpened: false,
-	  isLineShow: false,
-	  sentSuccess: false
+      isLineShow: false,
+      sentSuccess: false,
+      creditApprove: false,
+      dealerCreditApprove: ''
     }
   },
   computed: {
@@ -409,7 +411,8 @@ export default {
       pdfApi: 'GET_API_GET_PDF',
       colorId: 'GET_COLOR_ID',
       packetsSelected: 'GET_CURRENT_PACKETS',
-      isDealer: 'GET_IS_DEALER'
+      isDealer: 'GET_IS_DEALER',
+      apiCheckCredit: 'GET_API_CHECK_CREDIT'
     }),
     isLoading () {
       return this.$store.getters.GET_APP_STATE.isCalculatorLoading
@@ -674,8 +677,10 @@ export default {
       }
     },
     toggleSendCredit () {
-      if (!this.isRulesActive) {
+      if (!this.isDealer) {
         this.isSendCreditActive = !this.isSendCreditActive
+      } else {
+        window.open('https://credit-approval.ecredit.one/?car=' + this.carName + '&fee=' + this.sliderPrepayValue + '&sum=' + this.summaryPrice + '&term=' + this.terms.active + '&dealer=' + this.dealerCreditApprove, '_blank');
       }
     },
     toggleRules () {
@@ -776,6 +781,25 @@ export default {
     window.addEventListener('resize', function () {
       that.lineController();
     })
+    
+    //Проверяем показывать ли кнопку предодобрение кредита
+    if (this.isDealer) {
+      axios.get(this.apiCheckCredit)
+        .then(response=>{
+          if (!response.data) {
+            this.creditApprove = false
+          } else if (response.data) {
+            this.creditApprove = true
+            this.dealerCreditApprove = response.data
+          } else {
+            throw new Error()
+          }
+        })
+        .catch(error=>{
+          this.creditApprove = false
+          console.error(error)
+        })
+    }
   }
 }
 </script>
@@ -1060,7 +1084,7 @@ $programTransition: .35s cubic-bezier(.55,0,.1,1) 0s;
   &__button {
     display: block;
     background-color: #00AAD2;
-    padding: 18px 78px;
+    padding: 18px 0px;
     &:hover, &:focus {
       background-color: #00AAD2;
       color: #fff;

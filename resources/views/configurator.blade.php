@@ -3,6 +3,7 @@
 @section('styles')
     <link rel="stylesheet" href="{{ mix('/css/configurator/libs.css') }}">
     <link rel="stylesheet" href="{{ mix('/css/configurator/configurator.css') }}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.4/build/pannellum.css"/>
 @endsection
 
 @section('content')
@@ -22,6 +23,7 @@
 @endsection
 
 @section('scripts')
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.4/build/pannellum.js"></script>
     <script src="{{ mix('/js/configurator/libs.js') }}"></script>
     <script src="{{ mix('/js/configurator/configurator.js') }}"></script>
     <script src="{{ mix('/js/configurator/forms.js') }}"></script>

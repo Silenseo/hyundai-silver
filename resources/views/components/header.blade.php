@@ -119,6 +119,11 @@
                         Тест-драйв
                     </a>
                 </li>
+                <li class="header-top__item">
+                    <a href="/start" target="_blank" class="header-top__link">
+                        Кредит
+                    </a>
+                </li>
                 <li class="header-top__item header-top__item--search js-search">
                     <a href="#" class="header-top__link">
                         <svg role="img" aria-hidden="true" class="icon-magnifier">
@@ -154,6 +159,11 @@
                         <nav class="main-nav" role="navigation">
                             <ul class="main-nav__list">
                                 <li class="main-nav__item">
+                                    <a href="https://hyundai-berezniki.ru/" target="_blank" class="main-nav__link">
+                                        Мы в Березниках
+                                    </a>
+                                </li>
+                                <li class="main-nav__item">
                                     <a href="#" class="main-nav__link main-nav__link--contains-submenu js-main-submenu-open">
                                         Модельный ряд
                                         <svg role="img" aria-hidden="true" class="main-nav__arrow">
@@ -170,6 +180,11 @@
                                         </svg>
                                     </a>
                                     @component('components/dropdown-service')@endcomponent
+                                </li>
+                                <li class="main-nav__item">
+                                    <a href="https://cars.hyundai-silver.ru/" target="_blank" class="main-nav__link">
+                                        В наличии
+                                    </a>
                                 </li>
                                 <li class="main-nav__item">
                                     <a href="https://hpromise.hyundai.ru/" target="_blank" class="main-nav__link">
@@ -221,6 +236,11 @@
                                 <li class="main-nav__item main-nav__item--mobile">
                                     <a href="/test-drive" class="main-nav__link">
                                         Тест-драйв
+                                    </a>
+                                </li>
+                                <li class="main-nav__item main-nav__item--mobile">
+                                    <a href="/start" target="_blank" class="main-nav__link">
+                                        Кредит
                                     </a>
                                 </li>
                                 <li class="main-nav__item main-nav__item--mobile js-search">

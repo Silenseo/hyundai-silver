@@ -1,0 +1,93 @@
+@import '../../common/_variables.scss'
+
+.banner
+	padding-top: 30px
+	background-image: url('/images/bgr_1.jpg')
+	&__inner
+		position: relative
+		color: #000
+		margin-top: 30px
+		background-position: 100% 100%
+	&__buttons
+		position: absolute
+		left: 48px
+		bottom: 80px
+	&__button
+		display: inline-block
+		max-width: 128px
+		&:not(:last-of-type)
+			margin-right: 15px
+
+.features
+	padding: 70px 0
+	background-color: #F6F3F2
+	&__title
+		margin-bottom: 60px
+		text-align: center
+	&__body
+		display: flex
+		flex-wrap: wrap
+		max-width: 80%
+		margin: 0 auto
+	&__left
+		width: 50%
+		padding-right: 30px
+	&__right
+		width: 50%
+		padding-left: 30px
+	&__item
+		position: relative
+		padding-left: 26px
+		font-size: 1.6rem
+		line-height: 1.5
+		font-family: $default-font-1
+		color: #000
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			top: 0.5em
+			left: 0
+			width: 10px
+			height: 10px
+			border-radius: 50%
+			background-color: $second_blue
+		&:not(:last-of-type)
+			margin-bottom: 15px
+
+@media only screen and (max-width : $lg-max)
+	.banner
+		&__buttons
+			position: relative
+			left: 0
+			bottom: 0
+			margin-top: 57px
+
+	.features
+		padding-top: 56px
+		padding-bottom: 108px
+		&__body
+			max-width: 100%
+
+@media only screen and (max-width : 640px)
+	.banner
+		padding-top: 20px
+		&__inner
+			margin-top: 20px
+			min-height: 438px
+		&__title
+			font-size: 24px
+		&__buttons
+			margin-top: 17px
+		&__button
+			max-width: 117px
+
+	.features
+		padding: 56px 0
+		&__title
+			margin-bottom: 48px
+		&__left, &__right
+			width: 100%
+			padding: 0
+		&__right
+			margin-top: 15px

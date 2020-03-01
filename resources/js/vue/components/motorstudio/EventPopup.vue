@@ -11,7 +11,15 @@
 					</a>
 					<ul class="p-event__list" :style="{ transform: 'translateX(' + (-100 * currentEvent) + '%)' }">
 						<li class="p-event__event" v-for="event in selectedEvents" :key="event.id">
-							<div class="p-event__img" :style="'background-image: url(' + event.img + ')'">
+							<div class="p-event__img">
+								<picture>
+									<source media="(max-width: 1023px)"
+											:srcset="event.img_mobile">   
+									<source media="(min-width: 1024px)"
+											:srcset="event.img">   
+									<img :src="event.img" 
+											:alt="event.name">
+								</picture>
 								<div class="p-event__nav">
 									<a href="#" class="p-event__prev" @click.prevent="prevEvent" :class="{ visible: currentEvent > 0 }">
 										<svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">

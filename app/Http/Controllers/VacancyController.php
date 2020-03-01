@@ -55,8 +55,6 @@ class VacancyController extends Controller
 	}
 
 	public function detail($id) {
-
-
         $key = 'vacancy_' . $id;
 
         if(!Cache::has($key))
@@ -75,7 +73,8 @@ class VacancyController extends Controller
             $vacancy_id = $id;
 
             if(!in_array($vacancy_id, $ids)) {
-                throw new HTTP_Exception_404('Not found', NULL, 404);
+                // throw new HTTP_Exception_404('Not found', NULL, 404);
+                abort(404);
             }
 
             $ch = curl_init();
@@ -92,7 +91,9 @@ class VacancyController extends Controller
             $vacancy = Cache::get($key);
         }
 
-
+        if(!$vacancy) {
+            abort(404);
+        }
 
         return view('frontend.vacancy.page', [
             'vacancy' => $vacancy

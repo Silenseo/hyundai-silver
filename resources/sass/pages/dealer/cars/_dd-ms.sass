@@ -1,0 +1,133 @@
+.dd-multi
+	position: relative
+	transition: 0.3s
+	&.active
+		box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.16)
+	&__head
+		display: block
+		position: relative
+		font-size: 14px
+		background-color: #fff
+		line-height: 40px
+		padding: 0 20px
+		padding-right: 45px
+		color: $second_text
+		white-space: nowrap
+		transition: 0.3s
+		span
+			pointer-events: none
+		&.active
+			background-color: $light_grey_hover
+			z-index: 101
+			.dd-multi__arrow
+				svg
+					transform: rotate(180deg)
+		&.full
+			color: #000
+	&__arrow
+		position: absolute
+		top: 50%
+		margin-top: -3px
+		right: 20px
+		transition: 0.3s
+		svg
+			display: block
+			transition: 0.3s
+		&.active
+			right: 42px
+	&__clear
+		visibility: hidden
+		position: absolute
+		top: 50%
+		margin-top: -14px
+		right: 10px
+		cursor: pointer
+		padding: 10px
+		transition: opacity 0.3s
+		svg
+			display: block
+		&:hover
+			opacity: 0.8
+		&.active
+			visibility: visible
+			
+	.dropdown
+		display: none
+		position: absolute
+		top: 100%
+		left: 0
+		right: 0
+		background-color: #fff
+		box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.16)
+		z-index: 10
+		transition: 0.3s
+		&.active
+			display: block
+		&__top
+			display: flex
+			align-items: center
+			padding: 5px 20px
+			font-size: 12px
+			color: #000
+		&__value
+			padding: 10px
+			color: $main_blue
+			transition: 0.3s
+			&:hover
+				color: #103A71
+		&__list
+			position: relative
+			padding: 20px
+			max-height: 200px
+			border-top: 1px solid $light_grey_scroll_bar
+			border-bottom: 2px solid $light_grey_scroll_bar
+			overflow: auto
+		&__item
+			&:not(:last-of-type)
+				margin-bottom: 18px
+			label
+				display: flex
+				align-items: center
+				cursor: pointer
+				margin-bottom: 0
+			input
+				display: none
+				&:checked
+					& + .dropdown__box
+						border: 2px solid $second_blue
+						svg
+							transform: scale(1)
+		&__box
+			position: relative
+			width: 16px
+			height: 16px
+			margin-right: 18px
+			border: 2px solid $third_text
+			svg
+				display: block
+				position: absolute
+				top: 0
+				right: 0
+				left: 0
+				bottom: 0
+				margin: auto
+				transform: scale(0)
+				transition: 0.3s
+		&__description
+			font-size: 1.4rem
+			color: #000
+		&__footer
+			padding: 20px
+		&__button
+			padding: 6px 16px
+			font-size: 13px
+
+	.dropdown
+		.ps__rail-y
+			width: 8px
+			background-color: #F1F1F1
+		.ps__thumb-y, .ps__thumb-y:hover
+			right: 0
+			width: 8px
+			background-color: #002C5F
+			border-radius: 0

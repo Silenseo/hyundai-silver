@@ -80,6 +80,9 @@
 			{{ Form::adminInput('legal_name', $item->legal_name, ['placeholder' => 'Введите значение', 'publicName' => 'Юридическое название']) }}
 		</div>
 		<div class="content__line">
+			{{ Form::adminInput('legal_address', $item->legal_address, ['placeholder' => 'Введите значение', 'publicName' => 'Юридический адрес']) }}
+		</div>
+		<div class="content__line">
 			<fieldset>
 				<label class="label">Настройки показа</label>
 				{{ Form::adminCheckbox('visible', $item->visible, ['id' => 'visible', 'publicName' => 'Показывается на сайте']) }}
@@ -93,7 +96,7 @@
 
 <script>
 document.getElementById("dealer-create-token").onclick = function(e) {
-	e.preventDefault() 
+	e.preventDefault()
 	let f = function() {
 		return Math.random(0).toString(36).substr(2);
 	};

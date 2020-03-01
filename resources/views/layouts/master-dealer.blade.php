@@ -7,7 +7,7 @@
 
 	<link rel="icon" href="/images/favicon.ico">
 	<meta property="og:image" content="/images/og_image1.jpg">
-    <meta name="yandex-verification" content="56f1889c87dc5b32" />
+
     @if(!empty($u_seo_info))
     <title>{{ $u_seo_info['meta_title'] }}</title>
     <meta property="title" content="{{ $u_seo_info['meta_title'] }}" />
@@ -19,8 +19,6 @@
     <meta property="description" content="@yield('pageDescription')" />
     @endif
 
-    <link rel="canonical" href="{{ url()->full()."/" }} @if(url()->full() == ''){{'/'}}@endif"/>
-
     <link rel="stylesheet" href="{{ mix('/dealer/css/libs.css') }}">
     <link rel="stylesheet" href="{{ mix('/dealer/css/master.css') }}">
     @isset($headerFixed)
@@ -28,9 +26,6 @@
     @endisset
 
     @yield('styles')
-
-    <link rel="stylesheet" href="/dealer/css/custom.css">
-
 </head>
 <body>
 	@component('components/analytics')@endcomponent
@@ -301,7 +296,5 @@
         });
     });
    </script>
-
-    @component('components/analytics-footer')@endcomponent
 </body>
 </html>

@@ -39,7 +39,7 @@
             </a>
         </li>
         <li class="nav__item">
-            <a target="_blank" href="{{ route('static_car27') }}/gallery" class="nav__link">
+            <a target="_blank" href="{{ route('static_dealerapi_car27', null, false) }}/gallery" class="nav__link">
                 Галерея
             </a>
         </li>
@@ -63,7 +63,7 @@
             <span>Так устроен комфорт.</span>
         </div>
     </div>
-    <div class="blue-label" style="display:none">
+    <div class="blue-label">
         <div class="blue-label__top">
             <span>от</span> <span id="price-from"></span> &#8381;
         </div>
@@ -76,7 +76,7 @@
 
 	<div id="hotbuttons">
 		<!-- Установим активной модель. model Св-во codeName!!!!!! -->
-		<hot-buttons :car-id="27" model="elantra" :buttons="[1,1,1]"></hot-buttons>
+		<hot-buttons :car-id="27" model="elantra" :buttons="[1,1,1,1]" page="isModelPage"></hot-buttons>
 	</div>
 </section>
 
@@ -607,7 +607,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<specs-section car-id="27" model-type="Седан" number-of-seats="5" engine="Бензиновый" drive="Передний" gear-box="Автоматическая / Механическая"></specs-section>
+				<specs-section car-id="27" model-type="Седан" number-of-seats="5" engine="Бензиновый" drive="Передний" gear-box="Автоматическая / Механическая" car-name="Elantra"></specs-section>
 				<?php if(strlen($disclaimer) > 0) :?>
 				<div class="specs" style="padding-top: 0px;">
 				    <div class="section__center">
@@ -617,15 +617,15 @@
                         </div>
                     </div>
                 </div>
-                <?php endif; ?>
+				<?php endif; ?>
+				
+				<div class="section__center">
+					@component('components/model-seo-text', ['model' => 'Hyundai Elantra'])@endcomponent
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
-<div id="tdpopup">
-	<sign-up-test-drive-form-popup v-if="isVisible" page="isModelPage"></sign-up-test-drive-form-popup>
-</div>
 
 @endsection
 

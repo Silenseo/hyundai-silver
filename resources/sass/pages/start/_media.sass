@@ -21,8 +21,6 @@
 			
 @media only screen and (max-width : $lg-max)
 	.help
-		min-width: 100%
-		margin-right: -40px
 		padding-top: 48px
 		&__migel
 			width: 405px
@@ -31,7 +29,6 @@
 			margin-bottom: 32px
 		&__list
 			width: 100%
-			max-width: 566px
 		&__inner
 			min-height: 128px
 			flex-direction: column
@@ -70,9 +67,6 @@
 
 @media only screen and (max-width : 1023px)
 	.banner
-		&__inner
-			height: 872px
-			background-image: url('/images/start/pics/768.jpg')
 		&__button
 			display: none!important
 		&__m-button
@@ -251,8 +245,6 @@
 
 @media only screen and (max-width : $md-max)
 	.banner
-		&__inner
-			height: 408px
 		&__pass
 			bottom: 30px
 		&__title
@@ -306,6 +298,8 @@
 		&__main
 			padding: 0 16px
 			transform: translateY(-120px)
+			&.noButton
+				transform: translateY(-72px)
 		&__top
 			height: 72px
 		&__img
@@ -444,6 +438,10 @@
 				left: 16px
 
 @media only screen and (max-width : 640px)
+	.banner
+		&__inner
+			height: 120vw
+
 	.filters
 		padding-left: 20px
 		padding-right: 20px
@@ -452,8 +450,3 @@
 	.cars
 		&__item
 			width: 100%
-
-@media only screen and (max-width : 400px)
-	.banner
-		&__inner
-			background-image: url('/images/start/pics/320.jpg')

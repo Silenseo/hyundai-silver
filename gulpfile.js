@@ -9,6 +9,7 @@ var svgSprite = require('gulp-svg-sprites'),
 elixir(function(mix) {
     mix.browserSync({
 		proxy: 'hyundai',
+		port: 8080
 		// tunnel: true,
 		// tunnel: "hyundai123", //Demonstration page: http://hyundai123.localtunnel.me
     });

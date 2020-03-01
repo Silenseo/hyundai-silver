@@ -15,7 +15,7 @@
 					<input type="text" class="df-input-bordered contact-form__input capitalize" name="name" id="name" placeholder="Имя" v-model="user.name" :class="{ 'invalid' : !validation.name }" @blur="focusLost('name')">
 					<input type="email" class="df-input-bordered contact-form__input" name="email" id="email" placeholder="E-mail" v-model="user.email" :class="{ 'invalid' : !validation.email }" @blur="focusLost('email')">
 					<form-accept v-model="agreement" :is-valid="validation.agreement" @show-rules="openRules"></form-accept>
-					<button @click.prevent="checkout" class="df-button contact-form__button">Отправить</button>
+					<button @click.prevent="checkout" class="df-button contact-form__button" :disabled="sending">{{ sending ? 'Отправка...' : 'Отправить'}}</button>
 				</div>
 			</div>
 		</div>
@@ -44,7 +44,8 @@ export default {
 				email: ''
 			},
 			agreement: false,
-			process: false
+			process: false,
+			sending: false
 		};
 	},
 	computed: {
@@ -87,6 +88,8 @@ export default {
 			this.process = true;
 
 			if (this.isValid) {
+				this.sending = true;
+
 				axios.get(this.sendUrl, {
 						params: {
 							carid: this.currentCar.id,
@@ -110,6 +113,7 @@ export default {
 						if (response.data.status === 1) {
 							that.$emit('open-success');
 							that.clearForm();
+							that.sending = false;
 
 							if (that.page === 'isStartPage') {
 								dataLayer.push({
@@ -126,6 +130,7 @@ export default {
 					.catch(function (error) {
 						that.$root.$emit('notify', { type: 'error', text: 'Ошибка отправки формы, повторите попытку позднее' })
 						console.log(error);
+						that.sending = false;
 					})
 			}
 		},

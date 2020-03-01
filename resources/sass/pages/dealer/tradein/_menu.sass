@@ -1,0 +1,43 @@
+.t-menu
+	overflow-y: auto
+	margin-bottom: 40px
+	&__wrap
+		min-width: 1200px
+		padding: 40px
+		background-color: #fff
+	&__list
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__step
+		width: calc(100% / 3)
+		a
+			display: flex
+			align-items: center
+			pointer-events: none
+			&.router-link-active
+				.t-menu__name
+					border-color: $main_blue
+					color: $main_blue
+			&.complete:not(.router-link-active)
+				.t-menu__name
+					border-color: $main_blue
+					background-color: $main_blue
+					color: #fff
+	&__name
+		flex: none
+		line-height: 44px
+		width: 48px
+		text-align: center
+		border-radius: 50%
+		border: 2px solid $third_text
+		font-size: 1.4rem
+		color: $third_text
+		font-weight: 500
+		margin-right: 19px
+		transition: 0.3s
+	&__description
+		font-size: 1.4rem
+		font-weight: 500
+		color: #000
+		white-space: nowrap

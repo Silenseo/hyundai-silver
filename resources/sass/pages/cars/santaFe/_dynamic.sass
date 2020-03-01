@@ -12,25 +12,27 @@
 			transform: translateY(0)
 		.dynamics__specs-w
 			transform: translateY(0)
-		&:not(.view1)
-			&__back
-				opacity: 0
-				&--view1
-					opacity: 1
-		&.view0
-			.dynamics__back--view0
-				opacity: 1
-			.dynamics__specs--0
-				opacity: 1
-			.dynamics__graph--0
-				opacity: 1
-		&.view1
-			.dynamics__back--view1
-				opacity: 1
-			.dynamics__specs--1
-				opacity: 1
-			.dynamics__graph--1
-				opacity: 1
+	&.view0
+		.dynamics__back--view0
+			opacity: 1
+		.dynamics__specs--0
+			opacity: 1
+		.dynamics__graph--0
+			opacity: 1
+	&.view1
+		.dynamics__back--view1
+			opacity: 1
+		.dynamics__specs--1
+			opacity: 1
+		.dynamics__graph--1
+			opacity: 1
+	&.view2
+		.dynamics__back--view2
+			opacity: 1
+		.dynamics__specs--2
+			opacity: 1
+		.dynamics__graph--2
+			opacity: 1
 	&::after
 		content: ''
 		display: block
@@ -72,6 +74,7 @@
 		position: absolute
 		top: 48px
 		left: 32px
+		right: 32px
 		z-index: 10
 	&__title
 		font-size: 7.6rem
@@ -93,7 +96,9 @@
 		overflow: hidden
 	&__tabs
 		display: flex
+		flex-wrap: wrap
 		align-items: center
+		width: 100%
 		transition: 0.5s
 		transition-delay: 0.5s
 		transform: translateY(100%)

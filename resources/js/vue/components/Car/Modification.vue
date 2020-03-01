@@ -8,8 +8,8 @@
               <div class="content-main">
                 <div class="content-main__inner">
                   <transition name="fade" appear>
-                  <div class="modification-list" v-if="modificationList">
-                    <label class="modification-item" v-for="item in modificationList" :key="item.id" :class="{ 'is-selected': modification === item.id }">
+                  <div class="modification-list" v-if="modificationListSorted">
+                    <label class="modification-item" v-for="item in modificationListSorted" :key="item.id" :class="{ 'is-selected': modification === item.id }">
                       <input type="radio" name="modification-selector" :value="item.id" v-model="modification">
                       <div class="modification-circle"></div>
                       <span class="modification-head">
@@ -38,7 +38,7 @@
                   </div>
                   </transition>
                   <transition name="fade" appear>
-                  <div class="content-footer" v-if="modificationList" >
+                  <div class="content-footer" v-if="modificationListSorted" >
                     <router-link class="df-button button content-footer__button" :to="{ name: 'Complectation', params: { id: this.$store.getters.GET_CURRENT_ID }}">
                       Продолжить
                     </router-link>
@@ -431,8 +431,19 @@ export default {
       }
     },
     modificationList () {
-      let list = this.$store.getters.GET_MODIFICATION_LIST
-      let arr = []
+		if (this.fullSpecifications) {
+			return this.fullSpecifications.modifications.map((item)=>{
+				item.minPrice = item.price
+
+				return item;
+			})
+		} else {
+			return this.modificationListSorted
+		}
+    },
+    modificationListSorted () {
+      let list = this.$store.getters.GET_MODIFICATION_LIST;
+      let arr = [];
       for (var obj in list) {
         arr.push(list[obj])
       }

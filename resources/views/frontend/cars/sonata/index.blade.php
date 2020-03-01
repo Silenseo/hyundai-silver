@@ -39,7 +39,7 @@
             </a>
         </li>
         <li class="nav__item">
-            <a target="_blank" href="{{ route('static_car24') }}/gallery" class="nav__link">
+            <a target="_blank" href="{{ route('static_dealerapi_car24', null, false) }}/gallery" class="nav__link">
                 Галерея
             </a>
         </li>
@@ -60,10 +60,10 @@
             <span>SONATA.</span>
         </h1>
         <div class="banner__subtitle h3">
-            <span>В новом исполнении.</span>
+            <span>Твоя мелодия успеха.</span>
         </div>
     </div>
-    <div class="blue-label" style="display:none">
+    <div class="blue-label">
         <div class="blue-label__top">
             <span>от</span> <span id="price-from"></span> &#8381;
         </div>
@@ -77,7 +77,7 @@
 
 	<div id="hotbuttons">
 		<!-- Установим активной модель. model Св-во codeName!!!!!! -->
-		<hot-buttons :car-id="24" model="Sonata" :buttons="[1,1,1]"></hot-buttons>
+		<hot-buttons :car-id="24" model="Sonata" :buttons="[1,1,1,1]" page="isModelPage"></hot-buttons>
 	</div>
 </section>
 
@@ -330,14 +330,14 @@
         </li>
         <li class="s-parallax__item s-parallax__item--50 lazyload lazypreview" data-order="5" data-bgset="/images/cars/sonata/tablet/comfort_3.jpg [(max-width: 640px)] | /images/cars/sonata/tablet/comfort_3.jpg">
             <div class="s-parallax__description">
-                <span>Система памяти настроек водительского сиденья (IMS)</span> хранить в памяти настройки положения сиденья для двух водителей.
+                <span>Система памяти настроек водительского сиденья (IMS)</span> хранит в памяти настройки положения сиденья для двух водителей.
             </div>
         </li>
     </ul>
     <ul class="s-parallax__list s-parallax__list--right">
         <li class="s-parallax__item s-parallax__item--right s-parallax__item--50 lazyload lazypreview" data-order="2" data-bgset="/images/cars/sonata/pics/4_comfort/comfort_4.jpg [(max-width: 640px)] | /images/cars/sonata/pics/4_comfort/comfort_4.jpg">
             <div class="s-parallax__description">
-                <span>Шторка на заднем стекте с электроприводом.</span> Регулируйте затемнение заднего стекла с помощью электропривода шторки.
+                <span>Шторка на заднем стекле с электроприводом.</span> Регулируйте затемнение заднего стекла с помощью электропривода шторки.
             </div>
         </li>
         <li class="s-parallax__item s-parallax__item--right s-parallax__item--50 lazyload lazypreview" data-order="4" data-bgset="/images/cars/sonata/pics/4_comfort/comfort_5.jpg [(max-width: 640px)] | /images/cars/sonata/pics/4_comfort/comfort_5.jpg">
@@ -399,7 +399,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<specs-section car-id="24" model-type="Седан" number-of-seats="5" engine="Бензиновый" drive="Передний" gear-box="Механическая / Автоматическая"></specs-section>
+				<specs-section car-id="24" model-type="Седан" number-of-seats="5" engine="Бензиновый" drive="Передний" gear-box="Механическая / Автоматическая" car-name="Sonata"></specs-section>
 				<?php if(strlen($disclaimer) > 0) :?>
 				<div class="specs" style="padding-top: 0px;">
 				    <div class="section__center">
@@ -410,15 +410,14 @@
                     </div>
                 </div>
                 <?php endif; ?>
+
+				<div class="section__center">
+					@component('components/model-seo-text', ['model' => 'Hyundai Sonata'])@endcomponent
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
-<div id="tdpopup">
-	<sign-up-test-drive-form-popup v-if="isVisible" page="isModelPage"></sign-up-test-drive-form-popup>
-</div>
-
 @endsection
 
 @section('scripts')

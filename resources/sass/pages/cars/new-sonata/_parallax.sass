@@ -1,0 +1,81 @@
+.s-parallax
+	position: relative
+	display: flex
+	padding-top: 180px
+	padding-left: 32px
+	padding-right: 32px
+	padding-bottom: 8px
+	height: auto
+	&__head
+		position: absolute
+		top: 26px
+		left: 32px
+		z-index: 10
+		h2
+			font-weight: 500
+			opacity: 0.6
+			color: #C3BAB4
+			font-size: 2.0rem
+			line-height: 1.2
+	&__list
+		width: 100%
+		&--left
+			margin-right: 16px	
+		&--right
+			margin-left: 16px
+	&__item
+		position: relative
+		overflow: hidden
+		width: 100%
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+		margin-bottom: 32px
+		&::after
+			content: ''
+			display: block
+			position: relative
+		&--50
+			&::after
+				padding-bottom: 50%
+		&--100
+			&::after
+				padding-bottom: 100%	
+	&__bg, &__bg0
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+	&__video
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+	&__back
+		display: none
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+	&__description
+		position: absolute
+		left: 40px
+		bottom: 24px
+		font-size: 1.8rem
+		line-height: 1.5
+		color: #fff
+		max-width: 380px
+		span
+			font-weight: 500
+		&--black
+			color: #303030

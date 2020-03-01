@@ -1,3 +1,4 @@
+<noindex>
 <div class="cookie">
     <div class="cookie-inner">
         <p class="df-text-input-14px cookie-desktop">Данный веб-сайт использует cookie-файлы с&nbsp;целью повышения удобства и&nbsp;эффективности работы пользователя.</p>
@@ -27,3 +28,4 @@
         </a>
     </div>
 </div>
+</noindex>

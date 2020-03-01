@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master-dealer')
 
 @section('pageTitle', 'New Sonata')
 
@@ -47,9 +47,6 @@
         </a>
         <a target="_blank" href="/configurator/car/29" class="df-button nav__button">
             Конфигуратор
-        </a>
-        <a target="_blank" href="/find-dealer" class="df-button nav__button">
-            Найти дилера
         </a>
     </div>
 </section>

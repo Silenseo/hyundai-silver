@@ -26,15 +26,37 @@
 			<tr>
 				<th data-sort-name="id">id</th>
 				<th data-sort-name="name">Название</th>
+				<th data-sort-name="article">Артикул</th>
 				<th data-sort-name="visible">Показывается</th>
 				<th></th>
 			</tr>
 		</thead>
 		<tbody>
+			<tr>
+				<td>
+					{{ Form::adminInput('search_id', (string)request()->get('search_id'), ['placeholder' => '']) }}
+				</td>
+				<td>
+					{{ Form::adminInput('search_name', (string)request()->get('search_name'), ['placeholder' => '']) }}
+				</td>
+				<td>
+					<div class="table__flex">
+						<div class="table__text">
+							{{ Form::adminInput('search_article', (string)request()->get('search_article'), ['placeholder' => '']) }}
+						</div>
+						<ul class="table__controls">
+							<li>
+								<a href="javascript:void(0);" class="table__link" id="table_search">Поиск</a>
+							</li>
+						</ul>
+					</div>
+				</td>
+			</tr>
 			@foreach($items as $item)
 			<tr>
 				<td>{{ $item->id }}</td>
 				<td>{{ $item->name }}</td>
+				<td>{{ $item->article }}</td>
 				<td>{{ $item->visible == 1 ? 'Да' : 'Нет' }}</td>
 				<td>
 					<div class="table__flex">

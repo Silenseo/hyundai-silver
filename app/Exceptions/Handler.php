@@ -46,15 +46,19 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if($this->isHttpException($exception)) {
-            $statusCode = $exception->getStatusCode();
-            switch ($statusCode) {
-                case '404':
-                    return response()->view('frontend/pages/warning', ['message' => '404 Страница не найдена'], 404);
-                case '500':
-                    return response()->view('frontend/pages/warning', ['message' => 'При загрузке страницы произошла ошибка']);
-            }
-        }
+        // if ($exception instanceof \Illuminate\Database\Eloquent\ModelNotFoundException) {
+        //   return response()->view('frontend/pages/warning', ['message' => '404 Страница не найдена']);
+        // }
+
+        // if($this->isHttpException($exception)) {
+        //     $statusCode = $exception->getStatusCode();
+        //     switch ($statusCode) {
+        //         case '404':
+        //             return response()->view('frontend/pages/warning', ['message' => '404 Страница не найдена']);
+        //         case '500':
+        //             return response()->view('frontend/pages/warning', ['message' => 'При загрузке страницы произошла ошибка']);
+        //     }
+        // }
         return parent::render($request, $exception);
     }
 }

@@ -1,4 +1,8 @@
 $(function(){
+	//	Простановка класса на дилерской сборке
+	if (process.env.MIX_BUILD === 'dealer') {
+		$('body').addClass('isDealerPage')
+	}
 	//  Обработки для полей
 	$(document).on('keyup', '.capitalize', function(){
 		$(this).val($(this).val().capitalize());

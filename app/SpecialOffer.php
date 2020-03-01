@@ -62,4 +62,16 @@ class SpecialOffer extends Model
     {
         return strlen($this->banner_mobile) > 0 ? $this->picPath . $this->banner_mobile : $this->getBannerUrl();
     }
+
+    public function getVideoDesktopUrl() {
+        return strlen($this->video_desktop) ? $this->picPath . $this->video_desktop : '';
+    }
+
+    public function getVideoMobileUrl() {
+        return strlen($this->video_mobile) ? $this->picPath . $this->video_mobile : '';
+    }
+
+    public function isVideo() {
+        return !empty($this->video_desktop) && !empty($this->video_mobile) && file_exists(public_path() . $this->picPath . $this->video_desktop) && file_exists(public_path() . $this->picPath . $this->video_mobile);
+    }
 }

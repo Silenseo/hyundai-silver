@@ -27,7 +27,7 @@
 								</div>
 							</div>
 							<div class="car-page__images">
-								<car-page-slider :is-popup="false" :images="car.images" @open-popup="openCarPopup = true"></car-page-slider>
+								<car-page-slider :is-popup="false" :key="car.id" :images="car.images" @open-popup="openCarPopup = true"></car-page-slider>
 							</div>
 							<div class="car-page__specifications">
 								<div class="car-page__line car-page__line--top">
@@ -133,13 +133,13 @@
 				</div>
 			</div>
 			<!-- Горячие кнопки -->
-		<hot-buttons-dealer :from-hour="10" :to-hour="18" :type="1" :centers-list="['Первый', 'Второй', 'Третий']" url-call-back="/" url-ask-question="/"></hot-buttons-dealer>
+		<hot-buttons-dealer :key="car.id" :from-hour="10" :to-hour="18" :type="1" :centers-list="[{ name: 'Первый' }, { name: 'Второй' }, { name: 'Третий' }]" url-call-back="/" url-ask-question="/"></hot-buttons-dealer>
 		</div>
 		<!-- Если у авто есть id для загрузки характеристик, отображаем характеристики -->
 		<div class="container" v-if="car.configId && loadingFeaturesSuccess">
 			<div class="row">
 				<div class="col-md-12">
-					<specs-section @error="loadingFeaturesSuccess = false" page="isDealerCarPage" :carId="car.configId" :model-type="car.type" :numberOfSeats="car.seats" :engine="car.engine" :drive="car.transmission" :gearBox="car.gearBox"></specs-section>
+					<specs-section :key="car.id" @error="loadingFeaturesSuccess = false" page="isDealerCarPage" :carId="car.configId" :model-type="car.type" :numberOfSeats="car.seats" :engine="car.engine" :drive="car.transmission" :gearBox="car.gearBox"></specs-section>
 				</div>
 			</div>
 		</div>
@@ -154,7 +154,7 @@
 								<rect x="1.45459" width="20.5702" height="2.05702" transform="rotate(45 1.45459 0)"/>
 							</svg>
 						</a>
-						<car-page-slider :event="openCarPopup" :is-popup="true" :images="car.images"></car-page-slider>
+						<car-page-slider :key="car.id" :event="openCarPopup" :is-popup="true" :images="car.images"></car-page-slider>
 					</div>
 				</div>
 			</div>
@@ -177,7 +177,6 @@ export default {
 	},
 	data () {
 		return {
-			id: 0,
 			car: {},
 			loadingFeaturesSuccess: true,
 			openCarPopup: false,
@@ -187,7 +186,7 @@ export default {
 	computed: {
 		...mapGetters({
 			openTdPopup: "OPEN_TEST_DRIVE_POPUP",
-
+			id: "GET_DEALER_CARS_CAR_ID"
 		}),
 		tdVisible: function () {
 			if (this.openTdPopup) {
@@ -212,30 +211,28 @@ export default {
 		},
 		goBack: function() {
 			this.$router.push({ name: 'home' })
+		},
+		setCarObj: function () {
+			if (typeof carsList !== 'undefined') {
+				carsList.forEach(car => {
+					if (car.id === +this.id) {
+						this.car = car
+					}
+				});
+			}
 		}
 	},
-	created () {
-		this.id = this.$route.params.id;
-
-		if (typeof carsList !== 'undefined') {
-			carsList.forEach(car => {
-				if (car.id === +this.id) {
-					this.car = car
-				}
-			});
-		}
+	activated: function () {
+		this.setCarObj();
 	},
 	filters: {
 		output: function (value) {
 			return typeof value !== 'undefined' ? value : ''
 		}
-	},
-	mounted () {
-
 	}
 }
 </script>
 
 <style lang="sass">
-@import '../../../../sass/pages/dealerCars/carpage.sass'
+@import '../../../../sass/pages/dealer/cars/carpage.sass'
 </style>

@@ -163,7 +163,7 @@ export default {
         })
       }
       // finally push new data
-      this.$store.dispatch('UPDATE_PACKETS', array)
+      this.$store.dispatch('UPDATE_PACKETS', array.sort(function (a, b) { return a - b }))
     },
     togglePacket (id, forceRemove, event) {
       this.packetSelect(null, id, forceRemove)
@@ -235,7 +235,7 @@ export default {
     position: absolute;
     left: 0;
     top: 0.5em;
-    width: 7px;  
+    width: 7px;
     height: 7px;
     border-radius: 50%;
     background-color: #000;

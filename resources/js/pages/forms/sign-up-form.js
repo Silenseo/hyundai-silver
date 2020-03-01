@@ -5,12 +5,6 @@
 import Vue from 'vue'
 import store from '../../vue/store-service/index'
 
-const VueInputMask = require('vue-inputmask').default
-
-Vue.use(VueInputMask)
-
-console.log(process.env.MIX_BUILD)
-
 Vue.component('signup-forms', require('../../vue/SignUpForms.vue'));
 
 const app = new Vue({
@@ -34,10 +28,13 @@ const app = new Vue({
 					document.body.style.overflow = ''
 				}
 			}
+		},
+		formInit () {
+			this.init = true;
 		}
 	},
 	mounted () {
-		this.init = true;
+		this.$root.$on('form-init', this.formInit)
 		this.$root.$on('fixOverflow', this.fixOverflow)
     }
 });

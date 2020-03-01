@@ -22,11 +22,48 @@
 		margin-bottom: 8px
 		&--dropdown
 			margin-top: 39px
+	&__label
+		width: 100%
+		display: flex
+		input
+			display: none
+			&:checked
+				& + .sidebar__circle
+					&::after
+						transform: scale(1)
+
+	&__circle
+		flex: none
+		position: relative
+		width: 24px
+		height: 24px
+		border: 2px solid #fff
+		border-radius: 50%
+		margin-right: 16px
+		cursor: pointer
+		&::after
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			width: 12px
+			height: 12px
+			background-color: #fff
+			border-radius: 50%
+			transform: scale(0)
+			transition: 0.3s
+	
 	&__text
 		margin-right: 20px
 	&__value
 		font-weight: 500
 		white-space: nowrap
+		&--ml
+			margin-left: auto
 		&--total
 			font-size: 4.2rem
 			line-height: 1.14

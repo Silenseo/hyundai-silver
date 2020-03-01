@@ -49,6 +49,9 @@ export default {
   GET_COST: (state) => {
     return state.cost
   },
+  GET_SERVICE_PARTS: (state) => {
+    return state.serviceParts
+  },
   GET_DEALERS: (state) => {
     return state.dealers
   },
@@ -182,6 +185,24 @@ export default {
 		}
 	}
   },
+  GET_DEALER_CARS_CAR_ID (state) {
+	return state.dealerCars.carId
+  },
+  GET_TRADEIN_STATE (state) {
+	return state.tradein.state
+  },
+  GET_TRADEIN_STEP2 (state) {
+	return state.tradein.step2
+  },
+  GET_TRADEIN_STEP3 (state) {
+	return state.tradein.step3
+  },
+  GET_TRADEIN_URL (state) {
+	return state.tradein.sendUrl
+  },
+  GET_TRADEIN_CAR (state) {
+	return state.tradein.currentCar
+  },
   OPEN_START_MOBILE_LINE (state) {
 	return state.start.openMobileLine
   },
@@ -217,5 +238,11 @@ export default {
   },
   OPEN_TEST_DRIVE_POPUP: (state) => {
 	return state.openTestDrivePopup
+  },
+  GET_CHECK_CREDIT_API: (state) => {
+	return state.API.CHECK_CREDIT
+  },
+  GET_CARS_ID_LINKS: (state) => {
+	return state.carsIdLinks
   }
 }

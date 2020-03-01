@@ -20,4 +20,16 @@ class Banner extends Model
     {
         return $this->picPath . $this->image_mobile;
     }
+
+    public function getVideoDesktopUrl() {
+        return strlen($this->video_desktop) ? $this->picPath . $this->video_desktop : '';
+    }
+
+    public function getVideoMobileUrl() {
+        return strlen($this->video_mobile) ? $this->picPath . $this->video_mobile : '';
+    }
+
+    public function isVideo() {
+        return !empty($this->video_desktop) && !empty($this->video_mobile) && file_exists(public_path() . $this->picPath . $this->video_desktop) && file_exists(public_path() . $this->picPath . $this->video_mobile);
+    }
 }

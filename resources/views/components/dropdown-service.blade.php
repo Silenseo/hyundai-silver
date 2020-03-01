@@ -17,7 +17,7 @@
                     <ul class="df-dropdown__submenu">
                         @foreach($service_cat as $title => $link)
                         <li class="df-dropdown__submenu-item">
-                            <a href="{{ $link }}" class="df-dropdown__link"><span>{{ $title }}</span></a>
+                            <a href="{{ $link }}" class="df-dropdown__link" {!! strpos($link, 'http') === 0 ? 'target="_blank"' : '' !!}><span>{{ $title }}</span></a>
                         </li>
                         @endforeach
                     </ul>

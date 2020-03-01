@@ -39,7 +39,7 @@
             </a>
         </li>
         <li class="nav__item">
-            <a target="_blank" href="{{ route('static_car16') }}/gallery" class="nav__link">
+            <a target="_blank" href="{{ route('static_dealerapi_car16', null, false) }}/gallery" class="nav__link">
                 Галерея
             </a>
         </li>
@@ -63,7 +63,7 @@
             <span>Инновации в каждом мгновении.</span>
         </div>
     </div>
-    <div class="blue-label" style="display:none">
+    <div class="blue-label">
         <div class="blue-label__top">
             <span>от</span> <span id="price-from"></span> &#8381;
         </div>
@@ -77,7 +77,7 @@
 
 	<div id="hotbuttons">
 		<!-- Установим активной модель. model Св-во codeName!!!!!! -->
-		<hot-buttons :car-id="16" model="h-1" :buttons="[1,1,1]"></hot-buttons>
+		<hot-buttons :car-id="16" model="h-1" :buttons="[1,1,1,1]" page="isModelPage"></hot-buttons>
 	</div>
 </section>
 
@@ -238,7 +238,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<specs-section car-id="16" model-type="Микроавтобус" number-of-seats="8" engine="Дизельный" drive="Задний" gear-box="Механическая / Автоматическая"></specs-section>
+				<specs-section car-id="16" model-type="Микроавтобус" number-of-seats="8" engine="Дизельный" drive="Задний" gear-box="Механическая / Автоматическая" car-name="H-1"></specs-section>
 				<?php if(strlen($disclaimer) > 0) :?>
 				<div class="specs" style="padding-top: 0px;">
 				    <div class="section__center">
@@ -249,15 +249,14 @@
                     </div>
                 </div>
                 <?php endif; ?>
+
+				<div class="section__center">
+					@component('components/model-seo-text', ['model' => 'Hyundai H-1'])@endcomponent
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
-<div id="tdpopup">
-	<sign-up-test-drive-form-popup v-if="isVisible" page="isModelPage"></sign-up-test-drive-form-popup>
-</div>
-
 @endsection
 
 @section('scripts')

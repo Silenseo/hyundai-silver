@@ -35,7 +35,35 @@ class AccessoriesProductController extends Controller
      */
     public function index(Request $request)
     {
+        $request_arr = $request->all();
+        $where_arr = [];
+        foreach($request_arr as $r_key => $r_val) {
+            preg_match('/search_(.*)/', $r_key, $matches);
+            if(isset($matches[1])) {
+                $where_arr[$matches[1]] = $r_val;
+            }
+        }
+
         $items = new AccessoriesProduct;
+        $table_name = $items->getTable();
+
+        $table_columns_types = [];
+        $table_info_columns = \DB::select(\DB::raw("SHOW COLUMNS FROM {$table_name}"));
+        foreach($table_info_columns as $column) {
+            $table_columns_types[$column->Field] = $column->Type;
+        }
+
+        foreach($where_arr as $w_field => $w_val) {
+            if(\Schema::hasColumn($table_name, $w_field)) {
+                if(strpos($table_columns_types[$w_field], 'varchar') !== false || strpos($table_columns_types[$w_field], 'text') !== false) {
+                    $items = $items->where($w_field, 'like', "%{$w_val}%");
+                }
+                else {
+                    $items = $items->where($w_field, '=', $w_val);
+                }
+            }
+        }
+
         if($request->get('sort_field')) {
             $sort_field = $request->get('sort_field');
             $sort_order = $request->get('sort_order') ?? 'asc';

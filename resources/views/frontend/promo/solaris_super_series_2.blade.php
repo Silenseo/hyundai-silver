@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master-dealer')
 
 @section('pageTitle', 'Hyundai: модельный ряд, цены на автомобили, где купить Хендэ')
 
@@ -8,15 +8,21 @@
 @endsection
 
 @section('content')
-<div class="offers-container">
-	<div class="content_area">
+<div class="offers-container ss-container">
+	<div class="content_area content_area__ss">
 		<img class="promo-head lazyload" src="/getPicThumb/assets/ss/ss_2_bg.jpg?w=100&h=0" data-src="/assets/ss/ss_2_bg.jpg" style="">
 		<img class="promo-head-mobile lazyload" src="/getPicThumb/assets/ss/ss_2_mob.jpg?w=100&h=0" width="640px" height="700px" data-src="/assets/ss/ss_2_mob.jpg" style="">
-
+		<div class="banner__head">
+			<h1 class="df-main-banner__title ss-title white-mob">
+				<span>SOLARIS. Super Series&nbsp;II.</span>
+			</h1>
+			<div class="df-main-banner__subtitle ss-subtitle white-mob">
+				<span>Уникальная комплектация!</span>
+			</div>
+    </div>
 		<div class="offers-content">
-
-			<h1 class="title-offer bordr-btm"><span class="nowrp">Уникальный SOLARIS Super Series II</span></h1>
-<!-- 			<h2 class="title-offer bordr-btm"><span class="nowrp">Стартуй в лето!</span></h2> -->
+			<!-- <h1 class="title-offer bordr-btm"><span class="nowrp">Уникальный SOLARIS Super Series II</span></h1> -->
+			<!-- <h2 class="title-offer bordr-btm"><span class="nowrp">Стартуй в лето!</span></h2> -->
 		</div>
 	</div>
 
@@ -160,6 +166,6 @@
 @endsection
 
 @section('scripts')
-	<script src="/js/lazypreview.js"></script>
-	<script src="/js/special/libs.js"></script>
+	<script src="{{ mix('/js/lazypreview.js') }}"></script>
+	<script src="{{ mix('/js/special/libs.js') }}"></script>
 @endsection

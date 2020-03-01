@@ -6,15 +6,11 @@ import router from '../../vue/router'
 import CheckboxRadio from 'vue-checkbox-radio'
 import VueCookie from 'vue-cookie'
 import Vuebar from 'vuebar'
-import { VueMaskDirective } from 'v-mask'
 // import VueGtm from 'vue-gtm'
 
 //require('./bootstrap');
 
 //window.Vue = require('vue');
-const VueInputMask = require('vue-inputmask').default
-
-Vue.use(VueInputMask)
 
 Vue.filter('priceFormat', function (value) {
 return value.toString().replace(/\D/g, '').replace(/(?!^)(?=(?:\d{3})+(?:\.|$))/g, ' ') + ' ₽'

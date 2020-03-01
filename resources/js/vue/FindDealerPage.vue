@@ -3,7 +3,7 @@
 		<cities-list></cities-list>
 		<find-dealer :fullscreen-control="true" v-bind:disable-scroll="true" :ctrl-zoom="true" v-bind:is-find-dealer-page="true" v-bind:city="city" v-bind:dealer="dealer" v-bind:is-opened="openFindDealer" v-on:city-detected="setCityFromMap" v-on:dealer-selected="selectDealerFromMap"></find-dealer>
 		<dealers-list></dealers-list>
-		<back-call-form v-bind:is-opened="openBackCallPopup"></back-call-form>
+		<!-- <back-call-form v-bind:is-opened="openBackCallPopup"></back-call-form> -->
 		<rules v-bind:is-opened="openRules"></rules>
 		<sent-successfully v-bind:is-opened="openSuccess" v-on:close-this="closeSuccess"></sent-successfully>
 		<notifier></notifier>

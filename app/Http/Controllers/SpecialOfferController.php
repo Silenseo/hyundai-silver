@@ -27,17 +27,15 @@ class SpecialOfferController extends Controller
 	}
 
 	public function detail($code) {
-
 		$offer = \App\SpecialOffer::where('url', $code)->where('is_active', 1)->where(function($query) {
 			$query->where('active_from', '<', date('Y-m-d H:i:s'))
 				->orWhereNull('active_from');
 		})->where(function($query) {
 			$query->where('active_to', '>', date('Y-m-d H:i:s'))
 				->orWhereNull('active_to');
-		})->first();
+		})->firstOrFail();
 
-		if(!$offer)
-		    abort(404);
+		$offer->head_title = strip_tags($offer->name);
 
 		return view('frontend.offers.detail', [
 			'offer' => $offer,

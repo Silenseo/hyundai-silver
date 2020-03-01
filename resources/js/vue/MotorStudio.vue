@@ -2,7 +2,7 @@
     <div>
 		<!-- <banner-section></banner-section> -->
 		<nav-section></nav-section>
-		<calendar-section></calendar-section>
+		<calendar-section @show-rules="openRules = true"></calendar-section>
 		<slider-section></slider-section>
 		<event-popup></event-popup>
 		<checkout-form @show-rules="openRules = true"></checkout-form>
@@ -29,6 +29,7 @@ import SimpleSentSuccessfully from '@/components/common/SimpleSentSuccessfully.v
 import LangSelect from '@/components/motorstudio/LangSelect.vue'
 import Notifier from '@/components/Notifier'
 import ClosedPopup from '@/components/motorstudio/ClosedPopup.vue'
+import urlParamsParse from '@/components/common/urlParamsParse.js'
 
 import { mapGetters } from "vuex";
 
@@ -84,18 +85,25 @@ export default {
 
 		this.$nextTick(()=>{
 			//Если есть хэш с id события, отобразить карточку этого события или ещё что-то
-			if (window.location.hash != '') {
-				var hash = window.location.hash.substr(1);
+			var eventId = urlParamsParse().event_id;
 
-				//Проверяем есть ли событие с таким id
-				if (itemsJson.some(function(event){ return event.id == hash })) {
+			if (eventId) {
+				if (itemsJson.some(function(event){ return event.id == eventId })) {
 					itemsJson.forEach((event)=>{
-						if (event.id === +hash) {
+						if (event.id == eventId) {
 							this.$store.dispatch('SET_SELECTED_EVENTS', event)
 							this.$store.dispatch('OPEN_EVENT_POPUP', true)
 						}
 					})
-				} else if (hash == 'calendar') {
+				} else {
+					console.log('event not found');
+				}
+			}
+
+			if (window.location.hash != '') {
+				var hash = window.location.hash.substr(1);
+
+				if (hash == 'calendar') {
 					$(window).on('load', function() {
 						$('a.scroll[href="#calendar"]').trigger('click')
 					})

@@ -10,13 +10,15 @@
 </template>
 
 <script>
-import SignUpServiceForm from '@/components/common/SignUpServiceForm.vue'
-import SignUpTestDriveForm from '@/components/common/SignUpTestDriveForm.vue'
+import FindDealer from '@/components/common/FindDealer.vue'
 import Rules from '@/components/common/Rules.vue'
 import SentSuccessfully from '@/components/common/SentSuccessfully.vue'
 import Notifier from '@/components/Notifier'
 
 import { mapGetters } from "vuex";
+
+const SignUpServiceForm = () => import('@/components/common/SignUpServiceForm.vue')
+const SignUpTestDriveForm = () => import('@/components/common/SignUpTestDriveForm.vue')
 
 export default {
 	name: 'signupforms',
@@ -54,38 +56,53 @@ export default {
 		setI30n: function (value) {
 			this.i30n = value;
 		},
-	},
-	filters: {
+		getData: function (getOld) {
+			//Получим список дилеров и городов и запишем их в хранилище
+			if (this.ENV !== 'dealer') {
+				this.$store.dispatch('GET_DEALERS')
+					.then(() => {
+						//Обновим в форме записи на ТД список доступных городов и лилеров для i30N
+						this.$root.$emit('updateI30n');
+					})
+					.catch((error) => {
+						console.log(error)
+						this.$root.$emit('notify', { type: 'error', text: 'Ошибка загрузки данных, повторите попытку позднее' })
+					})
+			}
+			
+			//Получим данные по тачкам
+			if (this.noDefaultCar) {
+				var flag = 'noDefaultCar'
+			}
 
-	},
-	mounted () {
-		//Получим список дилеров и городов и запишем их в хранилище, если дилерская сборка, то список дилеров не загружаем
-		if (this.ENV !== 'dealer') {
-			this.$store.dispatch('GET_DEALERS')
+			this.$store.dispatch('GET_DATA', { flag, getOld })
+				.then(() => {
+					//Установка тачки по умолчанию
+					if (typeof commonCarCode !== 'undefined') {
+						this.$store.dispatch('SET_MODEL', commonCarCode);
+					}
+				})
 				.catch((error) => {
 					console.log(error)
 					this.$root.$emit('notify', { type: 'error', text: 'Ошибка загрузки данных, повторите попытку позднее' })
 				})
 		}
-			
-		//Получим данные по тачкам
-		if (this.noDefaultCar) {
-			var flag = 'noDefaultCar'
-		}
-		this.$store.dispatch('GET_DATA', flag)
-			.then(() => {
-				//Установка тачки по умолчанию
-				if (typeof commonCarCode !== 'undefined') {
-					this.$store.dispatch('SET_MODEL', commonCarCode);
-				}
-			})
-			.catch((error) => {
-				console.log(error)
-				this.$root.$emit('notify', { type: 'error', text: 'Ошибка загрузки данных, повторите попытку позднее' })
-			})
 	},
-	watch: {
-
+	beforeMount () {
+		if (this.form === 'test-drive') {
+			SignUpTestDriveForm()
+				.then(()=>{
+					this.$emit('modules-loaded')
+					this.getData()
+				})
+		}
+		if (this.form === 'service') {
+			SignUpServiceForm()
+				.then(()=>{
+					this.$emit('modules-loaded')
+					this.getData(true)
+				})
+		}
 	}
 }
 </script>

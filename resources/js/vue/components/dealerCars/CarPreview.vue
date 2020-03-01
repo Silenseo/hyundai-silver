@@ -26,7 +26,8 @@ export default {
 	},
 	data () {
 		return {
-			currentImage: 0
+			currentImage: 0,
+			manager: null
 		}
 	},
 	computed: {
@@ -51,21 +52,24 @@ export default {
 			}
 		}
 	},
+	beforeDestroy () {
+		this.manager.destroy();
+	},
 	mounted () {
 		var that = this;
 
 		this.$nextTick(()=>{
 			//Листаем слайды свайпом
 			var square = this.$refs['car-container'];
-			var manager = new Hammer.Manager(square, {touchAction: 'pan-y'});
+			that.manager = new Hammer.Manager(square, {touchAction: 'pan-y'});
 			var Swipe = new Hammer.Swipe();
 
-			manager.add(Swipe);
+			that.manager.add(Swipe);
 
 			var deltaX = 0;
 			var deltaY = 0;
 
-			manager.on('swipe', function(e) {
+			that.manager.on('swipe', function(e) {
 				deltaX = deltaX + e.deltaX;
 				var direction = e.offsetDirection;
 				

@@ -6,21 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 	<link rel="icon" href="/images/favicon.ico">
-	<meta property="og:image" content="/images/og_image1.jpg">
-    <meta name="yandex-verification" content="56f1889c87dc5b32" />
+	<meta name="google-site-verification" content="wk-t3VfpzpyUkcBLMg4cp3bvUP7FGfgjL6YVzvl-oD8" />
+	<meta name="yandex-verification" content="6e47cb222600462d" />
+
     @if(!empty($u_seo_info))
     <title>{{ $u_seo_info['meta_title'] }}</title>
     <meta property="title" content="{{ $u_seo_info['meta_title'] }}" />
-    <meta property="description" content="{{ $u_seo_info['meta_description'] }}" />
-    <meta property="keywords" content="{{ $u_seo_info['meta_keywords'] }}" />
+    <meta name="description" content="{{ $u_seo_info['meta_description'] }}" />
+    <meta name="keywords" content="{{ $u_seo_info['meta_keywords'] }}" />
     <meta property="og:title" content="{{ $u_seo_info['og_title'] }}" />
+    @if(!empty($u_seo_info['og_image']))
+    <meta property="og:image" content="{{ $u_seo_info['og_image'] }}" />
+    @else
+    <meta property="og:image" content="/images/og_image1.jpg">
+    @endif
+    @if(!empty($u_seo_info['og_description']))
+    <meta property="og:description" content="{{ $u_seo_info['og_description'] }}" />
+    @endif
     @else
     <title>@yield('pageTitle')</title>
-    <meta property="description" content="@yield('pageDescription')" />
+    <meta name="description" content="@yield('pageDescription')" />
+    <meta property="og:image" content="/images/og_image1.jpg">
     @endif
-    @if(strpos(url()->full(),'/promo/creta-rock') !== false || strpos(url()->full(),'/promo/solaris_super_series') !== false)
-        <link rel="canonical" href="{{ url()->full()."/" }} @if(url()->full() == ''){{'/'}}@endif"/>
-    @endif
+
     <link rel="stylesheet" href="{{ mix('/css/libs.css') }}">
     <link rel="stylesheet" href="{{ mix('/css/master.css') }}">
     @isset($headerFixed)
@@ -255,7 +263,8 @@
             cookieAgree = $('.cookie-agree'),
             cookieMain  = $('.cookie'),
             cookieInfo  = $('.cookie-popup__info'),
-            cookieWrap  = $('.cookie-popup .df-popup__wrap');
+			cookieWrap  = $('.cookie-popup .df-popup__wrap'),
+			cookieOptions = { expires: 31 };
 
         $(window).on('load', function() {
             if (!$.cookie('cookieAreShown')) {
@@ -289,7 +298,7 @@
             cookiePopup.fadeOut(400);
             cookieMain.removeClass('is-show');
             setTimeout(function() {
-                $.cookie('cookieAreShown', true);
+                $.cookie('cookieAreShown', true, cookieOptions);
                 cookieMain.hide();
             }, 1200);
         });

@@ -211,6 +211,7 @@ export default {
 			margin-right: 15px
 	&__footer
 		padding: 20px
+		border-top: 2px solid $light_grey_scroll_bar
 	&__button
 		padding: 6px 16px
 		font-size: 13px

@@ -78,6 +78,7 @@
 import Selectize from 'vue2-selectize'
 import axios from 'axios'
 import { mapGetters } from "vuex";
+import Inputmask from "inputmask";
 
 export default {
 	name: "SendDealerNew",
@@ -149,6 +150,13 @@ export default {
 			dealer: '',
 			sending: false
 		};
+	},
+	directives: {
+		mask: {
+			bind: function(el, binding) {
+				Inputmask(binding.value).mask(el);
+			}
+		}
 	},
 	computed: {
 		...mapGetters({
@@ -226,12 +234,14 @@ export default {
 						that.$emit('success');
 						that.sending = false;
 
-						dataLayer.push({
-							"event": "custom_event",
-							"category" : "Конфигуратор",
-							"action": "Отправка расчета дилеру",
-							"label" : that.carCode
-						});
+						if (typeof dataLayer !== 'undefined') {
+							dataLayer.push({
+								"event": "custom_event",
+								"category" : "Конфигуратор",
+								"action": "Отправка расчета дилеру",
+								"label" : that.carCode
+							});
+						}
 					})
 					.catch(function (error) {
 						that.$root.$emit('notify', { type: 'error', text: 'Ошибка отправки формы, повторите попытку позднее' })

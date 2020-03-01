@@ -21,22 +21,8 @@
 <header class="header-main" role="navigation">
     <div class="header-top">
         <div class="support-service">
-            <div class="support-service__link">
-                <div class="support-service__text">Адрес автосалона</div>
-                <div class="support-service__phone mr-0">{{ $dealerData['address' ]}}</div>
-            </div>
-        </div>
-        
-        <div class="support-service">
-            <div class="support-service__link p-0">
-                <a href="https://vk.com/hyundai_silver" target="_blank" style="margin-right: 15px;"><img src="/dealer/img/vk.png"></a>
-                <a href="https://www.instagram.com/hyundai_silver/" target="_blank"><img src="/dealer/img/instagram.png"></a>
-            </div>
-        </div>
-
-        <div class="support-service">
             <a class="support-service__link js-open-support-service__dropdown" href="#" role="button">
-                <div class="support-service__text">Телефон автосалона</div>
+                <div class="support-service__text">{{ $dealerData['city' ]}}</div>
                 <div class="support-service__phone">{{ $dealerData['phone'] }}</div>
                 <svg role="img" aria-hidden="true" class="support-service__arrow">
                     <use xlink:href="#icon-Arrow_Dropdown"></use>
@@ -44,11 +30,15 @@
             </a>
             <div class="support-service__dropdown support-service__dropdown--dealer">
                 <div class="s-contacts">
-                    <div class="s-contacts__title">Контакты салона</div>
+                    <div class="s-contacts__title">Контакты салонов</div>
                     <ul class="s-contacts__list">
                         <li class="s-contacts__item">
-                            <a href="tel:" class="s-contacts__phone">{{ $dealerData['phone'] }}</a>
+                            <a href="tel:{{ $dealerData['phone'] }}" class="s-contacts__phone">{{ $dealerData['phone'] }}</a>
                             <div class="s-contacts__address">{{ $dealerData['address'] }}</div>
+                        </li>
+                        <li class="s-contacts__item">
+                            <a href="tel:88003337167" class="s-contacts__phone">8 800 333-71-67</a>
+                            <div class="s-contacts__address">Cлужба клиентской поддержки</div>
                         </li>
                     </ul>
                 </div>
@@ -80,6 +70,11 @@
                         Тест-драйв
                     </a>
                 </li>
+                <li class="header-top__item">
+                    <a href="/start" target="_blank" class="header-top__link">
+                        Кредит
+                    </a>
+                </li>
 <!--
                 <li class="header-top__item header-top__item--search js-search">
                     <a href="#" class="header-top__link">
@@ -109,7 +104,6 @@
                                 <svg role="img" aria-hidden="true">
                                     <use xlink:href="#img-hyundai"></use>
                                 </svg>
-                                <div class="header-bottom__dealer-name">{{ $dealerData['name'] }}</div>
                             </a>
                             <button class="hamburger hamburger--collapse js-open-mobile-menu" type="button" aria-label="Открыть мобильное меню">
                                 <span class="hamburger-box">
@@ -119,11 +113,11 @@
                         </div>
                         <nav class="main-nav" role="navigation">
                             <ul class="main-nav__list">
-                                {{-- <li class="main-nav__item">
-                                    <a href="https://hyundai-berezniki.ru" class="main-nav__link" target="_blank">
+                                <li class="main-nav__item">
+                                    <a href="https://hyundai-berezniki.ru/" target="_blank" class="main-nav__link">
                                         Мы в Березниках
                                     </a>
-                                </li> --}}
+                                </li>
                                 <li class="main-nav__item">
                                     <a href="#" class="main-nav__link main-nav__link--contains-submenu js-main-submenu-open">
                                         Модельный ряд
@@ -148,7 +142,7 @@
                                     @component('components/dropdown-service')@endcomponent
                                 </li>
                                 <li class="main-nav__item">
-                                    <a href="https://cars.hyundai-silver.ru" target="_blank" class="main-nav__link">
+                                    <a href="https://cars.hyundai-silver.ru/" target="_blank" class="main-nav__link">
                                         В наличии
                                     </a>
                                 </li>
@@ -162,7 +156,6 @@
                                         Спецпредложения
                                     </a>
                                 </li>
-
                                 <li class="main-nav__item main-nav__item--mir">
                                     <a href="https://mir.hyundai.ru/" target="_blank" class="main-nav__link main-nav__link--iconed">
                                         Мир Хендэ
@@ -184,6 +177,9 @@
                                 </li>
                                 <li class="main-nav__item main-nav__item--mobile main-nav__item--support">
                                     <div class="support-service-m">
+                                        <div class="support-service-m__text">Контакты</div>
+                                        <a class="support-service-m__phone" href="tel:{{ $dealerData['phone'] }}">{{ $dealerData['phone'] }}</a>
+                                        <hr>
                                         <div class="support-service-m__text">Служба клиентской поддержки</div>
                                         <a class="support-service-m__phone" href="tel:88003337167">8 800 333-71-67</a>
                                         <hr>

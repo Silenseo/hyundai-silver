@@ -1,6 +1,7 @@
 @extends('layouts.master-dealer')
 
-@section('pageTitle', 'Новости')
+@section('pageTitle', $item->title)
+@section('pageDescription', "Новости компании «Хендэ Мотор СНГ». {$item->title}. {$item->datePublic}")
 
 @section('styles')
     <link rel="stylesheet" href="{{ mix('/css/news/libs.css') }}">
@@ -27,21 +28,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>{{ $item->name }}</h1>
+                    <h1>{{ $item->title }}</h1>
                     <h2>{{ $item->datePublic }}</h2>
-<!--
-                    <ul>
-                        <li>
-                            На Парижском автосалоне 2018 Hyundai выставляет свой шоу-кар i30 N “N Option”
-                        </li>
-                        <li>
-                            i30 N N Option дает представление о будущих решениях бренда Hyundai N, предлагая 25 различных высококачественных опций для персонализации экстерьера и интерьера.
-                        </li>
-                        <li>
-                            Новый N Option выйдет на рынок в ближайшем будущем и предоставит автолюбителям множество опций для персонализации
-                        </li>
-                    </ul>
--->
                     <img src="{{ $item->imgPath }}" alt="">
                 </div>
             </div>

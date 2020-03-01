@@ -10,7 +10,7 @@
   <section class="special-title">
     <div class="container">
       <div class="special-title-inner">
-        <h1 class="h2">Спецпредложения</h1>
+        <h2>Спецпредложения</h2>
       </div>
     </div>
   </section>

@@ -2,7 +2,7 @@
 <template>
 	<div class="specs">
 		<div class="section__center">
-			<h2 class="specs__title">Характеристики</h2>
+			<h2 class="specs__title">Технические характеристики Hyundai {{ carName }}</h2>
 			<table class="specs__main">
 				<tr>
 					<td>Тип модели</td>
@@ -116,7 +116,7 @@ import Notifier from '@/components/Notifier'
 export default {
 	name: "SpecsSection",
 	components: { Notifier },
-	props: ['carId', 'modelType', 'numberOfSeats', 'engine', 'drive', 'gearBox', 'page'],
+	props: ['carId', 'modelType', 'numberOfSeats', 'engine', 'drive', 'gearBox', 'page', 'carName'],
 	data() {
 		return {
 			success: true,

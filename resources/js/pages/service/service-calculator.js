@@ -8,10 +8,6 @@ Vue.filter('priceBaseFormat', function (value) {
 return value.toString().replace(/\D/g, '').replace(/(?!^)(?=(?:\d{3})+(?:\.|$))/g, ' ')
 })
 
-const VueInputMask = require('vue-inputmask').default
-
-Vue.use(VueInputMask)
-
 window.vueStore = store;
 
 Vue.component('service-calculator', require('../../vue/ServiceCalculator.vue'));

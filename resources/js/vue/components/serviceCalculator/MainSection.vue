@@ -62,28 +62,25 @@
                 </a>
             </div>
 -->
+
             <hr>
             <div class="main-s__item">
                 <h5 class="main-s__f-title">Материалы</h5>
-                <a v-if="model === 'solaris'" href="/assets/pdf/maintenance/maintenance-solaris.pdf" class="df-download-link df-link main-s__d-link" target="_blank">
+
+				<a href="/assets/pdf/maintenance/maintenance-general.pdf" class="df-download-link df-link main-s__d-link" target="_blank">
                     <svg>
                         <use xlink:href="#download-link"></use>
                     </svg>
-                    Базовые работы, входящие в периодическое ТО
+                    Базовые работы, входящие в периодическое ТО (Легковые автомобили, кроме Solaris)
                 </a>
-								<a v-else-if="model === 'creta' || model === 'santa fe' || model === 'tucson'" href="/assets/pdf/maintenance/maintenance-suv.pdf" class="df-download-link df-link main-s__d-link" target="_blank">
+				<br>
+                <a href="/assets/pdf/maintenance/maintenance-solaris.pdf" class="df-download-link df-link main-s__d-link" target="_blank">
                     <svg>
                         <use xlink:href="#download-link"></use>
                     </svg>
-                    Базовые работы, входящие в периодическое ТО
+                    Базовые работы, входящие в периодическое ТО (Solaris)
                 </a>
-								<a v-else href="/assets/pdf/maintenance/maintenance-general.pdf" class="df-download-link df-link main-s__d-link" target="_blank">
-                    <svg>
-                        <use xlink:href="#download-link"></use>
-                    </svg>
-                    Базовые работы, входящие в периодическое ТО
-                </a>
-								<br>
+				<br>
                 <a href="/assets/pdf/maintenance/maintenance-harsh-conditions.pdf" target="_blank" class="df-download-link df-link main-s__d-link">
                     <svg>
                         <use xlink:href="#download-link"></use>
@@ -104,7 +101,7 @@ export default {
     name: 'MainSection',
     components: {
     	Selectize
-    },
+	},
     data () {
         return {
 			settingsModel: {
@@ -196,6 +193,7 @@ export default {
     },
     computed: {
 		...mapGetters({
+			ENV: "GET_ENV",
             dealersCities: 'GET_DEALERS_CITIES',
             dealers: 'GET_DEALERS',
             data: 'GET_DATA',
@@ -291,9 +289,6 @@ export default {
 				})
 			})
 		}
-    },
-    filters: {
-
     },
     mounted () {
 		var that = this;

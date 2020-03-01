@@ -9,7 +9,7 @@
 							<rect x="1.45459" width="20.5702" height="2.05702" transform="rotate(45 1.45459 0)"/>
 						</svg>
 					</a>
-					<sign-up-forms form="service"></sign-up-forms>
+					<sign-up-forms form="service" @modules-loaded="modulesLoaded = true"></sign-up-forms>
 				</div>
 			</div>
 		</div>
@@ -22,17 +22,24 @@ import SignUpForms from '../../SignUpForms'
 import { mapGetters } from "vuex";
 
 export default {
-	name: "SignUpTestDriveFormPopup",
+	name: "SignUpServiceFormPopup",
 	components: { SignUpForms },
 	data() {
 		return {
-		
+			modulesLoaded: false
 		};
 	},
 	computed: {
 		...mapGetters({
-			isOpened: "OPEN_TEST_DRIVE_POPUP",
+			isOpenedS: "OPEN_TEST_DRIVE_POPUP",
 		}),
+		isOpened: function () {
+			if (this.isOpenedS && this.modulesLoaded) {
+				return true
+			} else {
+				return false
+			}
+		}
 	},
 	methods: {
 		closeThis: function () {

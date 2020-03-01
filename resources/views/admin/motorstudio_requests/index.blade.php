@@ -35,7 +35,7 @@
 			<tr>
 				<td>{{ $item->id }}</td>
 				<td>{{ date('d.m.Y H:i', $item->date) }}</td>
-				<td>{{ $item->event->name }}</td>
+				<td>{{ @$item->event->name }}</td>
 				<td>{{ $item->sirname }}</td>
 				<td>{{ $item->name }}</td>
 				<td>{{ $item->age }}</td>

@@ -1,6 +1,20 @@
 <template>
 	<div class="h-buttons" :class="{ oneButton: oneButton, fixed: fixed }">
 		<ul class="h-buttons__list" :class="{ show: showList, showButton: showButton }">
+			<li v-if="buttons[3]" class="h-buttons__item">
+				<div class="h-buttons__link">
+					<a class="h-buttons__button" :href="linkFromId"><span>Кредит</span></a>
+
+					<div class="h-buttons__icon" @click="toggleButton">
+						<svg width="36" height="24" viewBox="0 0 36 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="29.2259" cy="16.8064" r="5.77419" stroke="white" stroke-width="2"/>
+							<path d="M28.2373 16.9291C28.9665 16.9291 29.5067 16.4145 29.5067 15.739C29.5067 15.0635 28.9665 14.5488 28.2373 14.5488C27.508 14.5488 26.9678 15.0635 26.9678 15.739C26.9678 16.4145 27.508 16.9291 28.2373 16.9291ZM28.2373 16.2408C27.9334 16.2408 27.7241 16.0092 27.7241 15.739C27.7241 15.4688 27.9334 15.2372 28.2373 15.2372C28.5411 15.2372 28.7505 15.4688 28.7505 15.739C28.7505 16.0092 28.5411 16.2408 28.2373 16.2408ZM28.19 18.9878H28.9868L31.3637 14.6132H30.5737L28.19 18.9878ZM31.3434 19.065C32.0727 19.065 32.6129 18.5503 32.6129 17.8748C32.6129 17.1993 32.0727 16.6847 31.3434 16.6847C30.6142 16.6847 30.074 17.1993 30.074 17.8748C30.074 18.5503 30.6142 19.065 31.3434 19.065ZM31.3434 18.3766C31.0396 18.3766 30.8303 18.145 30.8303 17.8748C30.8303 17.6046 31.0396 17.373 31.3434 17.373C31.6473 17.373 31.8566 17.6046 31.8566 17.8748C31.8566 18.145 31.6473 18.3766 31.3434 18.3766Z" fill="white"/>
+							<path d="M21.3669 19.0645H2C1.44771 19.0645 1 18.6168 1 18.0645V2C1 1.44772 1.44772 1 2 1H31.6129C32.1652 1 32.6129 1.44772 32.6129 2V9.67805" stroke="white" stroke-width="2"/>
+							<path d="M1.56458 6.48779H32.613" stroke="white" stroke-width="2"/>
+						</svg>
+					</div>
+				</div>
+			</li>
 			<li v-if="buttons[0]" class="h-buttons__item">
 				<div class="h-buttons__link">
 					<a class="h-buttons__button" href="#" @click.prevent="testDrive"><span>Тест-драйв</span></a>
@@ -38,27 +52,47 @@
 			</li>
 		</ul>
 		<a href="#" @click.prevent="toggleShowList" :class="{ show: showList }" class="h-buttons__main"></a>
+
+		<sign-up-test-drive-form-popup v-if="isVisible" :page="page"></sign-up-test-drive-form-popup>
 	</div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
 	name: "HotButtons",
-	components: {},
+	components: {
+		'sign-up-test-drive-form-popup': () => import('@/components/common/SignUpTestDriveFormPopup.vue')
+	},
 	props: {
 		carId: Number,
 		model: String,
-		buttons: Array
+		buttons: Array,
+		page: String
 	},
 	data() {
 		return {
 			showList: false,
 			showButton: false,
 			init: false,
-			fixed: false
+			fixed: false,
+			initTdPopup: false,
+			popups: 0
 		}
 	},
 	computed: {
+		...mapGetters({
+			ENV: "GET_ENV",
+			carsIdLinks: 'GET_CARS_ID_LINKS'
+		}),
+		isVisible: function () {
+			if (this.$store.state.openTestDrivePopup) {
+				this.initTdPopup = true;
+			}
+
+			return this.initTdPopup;
+		},
 		oneButton: function () {
 			var count = 0;
 
@@ -86,6 +120,13 @@ export default {
 			document.body.removeChild(div);
 
 			return scrollWidth
+		},
+		linkFromId () {
+			if (this.carsIdLinks.filter(car=>car.id == this.carId).length > 0) {
+				return '/start/' + this.carsIdLinks.filter(car=>car.id == this.carId)[0].link
+			} else {
+				return '/start'
+			}
 		}
 	},
 	methods: {
@@ -94,7 +135,7 @@ export default {
 			this.init = true;
 		},
 		testDrive: function () {
-			if (typeof this.model !== 'undefined') {
+			if (typeof this.model !== 'undefined' && this.ENV !== 'dealer') {
 				this.$store.dispatch('OPEN_TEST_DRIVE_POPUP', true);
 				this.$store.dispatch('SET_SAVED_MODEL', this.model);
 			} else {
@@ -104,9 +145,23 @@ export default {
 		toggleButton: function () {
 			this.showButton = !this.showButton;
 			this.init = true;
+		},
+		fixOverflow (makeFixed) {
+			if (makeFixed === true) {
+				document.body.style.overflow = 'hidden'
+				this.popups++
+			} else {
+				this.popups--
+
+				if (this.popups === 0) {
+					document.body.style.overflow = ''
+				}
+			}
 		}
 	},
 	mounted() {
+		this.$root.$on('fixOverflow', this.fixOverflow)
+
 		this.$nextTick(()=>{
 			this.showList = true;
 			this.showButton = true;
@@ -154,9 +209,8 @@ export default {
 .h-buttons
 	display: block
 	color: $text_white
-	text-align: right
 	// overflow: hidden
-	z-index: 50
+	z-index: 600
 	font-size: 0
 	border-radius: 24px
 	//transition: 0.5s
@@ -273,7 +327,7 @@ export default {
 			transform: translateX(0)
 
 
-@for $i from 1 through 3
+@for $i from 1 through 4
 	.h-buttons__list.show
 		.h-buttons__item:nth-of-type(#{$i}n)
 			.h-buttons__link

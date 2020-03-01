@@ -27,15 +27,19 @@ export default {
     MODIFICATIONS: domian + 'car/modifications/',
     COMPLECTATIONS: domian + 'car/complectations/',
     SUMMARY: domian + 'car/final/',
-    CALCULATOR: domian + 'credit/car/',
-    CALCULATIONS: domian + 'credit/calculations/',
+    CALCULATOR: domian + 'ecredit/car/',
+    CALCULATIONS: domian + 'ecredit/calculations/',
     SEND_EMAIL: domian + 'sendPDFtoEmail',
+    SEND_EMAIL_DEALER: '/api/send/configurator',
     GET_PDF: domian + 'getPdf',
     SEND_DEALER: domian + 'sendPDFtoDealer',
     GET_DEALERS: domian + 'dealers',
     GET_DEALERS_CREDIT: domian + 'dealersCredit',
     SEND_TESTDRIVE: domian + 'sendTestDrive',
 	COMPARE: domian + 'compare',
+	CHECK_CREDIT: '/api/checkEcredit/',
+	CONF_BOOK: 'https://showroom.hyundai.ru/',
+	LOAD_SIMILAR: 'https://showroom.hyundai.ru/rest/car',
 	CALCULATOR_PDF: 'http://configurator.hyundai.ru/pdf/' //Не используется
   },
   filter: {
@@ -75,6 +79,10 @@ export default {
   isPopoversVisible: false,
   isMobileOpened: false,
   dealerList: [],
-  isDealer: isDealer,
-  dealerCreditList: []
+//   isDealer: isDealer,
+  dealerCreditList: [],
+  similar: {
+    models: [],
+    similar_models: []
+  }
 }

@@ -105,37 +105,44 @@ class SpecialOfferController extends Controller
         if ($request->hasFile('image_preview')) {
             $image = $request->file('image_preview');
             $filename = 'preview_' . time() . '.' . $image->getClientOriginalExtension();
-
             $path = $image->storeAs('public/special_offers', $filename);
-
             $item->image_preview = $filename;
         }
 
         if ($request->hasFile('image_world')) {
             $image = $request->file('image_world');
             $filename = 'world_' . time() . '.' . $image->getClientOriginalExtension();
-
             $path = $image->storeAs('public/special_offers', $filename);
-
             $item->image_world = $filename;
         }
 
         if ($request->hasFile('banner')) {
             $image = $request->file('banner');
             $filename = 'banner_' . time() . '.' . $image->getClientOriginalExtension();
-
             $path = $image->storeAs('public/special_offers', $filename);
-
             $item->banner = $filename;
         }
 
         if ($request->hasFile('banner_mobile')) {
             $image = $request->file('banner_mobile');
-            $filename = 'banner_' . time() . '.' . $image->getClientOriginalExtension();
+            $filename = 'bannerm_' . time() . '.' . $image->getClientOriginalExtension();
 
             $path = $image->storeAs('public/special_offers', $filename);
-
             $item->banner_mobile = $filename;
+        }
+
+        if ($request->hasFile('video_desktop')) {
+            $file = $request->file('video_desktop');
+            $filename = 'vd_' . time() . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('public/special_offers', $filename);
+            $item->video_desktop = $filename;
+        }
+
+        if ($request->hasFile('video_mobile')) {
+            $file = $request->file('video_mobile');
+            $filename = 'vm_' . time() . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('public/special_offers', $filename);
+            $item->video_mobile = $filename;
         }
 
         $item->save();
@@ -214,9 +221,7 @@ class SpecialOfferController extends Controller
             $oldFile = $item->image_preview;
             $image = $request->file('image_preview');
             $filename = 'preview_' . time() . '.' . $image->getClientOriginalExtension();
-
             $path = $image->storeAs('public/special_offers', $filename);
-
             $item->image_preview = $filename;
             Storage::disk('public')->delete('special_offers/' . $oldFile);
         }
@@ -225,9 +230,7 @@ class SpecialOfferController extends Controller
             $oldFile = $item->image_world;
             $image = $request->file('image_world');
             $filename = 'world_' . time() . '.' . $image->getClientOriginalExtension();
-
             $path = $image->storeAs('public/special_offers', $filename);
-
             $item->image_world = $filename;
             Storage::disk('public')->delete('special_offers/' . $oldFile);
         }
@@ -236,9 +239,7 @@ class SpecialOfferController extends Controller
             $oldFile = $item->banner;
             $image = $request->file('banner');
             $filename = 'banner_' . time() . '.' . $image->getClientOriginalExtension();
-
             $path = $image->storeAs('public/special_offers', $filename);
-
             $item->banner = $filename;
             Storage::disk('public')->delete('special_offers/' . $oldFile);
         }
@@ -246,11 +247,27 @@ class SpecialOfferController extends Controller
         if ($request->hasFile('banner_mobile')) {
             $oldFile = $item->banner_mobile;
             $image = $request->file('banner_mobile');
-            $filename = 'banner_' . time() . '.' . $image->getClientOriginalExtension();
-
+            $filename = 'bannerm_' . time() . '.' . $image->getClientOriginalExtension();
             $path = $image->storeAs('public/special_offers', $filename);
-
             $item->banner_mobile = $filename;
+            Storage::disk('public')->delete('special_offers/' . $oldFile);
+        }
+
+        if ($request->hasFile('video_desktop')) {
+            $oldFile = $item->video_desktop;
+            $file = $request->file('video_desktop');
+            $filename = 'vd_' . time() . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('public/special_offers', $filename);
+            $item->video_desktop = $filename;
+            Storage::disk('public')->delete('special_offers/' . $oldFile);
+        }
+
+        if ($request->hasFile('video_mobile')) {
+            $oldFile = $item->video_mobile;
+            $file = $request->file('video_mobile');
+            $filename = 'vm_' . time() . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('public/special_offers', $filename);
+            $item->video_mobile = $filename;
             Storage::disk('public')->delete('special_offers/' . $oldFile);
         }
 

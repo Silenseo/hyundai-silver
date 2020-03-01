@@ -11,32 +11,32 @@
 <section class="nav">
     <ul class="nav__menu">
         <li class="nav__item">
-            <a href="{{ route('static_car28') }}#design" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car28', null, false) }}#design" class="nav__link scroll">
                 Дизайн
             </a>
         </li>
         <li class="nav__item">
-            <a href="{{ route('static_car28') }}#dynamics" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car28', null, false) }}#dynamics" class="nav__link scroll">
                 Динамика
             </a>
         </li>
         <li class="nav__item">
-            <a href="{{ route('static_car28') }}#comfort" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car28', null, false) }}#comfort" class="nav__link scroll">
                 Комфорт
             </a>
         </li>
         <li class="nav__item">
-            <a href="{{ route('static_car28') }}#safety" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car28', null, false) }}#safety" class="nav__link scroll">
                 Безопасность
             </a>
         </li>
         <li class="nav__item">
-            <a href="{{ route('static_car28') }}#specs" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car28', null, false) }}#specs" class="nav__link scroll">
                 Характеристики
             </a>
         </li>
         <li class="nav__item">
-            <a href="{{ route('static_car28') }}/gallery" class="nav__link active">
+            <a href="{{ route('static_dealerapi_car28', null, false) }}/gallery" class="nav__link active">
                 Галерея
             </a>
         </li>

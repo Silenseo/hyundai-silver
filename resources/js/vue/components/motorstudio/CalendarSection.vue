@@ -22,7 +22,7 @@
 				<button class="df-button new-event__button" @click="openPopup">Submit a request</button>
 			</div>
 		</div>
-		<new-event-popup v-if="isInit" :is-opened="isOpened" @close="isOpened = false" @open-success="successOpened = true"></new-event-popup>
+		<new-event-popup v-if="isInit" :is-opened="isOpened" @close="isOpened = false" @open-success="successOpened = true" @show-rules="showRules"></new-event-popup>
 		<simple-sent-successfully innerText="Ваша заявка принята" :is-opened="successOpened" @close-this="successOpened = false"></simple-sent-successfully>
 		<h2 class="slider__title">{{ sliderTitle }}</h2>
 	</section>
@@ -47,7 +47,7 @@ export default {
         return {
 			currentMonth: 0,
 			currentYear: '',
-			currentView: 'calendar',
+			currentView: 'list',
 			slideChange: '',
 			isInit: false,
 			isOpened: false,
@@ -95,6 +95,9 @@ export default {
 			}
 
 			this.isOpened = true;
+		},
+		showRules: function () {
+			this.$emit('show-rules')
 		}
     },
     mounted () {

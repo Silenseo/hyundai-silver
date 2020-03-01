@@ -39,7 +39,7 @@
             </a>
         </li>
         <li class="nav__item">
-            <a target="_blank" href="{{ route('static_car28') }}/gallery" class="nav__link">
+            <a target="_blank" href="{{ route('static_dealerapi_car28', null, false) }}/gallery" class="nav__link">
                 Галерея
             </a>
         </li>
@@ -63,21 +63,24 @@
             <span>Спорткар на каждый день.</span>
         </div>
     </div>
-    <div class="blue-label" style="display:none">
+    <div class="blue-label">
         <div class="blue-label__top">
             <span>от</span> <span id="price-from"></span> &#8381;
         </div>
-        <!-- <hr>
-        <div class="blue-label__bottom">
-            В кредит — от <span id="credit-from"></span> ₽/мес
-        </div> -->
+        <hr>
+        <a href="/promo/trade-in-sale"><div class="blue-label__bottom">
+            Трейд-ин: - 300 000 ₽
+		</div></a>
+		<div class="blue-label__bottom">
+			Кредит: 5.9%*
+		</div>
     </div>
     <a href="#view360" class="js-next-slide banner__circle scroll"></a>
     <div class="preloader__inner"></div>
 
 	<div id="hotbuttons">
 		<!-- Установим активной модель. model Св-во codeName или Link!!!!!! -->
-		<hot-buttons :car-id="28" model="i30N" :buttons="[1,1,1]"></hot-buttons>
+		<hot-buttons :car-id="28" model="i30N" :buttons="[1,1,1,1]" page="isModelPage"></hot-buttons>
 	</div>
 </section>
 
@@ -334,7 +337,7 @@
         </li>
         <li class="s-parallax__item s-parallax__item--right s-parallax__item--50 lazyload" data-order="4" data-bgset="/images/cars/i30n/m_pics/dynamics_5.jpg [(max-width: 640px)] | /images/cars/i30n/pics/dynamics_2.jpg">
             <div class="s-parallax__description">
-                <span>Система Lauch Control</span> позволяет точнее контролировать крутящий момент и&nbsp;стартовать максимально эффективно.
+                <span>Система Launch Control</span> позволяет точнее контролировать крутящий момент и&nbsp;стартовать максимально эффективно.
             </div>
         </li>
         <li class="s-parallax__item s-parallax__item--right s-parallax__item--50 lazyload" data-order="6" data-bgset="/images/cars/i30n/m_pics/dynamics_4.jpg [(max-width: 640px)] | /images/cars/i30n/pics/dynamics_4.jpg">
@@ -651,7 +654,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<specs-section car-id="28" model-type="Хэтчбэк" number-of-seats="5" engine="Бензиновый" drive="Передний" gear-box="Механическая"></specs-section>
+				<specs-section car-id="28" model-type="Хэтчбэк" number-of-seats="5" engine="Бензиновый" drive="Передний" gear-box="Механическая" car-name="i30 N"></specs-section>
 				<?php if(strlen($disclaimer) > 0) :?>
 				<div class="specs" style="padding-top: 0px;">
 				    <div class="section__center">
@@ -661,16 +664,28 @@
                         </div>
                     </div>
                 </div>
-                <?php endif; ?>
+				<?php endif; ?>
+				<div class="specs" style="padding-top: 0px;">
+				    <div class="section__center">
+				        <div class="dsclmr df-text-small-12px">
+                            <div class="dsclmr__icon">
+								<svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M2.66411 7.31177L3.96011 5.31377L5.23811 7.31177L6.62411 6.32177L5.16611 4.53976L7.34411 3.96377L6.89411 2.32577L4.71611 3.11777L4.84211 0.759766H3.06011L3.20411 3.11777L1.00811 2.32577L0.558105 3.96377L2.73611 4.53976L1.27811 6.32177L2.66411 7.31177Z" fill="white"/>
+								</svg>
+							</div>
+                            <div class="dsclmr__body">
+								5,9% – маркетинговая ставка, не является ставкой по кредиту в договоре и отражает затраты Клиента на оплату стоимости нового автомобиля Hyundai i30N Sport 2.0 - 6МT (249 л.с.) по рекомендованной розничной цене 2 200 000 руб., уменьшенной на 160 000 руб. по программе «Hyundai Finance Special». Кредитор – ПАО «Совкомбанк» (ген. лицензия Банка России №963 от 05.12.2014). Условия кредитования: первоначальный взнос – 880 000 руб.; сумма кредита – 1 320 000 руб.; срок кредита – 36 мес.; ставка в кредитном договоре – 14,8% годовых. Обязательное условие: оформление договора страхования автомобиля от рисков хищения (угона), утраты (гибели). Обеспечение по кредиту – залог автомобиля. Срок действия предложения с 01.09.2019 по 31.10.2019 года. Предложение ограничено. Не является офертой. Условия могут быть изменены Банком в одностороннем порядке. Подробные условия программы кредитования уточняйте в салонах официальных дилеров Hyundai и на сайте <a href="https://sovcombank.ru/" target="_blank" rel="noopener noreferrer">www.sovcombank.ru</a>.
+							</div>
+                        </div>
+                    </div>
+                </div>
+				<div class="section__center">
+					@component('components/model-seo-text', ['model' => 'Hyundai i30 N'])@endcomponent
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
-<div id="tdpopup">
-	<sign-up-test-drive-form-popup v-if="isVisible" page="isModelPage"></sign-up-test-drive-form-popup>
-</div>
-
 @endsection
 
 @section('scripts')

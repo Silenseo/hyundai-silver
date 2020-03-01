@@ -1,3 +1,4 @@
+// Компонент используется в калькуляторе ТО
 <template>
 	<transition name="popup" v-on:enter="onEnter" v-on:leave="onLeave">
 		<div class="contact-form df-popup" v-show="isOpened">
@@ -23,7 +24,7 @@
 						</div>
 						<div class="contact-form__description">Я согласен с <a href="#" @click.prevent="openRules">правилами</a> обработки персональных данных</div>
 					</label>
-					<button @click.prevent="checkout" class="df-button contact-form__button">Отправить заявку</button>
+					<button @click.prevent="checkout" class="df-button contact-form__button" :disabled="sending">{{ sending ? 'Отправка...' : 'Отправить заявку'}}</button>
 				</div>
 			</div>
 		</div>
@@ -33,6 +34,7 @@
 <script>
 import axios from 'axios'
 import { mapGetters } from "vuex";
+import Inputmask from "inputmask";
 
 export default {
 	name: "ContactForm",
@@ -51,12 +53,26 @@ export default {
 				name: '',
 				email: ''
 			},
+			defaultUser: {
+				surname: '',
+				name: '',
+				email: ''
+			},
 			agreement: false,
-			process: false
+			process: false,
+			sending: false
 		};
+	},
+	directives: {
+		mask: {
+			bind: function(el, binding) {
+				Inputmask(binding.value).mask(el);
+			}
+		}
 	},
 	computed: {
 		...mapGetters({
+			ENV: "GET_ENV",
 			model: "GET_CAR_CODE",
 			carID: "GET_CAR_ID",
 			dealer: "GET_DEALER"
@@ -81,7 +97,7 @@ export default {
                 return this.$store.state.user.phone;
             },
             set (value) {
-				if (value) {
+				if (typeof value !== 'undefined') {
 					this.$store.dispatch('SET_USER_PHONE', value);
 				}
             }
@@ -103,27 +119,37 @@ export default {
 			this.process = true;
 
 			if (this.isValid) {
-				axios.get(this.$store.state.API.CONTACT_FORM, {
-					params: {
+				this.sending = true;
+
+				let params = {
 						modelId: this.carID,
 						modelCode: this.model,
-						dealer: this.dealer,
 						salutation: 'Mr.',
 						name: this.user.name,
 						sirname: this.user.surname,
 						email: this.user.email,
 						phone: this.phone
 					}
+
+				if (this.ENV !== 'dealer') {
+					params.dealer = this.dealer
+				}
+
+				axios.get(this.$store.state.API.CONTACT_FORM, {
+					params: params
 				})
 					.then(function (response) {
 						if (response.data.status === 1) {
 							that.$store.dispatch('OPEN_SUCCESS', true);
+							that.clearForm()
 							that.closeThis();
+							that.sending = false;
 						} else {
 							throw new Error('Ошибка');
 						}
 					})
 					.catch(function (error) {
+						that.sending = false;
 						that.$root.$emit('notify', { type: 'error', text: 'Ошибка отправки формы, повторите попытку позднее' })
 						console.log(error);
 					})
@@ -134,18 +160,25 @@ export default {
 		},
 		onLeave: function() {
 			this.$root.$emit('fixOverflow', false)
+		},
+		clearForm () {
+			this.user = Object.assign({}, this.defaultUser);
+
+			for (var name in this.blur) {
+				this.blur[name] = false
+			}
+
+			this.phone = ''
+			this.agreement = false
+			this.process = false
 		}
 	},
-	filters: {},
 	mounted() {
 		var that = this;
 
 		this.$nextTick(function() {
 			
 		})
-	},
-	watch: {
-
 	}
 };
 </script>

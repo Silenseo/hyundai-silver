@@ -23,24 +23,19 @@ class AppServiceProvider extends ServiceProvider
             $is_crawler = \Crawler::isCrawler();
 
             $dealerData = [
-                'name' => 'Сильвер Моторс', //env('DEALER_NAME'),
-                'email' => 'web@investmarketing.ru', //env('DEALER_EMAIL'),
-                'city' => 'г. Пермь', //env('DEALER_CITY'),
-                'phone' => '+7 (342) 225-08-76', //env('DEALER_PHONE'),
-                'address' => 'г. Пермь, ул. Спешилова, 109', //env('DEALER_ADDRESS'),
-                'sap' => 'C40AF01010',//env('DEALER_SAP'),
+                'name' => env('DEALER_NAME'),
+                'email' => explode(',',env('DEALER_EMAIL'))[0],
+                'city' => env('DEALER_CITY'),
+                'phone' => env('DEALER_PHONE'),
+                'address' => env('DEALER_ADDRESS'),
+                'sap' => env('DEALER_SAP'),
             ];
-            $seo = [];
-            $item = \App\SEO::where('url', '/' . \Request::path())->first();
-            if($item) {
-                $seo = $item->toArray();
-            }
 
-            $view->with('is_crawler', $is_crawler)->with('dealerData', $dealerData)->with('u_seo_info', $seo);
+            $view->with('is_crawler', $is_crawler)->with('dealerData', $dealerData);
         });
 
         view()->composer(['components.dropdown-showroom', 'frontend.pages.sitemap'], function($view) {
-            $cars_grouped = \Cache::remember('menu_cars_grouped', 0, function() {
+            $cars_grouped = \Cache::remember('menu_cars_grouped1', 3600, function() {
 
                 $cars = \App\Car::where('visible', 1)->where('is_old_model', 0)->orderBy('menu_row')->orderBy('menu_column')->get();
                 $cars_grouped = [
@@ -58,14 +53,12 @@ class AppServiceProvider extends ServiceProvider
                     ],
                 ];
                 foreach($cars as $car) {
-                    if($car->id == 11) continue;
                     $cars_grouped[$car->menu_row]['items'][] = $car;
                 }
 
                 return $cars_grouped;
             });
 
-            unset($cars_grouped[1]);
             $view->with('menu_cars', $cars_grouped);
         });
 
@@ -74,6 +67,7 @@ class AppServiceProvider extends ServiceProvider
                 'Сервисы' => [
                     'Калькулятор ТО' => '/service/maintenance#app',
                     'Акции сервис' => '/all-offers#service',
+                    'Продлить ОСАГО онлайн' => 'http://hmr.e-credit.one/e-osago/'
                 ],
                 'Обслуживание и ремонт' => [
                     'Обслуживание' => '/service/maintenance',
@@ -89,6 +83,7 @@ class AppServiceProvider extends ServiceProvider
                     'Оригинальные аксессуары' => 'https://acc.hyundai.ru/',
                     'Запчасти Product Line 2' => '/pl2',
                     'Моторное масло' => '/shell',
+                    'Auto Link Hyundai' => '/promo/auto_link'
                 ],
                 'Сервисные предложения' => [
                     'Лучшее для своих' => '/service/best',
@@ -99,7 +94,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('menu_service', $menu_service);
         });
 
-        view()->composer('layouts.master', function($view) {
+        view()->composer(['layouts.master', 'layouts.master-dealer'], function($view) {
             $seo = [];
 
 

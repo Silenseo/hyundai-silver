@@ -25,7 +25,7 @@
           <li v-for="color in colors" class="color-list__item">
           <label class="color-selector" :class="{ 'is-active' : color.id === currentColor }" :title="color.nameRus">
             <input type="radio" :name="'color[' + color.id + ']'" :value="color.id" v-model="currentColor">
-            <span tabindex="-1" class="color-pick" :style="{ 'background': getStyleString(color.id) }"></span>
+            <span tabindex="-1" class="color-pick" :style="{ 'background-color': color.colorCode }"></span>
           </label>
           </li>
         </ul>

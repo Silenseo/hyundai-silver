@@ -3,8 +3,8 @@
 @section('pageTitle', 'New Sonata')
 
 @section('styles')
-    <link rel="stylesheet" href="/css/cars/new-sonata/libs.css">
-    <link rel="stylesheet" href="/css/cars/new-sonata/new-sonata.css">
+    <link rel="stylesheet" href="{{ mix('/css/cars/new-sonata/libs.css') }}">
+    <link rel="stylesheet" href="{{ mix('/css/cars/new-sonata/new-sonata.css') }}">
 @endsection
 
 @section('content')
@@ -45,11 +45,14 @@
         </li>
     </ul>
     <div class="nav__buttons">
-        <a target="_blank" href="/test-drive/NewSonata" class="df-button nav__button">
+        <a target="_blank" href="/test-drive/NewSonata" class="df-button nav__button js-open-p-td">
             Тест-драйв
         </a>
         <a target="_blank" href="/configurator/car/29" class="df-button nav__button">
             Конфигуратор
+        </a>
+        <a target="_blank" href="/find-dealer" class="df-button nav__button">
+            Найти дилера
         </a>
     </div>
 </section>
@@ -63,14 +66,24 @@
             <span>Искусственный интеллект.<br>Истинные чувства.</span>
         </div>
     </div>
-    <div class="blue-label">
-        <div class="blue-label__top">
-            <span>от</span> <span id="price-from"></span> &#8381;
+    <div class="blue-label blue-label--extended">
+        <div>
+            <div class="blue-label__top">
+                <span>от</span> <span id="price-from"></span> &#8381;
+            </div>
+            <!-- <hr> -->
+            <div class="blue-label__bottom">
+                <!-- В кредит — от <span id="credit-from"></span> ₽/мес -->
+                Доступно в&nbsp;рассрочку
+            </div>
         </div>
-        <hr>
-        <div class="blue-label__bottom">
-            <!-- В кредит — от <span id="credit-from"></span> ₽/мес -->
-            Доступно в&nbsp;рассрочку
+        <div class="blue-label__separate"></div>
+        <div class="blue-label__reservation">
+            <div class="reservation__stock">
+                <img src="/images/cars/new-sonata/svg/check-wh.svg" alt="">
+                <span class="reservation__stock-text">Есть в наличии</span>
+            </div>
+            <a target="_blank" href="https://showroom.hyundai.ru/" class="reservation__button df-button">Забронировать онлайн</a>
         </div>
     </div>
     <a href="#view360" class="js-next-slide banner__circle scroll"></a>
@@ -78,7 +91,7 @@
 
 	<div id="hotbuttons">
 		<!-- Установим активной модель. model Св-во codeName!!!!!! -->
-		<hot-buttons :car-id="29" model="NewSonata" :buttons="[1,1,0]" page="isModelPage"></hot-buttons>
+		<hot-buttons :car-id="29" model="NewSonata" :buttons="[1,1,1,1]" page="isModelPage"></hot-buttons>
 	</div>
 </section>
 
@@ -101,7 +114,7 @@
 </div>
 
 <section id="view360" class="section">
-	<view-360 title="Выберите свою SONATA" car-id="29"></view-360>
+	<view-360 title="Выберите свою SONATA" car-id="29" default-color="190"></view-360>
 </section>
 
 <section id="design" class="design">
@@ -207,7 +220,7 @@
             <ul class="dynamics__tabs">
                 <li class="dynamics__tab">
                     <a data-view="view0" href="#" class="dynamics__link js-change-view active">
-                        2.5 MPi
+                        2.5 MPi Smartstream
                     </a>
                 </li>
                 <!-- <li class="dynamics__tab">
@@ -466,7 +479,7 @@
                 Система автоматического торможения перед препятствием.
             </div>
             <div class="safety__text">
-                Специальные датчики отслеживают препятствия спереди и,&nbsp;в&nbsp;экстренном случае, задействуют тормоза, останавливая автомобиль.
+                Фронтальная камера и&nbsp;радар отслеживают препятствия спереди. В&nbsp;экстренном случае они задействуют тормоза, останавливая автомобиль.
             </div>
         </div>
     </div>
@@ -519,7 +532,7 @@
                 Безопасный выезд с&nbsp;парковки задним ходом.
             </div>
             <div class="safety__text">
-                Система предотвращения столкновения сбоку при выезде с&nbsp;парковки задним ходом предупреждает водителя об&nbsp;опасности и&nbsp;автоматически задействует тормоза, останавливая автомобиль.
+                Система предотвращения столкновения сбоку при выезде с&nbsp;парковки задним ходом предупреждает водителя об опасности и,&nbsp;в&nbsp;случае необходимости, автоматически задействует тормоза, останавливая автомобиль.
             </div>
         </div>
 	</div>
@@ -588,7 +601,7 @@
             <div class="s-parallax__back lazyload lazypreview" data-bgset="/images/cars/new-sonata/m_pics/tech_5.jpg [(max-width: 640px)] | /images/cars/new-sonata/covers/cover_8.jpg">
             </div>
             <div class="s-parallax__description">
-                <span>Система предотвращения столкновений с&nbsp;автомобилями в&nbsp;слепой зоне</span> предупреждает водителя (в&nbsp;случае обнаружения угрозы столкновения при перестроении) подтормаживанием и&nbsp;подруливанием.
+                <span>Система предотвращения столкновений</span> предупреждает водителя об автомобилях в&nbsp;"слепой зоне", а&nbsp;также снижает вероятность столкновения при смене полосы, притормаживая одно из&nbsp;колес.
             </div>
         </li>
     </ul>
@@ -598,7 +611,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<specs-section car-id="29" model-type="Седан" number-of-seats="5" engine="Бензиновый" drive="Передний" gear-box="Автоматическая"></specs-section>
+				<specs-section car-id="29" model-type="Седан" number-of-seats="5" engine="Бензиновый" drive="Передний" gear-box="Автоматическая"  car-name="Sonata"></specs-section>
 				<?php if(strlen($disclaimer) > 0) :?>
 				<div class="specs" style="padding-top: 0px;">
 				    <div class="section__center">
@@ -609,6 +622,9 @@
                     </div>
                 </div>
                 <?php endif; ?>
+				<div class="section__center">
+					@component('components/model-seo-text', ['model' => 'Hyundai Sonata'])@endcomponent
+				</div>
 			</div>
 		</div>
 	</div>
@@ -616,8 +632,8 @@
 @endsection
 
 @section('scripts')
-	<script src="/js/lazypreview.js"></script>
-    <script src="/js/cars/new-sonata/libs.js"></script>
-	<script src="/js/cars/new-sonata/new-sonata.js"></script>
-	<script src="/js/cars/new-sonata/main.js"></script>
+	<script src="{{ mix('/js/lazypreview.js') }}"></script>
+    <script src="{{ mix('/js/cars/new-sonata/libs.js') }}"></script>
+	<script src="{{ mix('/js/cars/new-sonata/new-sonata.js') }}"></script>
+	<script src="{{ mix('/js/cars/new-sonata/main.js') }}"></script>
 @endsection

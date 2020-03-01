@@ -39,7 +39,7 @@
             </a>
         </li>
         <li class="nav__item">
-            <a target="_blank" href="{{ route('static_car26') }}/gallery" class="nav__link">
+            <a target="_blank" href="{{ route('static_dealerapi_car26', null, false) }}/gallery" class="nav__link">
                 Галерея
             </a>
         </li>
@@ -63,7 +63,7 @@
             <span>Везет тому, кто ведет!</span>
         </div>
     </div>
-    <div class="blue-label" style="display:none">
+    <div class="blue-label">
         <div class="blue-label__top">
             <span>от</span> <span id="price-from"></span> &#8381;
         </div>
@@ -76,7 +76,7 @@
 
 	<div id="hotbuttons">
 		<!-- Установим активной модель. model Св-во codeName!!!!!! -->
-		<hot-buttons :car-id="26" model="tucson" :buttons="[1,1,1]"></hot-buttons>
+		<hot-buttons :car-id="26" model="tucson" :buttons="[1,1,1,1]" page="isModelPage"></hot-buttons>
 	</div>
 </section>
 
@@ -173,11 +173,6 @@
                         2.0 MPI
                     </a>
                 </li>
-                <li class="dynamics__tab dynamics__tab--right">
-                    <a data-view="view1" href="#" class="dynamics__link js-change-view">
-                        1.6 T-GDi
-                    </a>
-                </li>
                 <li class="dynamics__tab">
                     <a data-view="view2" href="#" class="dynamics__link js-change-view">
                         2.0 Diesel
@@ -211,38 +206,6 @@
             <div class="dynamics__specs-w dynamics__specs-w--2">
                 <div class="dynamics__description">
                     7.9 л / 100 км
-                </div>
-                <div class="dynamics__text">
-                    Средний расход топлива
-                </div>
-            </div>
-        </li>
-    </ul>
-    <ul class="dynamics__specs dynamics__specs--1">
-        <li class="dynamics__spec">
-            <div class="dynamics__specs-w dynamics__specs-w--0">
-                <div class="dynamics__description">
-					<span id="count3"></span> л.с.
-                </div>
-                <div class="dynamics__text">
-                    Максимальная мощность
-                </div>
-            </div>
-        </li>
-        <li class="dynamics__spec">
-            <div class="dynamics__specs-w dynamics__specs-w--1">
-                <div class="dynamics__description">
-					<span id="count4"></span>.1 сек
-                </div>
-                <div class="dynamics__text">
-                    Разгон до 100 км/ч
-                </div>
-            </div>
-        </li>
-        <li class="dynamics__spec">
-            <div class="dynamics__specs-w dynamics__specs-w--2">
-                <div class="dynamics__description">
-                    7.7 л / 100 км
                 </div>
                 <div class="dynamics__text">
                     Средний расход топлива
@@ -610,7 +573,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<specs-section car-id="26" model-type="Кроссовер" number-of-seats="5" engine="Бензиновый / Дизель" drive="Передний / Полный" gear-box="Автоматическая / Механическая"></specs-section>
+				<specs-section car-id="26" model-type="Кроссовер" number-of-seats="5" engine="Бензиновый / Дизель" drive="Передний / Полный" gear-box="Автоматическая / Механическая" car-name="Tucson"></specs-section>
 				<?php if(strlen($disclaimer) > 0) :?>
 				<div class="specs" style="padding-top: 0px;">
 				    <div class="section__center">
@@ -621,15 +584,27 @@
                     </div>
                 </div>
                 <?php endif; ?>
+
+				<div class="section__center">
+					@component('components/model-seo-text', ['model' => 'Hyundai Tucson'])@endcomponent
+				</div>
+
+				<div class="tags">
+					<div class="tags__center section__center">
+						<a class="tags__head js-toggle-tags" href="#">Теги</a>
+						<div class="tags__dd">
+							<h3 class="tags__title">Эту страницу находят по запросам:</h3>
+							<div class="tags__list">
+								обзор Хендай Туссан технические характеристики фото комплектации купить
+								<br>продажа Хундай Туксон комплектации цены авто тест-драйв автомобиль
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
-<div id="tdpopup">
-	<sign-up-test-drive-form-popup v-if="isVisible" page="isModelPage"></sign-up-test-drive-form-popup>
-</div>
-
 @endsection
 
 @section('scripts')

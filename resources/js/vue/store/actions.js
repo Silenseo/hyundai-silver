@@ -3,6 +3,7 @@ import router from '../router'
 import store from '../store'
 import Vue from 'vue'
 import analytics from '../analytics/index'
+// import { Base64 } from 'js-base64'
 
 export default {
   SET_APP_STATE ({ commit, state, getters }, data) {
@@ -93,6 +94,9 @@ export default {
           for (var key in complectation) {
             if (complectation[key].hasOwnProperty(query.exterior)) {
               options.exteriorColor = query.exterior
+            }
+            if (complectation[key].hasOwnProperty(query.exterior_detail)) {
+              options.exteriorColor = query.exterior_detail
             }
           }
         }
@@ -323,11 +327,81 @@ export default {
         return resolve('Already loaded.')
       }
       return axios.get(getters.GET_API_DEALERS_CREDIT).then((response) => {
-		commit('PUSH_DEALERS_CREDIT', response.data)
+        commit('PUSH_DEALERS_CREDIT', response.data)
         return resolve(response)
       }, (error) => {
         return reject(error)
       })
+    })
+  },
+  LOAD_SIMILAR_CAR ({ commit, getters }, id) {
+    return new Promise((resolve, reject)=>{
+
+      axios.get(getters.GET_API_CAR + id)
+        .then(response=>{
+          resolve(response.data)
+        })
+        .catch(error=>{
+          reject(error)
+        })
+    })
+  },
+  LOAD_SIMILAR ({ commit, getters }, data) {
+    return new Promise((resolve, reject) => {
+      // const tok = '1:1';
+      // const hash = Base64.encode(tok);
+      // const Basic = 'Basic ' + hash;
+
+      // axios.get(store.state.API.LOAD_SIMILAR, {
+      //   params: {},
+      //   withCredentials: true,
+      //   auth: {
+      //     username: 1,
+      //     password: 1
+      //   }
+      // })
+      //   .then((response)=>{
+      //     console.log(response);
+      //     console.log(response.headers['Authorization']);
+      //   })
+      //   .catch((error)=>{
+      //     console.log(error);
+      //   })
+
+      // let response = fetch(store.state.API.LOAD_SIMILAR, {
+      //   headers: {
+      //     Authentication: 'secret'
+      //   }
+      // });
+
+      // response()
+      //   .then((response)=>{
+      //     console.log(response);
+      //   })
+
+      axios.get(store.state.API.LOAD_SIMILAR, {
+        params: data
+      })
+        .then(r=>{
+          commit('SET_SIMILAR', r.data)
+
+          resolve()
+        })
+        .catch(error=>{
+          reject(error)
+        })
+      // fetch(store.state.API.LOAD_SIMILAR + '?car_id=' + data.car_id + '&modification_id=' + data.modification_id + '&complectation_id=' + data.complectation_id + '&package_id=' + data.package_id + '&color_exterior_id=' + data.color_exterior_id + '&color_interior_id=' + data.color_interior_id, {
+      //   method: 'GET',
+
+      //   credentials: 'include',
+      //   // headers: {'Authorization': 'Basic ' + btoa('1:1'),}
+      // })
+      // .then(response => response.json())
+      // .then(r=>{
+      //   commit('SET_SIMILAR', r)
+      // })
+
+
     })
   }
 }

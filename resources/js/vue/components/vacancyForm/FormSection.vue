@@ -100,6 +100,7 @@ import Selectize from 'vue2-selectize'
 import FormAccept from '@/components/common/FormAccept.vue'
 import axios from 'axios'
 import { setTimeout } from 'core-js';
+import Inputmask from "inputmask";
 
 export default {
     name: 'FormSection',
@@ -133,7 +134,7 @@ export default {
 				'Российский государственный гуманитарный университет (РГГУ)',
 				'Российский государственный социальный университет (РГСУ)',
 				'Российский университет дружбы народов (РУДН)',
-				'Финансовая академия при Правительстве Российской Федерации (ФА)',
+				'Финансовый университет при Правительстве РФ',
 				'Другой.'
 			],
 			settingsLevel: {
@@ -145,7 +146,7 @@ export default {
 				'Специалитет'
 			],
 			settingsLang: {
-				placeholder: 'Выберите уровень',
+				placeholder: 'Выберите уровень английского',
 				onDropdownOpen: this.psUpdate
 			},
 			languages: [
@@ -179,6 +180,19 @@ export default {
 				stage: '',
 				lang: ''
 			},
+			defaultUser: {
+				name: '',
+				surname: '',
+				patronymic: '',
+				phone: '',
+				email: '',
+				institute: '',
+				otherinstitute: '',
+				specialty: '',
+				level: '',
+				stage: '',
+				lang: ''
+			},
 			agreement: false,
 			process: false,
 			ps: [],
@@ -187,7 +201,14 @@ export default {
 			fileName: '',
 			fileError: false
         }
-    },
+	},
+	directives: {
+		mask: {
+			bind: function(el, binding) {
+				Inputmask(binding.value).mask(el);
+			}
+		}
+	},
     computed: {
 		validation () {
 			const reEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -250,6 +271,11 @@ export default {
 						if (response.data.status === 1) {
 							that.$store.dispatch('OPEN_SUCCESS', true);
 							that.sending = false
+							that.clearForm();
+							that.process = false;
+						} else if (response.data.status === 2) {
+							that.$root.$emit('notify', { type: 'error', text: 'Вы уже отправляли заявку на стажировку' })
+							that.sending = false
 						} else {
 							throw new Error('Ошибка');
 						}
@@ -262,11 +288,7 @@ export default {
 			} else {
 				//Скролл к первому не валидному полю
 				setTimeout(()=>{
-					if ($(window).outerWidth() > 1262) {
-						$('.vacancy').animate({ scrollTop: $('.invalid').eq(0).offset().top + $('.vacancy').scrollTop() - $('.header-main').height() }, 500);
-					} else {
-						$('html, body').animate({ scrollTop: $('.invalid').eq(0).offset().top - $('.header-main').height() }, 500);
-					}
+					if ($('.invalid:not([type="checkbox"])').length > 0) $('html, body').animate({ scrollTop: $('.invalid:not([type="checkbox"])').eq(0).offset().top - $('.header-main').height() }, 500);
 				}, 300)
 			}
 		},
@@ -293,6 +315,14 @@ export default {
 				this.fileError = true;
 				this.fileExist = false;
 			}
+		},
+		clearForm () {
+			this.user = Object.assign({}, this.defaultUser)
+			this.fileName = ''
+			this.fileExist = false
+			document.querySelector('#file').value = ''
+			
+			Object.keys(this.blur).forEach((key)=>{this.blur[key] = false})
 		}
     },
     filters: {

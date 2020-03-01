@@ -42,11 +42,22 @@ export default {
   },
   computed: {
     sourceArray () {
-      let folder = this.frames[this.ID].folder
-      let ext = this.frames[this.ID].extension
       let result = []
-      for (var i = 0; i < 36; i++) {
-        result.push(folder + '/' + i + '.' + ext)
+      if (this.frames[this.ID]) {
+        let folder = this.frames[this.ID].folder
+        let ext = this.frames[this.ID].extension
+        let sum = (this.frames[this.ID].sum ? this.frames[this.ID].sum : 36)
+        for (var i = 0; i < sum; i++) {
+          result.push(folder + '/' + i + '.' + ext)
+        }
+      } else {
+        let folder = this.frames.folder
+        let ext = this.frames.extension
+        let sum = (this.frames.sum ? this.frames.sum : 36)
+
+        for (var j = 0; j < sum; j++) {
+          result.push(folder + '/' + j + '.' + ext)
+        }
       }
       return result
     }
@@ -54,45 +65,84 @@ export default {
   methods: {
     set360 () {
       const vm = this
-      this.$spritespin.spritespin({
-        source: vm.sourceArray,
-        height: 316,
-        width: 700,
-        animate: false,
-        behavior: 'drag',
-        frame: vm.frame,
-        frames: 36,
-        frameTime: 40,
-        lanes: 1,
-        mods: ['drag', '360'],
-        module: null,
-        renderer: 'canvas',
-        reverse: false,
-        scrollThreshold: 500,
-        // responsive: true,
-        onInit: function () {
-          vm.isLoaded = false
-        },
-        onProgress: function () {
-          vm.$emit('lockControls', false)
-        },
-        onFrame: function () {
-          console.log(2);
-          if (vm.show360 && vm.isLoaded) {
-            vm.show360 = false;
-          }
-        },
-        onLoad: function () {
-          vm.isLoaded = true
-          vm.$emit('lockControls', false)
-        }
-      }).spritespin('api')
+      if (vm.frames[vm.ID]) {
+        console.log('frames', (vm.frames[vm.ID].sum ? vm.frames[vm.ID].sum : 36))
+        this.$spritespin.spritespin({
+          source: vm.sourceArray,
+          height: 316,
+          width: 700,
+          animate: false,
+          behavior: 'drag',
+          frame: vm.frame,
+          frames: (vm.frames[vm.ID].sum ? vm.frames[vm.ID].sum : 36),
+          frameTime: 40,
+          lanes: 1,
+          mods: ['drag', '360'],
+          module: null,
+          renderer: 'canvas',
+          reverse: false,
+          scrollThreshold: 500,
+          onInit: function () {
+            vm.isLoaded = false
+          },
+          onProgress: function () {
+            vm.$emit('lockControls', false)
+          },
+          onLoad: function () {
+            vm.isLoaded = true
+            vm.$emit('lockControls', false)
+          },
+          onFrame: function () {
+            if (vm.show360 && vm.isLoaded) {
+              vm.show360 = false;
+            }
+          },
+        }).spritespin('api')
 
-      let api = this.$spritespin.spritespin('api')
-      this.$spritespin.bind('onFrame', function () {
-        vm.frame = api.data.frame
-        vm.lastFrameSrc = api.data.source[vm.frame]
-      })
+        let api = this.$spritespin.spritespin('api')
+        this.$spritespin.bind('onFrame', function () {
+          vm.frame = api.data.frame
+          vm.lastFrameSrc = api.data.source[vm.frame]
+        })
+      } else {
+        this.$spritespin.spritespin({
+          source: vm.sourceArray,
+          height: 316,
+          width: 700,
+          animate: false,
+          behavior: 'drag',
+          frame: vm.frame,
+          frames: (vm.frames.sum ? vm.frames.sum : 36),
+          frameTime: 40,
+          lanes: 1,
+          mods: ['drag', '360'],
+          module: null,
+          renderer: 'canvas',
+          reverse: false,
+          scrollThreshold: 500,
+          onInit: function () {
+            vm.isLoaded = false
+          },
+          onProgress: function () {
+            vm.$emit('lockControls', false)
+          },
+          onLoad: function () {
+            vm.isLoaded = true
+            vm.$emit('lockControls', false)
+          },
+          onFrame: function () {
+            if (vm.show360 && vm.isLoaded) {
+              vm.show360 = false;
+            }
+          }
+        }).spritespin('api')
+
+        let api = this.$spritespin.spritespin('api')
+        this.$spritespin.bind('onFrame', function () {
+          vm.frame = api.data.frame
+          vm.lastFrameSrc = api.data.source[vm.frame]
+        })
+      }
     }
   },
   mounted () {

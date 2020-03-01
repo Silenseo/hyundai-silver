@@ -39,7 +39,7 @@
             </a>
         </li>
         <li class="nav__item">
-            <a target="_blank" href="{{ route('static_car23') }}/gallery" class="nav__link">
+            <a target="_blank" href="{{ route('static_dealerapi_car23', null, false) }}/gallery" class="nav__link">
                 Галерея
             </a>
         </li>
@@ -63,21 +63,30 @@
             <span>Свой для каждого.</span>
         </div>
     </div>
-    <div class="blue-label" style="display:none">
+    <div class="blue-label">
         <div class="blue-label__top">
             <span>от</span> <span id="price-from"></span> &#8381;
         </div>
         <hr>
-        <div class="blue-label__bottom">
+        <!-- <div class="blue-label__bottom">
             В кредит — от <span id="credit-from"></span> ₽/мес
+        </div> -->
+        <div class="blue-label__bottom">
+            Субсидия на покупку<br> 10% от&nbsp;стоимости
         </div>
+        <a href="https://www.hyundai.ru/promo/new_owners" class="blue-panel__more">
+            Подробнее
+            <svg>
+                <use xlink:href="#arrow-link"></use>
+            </svg>
+        </a>
     </div>
     <a href="#view360" class="js-next-slide banner__circle scroll"></a>
     <!-- <div class="preloader__inner"></div> -->
 
 	<div id="hotbuttons">
 		<!-- Установим активной модель. model Св-во codeName!!!!!! -->
-		<hot-buttons :car-id="23" model="solaris" :buttons="[1,1,1]"></hot-buttons>
+		<hot-buttons :car-id="23" model="solaris" :buttons="[1,1,1,1]" page="isModelPage"></hot-buttons>
 	</div>
 </section>
 
@@ -437,14 +446,14 @@
         </li>
         <li class="s-parallax__item s-parallax__item--50 lazyload lazypreview" data-order="2" data-bgset="/images/cars/Solaris/pics/5_tech/s2.jpg [(max-width: 640px)] | /images/cars/Solaris/pics/5_tech/s2.jpg">
             <div class="s-parallax__description">
-                <span>Государственная система экстренного реагирования при авариях «ЭРА-ГЛОНАСС»</span> – это использование технологий ГЛОНАСС в целях повышения безопасности на транспорте.
+            Изображение <span>с камеры заднего вида</span> транслируется на большой дисплей центральной консоли, а динамическая разметка на мониторе поможет с легкостью рассчитать траекторию движения автомобиля.
             </div>
         </li>
     </ul>
     <ul class="s-parallax__list s-parallax__list--right">
         <li class="s-parallax__item s-parallax__item--right s-parallax__item--50 lazyload lazypreview" data-order="4" data-bgset="/images/cars/Solaris/pics/5_tech/s3.jpg [(max-width: 640px)] | /images/cars/Solaris/pics/5_tech/s3.jpg">
             <div class="s-parallax__description">
-                Изображение <span>с камеры заднего вида</span> транслируется на большой дисплей центральной консоли, а динамическая разметка на мониторе поможет с легкостью рассчитать траекторию движения автомобиля.
+                <span>Государственная система экстренного реагирования при авариях «ЭРА-ГЛОНАСС»</span> – это использование технологий ГЛОНАСС в целях повышения безопасности на транспорте.
             </div>
         </li>
         <li class="s-parallax__item s-parallax__item--right s-parallax__item--50 lazyload lazypreview" data-order="3" data-bgset="/images/cars/Solaris/pics/5_tech/s4.jpg [(max-width: 640px)] | /images/cars/Solaris/pics/5_tech/s4.jpg">
@@ -459,7 +468,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<specs-section car-id="23" model-type="Седан" number-of-seats="5" engine="Бензиновый" drive="Передний" gear-box="Механическая / Автоматическая"></specs-section>
+				<specs-section car-id="23" model-type="Седан" number-of-seats="5" engine="Бензиновый" drive="Передний" gear-box="Механическая / Автоматическая"  car-name="Solaris"></specs-section>
 				<?php if(strlen($disclaimer) > 0) :?>
 				<div class="specs" style="padding-top: 0px;">
 				    <div class="section__center">
@@ -470,15 +479,14 @@
                     </div>
                 </div>
                 <?php endif; ?>
+
+				<div class="section__center">
+					@component('components/model-seo-text', ['model' => 'Hyundai Solaris'])@endcomponent
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
-<div id="tdpopup">
-	<sign-up-test-drive-form-popup v-if="isVisible" page="isModelPage"></sign-up-test-drive-form-popup>
-</div>
-
 @endsection
 
 @section('scripts')

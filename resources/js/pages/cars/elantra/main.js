@@ -26,15 +26,6 @@ $(function () {
 		}
 	});
 
-	//Открыть попап записи на тестдрайв
-	$('.js-open-p-td').on('click', function (e) {
-		e.preventDefault();
-
-		//Установим активной модель. Св-во code!!!!!!
-		vueStore.dispatch('SET_SAVED_MODEL', 'elantra');
-		vueStore.dispatch('OPEN_TEST_DRIVE_POPUP', true);
-	})
-
 	var controller = new ScrollMagic.Controller();
 
 	if ($(window).outerWidth() >  1262) {
@@ -370,4 +361,30 @@ $(function () {
 		$('.safety--4').addClass('isEntered');
 		safety1.destroy();
 	});
+
+	//Hint Popup Start
+    $('.js-show-df-hint-popup').on('click', function(e){
+        e.preventDefault();
+        var popup = $(this).parent('.df-help').find('.df-hint-popup');
+
+        if (popup.hasClass('df-hint-popup--left') || popup.hasClass('df-hint-popup--right')) {
+            return null;
+        }
+
+        popup.addClass('df-hint-popup--right');
+    })
+
+    $('.js-close-df-hint-popup').on('click', function (e) {
+        e.preventDefault();
+        var popup = $(this).parent('.df-hint-popup');
+
+        popup.removeClass('df-hint-popup--right');
+    })
+
+    $(window).on('click', function(e){
+        if ($(e.target).closest('.df-hint-popup').length === 0 && $(e.target).closest('.js-show-df-hint-popup').length === 0) {
+            $('.df-hint-popup').removeClass('df-hint-popup--right');
+        }
+    })
+    //Hint Popup End
 })

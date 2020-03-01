@@ -45,6 +45,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
     name: 'CardsList',
     components: {
@@ -56,20 +58,10 @@ export default {
         }
     },
     computed: {
-
+		...mapGetters({
+			ENV: "GET_ENV",
+		}),
     },
-    methods: {
-
-    },
-    filters: {
-
-    },
-    mounted () {
-
-    },
-    watch: {
-
-    }
 }
 </script>
 

@@ -39,7 +39,11 @@ export default {
     return getters.GET_COMPLECTATION_ID !== 0 ? state.API.CALCULATIONS + getters.GET_COMPLECTATION_ID + '/' + getters.GET_EXTERIOR_PRICE + '/' + getters.GET_CURRENT_PACKETS_PRICE : null
   },
   GET_API_SEND_EMAIL: (state, getters) => {
-    return state.API.SEND_EMAIL
+    if (getters.GET_ENV === 'dealer') {
+      return state.API.SEND_EMAIL_DEALER
+    } else {
+      return state.API.SEND_EMAIL
+    }
   },
   GET_API_GET_PDF: (state, getters) => {
     return state.API.GET_PDF
@@ -58,6 +62,9 @@ export default {
   },
   GET_API_TESTDRIVE: (state, getters) => {
     return state.API.SEND_TESTDRIVE
+  },
+  GET_API_CHECK_CREDIT: (state, getters) => {
+    return state.API.CHECK_CREDIT
   },
   GET_CARS: (state) => {
     return state.cars
@@ -236,7 +243,7 @@ export default {
   },
   GET_COMPLECTATION_PRICE: (state, getters) => {
     if (getters.GET_COMPLECTATION_OBJECT) {
-      return getters.GET_COMPLECTATION_OBJECT.price
+      return +getters.GET_COMPLECTATION_OBJECT.price
     } else {
       return 0
     }
@@ -261,7 +268,7 @@ export default {
       let priceValue = 0
       // get and summ price for every packet's id from the current selected array of packets
       for (var i = packets.length - 1; i >= 0; i--) {
-        priceValue += getters.GET_PACKETS_LIST[packets[i]].price
+        priceValue += (+getters.GET_PACKETS_LIST[packets[i]].price)
       }
       return priceValue
     } else {
@@ -322,8 +329,14 @@ export default {
       if (mod) {
         let complect = mod.complectations[+state.configuration.complectation]
         if (complect) {
-          if ('exterior' in complect) {
-            if ('colors' in complect.exterior) {
+          if ('exterior_detail' in complect) {
+            if ('colors' in complect.exterior_detail) {
+              return complect.exterior_detail
+            } else { // Если в комплектации нет цветов, то берём их из старого источника
+              return getters.GET_EXTERIOR_OLD
+            }
+          } else if('exterior' in complect) {
+              if ('colors' in complect.exterior) {
               return complect.exterior
             } else { // Если в комплектации нет цветов, то берём их из старого источника
               return getters.GET_EXTERIOR_OLD
@@ -354,7 +367,9 @@ export default {
       if (mod) {
         let complect = mod.complectations[+state.configuration.complectation]
         if (complect) {
-          if ('interior' in complect) {
+          if ('interior_detail' in complect) {
+            return complect.interior_detail
+          } else if ('interior' in complect) {
             if ('colors' in complect.interior) {
               return complect.interior
             } else { // Если в комплектации нет цветов, то берём их из старого источника
@@ -427,15 +442,20 @@ export default {
     }
   },
   GET_INTERIOR_COLORS: (state, getters) => {
-    if (getters.GET_INTERIOR !== null && getters.GET_INTERIOR.colors !== null && getters.GET_INTERIOR.colors.colorObj !== null) {
-      return getters.GET_INTERIOR.colors.colorObj
+    console.log(getters.GET_INTERIOR)
+    if (getters.GET_INTERIOR !== null && getters.GET_INTERIOR.colors !== null) {
+      if (getters.GET_INTERIOR.colors.colorObj) {
+        return getters.GET_INTERIOR.colors.colorObj
+      } else {
+        return getters.GET_INTERIOR.colors
+      }
     } else {
       return null
     }
   },
   GET_EXTERIOR_PRICE: (state, getters) => {
     if (getters.GET_EXTERIOR_COLORS && getters.GET_EXTERIOR_COLORS[getters.GET_EXTERIOR_COLOR]) {
-      return getters.GET_EXTERIOR_COLORS[getters.GET_EXTERIOR_COLOR].cost
+      return +getters.GET_EXTERIOR_COLORS[getters.GET_EXTERIOR_COLOR].cost
     } else {
       return 0
     }
@@ -454,16 +474,45 @@ export default {
       return 0
     }
   },
+  GET_CUSTOM_360: (state, getters) => {
+    let sp360 = getters.GET_COMPLECTATION_OBJECT.complectation_360
+    let ext = getters.GET_CURRENT_CONFIGURATION.exteriorColor
+    let intc = getters.GET_CURRENT_CONFIGURATION.interiorColor
+    let packets = getters.GET_CURRENT_CONFIGURATION.packets.join(',')
+    console.log(packets)
+
+    let default360 = sp360[ext][intc][0]
+
+    for (let i = 0; i < sp360[ext][intc].length; i++) {
+      if (packets === sp360[ext][intc][i].packet_id) {
+        return sp360[ext][intc][i]
+      }
+    }
+
+    return default360
+  },
   GET_360: (state, getters) => {
     if (getters.GET_EXTERIOR) {
-      return getters.GET_EXTERIOR.spritespin
+      if (getters.GET_EXTERIOR.spritespin) {
+        return getters.GET_EXTERIOR.spritespin
+      } else if(getters.GET_CURRENT_ID != 16) {
+        return getters.GET_CUSTOM_360.spritespin
+      } else {
+        return null
+      }
     } else {
       return null
     }
   },
   GET_PANORAMA (state, getters) {
-    if (getters.GET_INTERIOR && getters.GET_INTERIOR.panorama) {
-      return getters.GET_INTERIOR.panorama
+    if (getters.GET_INTERIOR) {
+      if (getters.GET_INTERIOR.panorama) {
+        return getters.GET_INTERIOR.panorama
+      } else if(getters.GET_CURRENT_ID != 16) {
+        return getters.GET_CUSTOM_360.interior.panorama
+      } else {
+        return null
+      }
     } else {
       return null
     }
@@ -547,6 +596,12 @@ export default {
     return state.dealerCreditList || []
   },
   GET_IS_DEALER: (state) => {
-    return state.isDealer
+    return process.env.MIX_BUILD === 'dealer'
+  },
+  GET_SIMILAR_MODELS: (state) => {
+    return state.similar.models
+  },
+  GET_SIMILAR_SIMILARMODELS: (state) => {
+    return state.similar.similar_models
   }
 }

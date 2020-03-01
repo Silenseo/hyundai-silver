@@ -12,7 +12,9 @@ class SEO extends Model
         'meta_title',
         'meta_keywords',
         'meta_description',
-        'og_title'
+        'og_title',
+        'og_image',
+        'og_description'
     ];
     //
 }

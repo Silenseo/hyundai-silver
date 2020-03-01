@@ -600,58 +600,59 @@ h6, .h6
 
 //Попап подсказки
 .df-hint-popup
-    visibility: hidden
-    position: absolute
-    bottom: 40px
-    left: -225px
-    width: 280px
-    padding: 25px
-    background-color: $white_bg
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.16)
-    z-index: 100
-    opacity: 0
-    transition: opacity 0.3s
-    font-family: $default-font
-    &::after
-        content: ''
-        display: block
-        position: absolute
-        bottom: -5px
-        width: 15px
-        height: 15px
-        background-color: $white_bg
-        transform: rotate(45deg)
-    &--right
-        visibility: visible
-        opacity: 1
-        left: -25px
-        &::after
-            left: 25px
-    &--left
-        visibility: visible
-        opacity: 1
-        left: -225px
-        &::after
-            left: 225px
+	visibility: hidden
+	position: absolute
+	bottom: 40px
+	left: -225px
+	width: 280px
+	padding: 25px
+	background-color: $white_bg
+	box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.16)
+	z-index: 100
+	opacity: 0
+	transition: opacity 0.3s
+	font-family: $default-font
+	&::after
+		content: ''
+		display: block
+		position: absolute
+		bottom: -5px
+		width: 15px
+		height: 15px
+		background-color: $white_bg
+		transform: rotate(45deg)
+	&--right
+		visibility: visible
+		opacity: 1
+		left: -25px
+		&::after
+			left: 25px
+	&--left
+		visibility: visible
+		opacity: 1
+		left: -225px
+		&::after
+			left: 225px
 
 
-    &__close
-        position: absolute
-        display: block
-        top: 16px
-        right: 16px
-        width: 8px
-        height: 8px
-        background: transparent
-        svg
-            display: block
-            max-width: 100%
-            max-height: 100%
-    &__text
-        margin-top: 10px
-        font-size: 1.2rem
-        line-height: 18px
-        color: $text_black
+	&__close
+		position: absolute
+		display: block
+		top: 16px
+		right: 16px
+		width: 8px
+		height: 8px
+		background: transparent
+		svg
+			display: block
+			max-width: 100%
+			max-height: 100%
+	&__text
+		margin-top: 10px
+		font-size: 1.2rem
+		line-height: 18px
+		color: $text_black
+		font-family: $default-font-1
 
 // Таблица
 .df-table
@@ -1274,6 +1275,28 @@ body
         color: $text_black
         margin-top: 19px
 
+//Основной баннер, внизу медиазапросы
+.df-main-banner
+	background-repeat: no-repeat
+	background-position: 50%
+	background-size: cover
+	&__wrap
+		max-width: 1792px
+	&__inner
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: cover
+		padding: 32px 43px
+		height: 650px
+		color: #fff
+	&__title
+		font-size: 5.5rem
+		line-height: 1.23
+	&__subtitle
+		margin-top: 4px
+		font-size: 3rem
+		line-height: 1.067
+
 //Credit banner
 .df-credit-banner
     font-family: $default-font
@@ -1720,6 +1743,12 @@ $padding-bottom-sm: 20px
 // 		background-size: cover!important
 
 /*==========  Desktop First  ==========*/
+@media only screen and (max-width : 1850px)
+	.df-main-banner
+		&__wrap
+			max-width: 1536px
+		&__inner
+			height: 545px
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : $xl-max)
@@ -1730,6 +1759,11 @@ $padding-bottom-sm: 20px
         padding-left: 32px
         padding-right: 32px
 
+	.df-main-banner
+		&__wrap
+			max-width: 1280px
+		&__inner
+			height: 440px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : $lg-max)
@@ -1763,6 +1797,12 @@ $padding-bottom-sm: 20px
         font-size: 18px
         line-height: 1.22
 
+    .df-main-banner
+        &__title
+            font-size: 38px
+            line-height: 40px
+
+
     body
         .date-picker-wrapper
             padding: 35px 27px 8px 27px!important
@@ -1771,6 +1811,16 @@ $padding-bottom-sm: 20px
                     .day
                         line-height: 17px
                         padding: 0 9px
+
+@media only screen and (max-width : 640px)
+	.df-main-banner
+		&__inner
+			height: 120vw
+			padding: 24px 16px
+		&__subtitle
+			margin-top: 8px
+			font-size: 18px
+			line-height: 22px
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)

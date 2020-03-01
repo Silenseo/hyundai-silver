@@ -39,7 +39,7 @@
             </a>
         </li>
         <li class="nav__item">
-            <a target="_blank" href="{{ route('static_car22') }}/gallery" class="nav__link">
+            <a target="_blank" href="{{ route('static_dealerapi_car22', null, false) }}/gallery" class="nav__link">
                 Галерея
             </a>
         </li>
@@ -54,7 +54,7 @@
     </div>
 </section>
 
-<section class="banner section section--big lazyload lazypreview" data-bgset="/images/cars/creta/m_pics/01_title/title1.jpg [(max-width: 640px)] | /images/cars/creta/pics/title1.jpg">
+<section class="banner section section--big lazyload lazypreview" data-bgset="/images/cars/creta/m_pics/01_title/title1.jpg [(max-width: 640px)] | /images/cars/creta/pics/title2.jpg">
     <div class="banner__head">
         <h1 class="banner__title">
             <span>Hyundai CRETA.</span>
@@ -63,21 +63,30 @@
             <span>Для дорог и направлений!</span>
         </div>
     </div>
-    <div class="blue-label" style="display:none">
+    <div class="blue-label">
         <div class="blue-label__top">
             <span>от</span> <span id="price-from"></span> &#8381;
         </div>
         <hr>
-        <div class="blue-label__bottom">
+        <!-- <div class="blue-label__bottom">
             В кредит — от <span id="credit-from"></span> ₽/мес
+        </div> -->
+        <div class="blue-label__bottom">
+            Субсидия на покупку<br> 10% от&nbsp;стоимости
         </div>
+        <a href="https://www.hyundai.ru/promo/family_car" class="blue-panel__more">
+            Подробнее
+            <svg>
+                <use xlink:href="#arrow-link"></use>
+            </svg>
+        </a>
     </div>
     <a href="#view360" class="js-next-slide banner__circle scroll"></a>
     <!-- <div class="preloader__inner"></div> -->
 
 	<div id="hotbuttons">
 		<!-- Установим активной модель. model Св-во codeName!!!!!! -->
-		<hot-buttons :car-id="22" model="creta" :buttons="[1,1,1]"></hot-buttons>
+		<hot-buttons :car-id="22" model="creta" :buttons="[1,1,1,1]" page="isModelPage"></hot-buttons>
 	</div>
 </section>
 
@@ -438,7 +447,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<specs-section car-id="22" model-type="Кроссовер" number-of-seats="5" engine="Бензиновый" drive="Передний / Полный" gear-box="Механическая / Автоматическая"></specs-section>
+				<specs-section car-id="22" model-type="Кроссовер" number-of-seats="5" engine="Бензиновый" drive="Передний / Полный" gear-box="Механическая / Автоматическая" car-name="Creta"></specs-section>
 				<?php if(strlen($disclaimer) > 0) :?>
 				<div class="specs" style="padding-top: 0px;">
 				    <div class="section__center">
@@ -449,15 +458,14 @@
                     </div>
                 </div>
                 <?php endif; ?>
+
+				<div class="section__center">
+					@component('components/model-seo-text', ['model' => 'Hyundai Creta'])@endcomponent
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
-<div id="tdpopup">
-	<sign-up-test-drive-form-popup v-if="isVisible" page="isModelPage"></sign-up-test-drive-form-popup>
-</div>
-
 @endsection
 
 @section('scripts')

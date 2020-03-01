@@ -36,9 +36,17 @@
                 {{ Form::adminInput('og_title', $seo->og_title, ['placeholder' => 'Введите og:title', 'publicName' => 'og:title']) }}
         </div>
 
-          <div class="content__line">
-              <button class="button button--large" type="submit">Сохранить</button>
-              <button class="button button--large button--grey">Отменить</button>
-            </div>
+        <div class="content__line">
+                {{ Form::adminInput('og_image', $seo->og_image, ['placeholder' => 'Введите og:image', 'publicName' => 'og:image']) }}
+        </div>
+
+        <div class="content__line">
+                {{ Form::adminInput('og_description', $seo->og_description, ['placeholder' => 'Введите og:description', 'publicName' => 'og:description']) }}
+        </div>
+
+        <div class="content__line">
+          <button class="button button--large" type="submit">Сохранить</button>
+          <button class="button button--large button--grey">Отменить</button>
+        </div>
       </form>
 @endsection

@@ -1,0 +1,301 @@
+@import '../../../common/_variables.scss'
+
+.banner
+	padding-top: 30px
+	background-image: url('/images/bgr_1.jpg')
+	&__inner
+		position: relative
+		color: #000
+		margin-top: 30px
+		background-position: center
+	&__buttons
+		position: absolute
+		left: 48px
+		bottom: 80px
+	&__button
+		display: inline-block
+		max-width: 128px
+		&:not(:last-of-type)
+			margin-right: 15px
+
+.about
+	padding-top: 80px
+	background-color: $gray_bg
+	&__title
+		text-align: center
+		margin-bottom: 64px
+	.owl-stage
+		display: flex!important
+		padding-bottom: 80px
+	&__item
+		position: relative
+		height: 100%
+		padding: 32px 32px 44px
+		background-color: #fff
+		overflow: hidden
+		transition: 0.3s
+		&:hover
+			box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.16)
+			.about__back
+				background-color: #00AAD2
+	&__back
+		position: absolute
+		top: -280px
+		right: -100px
+		width: 434px
+		height: 434px
+		border-radius: 50%
+		background-color: #E4DCD3
+		transition: 0.3s
+		overflow: hidden
+		img
+			display: block
+			max-width: 100%
+			height: auto
+	&__icon
+		position: relative
+		width: 104px
+		height: 104px
+		border-radius: 50%
+		background-color: #F1F1F1
+		margin-bottom: 24px
+		svg
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+	&__description
+		position: relative
+		font-size: 30px
+		line-height: 36px
+		font-weight: 500
+		margin-bottom: 16px
+	&__text
+		position: relative
+		font-size: 16px
+		line-height: 24px
+	&__option
+		position: relative
+		padding-left: 26px
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			left: 0
+			top: 0.4em
+			width: 10px
+			height: 10px
+			border-radius: 50%
+			background-color: $second_blue
+		&:not(:last-of-type)
+			margin-bottom: 10px
+
+
+.desc
+	padding: 80px 0
+	background-color: #FFF
+	&__title
+		text-align: center
+		margin-bottom: 64px
+	&__text
+		font-size: 22px
+		line-height: 32px
+		color: #000
+		text-align: center
+		max-width: 800px
+		margin: 0 auto
+		&--blue
+			color: $main_blue
+			margin-top: 16px
+
+
+.features
+	padding: 80px 0
+	background-color: #F6F3F2
+	&__title
+		margin-bottom: 64px
+		text-align: center
+	&__body
+		display: flex
+		flex-wrap: wrap
+		max-width: 80%
+		margin: 0 auto
+	&__left
+		width: 50%
+		padding-right: 30px
+	&__right
+		width: 50%
+		padding-left: 30px
+	&__item
+		position: relative
+		padding-left: 26px
+		font-size: 1.6rem
+		line-height: 1.5
+		font-family: $default-font-1
+		color: #000
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			top: 0.5em
+			left: 0
+			width: 10px
+			height: 10px
+			border-radius: 50%
+			background-color: $second_blue
+		&:not(:last-of-type)
+			margin-bottom: 15px
+	&__desc
+		max-width: 80%
+		margin: 32px auto 0
+		font-size: 14px
+		line-height: 16px
+		color: #B7B7B7
+
+.disclamers
+	font-size: 11px
+    line-height: 13px
+	&__inner
+		max-width: 83%
+		margin: 0 auto
+	&__list
+		padding-bottom: 50px
+	&__item
+		&:not(:last-of-type)
+			margin-bottom: 10px
+	&__opener
+		display: flex
+		align-items: center
+		justify-content: space-between
+		color: $third_text
+		font-size: 16px
+		line-height: 24px
+		font-weight: 500
+		padding: 62px 0
+		cursor: pointer
+		span
+			display: block
+			margin-right: 20px
+		&.open
+			svg
+				transform: rotate(180deg)
+
+@media only screen and (max-width : $lg-max)
+	.features
+		&__body
+			max-width: 100%
+		&__desc
+			max-width: 100%
+
+	.desc
+		&__title br
+			display: none
+
+@media only screen and (max-width : 1023px)
+	.about
+		padding-top: 70px
+		padding-bottom: 70px
+		&__inner
+			width: calc(100% + 80px)
+			margin-left: -40px
+			margin-right: -40px
+		&__title
+			margin-left: 40px
+			margi-right: 40px
+		&__back
+			background-color: $second_blue		
+		.owl-stage
+			padding-bottom: 48px
+		.owl-dots
+			display: flex
+			align-items: center
+			justify-content: center
+			width: 100%
+		.owl-dot
+			display: block
+			width: 12px
+			height: 12px
+			border-radius: 50%
+			background-color: rgba(#000, 0.1)!important
+			transition: 0.3s
+			&.active
+				background-color: $second_blue!important
+			&:not(:last-of-type)
+				margin-right: 10px
+
+	.desc
+		padding: 70px 0
+		&__title
+			margin-bottom: 16px
+
+	.features
+		padding: 70px 0
+
+	.disclamers
+		&__inner
+			max-width: 100%
+		&__opener
+			padding: 36px 0
+
+
+@media (max-width: 767px)
+	.about
+		&__inner
+			width: calc(100% + 32px)
+			margin-left: -16px
+			margin-right: -16px
+		&__title
+			margin-left: 16px
+			margi-right: 16px
+
+
+@media only screen and (max-width : 640px)
+	.banner
+		padding-top: 20px
+		&__inner
+			margin-top: 20px
+			min-height: 438px
+
+	.about
+		padding-top: 40px
+		padding-bottom: 40px
+		&__title
+			margin-bottom: 32px
+		&__item
+			padding: 16px 16px 30px
+		&__back
+			top: -300px
+		&__description
+			font-size: 20px
+			line-height: 24px
+		.owl-stage
+    	padding-bottom: 27px
+
+	.desc
+		padding-top: 40px
+		padding-bottom: 40px
+		&__title
+			margin-bottom: 32px
+
+	.features
+		padding: 40px 0
+		&__title
+			margin-bottom: 48px
+		&__left, &__right
+			width: 100%
+			padding: 0
+		&__right
+			margin-top: 15px
+
+	.disclamers__opener
+		font-size: 12px
+		line-height: 16px
+
+
+@media only screen and (max-width : 480px)
+	.about
+		&__back
+			right: -176px

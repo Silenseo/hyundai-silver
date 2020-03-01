@@ -381,7 +381,7 @@ class ServiceCalculatorController extends Controller
         $f = true;
         while($row = fgetcsv($handle, 0, ';'))
         {
-            if(strtolower($row[3]) == $carCode && $row[4] == $engine && $row[5] == $enginetype && $row[0] == $dealer)
+            if(strtolower(str_replace(' ', '', $row[3])) == $carCode && $row[4] == $engine && $row[5] == $enginetype && $row[0] == $dealer)
             {
                 $r = $row;
                 $repairs = round($row[$pricesIds["repairs"]]);
@@ -401,8 +401,6 @@ class ServiceCalculatorController extends Controller
         fclose($handle);
 
         $out = [];
-        //$out["path"] = $path;
-        
         if($total > 0) {
             if($sparesOut == 1)
                 $total = $repairs + $pl2spares;
@@ -410,6 +408,11 @@ class ServiceCalculatorController extends Controller
             $out["repairs"] = number_format($repairs, 0, '', ' ') . ' &#8381;';
             $out["originspares"] = number_format($originspares, 0, '', ' ') . ' &#8381;';
             $out["pl2spares"] = $pl2spares ? number_format($pl2spares, 0, '', ' ') . ' &#8381;' : null;
+
+            $out["total_nf"] = $total ? $total : null;
+            $out["repairs_nf"] = $repairs;
+            $out["originspares_nf"] = $originspares;
+            $out["pl2spares_nf"] = $pl2spares ? $pl2spares : null;
         } else {
             $out  = 0;
         }

@@ -14,7 +14,7 @@ var scenarios = []; // The array that'll have the URL paths to check
 // if you use one of the options below to pass in, e.g. --env=dev
 var environments = {
   'dev': 'http://hyundai',
-  'staging': 'http://new-hyundai.familyagency.ru/',
+  'staging': 'http://new-hyundai.familyagency.ru',
   'prod': 'https://hyundai.ru'
 };
 var default_environment = 'dev';

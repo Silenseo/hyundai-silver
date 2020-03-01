@@ -6,6 +6,15 @@
 				svg
 					stroke: #fff
 
+
+@media (max-width : 1800px)
+	.champ1
+		.champ
+			&__info
+				&-sign
+					margin-left: 75px
+
+
 @media only screen and (max-width : $xl-max)
 	.intro
 		&__inner
@@ -14,7 +23,7 @@
 	.who
 		margin-top: -60px
 		padding-top: 207px
-		padding-bottom: 185px
+		padding-bottom: 100px
 		background-position: 120% -154px, 41vw -220px
 		background-size: 575px, 1110px
 		&__inner
@@ -34,6 +43,43 @@
 			height: 598px
 		&__description-in
 			max-width: 488px
+
+	.champ
+		&__inner
+			margin-top: 50px
+		&__graph
+			margin-left: 0px
+		&__back
+			width: 603px
+			height: 387px
+		&__wrapper
+			margin-top: -500px
+			margin-left: 0
+	
+	.champ1
+		margin-top: -60px
+		padding-top: 207px
+		padding-bottom: 0px
+		background-size: 700px
+		.champ
+			&__wrapper
+				margin-left: 0
+			&__info
+				padding-left: 0
+				&-sign
+					margin-left: 0
+				&-desc
+					padding-left: 0
+					padding-right: 50px
+
+	.champ2
+		margin-top: -60px
+		padding-top: 150px
+		padding-bottom: 100px
+		.champ
+			&__info
+				&-desc
+					padding-left: 50px
 
 	.team
 		padding-top: 144px
@@ -55,6 +101,17 @@
 		background-position: 100% 105%
 		&__description
 			margin-top: 71px
+
+
+@media (max-width : 1400px)
+	.champ
+		&__img
+			width: 700px
+	.champ1 .champ__info
+    width: calc(100% - 700px)
+	.champ2 .champ__info
+    width: calc(100% - 700px)
+
 
 @media only screen and (max-width : $lg-max)
 	.intro
@@ -81,6 +138,46 @@
 			justify-content: flex-start
 			margin-top: 40px
 			padding-left: 140px
+
+	.champ
+		&__n
+			display: none
+		&__graph
+			margin-left: 0px
+		&__img		
+			margin-right: 0
+			margin-left: 65px
+			height: 660px
+		&__wrapper
+			margin-top: -400px
+			flex-direction: column
+
+
+	.champ1 .champ__info
+		width: 700px
+		display: flex
+	.champ1 .champ__info-desc
+    padding-left: 50px
+    padding-right: 0
+	.champ2 .champ__info
+		width: 700px
+		display: flex
+	.champ2 .champ__info-desc
+    padding-left: 50px
+    padding-right: 0
+	.champ2 .champ__wrapper
+		flex-direction: column-reverse
+	.champ2 .champ__back 
+		margin-left: 0
+		top: 270px		
+	.champ1 .champ__back 
+		margin-left: 0
+		top: 270px
+	.champ1 .champ__info-sign
+    margin-bottom: 50px
+	.champ2 .champ__info-sign
+    margin-bottom: 50px
+
 
 	.team
 		padding-top: 90px
@@ -112,6 +209,25 @@
 		&__inner
 			height: 952px
 			background-image: url("/images/brand/motorsport/img/banner-med.jpg")
+
+	.champ2 .champ__info-sign
+    margin-bottom: 0px
+	.champ2 .champ__info-desc-text
+		margin-bottom: 0
+
+
+@media (max-width : 900px)
+	.champ__img
+		width: calc(100% - 65px)
+		height: 73vw
+	.champ__back 
+    width: 66vw
+    height: 43vw
+	.champ1 .champ__back
+    top: 30vw
+	.champ2 .champ__back
+    top: 17vw
+
 
 @media only screen and (max-width : $md-max)
 	.banner
@@ -156,6 +272,48 @@
 		&__text
 			font-size: 16px
 			line-height: 24px
+
+	.champ__title
+		line-height: 1
+
+	.champ1
+		background-size: 80vw
+		margin-top: -50px
+		padding-top: 250px
+		.champ__info-desc-title
+			font-size: 30px
+			line-height: 32px
+			margin-bottom: 11px
+		.champ__info-desc
+    	padding-left: 32px
+		.champ__info-desc-text
+			font-size: 16px
+			line-height: 24px
+		.champ__back 
+    	top: 10vw
+		.champ__info
+			width: 100%
+
+	.champ2
+		margin-top: -60px
+		padding-top: 260px
+		padding-bottom: 0
+		.champ__info
+			width: 100%
+		.champ__info-desc
+    	padding-left: 32px
+		.champ__info-desc-title
+			font-size: 30px
+			line-height: 32px
+			margin-bottom: 11px
+		.champ__info-desc-text
+			font-size: 16px
+			line-height: 24px
+		.champ__info-sign-points
+			font-size: 48px
+			line-height: 1
+		.champ__back 
+    	top: 2vw
 
 	.team
 		padding-top: 32px
@@ -220,3 +378,88 @@
 			height: 48px
 			background-size: 25px
 			margin-left: -24px
+
+
+@media (max-width : 640px)
+	.champ__img
+		width: calc(100% - 32px)
+		margin-left: 32px
+
+	.champ1
+    margin-top: -50px
+    padding-top: 300px
+	.win__icon
+    width: 100px
+	.champ1 .champ__info-sign-title
+		font-size: 18px
+	.champ1 .champ__info-desc-text
+		margin-bottom: 24px
+	.champ1 .champ__info-desc-title
+		font-size: 24px
+		line-height: 28px
+	.champ1 .champ__info-desc
+    padding-left: 34px
+
+	.champ2
+    margin-top: -50px
+    padding-top: 300px
+	.champ2 .champ__info-sign-title
+		font-size: 18px
+	.champ2 .champ__info-desc-text
+		margin-bottom: 24px
+	.champ2 .champ__info-desc-title
+		font-size: 24px
+		line-height: 28px
+	.champ2 .champ__info-desc
+    padding-left: 34px
+	.champ2	.champ__img
+		margin-left: 32px
+
+
+@media (max-width : 480px)
+	.champ1
+		padding-top: 320px
+	.champ1 .champ__info-sign
+		max-width: 200px
+		margin-bottom: 24px
+	.champ1 .champ__info-desc
+		padding-left: 0
+	.champ1 .champ__back
+    top: 27vw
+
+	.champ2 .champ__info-sign
+		max-width: 200px
+		margin-bottom: 24px
+	.champ2 .champ__info-desc
+		padding-left: 0
+	.champ2 .champ__back
+    top: 5vw
+	.champ2 .champ__info-sign
+		margin-right: auto
+	.champ2 .champ__info-sign-points span
+		font-size: 24px
+
+	.champ__info
+		align-items: center
+		flex-direction: column
+
+	.champ__title br
+		display: none
+
+
+@media (max-width : 415px)
+	.champ1
+    padding-top: 350px
+	.champ2
+		padding-top: 320px
+
+
+@media (max-width : 375px)
+	.champ__title
+		font-size: 34px
+	.champ1
+		padding-top: 360px
+		padding-bottom: 20px
+
+	.champ1 .champ__back
+    top: 35vw

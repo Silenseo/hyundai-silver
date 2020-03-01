@@ -1,0 +1,50 @@
+.t-showroom
+	display: flex
+	flex-wrap: wrap
+
+.t-car
+	position: relative
+	width: calc(100% / 4)
+	padding: 24px 48px 31px
+	background-color: #fff
+	color: #000
+	border: 1px solid #E3E3E3
+	margin-left: -1px
+	margin-top: -1px
+	transition: 0.3s
+	cursor: pointer
+	&:hover
+		background-color: #c3b9af
+	&__name
+		font-size: 2rem
+		line-height: 1.2
+		font-weight: 500
+	&__price
+		font-size: 1.6rem
+		line-height: 1.5
+		color: $second_text
+	&__profit
+		position: absolute
+		top: 44px
+		right: 0
+		padding: 0 16px
+		border-radius: 16px 0 0 16px
+		font-size: 16px
+		line-height: 32px
+		background-color: #E63312
+		font-weight: 500
+		color: #fff
+		white-space: nowrap
+		z-index: 1
+	&__img
+		width: 100%
+		height: 136px
+		background-repeat: no-repeat
+		background-position: 50%
+		background-size: contain
+		margin-top: 24px
+		margin-bottom: 40px
+	&__link
+		font-size: 1.6rem
+		color: $second_text
+		cursor: pointer

@@ -30,6 +30,7 @@ class UserPermissionTableSeeder extends Seeder
             'user_roles_admin_main' => 'Группы пользователей',
             'siebel_logs_admin_main' => 'Siebel logs',
             'storage_photos_admin_main' => 'Фото',
+            'dealer_menu_admin_main' => 'Дилерское меню',
         ];
 
         $up = UserPermission::whereIn('code', array_keys($items))->get()->pluck('code');

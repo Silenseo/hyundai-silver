@@ -1,4 +1,4 @@
-﻿@extends('layouts.master-dealer')
+@extends('layouts.master-dealer')
 
 @section('pageTitle', 'SantaFe')
 
@@ -11,32 +11,32 @@
 <section class="nav">
     <ul class="nav__menu">
         <li class="nav__item">
-            <a href="{{ route('static_car25') }}#design" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car25', null, false) }}#design" class="nav__link scroll">
                 Дизайн
             </a>
         </li>
         <li class="nav__item">
-            <a href="{{ route('static_car25') }}#dynamics" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car25', null, false) }}#dynamics" class="nav__link scroll">
                 Динамика
             </a>
         </li>
         <li class="nav__item">
-            <a href="{{ route('static_car25') }}#comfort" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car25', null, false) }}#comfort" class="nav__link scroll">
                 Комфорт
             </a>
         </li>
         <li class="nav__item">
-            <a href="{{ route('static_car25') }}#safety" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car25', null, false) }}#safety" class="nav__link scroll">
                 Безопасность
             </a>
         </li>
         <li class="nav__item">
-            <a href="{{ route('static_car25') }}#specs" class="nav__link scroll">
+            <a href="{{ route('static_dealerapi_car25', null, false) }}#specs" class="nav__link scroll">
                 Характеристики
             </a>
         </li>
         <li class="nav__item">
-            <a target="_blank" href="{{ route('static_car25') }}/gallery" class="nav__link active">
+            <a target="_blank" href="{{ route('static_dealerapi_car25', false, false) }}/gallery" class="nav__link active">
                 Галерея
             </a>
         </li>
@@ -58,7 +58,6 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-                <h1 class="h2 mb-5 text-center">Галерея новой SANTA FE</h1>
 				<div class="gallery__wrapper">
 					<ul id="gallery" class="gallery__list">
 						<li class="gallery__item" data-image="/images/santaFe/pics/slider/1.jpg" style="background-image: url(/images/santaFe/pics/slider/1.jpg)"></li>

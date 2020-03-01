@@ -34,6 +34,7 @@ export default {
 	},
 	computed: {
 		...mapGetters({
+			ENV: "GET_ENV",
 			openFindDealer: "OPEN_FIND_DEALER",
 			openSendDealer: "OPEN_SEND_DEALER",
 			openRules: "OPEN_RULES",
@@ -72,20 +73,22 @@ export default {
 			}
 		}
 	},
-	filters: {
-
-	},
 	mounted () {
     	this.selectDealerFromMap(window.sap);
         console.log(window.sap);
 		//Получим список дилеров и городов и запишем их в хранилище
-		this.$store.dispatch('GET_DEALERS')
-			.catch(() => {
-				this.$root.$emit('notify', { type: 'error', text: 'Ошибка загрузки данных, повторите попытку позднее' })
-			})
+		if (this.ENV !== 'dealer') {
+			this.$store.dispatch('GET_DEALERS')
+				.catch(() => {
+					this.$root.$emit('notify', { type: 'error', text: 'Ошибка загрузки данных, повторите попытку позднее' })
+				})
+		}
 
 		//Получим данные по тачкам
-		this.$store.dispatch('GET_DATA')
+		this.$store.dispatch('GET_DATA_CALC_TO')
+			.then(()=>{
+				this.$store.dispatch('GET_ENGINES')
+			})
 			.catch((err) => {
 				this.$root.$emit('notify', { type: 'error', text: 'Ошибка загрузки данных, повторите попытку позднее' })
 				console.log(err)

@@ -2,83 +2,99 @@
 
 //Стили футера
 .footer
-    width: 100%
-    background-color: $main_blue
-    color: $text_white
-    &__top
-        padding-top: 50px
-        padding-bottom: 54px
-    &__nav
-        display: flex
-        flex-wrap: wrap
-        overflow: hidden
-        min-width: 100%
-        margin-right: -16px
-        margin-left: -16px
-    &__column
-        width: calc(16% - 32px)
-        margin: 0 16px
-        &--logo
-            width: calc(7% - 32px)
-        &--last
-            width: calc(29% - 32px)
-        &--combologo
-            width: calc(100% - 32px)
-            padding-top: 24px
-    &__main-link
-        display: inline-block
-        svg
-            display: block
-            width: 41px
-            height: 21px
-            fill: #ffffff
-    &__sub-nav
-        margin-top: 11px
-    &__item
-        &:not(:last-of-type)
-            margin-bottom: 0.9rem
-    &__link
-        @extend .df-text-input-14px
-        color: $third_text
-        transition: color 0.3s
-        &:hover, &:focus
-            color: $sand
-    &__support
-        color: $third_text
-    &__phone
-        display: block
-        @extend .df-banner-subline
-        white-space: nowrap
-        margin-top: 12px
-        &:hover, &:focus
-            color: $text_white
-    &__mail
-        display: block
-        position: relative
-        @extend .df-text-radio-button-14px
-        padding-left: 25px
-        margin-top: 12px
-        transition: 0.3s
-        svg
-            display: block
-            position: absolute
-            left: 0
-            top: 50%
-            transform: translateY(-50%)
-            width: 17px
-            height: 13px
-            stroke: $text_white
-            fill: transparent
-            transition: 0.3s
-        &:hover, &:focus
-            color: $sand
-            svg
-                stroke: $sand
-                
-                   
-    &__combologo
-        width: 176px
-        height: auto
+	width: 100%
+	background-color: $main_blue
+	color: $text_white
+	&__top
+		padding-top: 50px
+		padding-bottom: 54px
+	&__nav
+		display: flex
+		flex-wrap: wrap
+		overflow: hidden
+		min-width: 100%
+		margin-right: -16px
+		margin-left: -16px
+	&__column
+		width: calc(16% - 32px)
+		margin: 0 16px
+		&--logo
+			width: calc(7% - 32px)
+		&--last
+			width: calc(29% - 32px)
+		&--combologo
+			width: calc(100% - 32px)
+			padding-top: 24px
+	&__main-link
+		display: inline-block
+		svg
+			display: block
+			width: 41px
+			height: 21px
+			fill: #ffffff
+	&__sub-nav
+		margin-top: 11px
+	&__item
+		&:not(:last-of-type)
+			margin-bottom: 0.9rem
+	&__link
+		@extend .df-text-input-14px
+		color: $third_text
+		transition: color 0.3s
+		&:hover, &:focus
+			color: $sand
+	&__support
+		color: $third_text
+	&__phone
+		display: block
+		@extend .df-banner-subline
+		white-space: nowrap
+		margin-top: 12px
+		&:hover, &:focus
+			color: $text_white
+	&__mail
+		display: block
+		position: relative
+		@extend .df-text-radio-button-14px
+		padding-left: 25px
+		margin-top: 12px
+		transition: 0.3s
+		svg
+			display: block
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translateY(-50%)
+			width: 17px
+			height: 13px
+			stroke: $text_white
+			fill: transparent
+			transition: 0.3s
+		&:hover, &:focus
+			color: $sand
+			svg
+				stroke: $sand
+				
+					
+	&__combologo
+		width: 176px
+		height: auto
+	&__ww
+		display: flex
+		align-items: center
+		font-size: 1.4rem
+		line-height: 1.5
+		color: #fff
+		font-weight: 500
+		margin-top: 35px
+		transition: 0.3s
+		svg
+			width: 18px
+			height: 18px
+			margin-right: 8px
+			transition: 0.3s
+		&:hover, &:focus
+			color: $sand
 
 .footer-social
     display: flex

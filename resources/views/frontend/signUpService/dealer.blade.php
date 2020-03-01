@@ -15,10 +15,10 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="form__wrap">
-					<div v-if="!init">
+					<div v-show="!init">
 						@component('components/placeholder')@endcomponent
 					</div>
-					<signup-forms v-else v-bind:form="'service'" :no-default-car="true"></signup-forms>
+					<signup-forms v-show="init" v-bind:form="'service'" :no-default-car="true"></signup-forms>
 				</div>
 			</div>
 		</div>
@@ -27,6 +27,9 @@
 @endsection
 
 @section('scripts')
+	<script>
+		var commonCarCode = 'Creta'
+	</script>
     <script src="/dealer/js/sign-up-form/libs.js"></script>
     <script src="/dealer/js/sign-up-form/sign-up-form.js"></script>
 @endsection

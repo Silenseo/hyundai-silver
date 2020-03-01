@@ -2,9 +2,11 @@
   <div class="summary-conf-controls">
     <div class="summary-buttons">
       <div class="summary-buttons__left summary-buttons__left--top">
+<!--
         <a href="#" @click.prevent="creditCalc" class="df-button summary-buttons__button test-calc-button">Рассчитать кредит</a>
         <a href="#" @click.prevent="sendTestDrive" class="df-button df-button--border summary-buttons__button test-td-button"  v-if="!isDealer && ID != 16">Тест-драйв</a>
         <a href="/test-drive" target="_blank" class="df-button df-button--border summary-buttons__button test-td-button" v-if="isDealer && ID != 16">Тест-драйв</a>
+-->
         <!-- <a href="#" @click.prevent="sendDealer" class="button button--ripple button-summary button--deep"  v-if="!isDealer">Отправить дилеру</a> -->
       </div>
       <div class="summary-buttons__right">
@@ -35,8 +37,13 @@
             </svg>
             Прайс-лист
         </a>
-        <!-- <a :href="priceList" target="_blank" class="button-summary button--small-iconized"><svg tabindex="-1" aria-visible="false" class="ic-svg"><use xlink:href="#ic-download"></use></svg>Прайс-лист</a>
-        <a href="#" @click.prevent="sendEmail" class="button-summary button--small-iconized"><svg tabindex="-1" aria-visible="false" class="ic-svg"><use xlink:href="#ic-email"></use></svg>Отправить на email</a> -->
+      </div>
+    </div>
+	<div class="summary-buttons summary-buttons--mb">
+      <div class="summary-buttons__left summary-buttons__left--top">
+        <a href="#" @click.prevent="creditCalc" class="df-button df-button--border summary-buttons__button test-calc-button">Рассчитать кредит</a>
+        <a href="#" @click.prevent="sendTestDrive" class="df-button df-button--border summary-buttons__button test-td-button"  v-if="!isDealer && ID != 16">Тест-драйв</a>
+        <a href="/test-drive" target="_blank" class="df-button df-button--border summary-buttons__button test-td-button" v-if="isDealer && ID != 16">Тест-драйв</a>
       </div>
     </div>
   </div>
@@ -88,7 +95,10 @@ export default {
 
 
 .summary-conf-controls {
-  padding: 0px 72px 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 39px 72px 42px;
 }
 .summary-buttons {
   font-size: 0;
@@ -96,9 +106,6 @@ export default {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  & + & {
-    margin-top: 22px;
-  }
   &__compare {
     svg {
       width: 20px;
@@ -125,18 +132,17 @@ export default {
     border: 2px solid #002C5F;
     color: #002C5F;
     font-weight: 500;
-    margin-left: 16px;
     padding-top: 14px;
     padding-bottom: 14px;
     &:hover {
 	  background-color: #002C5F;
 	  color: #fff;
 	}
-	&:focus {
-		color: #fff;
-	}
   }
 }
+.test-td-button {
+    margin-left: 16px;
+  }
 .summary-buttons__left {
   display: flex;
   align-items: flex-start;
@@ -250,22 +256,27 @@ export default {
 
 @media only screen and (max-width : $lg-max) {
   .summary-conf-controls {
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 10px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 32px 40px 46px;
+  }
+  .summary-buttons--mb {
+    margin-bottom: 27px;
   }
   .df-button {
     width: 200px;
   }
-  .df-button--border {
+  .test-td-button {
     margin-left: 8px;
   }
+
 }
 
 @media only screen and (max-width : $md-max) {
   .summary-conf-controls {
     padding-left: 16px;
     padding-right: 16px;
+    padding-top: 0;
   }
   .summary-buttons__left {
     margin-right: 0;
@@ -283,7 +294,6 @@ export default {
   .summary-buttons__button {
     margin: 0;
     width: 100%;
-    max-width: 400px;
     &:first-of-type {
       margin-bottom: 8px;
     }
@@ -305,6 +315,13 @@ export default {
     display: block;
     width: 1px;
     background-color: #E4DCD3;
+  }
+  .summary-buttons {
+    width: 100%;
+  }
+  .test-calc-button, .test-td-button {
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 }
 </style>

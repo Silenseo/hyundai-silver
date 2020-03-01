@@ -52,7 +52,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<start-summary @prev-slide="prevSlide" @show-info="showInfo" @open-credit-form="openCreditForm" :dealer-tel="dealerTel"></start-summary>
+							<start-summary @prev-slide="prevSlide" @show-info="showInfo" @open-credit-form="openCreditForm" :dealer-tel="dealerTel" :credit-approve="creditApprove" :dealer-credit-approve="dealerCreditApprove"></start-summary>
 						</div>
 					</div>
 				</div>
@@ -75,7 +75,7 @@
 				</div>
 			</div>
 		</transition>
-		<start-mobile-line :is-show="showMobileLine" @open-credit-form="openCreditForm" @line-height="setLineHeight" :dealer-tel="dealerTel"></start-mobile-line>
+		<start-mobile-line :is-show="showMobileLine" @open-credit-form="openCreditForm" @line-height="setLineHeight" :dealer-tel="dealerTel" :credit-approve="creditApprove" :dealer-credit-approve="dealerCreditApprove"></start-mobile-line>
 		<start-compare :show-compare="showCompare" @close-compare="toCloseCompare"></start-compare>
 		<send-email-form @open-success="openSuccess" @show-rules="openRules = true" :send-url="sendEmailUrl" page="isStartPage"></send-email-form>
 		<sign-up-test-drive-form-popup :no-default-car="true" v-if="isVisible" page="isStartPage"></sign-up-test-drive-form-popup>
@@ -86,6 +86,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Notifier from '@/components/Notifier'
 import StartShowroom from '@/components/Start/StartShowroom'
 import StartConfig from '@/components/Start/StartConfig'
@@ -130,7 +131,9 @@ export default {
 			popups: 0,
 			isSecondStep: false,
 			openRules: false,
-			lineHeight: 0
+			lineHeight: 0,
+			creditApprove: false,
+			dealerCreditApprove: ''
 		};
 	},
 	computed: {
@@ -139,7 +142,9 @@ export default {
 			currentCar: 'GET_START_CURRENT_CAR',
 			creditPack: 'GET_START_CREDIT_PACK',
 			term: 'GET_START_CURRENT_TERM',
-			modification: 'GET_START_MODIFICATION'
+			modification: 'GET_START_MODIFICATION',
+			apiCheckCredit: 'GET_CHECK_CREDIT_API',
+			carsIdLinks: 'GET_CARS_ID_LINKS'
 		}),
 		selectedPrograms: {
 			get: function() {
@@ -203,6 +208,8 @@ export default {
 						//Очистим список выбранных программ
 						that.$emit('clearPrograms');
 					}
+
+					that.carousel.trigger('refresh.owl.carousel')
 				}
 			});
 
@@ -224,13 +231,20 @@ export default {
 					.addTo(controller);
 
 			//Переход к нужной тачке
-			var queryString = window.location.search.slice(1),
-				value = queryString .split('=')[1],
+			var id = 0,
 				isExist = false;
+
+			if (typeof carCode !== 'undefined') {
+				this.carsIdLinks.forEach(car => {
+					if (car.link === carCode) {
+						id = car.id
+					}
+				});
+			}
 
 			//Проверяем есть ли тачка с таким id
 			for (let key in that.$refs.showroom.$refs) {
-				if (key == value) {
+				if (key == id) {
 					$(window).on('load', function() {
 						$(that.$refs.showroom.$refs[key]).trigger('click');
 					})
@@ -238,7 +252,6 @@ export default {
 					isExist = true;
 				}
 			}
-
 
 			if (!isExist) {
 				console.log('wrong car id!');
@@ -428,6 +441,25 @@ export default {
 			})
 
 		this.$root.$on('fixOverflow', this.fixOverflow)
+
+		//Проверяем показывать ли кнопку предодобрение кредита
+		if (this.ENV === 'dealer') {
+			axios.get(this.apiCheckCredit)
+				.then(response=>{
+					if (!response.data) {
+						this.creditApprove = false
+					} else if (response.data) {
+						this.creditApprove = true
+						this.dealerCreditApprove = response.data
+					} else {
+						throw new Error()
+					}
+				})
+				.catch(error=>{
+					this.creditApprove = false
+					console.error(error)
+				})
+		}
 	},
 	watch: {
 		showMobileLine: function () {

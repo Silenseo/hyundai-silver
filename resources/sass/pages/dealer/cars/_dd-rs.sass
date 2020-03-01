@@ -1,0 +1,90 @@
+.dd-range
+	position: relative
+	transition: 0.3s
+	&.active
+		box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.16)
+	&__head
+		display: block
+		position: relative
+		font-size: 14px
+		background-color: #fff
+		line-height: 40px
+		padding: 0 20px
+		padding-right: 45px
+		color: $second_text
+		white-space: nowrap
+		transition: 0.3s
+		span
+			pointer-events: none
+		&.active
+			background-color: $light_grey_hover
+			z-index: 101
+			.dd-range__arrow
+				svg
+					transform: rotate(180deg)
+		&.full
+			color: #000
+	&__arrow
+		position: absolute
+		top: 50%
+		margin-top: -3px
+		right: 20px
+		transition: 0.3s
+		svg
+			display: block
+			transition: 0.3s
+		&.active
+			right: 42px
+	&__clear
+		visibility: hidden
+		position: absolute
+		top: 50%
+		margin-top: -14px
+		right: 10px
+		cursor: pointer
+		padding: 10px
+		transition: opacity 0.3s
+		svg
+			display: block
+		&:hover
+			opacity: 0.8
+		&.active
+			visibility: visible
+
+	.dropdown
+		display: none
+		position: absolute
+		top: 100%
+		left: 0
+		right: 0
+		background-color: #fff
+		box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.16)
+		z-index: 10
+		transition: 0.3s
+		&.active
+			display: block
+		&__body
+			display: flex
+			align-items: center
+			justify-content: space-between
+			padding: 13px 20px
+			color: $second_text
+			font-size: 1.4rem
+			line-height: 21px
+			input
+				color: #000
+				padding: 5px
+		&__from, &__to
+			display: flex
+			align-items: center
+			span
+				margin-right: 30px
+		&__from
+			input
+				margin-right: 15px
+		&__footer
+			padding: 20px
+			border-top: 2px solid $light_grey_scroll_bar
+		&__button
+			padding: 6px 16px
+			font-size: 13px

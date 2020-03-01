@@ -1,6 +1,7 @@
 @extends('layouts.master-dealer')
 
-@section('pageTitle', $offer->name)
+@section('pageTitle', "Акция от Hyundai: {$offer->head_title}")
+@section('pageDescription', "Акции и специальные предложения от компании «Хендэ Мотор СНГ». {$offer->name}")
 
 @section('styles')
   <link rel="stylesheet" href="{{ mix('/css/promo1/promo1.css') }}">
@@ -25,9 +26,17 @@
                 </svg>
             </a>
             <div class="main-img">
+            @if($offer->isVideo())
+				<div class="detail-video" data-desctop-video="{{ $offer->getVideoDesktopUrl() }}" data-mobile-video="{{ $offer->getVideoMobileUrl() }}"></div>
+            @else
                 <div class="main-img-inner lazyload lazypreview" data-bgset="{{ $offer->getBannerMobileUrl() }} [(max-width: 640px)] | {{ $offer->getBannerUrl() }}"></div>
+            @endif;
                 @if($offer->show_header == 1)
-                <h1 class="section-title">{{ $offer->banner_title }}</h1>
+                <div class="section-title">
+                    <h1>{{ $offer->banner_title }}</h1>
+                    <div class="df-banner-subline">{{ $offer->banner_subtitle }}</div>
+                </div>
+
                 @endif
                 @if($offer->blue_show == 1)
                 <div class="blue-panel">
@@ -77,8 +86,7 @@
                 <div id="hotbuttons">
                     <hot-buttons :buttons="[1,1,1]"></hot-buttons>
                 </div>
-                @endif
-
+				@endif
             </div>
         </div>
     </div>
@@ -103,7 +111,7 @@
             </div>
         @endif
       </div>
-      @foreach($offer->cars as $car)
+      @foreach($offer->cars()->orderBy('menu_row')->orderBy('menu_column')->get() as $car)
       <div class="product-info">
         <div class="container">
           <div class="row">
@@ -159,6 +167,6 @@
 
 @section('scripts')
 	<script src="{{ mix('/js/lazypreview.js') }}"></script>
-    <script src="{{ mix('/js/special/detail.js') }}"></script>
-    <script src="{{ mix('/js/special/libs.js') }}"></script>
+	<script src="{{ mix('/js/special/libs.js') }}"></script>
+	<script src="{{ mix('/js/special/detail.js') }}"></script>
 @endsection

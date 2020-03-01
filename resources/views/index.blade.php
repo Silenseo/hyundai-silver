@@ -14,128 +14,214 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul class="slider__body js-main-slider owl-carousel">
-{{--						<div class="slider__item">--}}
-{{--							<a id="start-link" href="/promo/creta-rock" class="slider__link">--}}
-{{--								<div class="slider__video"></div>--}}
-{{--								<div class="slider__inner">--}}
-{{--                                    <h2 class="slider__title">Hyundai CRETA Rock Edition.</h2>--}}
-{{--                                    <div class="slider__subtitle df-banner-subline">В моторах – чистый рок.</div>--}}
-{{--                                </div>--}}
-{{--								<div class="blue-panel">--}}
-{{--									<div class="blue-panel__inner">--}}
-{{--										<div>Уникальная комплектация</div>--}}
-{{--										<div class="blue-panel__more">--}}
-{{--											подробнее--}}
-{{--											<svg>--}}
-{{--												<use xlink:href="#arrow-link"></use>--}}
-{{--											</svg>--}}
-{{--										</div>--}}
-{{--									</div>--}}
-{{--								</div>--}}
-{{--							</a>--}}
-{{--						</div>--}}
+
                         @foreach($banners as $banner)
-                        <li class="slider__item lazyload lazypreview" data-bgset="{{ $banner->getImageMobileUrl() }} [(max-width: 640px)] | {{ $banner->getImageUrl() }}">
-                            <a class="slider__link" href="{{ $banner->link }}" {{ $banner->target == 1 || strpos($banner->link, '"//') !== false ? 'target="_blank"' : '' }} aria-label="{{ $banner->title }}">
-                                @if($banner->font_color == 0)
-                                <div class="slider__inner">
-                                    <h2 class="slider__title"><?=$banner->title?></h2>
-                                    <div class="slider__subtitle df-banner-subline">{{ $banner->subtitle }}</div>
-                                </div>
-                                @else
-                                <div class="slider__inner">
-                                    <h2 class="slider__title" style="color: #000;"><?=$banner->title?></h2>
-                                    <div class="slider__subtitle df-banner-subline" style="color: #000;">{{ $banner->subtitle }}</div>
-                                </div>
-                                @endif
-                                @if($banner->blue_show == 1)
-                                <div class="blue-panel">
-                                    <div class="blue-panel__inner">
-                                        @if(strlen($banner->blue_row1) > 0)
-                                            @if($banner->row1_type == 3)
-                                                <div class="blue-panel__more">
-                                                    {{ $banner->blue_row1 }}
-                                                    <svg>
-                                                        <use xlink:href="#arrow-link"></use>
-                                                    </svg>
-                                                </div>
-                                            @else
-                                                <div>
-                                                    {{ $banner->blue_row1 }}
-                                                    <?php
-                                                    switch($banner->row1_type) {
-                                                        case 1: { echo '&nbsp;₽'; break; }
-                                                        case 2: { echo '&nbsp;₽/мес.'; break; }
-                                                        //case 3: { echo '&nbsp;>'; break; }
-                                                    };
-                                                    ?>
-                                                </div>
-                                            @endif
-                                        @endif
+							@if($banner->isVideo())
+								<li class="slider__item">
+									<a id="start-link" class="slider__link" href="{{ $banner->link }}" {{ $banner->target == 1 || strpos($banner->link, '"//') !== false ? 'target="_blank"' : '' }} aria-label="{{ $banner->title }}">
+										<div class="slider__video" data-desctop-video="{{ $banner->getVideoDesktopUrl() }}" data-mobile-video="{{ $banner->getVideoMobileUrl() }}"></div>
+										@if($banner->font_color == 0)
+										<div class="slider__inner">
+											<h2 class="slider__title"><?=$banner->title?></h2>
+											<div class="slider__subtitle df-banner-subline">{{ $banner->subtitle }}</div>
+										</div>
+										@else
+										<div class="slider__inner">
+											<h2 class="slider__title" style="color: #000;"><?=$banner->title?></h2>
+											<div class="slider__subtitle df-banner-subline" style="color: #000;">{{ $banner->subtitle }}</div>
+										</div>
+										@endif
+										@if($banner->blue_show == 1)
+										<div class="blue-panel">
+											<div class="blue-panel__inner">
+												@if(strlen($banner->blue_row1) > 0)
+													@if($banner->row1_type == 3)
+														<div class="blue-panel__more">
+															{{ $banner->blue_row1 }}
+															<svg>
+																<use xlink:href="#arrow-link"></use>
+															</svg>
+														</div>
+													@else
+														<div>
+															{{ $banner->blue_row1 }}
+															<?php
+															switch($banner->row1_type) {
+																case 1: { echo '&nbsp;₽'; break; }
+																case 2: { echo '&nbsp;₽/мес.'; break; }
+																//case 3: { echo '&nbsp;>'; break; }
+															};
+															?>
+														</div>
+													@endif
+												@endif
 
-                                        @if(strlen($banner->blue_row2) > 0)
-                                            @if($banner->row2_type == 3)
-                                                <div class="blue-panel__more">
-                                                    {{ $banner->blue_row2 }}
-                                                    <svg>
-                                                        <use xlink:href="#arrow-link"></use>
-                                                    </svg>
-                                                </div>
-                                            @else
-                                                <div>
-                                                    {{ $banner->blue_row2 }}
-                                                    <?php
-                                                    switch($banner->row2_type) {
-                                                        case 1: { echo '&nbsp;₽'; break; }
-                                                        case 2: { echo '&nbsp;₽/мес.'; break; }
-                                                        //case 3: { echo '&nbsp;>'; break; }
-                                                    };
-                                                    ?>
-                                                </div>
-                                            @endif
-                                        @endif
+												@if(strlen($banner->blue_row2) > 0)
+													@if($banner->row2_type == 3)
+														<div class="blue-panel__more">
+															{{ $banner->blue_row2 }}
+															<svg>
+																<use xlink:href="#arrow-link"></use>
+															</svg>
+														</div>
+													@else
+														<div>
+															{{ $banner->blue_row2 }}
+															<?php
+															switch($banner->row2_type) {
+																case 1: { echo '&nbsp;₽'; break; }
+																case 2: { echo '&nbsp;₽/мес.'; break; }
+																//case 3: { echo '&nbsp;>'; break; }
+															};
+															?>
+														</div>
+													@endif
+												@endif
 
-                                        @if(strlen($banner->blue_row3) > 0)
-                                            @if($banner->row3_type == 3)
-                                                <div class="blue-panel__more">
-                                                    {{ $banner->blue_row3 }}
-                                                    <svg>
-                                                        <use xlink:href="#arrow-link"></use>
-                                                    </svg>
-                                                </div>
-                                            @else
-                                                <div>
-                                                    {{ $banner->blue_row3 }}
-                                                    <?php
-                                                    switch($banner->row3_type) {
-                                                        case 1: { echo '&nbsp;₽'; break; }
-                                                        case 2: { echo '&nbsp;₽/мес.'; break; }
-                                                        //case 3: { echo '&nbsp;>'; break; }
-                                                    };
-                                                    ?>
-                                                </div>
-                                            @endif
-                                        @endif
+												@if(strlen($banner->blue_row3) > 0)
+													@if($banner->row3_type == 3)
+														<div class="blue-panel__more">
+															{{ $banner->blue_row3 }}
+															<svg>
+																<use xlink:href="#arrow-link"></use>
+															</svg>
+														</div>
+													@else
+														<div>
+															{{ $banner->blue_row3 }}
+															<?php
+															switch($banner->row3_type) {
+																case 1: { echo '&nbsp;₽'; break; }
+																case 2: { echo '&nbsp;₽/мес.'; break; }
+																//case 3: { echo '&nbsp;>'; break; }
+															};
+															?>
+														</div>
+													@endif
+												@endif
 
-                                        {{--
-                                        <div>
-                                            от 1 999 000 ₽
-                                        </div>
-                                        <div>
-                                            КАСКО в подарок
-                                        </div>
-                                        <div class="blue-panel__more">
-                                            Подробнее
-                                            <svg>
-                                                <use xlink:href="#arrow-link"></use>
-                                            </svg>
-                                        </div>
-                                        --}}
-                                    </div>
-                                </div>
-                                @endif
-                            </a>
-                        </li>
+												{{--
+												<div>
+													от 1 999 000 ₽
+												</div>
+												<div>
+													КАСКО в подарок
+												</div>
+												<div class="blue-panel__more">
+													Подробнее
+													<svg>
+														<use xlink:href="#arrow-link"></use>
+													</svg>
+												</div>
+												--}}
+											</div>
+										</div>
+										@endif
+									</a>
+								</li>
+							@else
+								<li class="slider__item lazyload lazypreview" data-bgset="{{ $banner->getImageMobileUrl() }} [(max-width: 640px)] | {{ $banner->getImageUrl() }}">
+									<a class="slider__link" href="{{ $banner->link }}" {{ $banner->target == 1 || strpos($banner->link, '"//') !== false ? 'target="_blank"' : '' }} aria-label="{{ $banner->title }}">
+										@if($banner->font_color == 0)
+										<div class="slider__inner">
+											<h2 class="slider__title"><?=$banner->title?></h2>
+											<div class="slider__subtitle df-banner-subline">{{ $banner->subtitle }}</div>
+										</div>
+										@else
+										<div class="slider__inner">
+											<h2 class="slider__title" style="color: #000;"><?=$banner->title?></h2>
+											<div class="slider__subtitle df-banner-subline" style="color: #000;">{{ $banner->subtitle }}</div>
+										</div>
+										@endif
+										@if($banner->blue_show == 1)
+										<div class="blue-panel">
+											<div class="blue-panel__inner">
+												@if(strlen($banner->blue_row1) > 0)
+													@if($banner->row1_type == 3)
+														<div class="blue-panel__more">
+															{{ $banner->blue_row1 }}
+															<svg>
+																<use xlink:href="#arrow-link"></use>
+															</svg>
+														</div>
+													@else
+														<div>
+															{{ $banner->blue_row1 }}
+															<?php
+															switch($banner->row1_type) {
+																case 1: { echo '&nbsp;₽'; break; }
+																case 2: { echo '&nbsp;₽/мес.'; break; }
+																//case 3: { echo '&nbsp;>'; break; }
+															};
+															?>
+														</div>
+													@endif
+												@endif
+
+												@if(strlen($banner->blue_row2) > 0)
+													@if($banner->row2_type == 3)
+														<div class="blue-panel__more">
+															{{ $banner->blue_row2 }}
+															<svg>
+																<use xlink:href="#arrow-link"></use>
+															</svg>
+														</div>
+													@else
+														<div>
+															{{ $banner->blue_row2 }}
+															<?php
+															switch($banner->row2_type) {
+																case 1: { echo '&nbsp;₽'; break; }
+																case 2: { echo '&nbsp;₽/мес.'; break; }
+																//case 3: { echo '&nbsp;>'; break; }
+															};
+															?>
+														</div>
+													@endif
+												@endif
+
+												@if(strlen($banner->blue_row3) > 0)
+													@if($banner->row3_type == 3)
+														<div class="blue-panel__more">
+															{{ $banner->blue_row3 }}
+															<svg>
+																<use xlink:href="#arrow-link"></use>
+															</svg>
+														</div>
+													@else
+														<div>
+															{{ $banner->blue_row3 }}
+															<?php
+															switch($banner->row3_type) {
+																case 1: { echo '&nbsp;₽'; break; }
+																case 2: { echo '&nbsp;₽/мес.'; break; }
+																//case 3: { echo '&nbsp;>'; break; }
+															};
+															?>
+														</div>
+													@endif
+												@endif
+
+												{{--
+												<div>
+													от 1 999 000 ₽
+												</div>
+												<div>
+													КАСКО в подарок
+												</div>
+												<div class="blue-panel__more">
+													Подробнее
+													<svg>
+														<use xlink:href="#arrow-link"></use>
+													</svg>
+												</div>
+												--}}
+											</div>
+										</div>
+										@endif
+									</a>
+								</li>
+							@endif
                         @endforeach
                     </ul>
                 </div>
@@ -250,46 +336,46 @@
                         </div>
                         <div class="mir-b__center">
                             <h2 class="mir-b__title">
-                                Платформа для владельцев автомобилей Hyundai и всех, кто хочет познакомиться с брендом.
+								Платформа для владельцев автомобилей Hyundai и&nbsp;всех, кто хочет познакомиться с&nbsp;брендом.
                             </h2>
                             <ul class="mir-b__list">
                                 <li class="mir-b__item">
                                     <div class="mir-b__icon ic-gift">
                                         <svg  role="img" aria-hidden="true">
-                                            <use xlink:href="#ic-gift"></use>
+                                            <use xlink:href="#mir-avatar"></use>
                                         </svg>
                                     </div>
                                     <div class="mir-b__description">
-                                        Бонусные <br>баллы
+                                        Личный <br>кабинет
                                     </div>
-                                    <div class="mir-b__text df-text-input-14px">
-                                        Персональные скидки и подарки
+                                    <div class="mir-b__text">
+										Информация об автомобиле всегда под рукой
                                     </div>
                                 </li>
                                 <li class="mir-b__item">
                                     <div class="mir-b__icon ic-fix">
                                         <svg  role="img" aria-hidden="true">
-                                            <use xlink:href="#ic-fix"></use>
+                                            <use xlink:href="#mir-testdrive"></use>
                                         </svg>
                                     </div>
                                     <div class="mir-b__description">
-                                        Запись на&nbsp;тех. обслуживание
+										Запись <br>на тест-драйв
                                     </div>
-                                    <div class="mir-b__text df-text-input-14px">
-                                        Запись всего в&nbsp;3&nbsp;клика
+                                    <div class="mir-b__text">
+										Выберите дилерский центр и&nbsp;пройдите тест-драйв автомобиля
                                     </div>
                                 </li>
                                 <li class="mir-b__item">
                                     <div class="mir-b__icon ic-pig">
                                         <svg  role="img" aria-hidden="true">
-                                            <use xlink:href="#ic-pig"></use>
+                                            <use xlink:href="#mir-club"></use>
                                         </svg>
                                     </div>
                                     <div class="mir-b__description">
-                                        Финансовые программы
+										Клуб <br>Hyundai
                                     </div>
-                                    <div class="mir-b__text df-text-input-14px">
-                                        Узнавайте первыми о&nbsp;новых предложениях
+                                    <div class="mir-b__text">
+										Общайтесь и&nbsp;создавайте интересные маршруты
                                     </div>
                                 </li>
                             </ul>

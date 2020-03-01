@@ -21,8 +21,8 @@
         </a>
         <div class="head__banner lazyload lazypreview" data-bgset="/images/service/best/pic-md.jpg [(max-width: 640px)] | /images/service/best/pic.jpg">
           <div class="head__composition">
-            <h1 class="head__title">Лучшее для своих.</h1>
-            <div class="head__subtitle">
+            <h1 class="df-main-banner__title">Лучшее для своих.</h1>
+            <div class="df-main-banner__subtitle">
               Предложение для владельцев Hyundai старше 2 лет.
             </div>
           </div>

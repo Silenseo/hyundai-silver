@@ -70,6 +70,8 @@ class SeoController extends Controller
             'meta_keywords' => $request->get('meta_keywords'),
             'meta_description' => $request->get('meta_description'),
             'og_title' => $request->get('og_title'),
+            'og_image' => $request->get('og_image'),
+            'og_description' => $request->get('og_description'),
         ]);
         $seo->save();
         return redirect('admin/seo')->with('Добавлено', 'SEO-запис успешно добавлена');
@@ -114,7 +116,9 @@ class SeoController extends Controller
         $seo->meta_keywords = $request->get('meta_keywords');
         $seo->meta_description = $request->get('meta_description');
         $seo->og_title = $request->get('og_title');
-                
+        $seo->og_image = $request->get('og_image');
+        $seo->og_description = $request->get('og_description');
+
         $seo->save();
 
         return redirect('admin/seo')->with('Успех', 'SEO-запись отредактирована');

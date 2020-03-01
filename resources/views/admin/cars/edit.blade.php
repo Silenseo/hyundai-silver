@@ -72,6 +72,10 @@
           {{ Form::adminCheckbox('is_old_model', $car->is_old_model, ['id' => 'is_old_model', 'publicName' => 'Старая модель']) }}
         </div>
 
+        <div class="content__line">
+          {{ Form::adminInput('tradein', $car->tradein, ['placeholder' => 'Введите значение', 'publicName' => 'Размер скидки по Trade-In']) }}
+        </div>
+
           <div class="content__line">
               <button class="button button--large" type="submit">Сохранить</button>
               <button class="button button--large button--grey">Отменить</button>

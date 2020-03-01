@@ -42,8 +42,12 @@
 			{{ Form::adminFile('detail_picture', $item->getDetailPictureUrl(), ['publicName' => 'Изображение для промо-блока (960 x 550 px)']) }}
 		</div>
 		<div class="content__line">
-			{{ Form::adminFile('preview_picture', $item->getPreviewPictureUrl(), ['publicName' => 'Изображение основное (525 х 650 px)']) }}
+			{{ Form::adminFile('preview_picture', $item->getPreviewPictureUrl(), ['publicName' => 'Изображение основное (624 х 800 px)']) }}
 		</div>
+		<div class="content__line">
+			{{ Form::adminFile('mobile_picture', $item->getMobilePictureUrl(), ['publicName' => 'Изображение мобильное (1023 x 512 px)']) }}
+		</div>
+
 		<div class="content__line">
 			{{ Form::adminTextarea('text', $item->text, ['publicName' => 'Текст']) }}
 		</div>
@@ -61,6 +65,9 @@
 		</div>
 		<div class="content__line">
 			{{ Form::adminCheckbox('available', $item->available, ['id' => 'available', 'publicName' => 'Обязательная запись']) }}
+		</div>
+		<div class="content__line">
+			{{ Form::adminCheckbox('check_registrations', $item->check_registrations, ['id' => 'check_registrations', 'publicName' => 'Не проверять почту и телефон на уникальность при регистрации']) }}
 		</div>
 		<div class="content__line">
 			{{ Form::adminCheckbox('repair', $item->repair, ['id' => 'repair', 'publicName' => 'Ремонтные работы']) }}

@@ -45,15 +45,18 @@
 			{{ Form::adminDropdown('row3_type', $item->row3_type, ['values' => ['Просто текст', 'Текст + знак рубля', 'Текст + знак рубля в месяц', 'Текст + символ'], 'publicName' => 'Третья строка синей плашки']) }}
 			{{ Form::adminInput('blue_row3', $item->blue_row3, ['placeholder' => 'Введите текст', 'publicName' => '&nbsp;']) }}
 		</div>
-
 		<div class="content__line">
 			{{ Form::adminFile('image', $item->getImageUrl(), ['publicName' => 'Картинка основная (1760 x 650 px)']) }}
 		</div>
-
 		<div class="content__line">
 			{{ Form::adminFile('image_mobile', $item->getImageMobileUrl(), ['publicName' => 'Картинка мобильная (640 x 800 px)']) }}
 		</div>
-
+		<div class="content__line">
+			{{ Form::adminFile('video_desktop', $item->getVideoDesktopUrl(), ['publicName' => 'Видео десктопное (mp4, 1760 x 650 px)']) }}
+		</div>
+		<div class="content__line">
+			{{ Form::adminFile('video_mobile', $item->getVideoMobileUrl(), ['publicName' => 'Видео мобильное (mp4, 640 x 800 px)']) }}
+		</div>
 		<div class="content__line">
 			{{ Form::adminInput('order', $item->order ?? 50, ['placeholder' => 'Введите текст', 'publicName' => 'Индекс сортировки']) }}
 		</div>

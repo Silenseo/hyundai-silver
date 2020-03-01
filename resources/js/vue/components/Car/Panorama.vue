@@ -2,7 +2,7 @@
   <div class="panorama-component">
     <div class="panorama-element">
       <div id="pannellum" class="pannellum">
-        <iframe class="pannellum-frame" :src="path"></iframe>
+        <!-- <iframe class="pannellum-frame" :src="path"></iframe> -->
       </div>
     </div>
   </div>
@@ -18,13 +18,34 @@ export default {
   data () {
     return {
       viewer: null,
-      baseUrl: process.env.NODE_ENV === 'production' ? 'https://www.hyundai.ru/config_src/dist' : '',
-      frameBase: '/static/pannellum/pannellum.htm?autoLoad=true&panorama='
+      baseUrl: process.env.NODE_ENV === 'production' ? '' : '',
+      frameBase: 'https://cdn.pannellum.org/2.5/pannellum.htm#panorama='
     }
   },
   computed: {
     path () {
-      return this.baseUrl + this.frameBase + this.source
+      return this.baseUrl + this.frameBase + this.source + '&amp;amp;autoLoad=true'
+    }
+  },
+  methods: {
+    init () {
+      if (this.viewer) this.viewer.destroy();
+
+      if (document.querySelector('#pannellum')) {
+        this.viewer = pannellum.viewer('pannellum', {
+          "type": "equirectangular",
+          "autoLoad": true,
+          "panorama": this.source
+        });
+      }
+    }
+  },
+  activated () {
+    this.init()
+  },
+  watch: {
+    source () {
+      this.init()
     }
   }
 }

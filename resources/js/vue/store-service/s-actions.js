@@ -10,12 +10,15 @@ export default {
 			}
 		})
 
+		//Если модель не найдена, установим первую в списке
+		if (state.car.code === '' && state.data.length > 0) {
+			store.dispatch('SET_MODEL', state.data[0].code);
+		}
+
 		//Обновим список двигателей
-		state.dataEngines.forEach((car)=>{
-			if (car.code === data || (data == 'santa fe' && car.code == 'santafe') || (data == 'h-1' && car.code == 'h1')) {
-				store.dispatch('SET_ENGINES', car.engines);
-			}
-		})
+		if (state.dataEngines.length > 0) {
+			store.dispatch('SET_ENGINES', data);
+		}
 	},
 	SET_SAVED_MODEL ({ commit, state }, data) {
 		commit('SET_SAVED_MODEL', data)
@@ -24,7 +27,12 @@ export default {
 		commit('SET_CAR_DATA', data)
 	},
 	SET_ENGINES ({ commit, state }, data) {
-		commit('SET_ENGINES', data);
+		//Обновим список двигателей
+		state.dataEngines.forEach((car)=>{
+			if (car.code === data || (data == 'santa fe' && car.code == 'santafe') || (data == 'h-1' && car.code == 'h1')) {
+				commit('SET_ENGINES', car.engines);
+			}
+		})
 
 		//Поставим первый двигатель в списке как активный
 		store.dispatch('SET_ENGINE', Object.keys(state.engines)[0]);
@@ -217,10 +225,10 @@ export default {
 		commit('SET_START_PREV_COLOR', data)
 	},
 	SET_360_COLORS ({ commit, state }) {
-		//Берём 360 из дефотной комплектации, дефолтной модификации
-		commit('SET_START_ACTIVE_COLOR', state.start.modificationList[state.start.currentCarSpec.defaultModificationId].complectations[state.start.modificationList[state.start.currentCarSpec.defaultModificationId].defaultComplectation].exterior.colors.defaultColor)
-		commit('SET_START_COLORS_API', state.start.modificationList[state.start.currentCarSpec.defaultModificationId].complectations[state.start.modificationList[state.start.currentCarSpec.defaultModificationId].defaultComplectation].exterior.colors.groups)
-		commit('SET_START_SPRITESPIN', state.start.modificationList[state.start.currentCarSpec.defaultModificationId].complectations[state.start.modificationList[state.start.currentCarSpec.defaultModificationId].defaultComplectation].exterior.spritespin)
+		//Берём 360 из текущей комплектации
+		commit('SET_START_ACTIVE_COLOR', state.start.complectation.exterior.colors.defaultColor)
+		commit('SET_START_COLORS_API', state.start.complectation.exterior.colors.groups)
+		commit('SET_START_SPRITESPIN', state.start.complectation.exterior.spritespin)
 
 		for (var group in state.start.colorsAPI) {
 			for (var color in state.start.colorsAPI[group]) {
@@ -247,6 +255,25 @@ export default {
 			return console.error('data.prepay должно быть от 0 до 100')
 		}
 		commit('SET_START_CREDIT_PACK', data)
+	},
+	SET_DEALER_CARS_CAR_ID ({ commit, state }, data) {
+		commit('SET_DEALER_CARS_CAR_ID', data)
+	},
+	SET_TRADEIN_CURRENT_CAR ({ commit, state }, data) {
+		commit('SET_TRADEIN_CURRENT_CAR', data)
+		commit('SET_TRADEIN_STATE', { step1: true })
+	},
+	SET_TRADEIN_STATE ({ commit, state }, data) {
+		commit('SET_TRADEIN_STATE', data)
+	},
+	SET_TRADEIN_STEP2 ({ commit, state }, data) {
+		commit('SET_TRADEIN_STEP2', data)
+	},
+	SET_TRADEIN_STEP3 ({ commit, state }, data) {
+		commit('SET_TRADEIN_STEP3', data)
+	},
+	SET_TRADEIN_URL ({ commit, state }, data) {
+		commit('SET_TRADEIN_URL', data)
 	},
 	OPEN_START_MOBILE_LINE ({ commit }, data) {
 		commit('OPEN_START_MOBILE_LINE', data)
@@ -301,8 +328,14 @@ export default {
 		})
 	},
 	GET_DATA ({ commit, state }, data) {
+		let params = {};
+
+		if (typeof data !== 'undefined' && data.getOld) {
+			params.oldCars = 1
+		}
+
 		return new Promise((resolve, reject)=>{
-			axios.get(state.API.CAR_LIST2)
+			axios.get(state.API.CAR_LIST2, { params: params })
 				.then(function (response) {
 					var arr = response.data.map((item)=>{
 						item.code = item.code.toLowerCase();
@@ -310,22 +343,54 @@ export default {
 					})
 
 					commit('SET_DATA', arr);
-					//Подгрузим информацию о двигателях
-					axios.get(state.API.ENGINES_LIST)
-						.then(function (response1) {
-							commit('SET_DATA_ENGINES', response1.data);
 
-							//Установим модель по умолчаню, если можель была установлена до этого момента (на странице модели), ставим её
-							if (data !== 'noDefaultCar') {
-								if (state.savedModel) {
-									store.dispatch('SET_MODEL', state.savedModel);
-								} else {
-									store.dispatch('SET_MODEL', response.data[0].code);
-								}
-							}
+					//Установим модель по умолчаню, если модель была установлена до этого момента (на странице модели), ставим её
+					if (typeof data === 'undefined' || (typeof data !== 'undefined' && data.flag !== 'noDefaultCar')) {
+						if (state.savedModel) {
+							store.dispatch('SET_MODEL', state.savedModel);
+						} else {
+							store.dispatch('SET_MODEL', response.data[0].code);
+						}
+					}
 
-							resolve();
-						})
+					resolve();
+				})
+				.catch((error)=>{
+					reject(error);
+				})
+		})
+	},
+	GET_DATA_CALC_TO ({ commit, state }, data) {
+		return new Promise((resolve, reject)=>{
+			axios.get(state.API.CAR_LIST3)
+				.then(function (response) {
+					var arr = response.data.map((item)=>{
+						item.code = item.code.toLowerCase();
+						return item;
+					})
+
+					commit('SET_DATA', arr);
+
+					//Установим модель по умолчаню
+					store.dispatch('SET_MODEL', response.data[0].code);
+
+					resolve();
+				})
+				.catch((error)=>{
+					reject(error);
+				})
+		})
+	},
+	GET_ENGINES ({ commit, state }, data) {
+		return new Promise((resolve, reject)=>{
+			//Подгрузим информацию о двигателях
+			axios.get(state.API.ENGINES_LIST)
+				.then(function (response) {
+					commit('SET_DATA_ENGINES', response.data);
+
+					store.dispatch('SET_ENGINES', state.car.code);
+
+					resolve();
 				})
 				.catch((error)=>{
 					reject(error);
@@ -333,27 +398,30 @@ export default {
 		})
 	},
 	GET_COST ({ commit, state }, data) {
-		axios.get(state.API.TO_CALC_COST + '?car=' + data.model + '&dealer=' + data.dealer + '&engine=' + data.vEngine + '&enginetype=' + data.engine + '&mileage=' + data.mileage + '&spares=0')
+		let dealer = '';
+
+		if (!!data.dealer) {
+			dealer = '&dealer=' + data.dealer
+		}
+		
+		axios.get(state.API.TO_CALC_COST + '?car=' + data.model + '' + dealer + '&engine=' + data.vEngine + '&enginetype=' + encodeURIComponent(data.engine) + '&mileage=' + data.mileage + '&spares=0')
 			.then(function (response) {
 				let data = response.data;
 
-				let works = response.data.repairs;
-				let parts = response.data.originspares;
-				let total = response.data.total;
+				let works = response.data.repairs_nf || 0;
+				let parts = response.data.originspares_nf || 0;
+				let partsPl2 = response.data.pl2spares_nf || 0;
+				let total = response.data.total_nf || 0;
 
-				if (works && parts && total) {
-					commit('SET_COST', {
-						works: works,
-						parts: parts,
-						total: total
-					});
-				} else {
-					commit('SET_COST', {
-						works: '0 &#8381;',
-    					parts: '0 &#8381;',
-    					total: 0
-					});
-				}
+				commit('SET_COST', {
+					works: works,
+					parts: parts,
+					partsPl2: partsPl2,
+					total: total
+				});
 			})
+	},
+	SET_SERVICE_PARTS ({ commit, state }, data) {
+		commit('SET_SERVICE_PARTS', data);
 	}
 }

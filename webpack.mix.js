@@ -1,8 +1,6 @@
+const cars = require('./cars.mix');
 const mix = require('laravel-mix');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 require('laravel-mix-merge-manifest');
-
-const path = process.env.MIX_BUILD === 'dealer' ? 'dealer/' : '';
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -29,18 +27,10 @@ mix.webpackConfig({
 })
 
 //Динамическая подгрузка vue компонентов
-if (path) {
-	mix.config.webpackConfig.output = {
-		chunkFilename: 'dealer/js/bundles/[name].bundle.js',
-		publicPath: '/',
-	};
-} else {
-	mix.config.webpackConfig.output = {
-		chunkFilename: 'js/bundles/[name].bundle.js',
-		publicPath: '/',
-	};
-}
-
+mix.config.webpackConfig.output = {
+	chunkFilename: 'js/bundles/[name].bundle.js',
+	publicPath: '/',
+};
 
 //------------------------------------KIT-------------------------------------------
 mix.js('resources/js/pages/kit/kit.js', 'public/js/kit')
@@ -69,15 +59,16 @@ mix.scripts([
 //------------------------------------------------------------------------------------
 
 //------------------------------------LAYOUT-------------------------------------------
-mix.js('resources/js/pages/layout/common.js', 'public/' + path + 'js/')
-mix.js('resources/js/common/lazypreview.js', 'public/' + path + 'js/')
-mix.sass('resources/sass/layout/master.sass', 'public/' + path + 'css')
-mix.sass('resources/sass/layout/layoutFixed.sass', 'public/' + path + 'css')
+mix.js('resources/js/pages/layout/common.js', 'public/js/')
+mix.js('resources/js/common/lazypreview.js', 'public/js/')
+mix.sass('resources/sass/layout/master.sass', 'public/css')
+mix.sass('resources/sass/layout/layoutFixed.sass', 'public/css')
+mix.sass('resources/sass/common/components/_placeholder.sass', 'public/css/placeholder.css')
 
 mix.styles([
 	 'resources/libs/hamburgers/hamburgers.css',
 	 'resources/libs/perfect-scrollbar/perfect-scrollbar.css',
-], 'public/' + path + 'css/libs.css');
+], 'public/css/libs.css');
 
 mix.scripts([
 	'resources/libs/jquery/3.3.1.min.js',
@@ -85,66 +76,36 @@ mix.scripts([
 	'resources/libs/perfect-scrollbar/perfect-scrollbar.min.js',
 	'resources/libs/jquery/jquery.cookie.min.js',
 	'resources/libs/svg4everybody/svg4everybody.min.js',
-	'resources/libs/polyfill/object-fit.min.js'
+	'resources/libs/polyfill/object-fit.min.js',
+	'resources/libs/polyfill/assign.js'
 ],
-   'public/' + path + 'js/libs.js')
-
-// mix.copy('resources/assets/sprite/svg/symbols.svg', 'public/images/svgSprite');
+   'public/js/libs.js')
 
 //------------------------------------------------------------------------------------
 
 //------------------------------------INDEX-------------------------------------------
 //так подключаются js, sass, scss... файлы. Эти файлы будут скомпилированы, т.е. например js будет преобразован в ES5 и т.д.
-mix.js('resources/js/pages/index/index.js', 'public/' + path + 'js/index')
-   .sass('resources/sass/pages/index/index.sass', 'public/' + path + 'css/index');
-
-if (path) {
-	mix.js('resources/js/pages/index/index-dealer.js', 'public/' + path + 'js/index');
-	mix.sass('resources/sass/pages/index/index-dealer.sass', 'public/' + path + 'css/index');
-}
+mix.js('resources/js/pages/index/index.js', 'public/js/index')
+   .sass('resources/sass/pages/index/index.sass', 'public/css/index');
 
 //так подключаются css файлы, которые не нужно компилировать, например библиотеки.
-if (path) {
-	mix.styles([
-		'resources/libs/OwlCarousel/dist/assets/owl.carousel.min.css',
-		'resources/libs/selectize/selectize.css',
-		'resources/libs/perfect-scrollbar/perfect-scrollbar.css',
-		'resources/libs/noUiSlider-12.1.0/nouislider.min.css',
-	 ], 'public/' + path + 'css/index/libs.css');
-} else {
-	mix.styles([
-		'resources/libs/OwlCarousel/dist/assets/owl.carousel.min.css',
-	 ], 'public/css/index/libs.css');
-}
-
+mix.styles([
+	'resources/libs/OwlCarousel/dist/assets/owl.carousel.min.css',
+	], 'public/css/index/libs.css');
 
 //так подключаются js файлы библиотек.
-if (path) {
-	mix.scripts([
-		'resources/libs/OwlCarousel/dist/owl.carousel.min.js',
-		'resources/libs/polyfill/promise.js',
-		'resources/libs/lazyLoad/ls.bgset.min.js',
-		'resources/libs/lazyLoad/lazysizes.min.js',
-		'resources/libs/polyfill/promise.js',
-		'resources/libs/lodash/lodash.js',
-		'resources/libs/perfect-scrollbar/perfect-scrollbar.min.js',
-		'resources/libs/noUiSlider-12.1.0/nouislider.min.js',
-		'resources/libs/scrollmagic/ScrollMagic.min.js'
-	],
-	   'public/' + path + 'js/index/libs.js')
-} else {
-	mix.scripts([
-		'resources/libs/OwlCarousel/dist/owl.carousel.min.js',
-		'resources/libs/polyfill/promise.js',
-		'resources/libs/axios/axios.js',
-		'resources/libs/vue/vue.min.js',
-		'resources/libs/greensock/TweenMax.min.js',
-		'resources/libs/hammerjs/hammer.min.js',
-		'resources/libs/lazyLoad/ls.bgset.min.js',
-		'resources/libs/lazyLoad/lazysizes.min.js',
-	],
-	   'public/js/index/libs.js')
-}
+mix.scripts([
+	'resources/libs/OwlCarousel/dist/owl.carousel.min.js',
+	'resources/libs/polyfill/promise.js',
+	'resources/libs/axios/axios.js',
+	'resources/libs/vue/vue.min.js',
+	'resources/libs/greensock/TweenMax.min.js',
+	'resources/libs/hammerjs/hammer.min.js',
+	'resources/libs/lazyLoad/ls.bgset.min.js',
+	'resources/libs/lazyLoad/lazysizes.min.js',
+],
+	'public/js/index/libs.js')
+
 
 //------------------------------------------------------------------------------------
 
@@ -160,7 +121,6 @@ mix.styles([
 
 mix.scripts([
    'resources/libs/polyfill/promise.js',
-   'resources/libs/polyfill/assign.js',
    'resources/libs/perfect-scrollbar/perfect-scrollbar.min.js'
 ],
    'public/js/configurator/libs.js')
@@ -198,6 +158,7 @@ mix.js('resources/js/pages/special/custom.js', 'public/js/special')
    .sass('resources/sass/pages/special/detail.scss', 'public/css/special');
 
 mix.scripts([
+	'resources/libs/polyfill/promise.js',
 	'resources/libs/lazyLoad/ls.bgset.min.js',
 	'resources/libs/lazyLoad/lazysizes.min.js',
 ],
@@ -251,36 +212,20 @@ mix.scripts([
 //------------------------------------------------------------------------------------
 
 //------------------------------------SIGN-UP-FORM-------------------------------------------
-mix.js('resources/js/pages/forms/sign-up-form.js', 'public/' + path + 'js/sign-up-form')
-	.sass('resources/sass/pages/signUpFormPage/signUpForm.sass', 'public/' + path + 'css/sign-up-form');
+mix.js('resources/js/pages/forms/sign-up-form.js', 'public/js/sign-up-form')
+	.sass('resources/sass/pages/signUpFormPage/signUpForm.sass', 'public/css/sign-up-form');
 
 mix.styles([
    'resources/libs/selectize/selectize.css',
    'resources/libs/animate-css/animate.css',
    'resources/libs/perfect-scrollbar/perfect-scrollbar.css'
-], 'public/' + path + 'css/sign-up-form/libs.css');
+], 'public/css/sign-up-form/libs.css');
 
 mix.scripts([
    'resources/libs/perfect-scrollbar/perfect-scrollbar.min.js',
    'resources/libs/polyfill/promise.js'
 ],
-   'public/' + path + 'js/sign-up-form/libs.js')
-//------------------------------------------------------------------------------------
-
-//------------------------------------FIND-DEALER-------------------------------------------
-mix.js('resources/js/pages/findDealer/find-dealer.js', 'public/js/find-dealer')
-   .sass('resources/sass/pages/findDealer/find-dealer.sass', 'public/css/find-dealer');
-
-mix.styles([
-	'resources/libs/selectize/selectize.css',
-	'resources/libs/perfect-scrollbar/perfect-scrollbar.css'
- ], 'public/css/find-dealer/libs.css');
-
-mix.scripts([
-	'resources/libs/polyfill/promise.js',
-	'resources/libs/perfect-scrollbar/perfect-scrollbar.min.js'
- ],
-	'public/js/find-dealer/libs.js')
+   'public/js/sign-up-form/libs.js')
 //------------------------------------------------------------------------------------
 
 //------------------------------------CONTACT-US-------------------------------------------
@@ -298,6 +243,7 @@ mix.scripts([
  ],
 	'public/js/contact-us/libs.js')
 //------------------------------------------------------------------------------------
+
 //------------------------------------WARRANTY-------------------------------------------
 mix.js('resources/js/pages/service/warranty/warranty.js', 'public/js/service/warranty')
    .sass('resources/sass/pages/service/warranty/warranty.sass', 'public/css/service/warranty');
@@ -337,6 +283,7 @@ mix.styles([
 mix.scripts([
    'resources/libs/perfect-scrollbar/perfect-scrollbar.min.js',
    'resources/libs/selectize/selectize.min.js',
+   'resources/libs/polyfill/promise.js',
 ],
    'public/js/service/shell/libs.js');
 //-----------------------------------------------------------------------------------
@@ -419,8 +366,10 @@ mix.scripts([
 	'public/js/service/best/libs.js')
 //-----------------------------------------------------------------------------------
 
+// У тачек js файл с подключением модулей vue находится в файле cars.mix.js, т.к. он разный для дилеров и для основного сайта
+cars.modules(mix, '');
 //------------------------------------SANTAFE-------------------------------------------
-mix.js('resources/js/pages/cars/santaFe/santa-fe.js', 'public/js/santaFe')
+mix
    .js('resources/js/pages/cars/santaFe/main.js', 'public/js/santaFe')
    .js('resources/js/pages/cars/santaFe/gallery.js', 'public/js/santaFe')
    .sass('resources/sass/pages/cars/santaFe/santa-fe.sass', 'public/css/santaFe');
@@ -451,7 +400,7 @@ mix.scripts([
 //------------------------------------------------------------------------------------
 
 //------------------------------------ELANTRA-------------------------------------------
-mix.js('resources/js/pages/cars/elantra/elantra.js', 'public/js/cars/elantra')
+mix
    .js('resources/js/pages/cars/elantra/main.js', 'public/js/cars/elantra')
    .js('resources/js/pages/cars/elantra/gallery.js', 'public/js/cars/elantra')
    .sass('resources/sass/pages/cars/elantra/elantra.sass', 'public/css/cars/elantra');
@@ -482,7 +431,7 @@ mix.scripts([
 //------------------------------------------------------------------------------------
 
 //------------------------------------TUCSON-------------------------------------------
-mix.js('resources/js/pages/cars/tucson/tucson.js', 'public/js/cars/tucson')
+mix
    .js('resources/js/pages/cars/tucson/main.js', 'public/js/cars/tucson')
    .js('resources/js/pages/cars/tucson/gallery.js', 'public/js/cars/tucson')
    .sass('resources/sass/pages/cars/tucson/tucson.sass', 'public/css/cars/tucson');
@@ -518,7 +467,7 @@ mix
    .js('resources/js/pages/cars/i30n/gallery.js', 'public/js/cars/i30n_2019')
    .sass('resources/sass/pages/cars/i30n/i30n_2019.sass', 'public/css/cars/i30n_2019');
 
-mix.js('resources/js/pages/cars/i30n/i30n_2019.js', 'public/js/cars/i30n_2019')
+//mix.js('resources/js/pages/cars/i30n/i30n_2019.js', 'public/js/cars/i30n_2019')
 
 mix.styles([
 	'resources/libs/slickSlider/slick.css',
@@ -547,7 +496,7 @@ mix.scripts([
 
 
 //------------------------------------SOLARIS-------------------------------------------
-mix.js('resources/js/pages/cars/solaris/solaris.js', 'public/js/solaris')
+mix
    .js('resources/js/pages/cars/solaris/main.js', 'public/js/solaris')
    .js('resources/js/pages/cars/solaris/gallery.js', 'public/js/solaris')
    .sass('resources/sass/pages/cars/solaris/solaris.sass', 'public/css/solaris');
@@ -579,7 +528,7 @@ mix.scripts([
 
 
 //------------------------------------SONATA-------------------------------------------
-mix.js('resources/js/pages/cars/sonata/sonata.js', 'public/js/sonata')
+mix
    .js('resources/js/pages/cars/sonata/main.js', 'public/js/sonata')
    .js('resources/js/pages/cars/sonata/gallery.js', 'public/js/sonata')
    .sass('resources/sass/pages/cars/sonata/sonata.sass', 'public/css/sonata');
@@ -610,8 +559,40 @@ mix.scripts([
 //------------------------------------------------------------------------------------
 
 
+//------------------------------------NEW-SONATA------------------------------------------
+mix
+   .js('resources/js/pages/cars/new-sonata/main.js', 'public/js/cars/new-sonata')
+   .js('resources/js/pages/cars/new-sonata/gallery.js', 'public/js/cars/new-sonata')
+   .sass('resources/sass/pages/cars/new-sonata/new-sonata.sass', 'public/css/cars/new-sonata');
+
+mix.styles([
+	'resources/libs/slickSlider/slick.css',
+	'resources/libs/slickSlider/slick-theme.css',
+	'resources/libs/perfect-scrollbar/perfect-scrollbar.css',
+	'resources/libs/selectize/selectize.css'
+ ], 'public/css/cars/new-sonata/libs.css');
+
+mix.scripts([
+	'resources/libs/polyfill/promise.js',
+	'resources/libs/greensock/TweenMax.min.js',
+	'resources/libs/scrollmagic/ScrollMagic.min.js',
+	'resources/libs/scrollmagic/plugins/debug.addIndicators.min.js',
+	'resources/libs/lazyLoad/jquery.lazyloadxt.min.js',
+	'resources/libs/lazyLoad/jquery.lazyloadxt.bg.min.js',
+	'resources/libs/lazyLoad/jquery.lazyloadxt.video.min.js',
+	'resources/libs/lazyLoad/ls.bgset.min.js',
+	'resources/libs/lazyLoad/lazysizes.min.js',
+	'resources/libs/rellax/rellax.min.js',
+	'resources/libs/hammerjs/hammer.min.js',
+	'resources/libs/slickSlider/slick.min.js',
+	'resources/libs/perfect-scrollbar/perfect-scrollbar.min.js'
+ ],
+	'public/js/cars/new-sonata/libs.js')
+//------------------------------------------------------------------------------------
+
+
 //------------------------------------CRETA-------------------------------------------
-mix.js('resources/js/pages/cars/creta/creta.js', 'public/js/creta')
+mix
    .js('resources/js/pages/cars/creta/main.js', 'public/js/creta')
    .js('resources/js/pages/cars/creta/gallery.js', 'public/js/creta')
    .sass('resources/sass/pages/cars/creta/creta.sass', 'public/css/creta');
@@ -643,7 +624,7 @@ mix.scripts([
 
 
 //------------------------------------H-1-------------------------------------------
-mix.js('resources/js/pages/cars/h1/h1.js', 'public/js/h1')
+mix
    .js('resources/js/pages/cars/h1/main.js', 'public/js/h1')
    .js('resources/js/pages/cars/h1/gallery.js', 'public/js/h1')
    .sass('resources/sass/pages/cars/h1/h1.sass', 'public/css/h1');
@@ -951,26 +932,59 @@ mix.scripts([
 	'resources/libs/noUiSlider-12.1.0/nouislider.min.js',
 	'resources/libs/scrollmagic/ScrollMagic.min.js',
 	'resources/libs/OwlCarousel/dist/owl.carousel.min.js',
+	'resources/libs/lazyLoad/ls.bgset.min.js',
+	'resources/libs/lazyLoad/lazysizes.min.js',
  ],
 	'public/js/start/libs.js')
 //------------------------------------------------------------------------------------
 
-//------------------------------------DEALER CARS-------------------------------------------
-mix.js('resources/js/pages/dealerCars/index.js', 'public/' + path + 'js/dealerCars')
-mix.sass('resources/sass/common/components/_placeholder.sass', 'public/' + path + 'css/dealerCars/placeholder.css')
-
-mix.styles([
-	'resources/libs/selectize/selectize.css',
-	'resources/libs/slickSlider/slick-theme.css',
-	'resources/libs/slickSlider/slick.css',
- ], 'public/' + path + 'css/dealerCars/libs.css');
+//------------------------------------AUTO LINK-------------------------------------------
+mix.sass('resources/sass/pages/autoLink/index.sass', 'public/css/autolink');
 
 mix.scripts([
-	'resources/libs/polyfill/promise.js',
-	'resources/libs/hammerjs/hammer.min.js',
-	'resources/libs/slickSlider/slick.min.js',
+	'resources/libs/lazyLoad/ls.bgset.min.js',
+	'resources/libs/lazyLoad/lazysizes.min.js',
  ],
-	'public/' + path + 'js/dealerCars/libs.js')
+	'public/js/autolink/libs.js')
+
+
+//------------------------------------HALVA-------------------------------------------
+mix.js('resources/js/pages/promo/halva/halva.js', 'public/js/promo/halva')
+mix.sass('resources/sass/pages/promo/halva/halva.sass', 'public/css/promo/halva');
+
+mix.styles([
+	'resources/libs/OwlCarousel/dist/assets/owl.carousel.min.css',
+	'resources/libs/OwlCarousel/dist/assets/owl.theme.default.min.css'
+ ], 'public/css/promo/halva/libs.css');
+
+mix.scripts([
+	'resources/libs/lazyLoad/ls.bgset.min.js',
+	'resources/libs/lazyLoad/lazysizes.min.js',
+	'resources/libs/OwlCarousel/dist/owl.carousel.min.js',
+ ],
+	'public/js/promo/halva/libs.js')
+
+
+//------------------------------------------------------------------------------------
+
+//------------------------------------KATOK-------------------------------------------
+mix.js('resources/js/pages/katok/index.js', 'public/js/katok')
+   .sass('resources/sass/pages/katok/index.sass', 'public/css/katok');
+
+mix.styles([
+	'resources/libs/OwlCarousel/dist/assets/owl.carousel.min.css',
+	'resources/libs/OwlCarousel/dist/assets/owl.theme.default.min.css'
+ ], 'public/css/katok/libs.css');
+
+mix.scripts([
+	'resources/libs/OwlCarousel/dist/owl.carousel.min.js',
+	'resources/libs/rellax/rellax.min.js',
+	'resources/libs/lazyLoad/ls.bgset.min.js',
+	'resources/libs/lazyLoad/lazysizes.min.js'
+ ],
+	'public/js/katok/libs.js')
+
+
 //------------------------------------------------------------------------------------
 
 //уникальные имена собраным файлам, чтобы они не кэшировались

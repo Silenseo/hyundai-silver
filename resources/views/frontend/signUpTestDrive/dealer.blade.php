@@ -16,10 +16,10 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="form__wrap">
-					<div v-if="!init">
+					<div v-show="!init">
 						@component('components/placeholder')@endcomponent
 					</div>
-					<signup-forms v-else v-bind:form="'test-drive'" page="isTestDrivePage"></signup-forms>
+					<signup-forms v-show="init" v-bind:form="'test-drive'" page="isTestDrivePage"></signup-forms>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-﻿@extends('layouts.master-dealer')
+@extends('layouts.master-dealer')
 
 @section('pageTitle', 'Форма обратной связи')
 

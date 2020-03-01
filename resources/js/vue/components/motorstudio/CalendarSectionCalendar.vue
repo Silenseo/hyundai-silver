@@ -28,7 +28,7 @@
 								width: event.isLong ? eventEndOnThisWeek(day, event) : ''
 							}"
 							@click.stop.prevent="openPopup(event)"
-						v-for="(event, index) in day.eventsList" :key="index"><span>{{ event.name }}</span></a>
+						v-for="(event, index) in day.eventsList" :key="index"><span>{{ event.calendar_name }}</span></a>
 					</div>
 				</li>
 			</div>

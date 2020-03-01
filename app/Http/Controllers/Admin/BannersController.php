@@ -90,23 +90,32 @@ class BannersController extends Controller
         $item->link = $request->get('link');
         $item->target = (bool)$request->get('target');
 
-
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
-
             $path = $image->storeAs('public/banners', $filename);
-
             $item->image = $filename;
         }
 
         if ($request->hasFile('image_mobile')) {
             $image = $request->file('image_mobile');
             $filename = time() . '_mob.' . $image->getClientOriginalExtension();
-
             $path = $image->storeAs('public/banners', $filename);
-
             $item->image_mobile = $filename;
+        }
+
+        if ($request->hasFile('video_desktop')) {
+            $file = $request->file('video_desktop');
+            $filename = 'vd_' . time() . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('public/banners', $filename);
+            $item->video_desktop = $filename;
+        }
+
+        if ($request->hasFile('video_mobile')) {
+            $file = $request->file('video_mobile');
+            $filename = 'vm_' . time() . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('public/banners', $filename);
+            $item->video_mobile = $filename;
         }
 
         $item->save();
@@ -169,32 +178,41 @@ class BannersController extends Controller
 
         if ($request->hasFile('image')) {
             $oldFile = $item->image;
-
             $image = $request->file('image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
-
             $path = $image->storeAs('public/banners', $filename);
-
             $item->image = $filename;
-
             /* TODO - удалить старую пикчу */
             Storage::disk('public')->delete('banners/' . $oldFile);
         }
 
         if ($request->hasFile('image_mobile')) {
             $oldFile = $item->image_mobile;
-
             $image = $request->file('image_mobile');
             $filename = time() . '_mob.' . $image->getClientOriginalExtension();
-
             $path = $image->storeAs('public/banners', $filename);
-
             $item->image_mobile = $filename;
-
             /* TODO - удалить старую пикчу */
             Storage::disk('public')->delete('banners/' . $oldFile);
         }
 
+        if ($request->hasFile('video_desktop')) {
+            $oldFile = $item->video_desktop;
+            $file = $request->file('video_desktop');
+            $filename = 'vd_' . time() . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('public/banners', $filename);
+            $item->video_desktop = $filename;
+            Storage::disk('public')->delete('banners/' . $oldFile);
+        }
+
+        if ($request->hasFile('video_mobile')) {
+            $oldFile = $item->video_mobile;
+            $file = $request->file('video_mobile');
+            $filename = 'vm_' . time() . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('public/banners', $filename);
+            $item->video_mobile = $filename;
+            Storage::disk('public')->delete('banners/' . $oldFile);
+        }
 
         $item->save();
 

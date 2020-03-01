@@ -1,19 +1,19 @@
 $(function(){
 	//IE11
-	objectFitPolyfill();
+	// objectFitPolyfill();
 	
-	var vid = document.getElementById("video");
+	// var vid = document.getElementById("video");
 
-	vid.addEventListener('ended', function() {
-		$('.banner').addClass('ended');
-	}, false);
+	// vid.addEventListener('ended', function() {
+	// 	$('.banner').addClass('ended');
+	// }, false);
 
-	//Пропустить видео
-	$('.js-pass').on('click', function(e){
-		e.preventDefault();
+	// //Пропустить видео
+	// $('.js-pass').on('click', function(e){
+	// 	e.preventDefault();
 
-		$('.banner').addClass('ended');
-	})
+	// 	$('.banner').addClass('ended');
+	// })
 
 	$('.js-go-to-calc').on('click', function(e) {
 		e.preventDefault();

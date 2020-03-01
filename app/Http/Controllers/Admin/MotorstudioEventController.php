@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 use App\MotorstudioEvent;
 
 class MotorstudioEventController extends Controller
@@ -84,6 +84,7 @@ class MotorstudioEventController extends Controller
         $item->max_reg = is_numeric($request->get('max_reg')) && $request->get('max_reg') > 0 ? $request->get('max_reg') : 0;
         $item->is_promo = (bool)$request->get('is_promo');
         $item->available = (bool)$request->get('available');
+        $item->check_registrations = (bool)$request->get('check_registrations');
         $item->repair = (bool)$request->get('repair');
         $item->visible = (bool)$request->get('visible');
 
@@ -98,16 +99,23 @@ class MotorstudioEventController extends Controller
 
         if ($request->hasFile('preview_picture')) {
             $image = $request->file('preview_picture');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $filename = time() . '_preview.' . $image->getClientOriginalExtension();
             $path = $image->storeAs('public/motorstudio_events', $filename);
             $item->preview_picture = $filename;
         }
 
         if ($request->hasFile('detail_picture')) {
             $image = $request->file('detail_picture');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $filename = time() . '_detail.' . $image->getClientOriginalExtension();
             $path = $image->storeAs('public/motorstudio_events', $filename);
             $item->detail_picture = $filename;
+        }
+
+        if ($request->hasFile('mobile_picture')) {
+            $image = $request->file('mobile_picture');
+            $filename = time() . '_mobile.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/motorstudio_events', $filename);
+            $item->mobile_picture = $filename;
         }
 
         $item->save();
@@ -163,6 +171,7 @@ class MotorstudioEventController extends Controller
         $item->max_reg = is_numeric($request->get('max_reg')) && $request->get('max_reg') > 0 ? $request->get('max_reg') : 0;
         $item->is_promo = (bool)$request->get('is_promo');
         $item->available = (bool)$request->get('available');
+        $item->check_registrations = (bool)$request->get('check_registrations');
         $item->repair = (bool)$request->get('repair');
         $item->visible = (bool)$request->get('visible');
 
@@ -178,7 +187,7 @@ class MotorstudioEventController extends Controller
         if ($request->hasFile('preview_picture')) {
             $oldFile = $item->preview_picture;
             $image = $request->file('preview_picture');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $filename = time() . '_preview.' . $image->getClientOriginalExtension();
             $path = $image->storeAs('public/motorstudio_events', $filename);
             $item->preview_picture = $filename;
 
@@ -189,9 +198,20 @@ class MotorstudioEventController extends Controller
         if ($request->hasFile('detail_picture')) {
             $oldFile = $item->detail_picture;
             $image = $request->file('detail_picture');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $filename = time() . '_detail.' . $image->getClientOriginalExtension();
             $path = $image->storeAs('public/motorstudio_events', $filename);
             $item->detail_picture = $filename;
+
+            /* TODO - удалить старую пикчу */
+            Storage::disk('public')->delete('motorstudio_events/' . $oldFile);
+        }
+
+        if ($request->hasFile('mobile_picture')) {
+            $oldFile = $item->mobile_picture;
+            $image = $request->file('mobile_picture');
+            $filename = time() . '_mobile.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/motorstudio_events', $filename);
+            $item->mobile_picture = $filename;
 
             /* TODO - удалить старую пикчу */
             Storage::disk('public')->delete('motorstudio_events/' . $oldFile);

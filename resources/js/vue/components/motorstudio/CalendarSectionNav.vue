@@ -69,7 +69,7 @@ export default {
 			currentMonth: 0,
 			animMonth: 'month-next',
 			date: '',
-			currentView: 'calendar',
+			currentView: 'list',
 			isMobile: false
         }
     },

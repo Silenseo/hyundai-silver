@@ -83,7 +83,8 @@ class CarsController extends Controller
             'visible' => (bool)$request->get('visible'),
             'is_promo' => (bool)$request->get('is_promo'),
             'conf_car_id' => 0,
-            'is_old_model' => (bool)$request->get('is_old_model')
+            'is_old_model' => (bool)$request->get('is_old_model'),
+            'tradein' => $request->get('tradein'),
         ]);
 
         if ($request->hasFile('image')) {
@@ -177,6 +178,7 @@ class CarsController extends Controller
         $car->visible = (bool)$request->get('visible');
         $car->is_promo = (bool)$request->get('is_promo');
         $car->is_old_model = (bool)$request->get('is_old_model');
+        $car->tradein = $request->get('tradein');
 
         if ($request->hasFile('image')) {
             $oldFile = $car->image;

@@ -1,0 +1,91 @@
+@media only screen and (max-width : 1023px)
+	.df-main-banner
+		&__wrap
+			padding-top: 0
+
+	.about
+		&__inner
+			width: 100%
+			max-width: 522px
+			padding: 72px 0
+
+	.team
+		&__inner
+			padding: 72px 0
+		&__title
+			margin-bottom: 40px
+		&__list
+			display: flex
+			flex-wrap: wrap
+			margin: 0
+
+	.t-item
+		width: 100%
+		margin: 0
+		&:not(:last-of-type)
+			margin-bottom: 32px
+
+@media only screen and (max-width : $md-max)
+	.about
+		&__inner
+			width: 100%
+			max-width: 100%
+			padding: 48px 0
+		&__title
+			margin-bottom: 28px
+
+	.team
+		&__inner
+			padding: 48px 0
+		&__title
+			margin-bottom: 20px
+
+	.t-item
+		padding: 30px 20px
+		&:not(:last-of-type)
+			margin-bottom: 16px
+		&__top
+			padding-bottom: 19px
+		&__img
+			width: 60px
+			height: 60px
+			margin-right: 20px
+		&__name
+			font-size: 16px
+			line-height: 18px
+		&__position
+			font-size: 12px
+			line-height: 15px
+		&__footer
+			padding-top: 19px
+		&__iconed
+			font-size: 12px
+			font-weight: 500
+
+@media only screen and (max-width : 640px)
+	.map
+		display: block
+		&__body
+			padding: 32px 16px
+			padding-bottom: 40px
+			min-height: 0
+		&__left, &__right
+			width: 100%
+		&__right
+			height: 408px
+		&__title
+			max-width: 100%
+			margin-bottom: 18px
+@media only screen and (max-width : 500px)
+	.t-item
+		&__footer
+			display: block
+		&__contacts
+			width: 100%
+			margin-right: 0
+			margin-bottom: 35px
+		&__call
+			font-size: 16px
+			width: 100%
+			padding-top: 16px
+			padding-bottom: 16px

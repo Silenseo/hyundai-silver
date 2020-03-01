@@ -14,7 +14,6 @@
       <div class="col-md-12">
         <div class="head__banner">        
           <div class="head__composition">
-            <h1 class="h2">Карта сайта</h1>
             <div class="sitemap__row sitemap__row--models">
               <h3 class="sitemap__row-title">Модельный ряд</h3>                
               <ul class="sitemap__row-list">
@@ -22,7 +21,7 @@
                   @if(isset($menu_car['items']))
                     @foreach($menu_car['items'] as $car)
                     <li class="sitemap__row-item">
-                      <a href="/{{ $car->id_text }}" class="sitemap__row-link">{{ $car->name_menu_rus }}</a>
+                      <a href="{{ $car->id_text }}" class="sitemap__row-link">{{ $car->name_menu_rus }}</a>
                     </li>
                     @endforeach
                   @endif

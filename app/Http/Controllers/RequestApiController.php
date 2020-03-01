@@ -159,6 +159,53 @@ class RequestApiController extends Controller
 	}
 
 	public function getOffers(Request $request) {
+
+	    $offers = \App\SpecialOffer::where('is_active', 1)->where(function($query) {
+			$query->where('active_from', '<', date('Y-m-d H:i:s'))
+				->orWhereNull('active_from');
+		})->where(function($query) {
+			$query->where('active_to', '>', date('Y-m-d H:i:s'))
+				->orWhereNull('active_to');
+		})->orderBy('sort')->get();
+
+		$Result = Array();
+
+		foreach($offers as $Offer)
+		{
+            //var_dump($offer); exit;
+
+			preg_match_all("#<div class=\"offer-price-count ruble\">(.*?)</div>#is", $Offer->text, $matches);
+
+			$offerText = $Offer->text;
+			if(!preg_match("/\<div.*offer\-terms.*\>/i", $Offer->text)) {
+				$offerText = '<div class="offer-terms">' . $offerText . '</div>';
+			}
+
+			$OfferArray = Array(
+				'id' => $Offer->id,
+				'name' => $Offer->name,
+				'subtitle' => $Offer->banner_subtitle,
+				'date_start' => $Offer->active_from,
+				'date_end' => $Offer->active_to,
+				'img' => 'https://www.hyundai.ru' . $Offer->getImagePreviewUrl(),
+				'img_full' => 'https://www.hyundai.ru' . $Offer->getBannerUrl(),
+				'img_mobile_app' => 'https://www.hyundai.ru' . $Offer->getBannerMobileUrl(),
+				'url' => (strpos($Offer->url, '/') === 0) ? 'https://www.hyundai.ru' . $Offer->url : '',
+				'text' => (strpos($Offer->url, '/') === 0) ? '' : $offerText,
+				'price' => isset($matches[0][0]) ? intval(str_replace(' ', '', strip_tags($matches[0][0]))) : '',
+				'img_preview' => 'https://www.hyundai.ru' . $Offer->getImageWorldUrl(),
+				'img_preview_2' => 'https://www.hyundai.ru' . $Offer->getImageWorldUrl()
+			);
+
+			$Result[] = $OfferArray;
+		}
+
+		if($request->get('debug') == 'Y') {
+			var_dump($Result);
+			exit;
+		}
+
+		return response()->json($Result);
 	}
 
 	public function getBrochureCodes(Request $request) {

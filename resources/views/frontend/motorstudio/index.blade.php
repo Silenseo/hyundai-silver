@@ -40,91 +40,25 @@
 
     // var itemsJson = [
     //     {
-    //         id: 0,
-	// 		available: false,
-	// 		promo: false,
-    //         name: 'Выставка "Future Humanity - Our Shared Planet"',
-	// 		description: 'Данная экспозиция является частью глобальной выставки, представленной Hyundai Motor Company в Hyundai Motorstudio в Пекине, Сеуле и Москве. Организаторами и кураторами совместно выступают центр Ars Electronica и Hyundai Motor Company. Мы являемся свидетелями перехода из эры, в которую мы управляли машинами, в новую эру, где машины станут частью нашей жизни. Так какое же влияние техника оказывает на нас, и какое влияние мы оказываем на технику? Данная выставка дает ответы на подобные вопросы. Ждем вас в Hyundai Motorstudio Moscow.',
-	// 		from: '2019-07-06',
-    //         to: '2019-07-10',
-	// 		img: '/images/motorstudio/events/1.jpg'
-    //     },
-    //     {
-    //         id: 1,
-	// 		available: true,
-	// 		promo: true,
-    //         name: 'Выставка "Future Humanity - Our Shared Planet"',
-	// 		description: 'Данная экспозиция является частью глобальной выставки, представленной Hyundai Motor Company в Hyundai Motorstudio в Пекине, Сеуле и Москве. Организаторами и кураторами совместно выступают центр Ars Electronica и Hyundai Motor Company. Мы являемся свидетелями перехода из эры, в которую мы управляли машинами, в новую эру, где машины станут частью нашей жизни. Так какое же влияние техника оказывает на нас, и какое влияние мы оказываем на технику? Данная выставка дает ответы на подобные вопросы. Ждем вас в Hyundai Motorstudio Moscow.',
-	// 		from: '2019-07-01',
-    //         to: '2019-07-04',
-	// 		img: '/images/motorstudio/events/1.jpg'
-    //     },
-    //     {
-    //         id: 2,
-    //         available: true,
-	// 		name: 'Интересное событие в конце зимы',
-	// 		description: 'Готова ли Россия к электромобилям и что представляет из себя электромобиль Hyundai IONIQ?',
-    //         from: '2019-07-12',
-    //         to: '2019-07-12',
-    //         img: '/images/motorstudio/events/2.jpg'
-    //     },
-    //     {
-    //         id: 3,
-    //         available: true,
-	// 		name: '8 марта!',
-	// 		description: 'Готова ли Россия к электромобилям и что представляет из себя электромобиль Hyundai IONIQ?',
-    //         from: '2019-07-13',
-    //         to: '2019-07-13',
-    //         img: '/images/motorstudio/events/3.jpg'
-    //     },
-    //     {
-    //         id: 4,
-    //         available: true,
-	// 		name: 'Интересное короткое событие в начале весны',
-	// 		description: 'Готова ли Россия к электромобилям и что представляет из себя электромобиль Hyundai IONIQ?',
-    //         from: '2019-07-14',
-    //         to: '2019-07-14',
-    //         img: '/images/motorstudio/events/4.jpg'
-    //     },
-    //     {
-    //         id: 5,
-    //         available: true,
-    //         name: 'Двенадцатое',
-    //         from: '2019-03-12',
-    //         to: '2019-03-12',
-    //         img: '/images/motorstudio/events/5.jpg'
-    //     },
-    //     {
-    //         id: 6,
-    //         available: true,
-    //         name: 'Тринадцатое',
-    //         from: '2019-03-13',
-    //         to: '2019-03-13',
-    //         img: '/images/motorstudio/events/6.jpg'
-    //     },
-    //     {
-    //         id: 7,
-	// 		available: false,
-    //         name: '2 Коротких',
-    //         from: '2019-03-22',
-    //         to: '2019-03-22',
-    //         img: '/images/motorstudio/events/1.jpg'
-    //     },
-    //     {
     //         id: 8,
-	// 		available: false,
-    //         name: 'Конец марта',
-    //         from: '2019-03-20',
-    //         to: '2019-04-05',
-    //         img: '/images/motorstudio/events/1.jpg'
+	// 		available: true,
+	// 		name: 'Конец марта',
+	// 		calendar_name: 'Конец марта',
+    //         from: '2019-11-05',
+    //         to: '2019-11-05',
+    //         img: '/images/motorstudio/events/7.jpg',
+    //         img_mobile: '/images/motorstudio/events/7.1.jpg'
     //     },
     //     {
-    //         id: 9,
-	// 		available: false,
-    //         name: 'Начало апреля',
-    //         from: '2019-04-06',
-    //         to: '2019-04-10',
-    //         img: '/images/motorstudio/events/2.jpg'
+    //         id: 119,
+	// 		available: true,
+	// 		altLong: true,
+	// 		name: 'Начало апреля',
+	// 		calendar_name: 'Начало апреля',
+    //         from: '2019-11-05',
+    //         to: '2019-11-05',
+	// 		img: '/images/motorstudio/events/2.jpg',
+	// 		img_mobile: '/images/motorstudio/events/7.1.jpg'
     //     }
     // ]
 
@@ -138,7 +72,7 @@
 				<div class="banner__center">
 					<div class="banner__video">
 						<video preload="preload" autoplay loop muted data-object-fit="cover">
-							<source src="/images/motorstudio/Hyundai_MotorStudio_v_Moskve_2.mp4" type="video/mp4">
+							<source src="/images/motorstudio/Hyundai_MotorStudio_v_Moskve_compressed.mp4" type="video/mp4">
 						</video>
 					</div>
 					<div class="banner__composition">

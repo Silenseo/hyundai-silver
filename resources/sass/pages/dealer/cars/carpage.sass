@@ -1,0 +1,174 @@
+@import '../../../common/_variables.scss'
+
+.car-page
+	position: relative
+	background-color: $gray_bg
+	color: #000
+	padding-top: 25px
+	&__inner
+		display: flex
+		padding: 55px 0
+		padding-top: 15px
+	&__mobile
+		display: none
+	&__images
+		width: calc(100% - 518px)
+		margin-right: 30px
+	&__specifications
+		flex: none
+		width: 488px
+		padding: 43px 40px
+		background-color: #fff
+		white-space: nowrap
+	&__line
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex-wrap: wrap
+		&--top
+			margin-bottom: 9px
+		&--price
+			margin-bottom: 15px
+		&--buttons
+			margin-bottom: 26px
+	&__year
+		font-size: 1.2rem
+		line-height: 1.5
+		font-weight: 500
+	&__old-price
+		width: 100%
+		font-size: 1.2rem
+		line-height: 1
+		font-weight: 500
+		color: $third_text
+		text-decoration: line-through
+	&__price
+		width: calc(50% - 7px)
+		font-size: 2rem
+		line-height: 1
+		font-weight: 500
+		margin-right: 7px
+	&__month-payment
+		width: calc(50% - 7px)
+		font-size: 1.6rem
+		line-height: 1
+		font-weight: 500
+		color: $main_blue
+		margin-left: 7px
+	&__book
+		width: calc(50% - 7px)
+		margin-right: 7px
+		padding-left: 0
+		padding-right: 0
+	&__calc
+		width: calc(50% - 7px)
+		margin-left: 7px
+		padding-left: 0
+		padding-right: 0
+		background-color: transparent
+		color: $main_blue
+		border: 1px solid $main_blue
+		padding-top: 15px
+		padding-bottom: 15px
+		&:hover
+			background-color: $main_blue
+			color: #fff
+
+.car-specifications
+	padding-top: 22px
+	padding-bottom: 30px
+	border-top: 1px solid #C4C4C4
+	&__line
+		display: flex
+		align-items: center
+		justify-content: space-between
+		font-size: 16px
+		color: #000
+		&:not(:last-of-type)
+			margin-bottom: 9px
+	&__description
+		width: calc(50% - 7px)
+		margin-right: 7px
+		font-weight: 500
+		overflow: hidden
+		text-overflow: ellipsis
+	&__value
+		width: calc(50% - 7px)
+		margin-left: 7px
+		overflow: hidden
+		text-overflow: ellipsis
+
+.car-popup
+	&__wrap
+		height: 100%
+	&__center
+		width: 100%
+		height: 100%
+
+.h-buttons
+	right: 0
+    bottom: 81px
+
+@media only screen and (max-width : $lg-max)
+	.car-page
+		&__inner
+			display: block
+			padding-top: 15px
+		&__images
+			width: 100%
+			margin-right: 0
+			margin-bottom: 30px
+			height: 560px
+		&__specifications
+			width: 100%
+
+@media only screen and (max-width : $md-max)
+	.car-page
+		&__inner
+			padding-top: 15px
+		&__mobile
+			display: block
+			margin-bottom: 26px
+		&__name
+			font-size: 30px
+		&__month-payment
+			width: auto
+		&__price
+			width: auto
+		&__images
+			height: 64vw
+			margin-bottom: 16px
+		&__specifications
+			padding: 34px 20px
+		&__line
+			&--top, &--price
+				display: none
+			&--top-mobile
+				margin-bottom: 20px
+			&--buttons
+				display: block
+		&__book
+			display: block
+			width: 100%
+			margin-right: 0
+			margin-bottom: 16px
+		&__calc
+			display: block
+			width: 100%
+			margin-left: 0
+
+	.car-specifications
+		padding-top: 0
+		border-top: none
+		&__line
+			display: block
+			&:not(:last-of-type)
+				margin-bottom: 19px
+		&__description
+			width: 100%
+			margin-right: 0
+			margin-bottom: 5px
+		&__value
+			width: 100%
+			margin-left: 0
+			

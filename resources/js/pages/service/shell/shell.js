@@ -1,10 +1,6 @@
 import Vue from 'vue'
 import store from '../../../vue/store-service'
 
-const VueInputMask = require('vue-inputmask').default
-
-Vue.use(VueInputMask)
-
 //Чтобы store был доступен из вне, для создания событий открытия окон
 window.vueStore = store;
 
@@ -55,8 +51,20 @@ $(function() {
 	$('.js-checkout-service').on('click', function (e) {
 		e.preventDefault();
 
+		switch (masterCar) {
+			case 'SOLARIS New':
+				masterCar = 'solaris';
+				break;
+			case 'Sonata New':
+				masterCar = 'sonata';
+				break;
+		
+			default:
+				break;
+		}
 		//Установим активной модель. Св-во code!!!!!!
 		vueStore.dispatch('SET_SAVED_MODEL', masterCar);
+		vueStore.dispatch('SET_MODEL', masterCar);
 		vueStore.dispatch('OPEN_TEST_DRIVE_POPUP', true);
 	})
 

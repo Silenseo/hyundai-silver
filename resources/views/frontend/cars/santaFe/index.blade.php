@@ -196,7 +196,7 @@
             </a>
         </li>
         <li class="nav__item">
-            <a target="_blank" href="{{ route('static_car25') }}/gallery" class="nav__link">
+            <a target="_blank" href="{{ route('static_dealerapi_car25', null, false) }}/gallery" class="nav__link">
                 Галерея
             </a>
         </li>
@@ -220,7 +220,7 @@
             <span>Инновации в каждом мгновении.</span>
         </div>
     </div>
-    <div class="blue-label" style="display:none">
+    <div class="blue-label">
         <div class="blue-label__top">
             <span>от</span> <span id="price-from"></span> &#8381;
         </div>
@@ -234,7 +234,7 @@
 
 	<div id="hotbuttons">
 		<!-- Установим активной модель. model Св-во codeName!!!!!! -->
-		<hot-buttons :car-id="25" model="santa fe" :buttons="[1,1,1]"></hot-buttons>
+		<hot-buttons :car-id="25" model="santa fe" :buttons="[1,1,1,1]" page="isModelPage"></hot-buttons>
 	</div>
 </section>
 
@@ -358,6 +358,11 @@
                         Theta-II 2.4 GDi
                     </a>
                 </li>
+                <li class="dynamics__tab">
+                    <a data-view="view2" href="#" class="dynamics__link js-change-view">
+						Lambda-II 3.5 MPI
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -418,6 +423,38 @@
             <div class="dynamics__specs-w dynamics__specs-w--2">
                 <div class="dynamics__description">
                     7.5 л / 100 км
+                </div>
+                <div class="dynamics__text">
+                    Средний расход топлива
+                </div>
+            </div>
+        </li>
+    </ul>
+    <ul class="dynamics__specs dynamics__specs--2">
+        <li class="dynamics__spec">
+            <div class="dynamics__specs-w dynamics__specs-w--0">
+                <div class="dynamics__description">
+					<span id="count5"></span> л.с.
+                </div>
+                <div class="dynamics__text">
+                    Максимальная мощность
+                </div>
+            </div>
+        </li>
+        <li class="dynamics__spec">
+            <div class="dynamics__specs-w dynamics__specs-w--1">
+                <div class="dynamics__description">
+					<span id="count6"></span>.8 сек
+                </div>
+                <div class="dynamics__text">
+                    Разгон до 100 км/ч
+                </div>
+            </div>
+        </li>
+        <li class="dynamics__spec">
+            <div class="dynamics__specs-w dynamics__specs-w--2">
+                <div class="dynamics__description">
+                    10.6 л / 100 км
                 </div>
                 <div class="dynamics__text">
                     Средний расход топлива
@@ -833,7 +870,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<specs-section car-id="25" model-type="Кроссовер" number-of-seats="5 или 7" engine="Бензиновый / Дизельный" drive="Полный" gear-box="Автоматическая"></specs-section>
+				<specs-section car-id="25" model-type="Кроссовер" number-of-seats="5 или 7" engine="Бензиновый / Дизельный" drive="Полный" gear-box="Автоматическая" car-name="Santa Fe"></specs-section>
 				<?php if(strlen($disclaimer) > 0) :?>
 				<div class="specs" style="padding-top: 0px;">
 				    <div class="section__center">
@@ -844,17 +881,14 @@
                     </div>
                 </div>
                 <?php endif; ?>
+
+				<div class="section__center">
+					@component('components/model-seo-text', ['model' => 'Hyundai Santa Fe'])@endcomponent
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
-
-
-
-<div id="tdpopup">
-	<sign-up-test-drive-form-popup v-if="isVisible" page="isModelPage"></sign-up-test-drive-form-popup>
-</div>
 <script>
 //Preloader
 //init();

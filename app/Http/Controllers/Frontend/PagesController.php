@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Cache;
 
 class PagesController extends Controller
 {
-    public function start() {
-        $key = 'disclaimer_start2';
+    public function start($carCode = '') {
+        $key = 'disclaimer_start4';
 
         if(!Cache::has($key))
         {
@@ -23,6 +23,7 @@ class PagesController extends Controller
             $disclaimer['i30n_start'] = PlaceholderHelper::getPlaceholderData('i30n_start');
             $disclaimer['Solaris_start'] = PlaceholderHelper::getPlaceholderData('Solaris_start');
             $disclaimer['Sonata_start'] = PlaceholderHelper::getPlaceholderData('Sonata_start');
+            $disclaimer['NewSonata_start'] = PlaceholderHelper::getPlaceholderData('NewSonata_start');
             $disclaimer['Creta_start'] = PlaceholderHelper::getPlaceholderData('Creta_start');
             $disclaimer['H-1_start'] = PlaceholderHelper::getPlaceholderData('H-1_start');
 
@@ -42,7 +43,7 @@ class PagesController extends Controller
             $disclaimer = Cache::get($key);
         }
 
-        return view('frontend.start.index', ['header' => true, 'highlight' => false, 'footer' => true, 'disclaimer' => $disclaimer]);
+        return view('frontend.start.index', ['header' => true, 'highlight' => false, 'footer' => true, 'disclaimer' => $disclaimer, 'code' => $carCode]);
 	}
 }
 ?>

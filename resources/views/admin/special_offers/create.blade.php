@@ -105,6 +105,12 @@
 			</fieldset>
 		</div>
 		<div class="content__line">
+			{{ Form::adminFile('video_desktop', '', ['publicName' => 'Видео десктопное (mp4, 1760 x 650 px)']) }}
+		</div>
+		<div class="content__line">
+			{{ Form::adminFile('video_mobile', '', ['publicName' => 'Видео мобильное (mp4, 640 x 800 px)']) }}
+		</div>
+		<div class="content__line">
 			<button class="button button--large" type="submit">Сохранить</button>
 			<button class="button button--large button--grey">Отменить</button>
 		</div>

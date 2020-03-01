@@ -43,7 +43,7 @@ class MotorstudioRequestController extends Controller
             }
             else {
                 if($sort_field == 'event__name') {
-                    $items = $items->join('motorstudio_events', 'motorstudio_requests.car_id', '=', 'motorstudio_events.id')
+                    $items = $items->join('motorstudio_events', 'motorstudio_requests.event_id', '=', 'motorstudio_events.id')
                         ->orderBy('motorstudio_events.name', $sort_order)
                         ->select('motorstudio_requests.*');
                 }
@@ -144,21 +144,21 @@ class MotorstudioRequestController extends Controller
                 iconv('UTF-8', 'Windows-1251', 'E-Mail'),
                 iconv('UTF-8', 'Windows-1251', 'Телефон')
             ];
-            fputcsv($output, $data);
+            fputcsv($output, $data, ";");
 
             foreach($items as $item) {
                 $data = [
-                    iconv('UTF-8', 'Windows-1251', $item->id),
-                    iconv('UTF-8', 'Windows-1251', date('d.m.Y H:i', $item->date)),
-                    iconv('UTF-8', 'Windows-1251', $item->event->name),
-                    iconv('UTF-8', 'Windows-1251', date('d.m.Y H:i', $item->event->date_start)),
+                    @iconv('UTF-8', 'Windows-1251', $item->id),
+                    @iconv('UTF-8', 'Windows-1251', date('d.m.Y H:i', $item->date)),
+                    @iconv('UTF-8', 'Windows-1251', $item->event->name),
+                    @iconv('UTF-8', 'Windows-1251', date('d.m.Y H:i', $item->event->date_start)),
                     @iconv('UTF-8', 'Windows-1251', $item->sirname),
                     @iconv('UTF-8', 'Windows-1251', $item->name),
                     iconv('UTF-8', 'Windows-1251', $item->age),
                     iconv('UTF-8', 'Windows-1251', $item->email),
                     iconv('UTF-8', 'Windows-1251', $item->phone)
                 ];
-                fputcsv($output, $data);
+                fputcsv($output, $data, ";");
             }
 
             fclose($output);

@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import Inputmask from "inputmask";
+
 export default {
 	name: "BackCallForm",
 	components: {},
@@ -60,6 +62,13 @@ export default {
 			agreement: false,
 			process: false
 		};
+	},
+	directives: {
+		mask: {
+			bind: function(el, binding) {
+				Inputmask(binding.value).mask(el);
+			}
+		}
 	},
 	computed: {
 		validation () {

@@ -249,6 +249,7 @@ export default {
 		min-width: 592px
 		padding: 40px 72px
 		background-color: $white_bg
+		color: #000
 		transition: 0.5s
 	&__title
 		text-align: center

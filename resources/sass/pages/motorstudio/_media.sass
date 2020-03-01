@@ -126,8 +126,10 @@
 		&__fb
 			border-right: 1px solid $white_bg
 
+@media only screen and (max-width : 1023px)
 	.p-event
 		top: 56px
+		z-index: 400
 		&__wrap
 			align-items: flex-start
 		&__center
@@ -138,12 +140,8 @@
 		&__img
 			width: 100%
 			min-height: 0
-			background-position: 0 0
-			&::after
-				content: ''
-				display: block
-				position: relative
-				padding-bottom: 50%
+			img
+				max-height: 512px
 		&__description
 			width: 100%
 			padding: 40px
@@ -284,7 +282,7 @@
 		&__img
 			margin-bottom: 16px
 		&__name
-			font-size: 16px
+			font-size: 18px
 
 	.slider
 		&__title
@@ -324,10 +322,6 @@
 			margin-bottom: 38px
 
 	.p-event
-		&__img
-			min-height: 320px
-			&::after
-				padding-bottom: 50%
 		&__description
 			display: flex
 			flex-direction: column

@@ -1,0 +1,74 @@
+.filters
+	background-color: $gray_bg
+	&__inner
+		padding: 40px 0
+		padding-bottom: 35px
+	&__title
+		margin-right: 77px
+	&__top
+		display: flex
+		align-items: center
+		margin-bottom: 16px
+	&__list
+		display: flex
+		flex-wrap: wrap
+		min-width: 100%
+		margin: 0 -16px
+	&__dd
+		width: calc(25% - 32px)
+		margin: 16px
+	&__footer
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__more
+		font-size: 1.8rem
+		font-weight: 500
+		color: $main_blue
+		transition: 0.3s
+		&:hover
+			color: #103A71
+		svg
+			transform: rotate(180deg)
+			transition: 0.3s
+		&.all
+			svg
+				transform: rotate(0)
+	&__clear
+		font-size: 18px
+		font-weight: 500
+		color: $second_text
+		transition: 0.3s
+		span
+			margin-right: 4px
+		&:hover
+			opacity: 0.8
+
+.age
+	&__list
+		display: flex
+		align-items: center
+	&__item
+		label
+			cursor: pointer
+			margin-bottom: 0
+		input
+			display: none
+			&:checked
+				& + .age__box
+					background-color: $second_blue
+					color: #fff
+		&:hover
+			.age__box
+				color: $second_blue
+	&__box
+		width: 160px
+		line-height: 40px
+		background-color: #fff
+		color: $second_text
+		text-align: center
+		font-size: 12px
+		font-weight: 500
+		transition: 0.3s
+	
+

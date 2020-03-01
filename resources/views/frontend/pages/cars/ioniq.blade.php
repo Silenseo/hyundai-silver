@@ -23,8 +23,8 @@
 				</div>
 				<div class="middle">
 					<div class="titWrap">
-						<h1 class="ftit">IONIQ Electric*</h1>
-						<div class="stit">
+						<h1 class="df-main-banner__title">IONIQ Electric*</h1>
+						<div class="df-main-banner__subtitle">
 							Инновации в динамике.
 							<br>Заряжен эмоциями.
 						</div>
@@ -349,13 +349,16 @@
 			</div>
 		</div>
   </div>
-  <div class="naviJumpWrap">
-    <div class="naviJump">
-      <div class="next">
-        <a href="https://www.hyundai.com/worldwide/en/eco/ioniq-electric/highlights" class="version__link">Перейти на английскую версию страницы</a>
-      </div>
-    </div>
-  </div>
+
+<div class="foot-nav">
+	<div class="foot-nav__center">
+		<a href="https://www.hyundai.com/worldwide/en/eco/ioniq-electric/highlights" class="df-forward-link">
+			Перейти на английскую версию страницы
+			<svg>
+				<use xlink:href="#forward-link"></use>
+			</svg>
+		</a>
+	</div>
 </div>
 
 @endsection

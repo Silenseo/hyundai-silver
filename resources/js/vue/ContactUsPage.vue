@@ -30,6 +30,7 @@ export default {
 	},
 	computed: {
 		...mapGetters({
+			ENV: "GET_ENV",
 			openSuccess: "OPEN_SUCCESS"
 		})
 	},
@@ -55,13 +56,15 @@ export default {
 	},
 	mounted () {
 		//Получим список дилеров и городов и запишем их в хранилище
-		this.$store.dispatch('GET_DEALERS')
-			.catch(() => {
-				this.$root.$emit('notify', { type: 'error', text: 'Ошибка загрузки данных, повторите попытку позднее' })
-			})
-			
+		if (this.ENV !== 'dealer') {
+			this.$store.dispatch('GET_DEALERS')
+				.catch(() => {
+					this.$root.$emit('notify', { type: 'error', text: 'Ошибка загрузки данных, повторите попытку позднее' })
+				})
+		}
+		
 		//Получим данные по тачкам
-		this.$store.dispatch('GET_DATA')
+		this.$store.dispatch('GET_DATA', { getOld: true })
 			.catch(() => {
 				this.$root.$emit('notify', { type: 'error', text: 'Ошибка загрузки данных, повторите попытку позднее' })
 			})

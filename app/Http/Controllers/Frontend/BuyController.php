@@ -36,5 +36,16 @@ class BuyController extends Controller
         {
             return view('frontend.contactUs.index', ['header' => true, 'highlight' => false, 'footer' => true]);
         }
+	}
+	
+    public function contactUsDealer() {
+    	if(Crawler::isCrawler())
+        {
+            return view('frontend.contactUs.seo', ['header' => true, 'highlight' => false, 'footer' => true]);
+        }
+        else
+        {
+            return view('frontend.contactUs.index-dealer', ['header' => true, 'highlight' => false, 'footer' => true]);
+        }
     }
 }

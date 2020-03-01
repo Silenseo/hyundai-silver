@@ -51,7 +51,7 @@
 			<input type="text" class="df-input-bordered service-form__input capitalize" name="surname" id="surname" placeholder="Фамилия" v-model="user.surname" :class="{ 'invalid' : !validation.surname }" @blur="focusLost('surname')">
 			<input type="text" class="df-input-bordered service-form__input capitalize" name="name" id="name" placeholder="Имя" v-model="user.name" :class="{ 'invalid' : !validation.name }" @blur="focusLost('name')">
 			<input type="email" class="df-input-bordered service-form__input" name="email" id="email" placeholder="E-mail" v-model="user.email" :class="{ 'invalid' : !validation.email }" @blur="focusLost('email')">
-			<input type="tel" v-mask="'+7(999)-999-99-99'" class="df-input-bordered service-form__input" name="tel" id="tel" placeholder="Телефон" v-model="phone" :class="{ 'invalid' : !validation.phone }" @blur="focusLost('phone')">
+			<input type="tel" v-mask="'+7(999) 999-99-99'" class="df-input-bordered service-form__input" name="tel" id="tel" placeholder="Телефон" v-model="phone" :class="{ 'invalid' : !validation.phone }" @blur="focusLost('phone')">
 		</div>
 		<div class="service-form__footer">
 			<label class="service-form__accept">
@@ -72,6 +72,7 @@
 import Selectize from 'vue2-selectize'
 import axios from 'axios'
 import { mapGetters } from "vuex"
+import Inputmask from "inputmask";
 
 export default {
 	name: "SignUpServiceForm",
@@ -156,6 +157,13 @@ export default {
 			},
 			sending: false
 		};
+	},
+	directives: {
+		mask: {
+			bind: function(el, binding) {
+				Inputmask(binding.value).mask(el);
+			}
+		}
 	},
 	computed: {
 		...mapGetters({
@@ -320,6 +328,8 @@ export default {
 	mounted() {
 		var that = this;
 
+		this.$root.$emit('form-init');
+		
 		this.$nextTick(function() {
 			//Scrollbars
 			$('.selectize-control .selectize-dropdown-content').each(function(){

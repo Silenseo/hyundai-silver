@@ -39,8 +39,9 @@ export default {
     const defaults = {
       modification: state.car.defaultModificationId,
       complectation: state.car.modificationList[state.car.defaultModificationId].defaultComplectation,
-      exteriorColor: state.car.modificationList[state.car.defaultModificationId].complectations[state.car.modificationList[state.car.defaultModificationId].defaultComplectation].exterior.colors.defaultColor,
-      interiorColor: state.car.modificationList[state.car.defaultModificationId].complectations[state.car.modificationList[state.car.defaultModificationId].defaultComplectation].interior.colors.defaultColor,
+      exteriorColor: (state.car.modificationList[state.car.defaultModificationId].complectations[state.car.modificationList[state.car.defaultModificationId].defaultComplectation].exterior_detail) ? state.car.modificationList[state.car.defaultModificationId].complectations[state.car.modificationList[state.car.defaultModificationId].defaultComplectation].exterior_detail.defaultColor : state.car.modificationList[state.car.defaultModificationId].complectations[state.car.modificationList[state.car.defaultModificationId].defaultComplectation].exterior.colors.defaultColor,
+
+      interiorColor: (state.car.modificationList[state.car.defaultModificationId].complectations[state.car.modificationList[state.car.defaultModificationId].defaultComplectation].interior_detail) ? state.car.modificationList[state.car.defaultModificationId].complectations[state.car.modificationList[state.car.defaultModificationId].defaultComplectation].interior_detail.defaultColor : state.car.modificationList[state.car.defaultModificationId].complectations[state.car.modificationList[state.car.defaultModificationId].defaultComplectation].interior.colors.defaultColor,
       packets: []
     }
     // [!] TODO AND WARN
@@ -53,8 +54,8 @@ export default {
     state.full.complectations = null
     state.configuration.modification = data
     // update default interier/exterior colors
-    state.configuration.exteriorColor = state.car.modificationList[data].complectations[state.car.modificationList[data].defaultComplectation].exterior.colors.defaultColor
-    state.configuration.interiorColor = state.car.modificationList[data].complectations[state.car.modificationList[data].defaultComplectation].interior.colors.defaultColor
+    state.configuration.exteriorColor = (state.car.modificationList[data].complectations[state.car.modificationList[data].defaultComplectation].exterior_detail) ? state.car.modificationList[data].complectations[state.car.modificationList[data].defaultComplectation].exterior_detail.defaultColor : state.car.modificationList[data].complectations[state.car.modificationList[data].defaultComplectation].exterior.colors.defaultColor
+    state.configuration.interiorColor = (state.car.modificationList[data].complectations[state.car.modificationList[data].defaultComplectation].interior_detail) ? state.car.modificationList[data].complectations[state.car.modificationList[data].defaultComplectation].interior_detail.defaultColor : state.car.modificationList[data].complectations[state.car.modificationList[data].defaultComplectation].interior.colors.defaultColor
   },
   UPDATE_FULL_MODIFICATIONS (state, data) {
     state.full.modifications = data
@@ -63,8 +64,8 @@ export default {
     state.configuration.packets = []
     state.configuration.complectation = data
     // update default interier/exterior colors
-    state.configuration.exteriorColor = state.car.modificationList[state.configuration.modification].complectations[data].exterior.colors.defaultColor
-    state.configuration.interiorColor = state.car.modificationList[state.configuration.modification].complectations[data].interior.colors.defaultColor
+    state.configuration.exteriorColor = (state.car.modificationList[state.configuration.modification].complectations[data].exterior_detail) ? state.car.modificationList[state.configuration.modification].complectations[data].exterior_detail.defaultColor : state.car.modificationList[state.configuration.modification].complectations[data].exterior.colors.defaultColor
+    state.configuration.interiorColor = (state.car.modificationList[state.configuration.modification].complectations[data].interior_detail) ? state.car.modificationList[state.configuration.modification].complectations[data].interior_detail.defaultColor : state.car.modificationList[state.configuration.modification].complectations[data].interior.colors.defaultColor
   },
   UPDATE_FULL_COMPLECTATIONS (state, data) {
     state.full.complectations = data
@@ -130,5 +131,8 @@ export default {
   },
   SET_MOBILEMENU_STATE (state, value) {
     state.isMobileOpened = value
+  },
+  SET_SIMILAR (state, value) {
+    state.similar = Object.assign({},value)
   }
 }

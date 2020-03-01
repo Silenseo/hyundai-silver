@@ -26,32 +26,35 @@ body
     z-index: 501
 
 .header-top
-    position: relative
-    display: flex
-    justify-content: flex-end
-    height: 48px
-    background-color: $gray_bg
-    z-index: 102
-    &__list
-        display: flex
-    &__item
-        width: 160px
-        background-color: $sand_bg
-        &:not(:last-of-type)
-            margin-right: 1px
-        &--search
-            width: 76px
-    &__link
-        display: block
-        line-height: 48px
-        text-align: center
-        white-space: nowrap
-        @extend .df-text-input-14px
-        color: $text_black
-        transition: background-color 0.3s
-        &:hover, &:focus
-            background-color: $gray_bg
-            color: $text_black
+	position: relative
+	display: flex
+	justify-content: flex-end
+	height: 48px
+	background-color: $gray_bg
+	z-index: 102
+	&__list
+		display: flex
+	&__item
+		width: 160px
+		background-color: $sand_bg
+		&:not(:last-of-type)
+			margin-right: 1px
+		&--search
+			width: 76px
+	&__link
+		display: flex
+		align-items: center
+		justify-content: center
+		height: 48px
+		line-height: 48px
+		text-align: center
+		white-space: nowrap
+		@extend .df-text-input-14px
+		color: $text_black
+		transition: background-color 0.3s
+		&:hover, &:focus
+			background-color: $gray_bg
+			color: $text_black
 
 .support-service
 	position: relative
@@ -236,11 +239,11 @@ body
 		.hamburger-box
 			width: 100%
 			height: 20px
-		.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after 
+		.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
 			width: 100%
 			height: 3px
 			background-color: #002C5E
-		.hamburger-inner::after 
+		.hamburger-inner::after
 			top: -16px
 		.hamburger-inner::before
 			top: -8px
@@ -260,7 +263,7 @@ body
 	&__item
 		margin-right: 32px
 		&--mobile
-			display: none  
+			display: none
 		&--mir
 			margin-right: 0
 	&__link
@@ -330,7 +333,7 @@ body
 		&:hover
 			svg
 				fill: $third_text
-				
+
 	&__arrow
 		display: block
 		position: absolute
@@ -526,7 +529,7 @@ body
     right: 0
 .search-field-inner
     display: flex
-    justify-content: flex-end    
+    justify-content: flex-end
     height: 100%
 .search-input
     outline: none!important
@@ -551,7 +554,7 @@ body
     cursor: pointer
     .df-close-button rect
         fill: #666
-    
+
 .is-search
     .header-main
         position: static
@@ -578,7 +581,7 @@ body
         &-pic
             width: 116px
             max-height: 64px
-            margin-right: 22px          
+            margin-right: 22px
         &-header
             display: flex
             width: 100%
@@ -615,6 +618,20 @@ body
         &:hover
             opacity: 0.8
 
+//	Dealer page
+.isDealerPage
+	.header-bottom
+		&__logo--dealer
+			flex: none
+
+	.main-nav
+		flex-grow: 0.5
+		margin-left: 20px
+		&__list
+			width: 100%
+			justify-content: right
+		&__item
+			margin-right: 32px
 
 @media (max-width: 1200px)
     .search-body

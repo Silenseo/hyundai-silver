@@ -160,7 +160,7 @@ export default {
 			}
 		},
 		hotButtonsFix: function () {
-			if (!this.fixed) {
+			if (!this.fixed && $('.h-buttons').length > 0) {
 				//Рассчитать положение кнопки
 				let y = $('.h-buttons').offset().top;
 				let x = $('.h-buttons').offset().left;

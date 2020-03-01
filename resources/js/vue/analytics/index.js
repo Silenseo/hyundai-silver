@@ -7,7 +7,7 @@ export default {
     let getters = store.getters
     if (!state.car) return false
 
-    if (!store.state.isDealer) {
+    if (!store.getters.GET_ENV) {
       let priceCredit = Math.round((1 + (getters.GET_EXTERIOR_PRICE + getters.GET_CURRENT_PACKETS_PRICE) / getters.GET_COMPLECTATION_PRICE) * getters.GET_CREDIT_PAYMENT)
       let data = {
         event: 'custom_event',
@@ -68,7 +68,7 @@ export default {
   },
 
   sendGtmFilter (actionText, labelText) {
-    if (!store.state.isDealer) {
+    if (!store.getters.GET_ENV) {
     //   Vue.gtm.trackEvent({
     //     event: 'custom_event',
     //     category: 'Конфигуратор',

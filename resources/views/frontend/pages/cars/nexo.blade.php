@@ -443,11 +443,14 @@
 	</div>
 </section>
 
-<div class="naviJumpWrap">
-	<div class="naviJump">
-		<div class="next">
-			<a href="https://www.hyundai.com/worldwide/en/eco/nexo/because-of-you" class="version__link">Перейти на английскую версию страницы</a>
-		</div>
+<div class="foot-nav">
+	<div class="foot-nav__center">
+		<a href="https://www.hyundai.com/worldwide/en/eco/nexo/because-of-you" class="df-forward-link">
+			Перейти на английскую версию страницы
+			<svg>
+				<use xlink:href="#forward-link"></use>
+			</svg>
+		</a>
 	</div>
 </div>
 

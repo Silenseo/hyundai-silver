@@ -14,6 +14,10 @@ class MotorstudioEvent extends Model
         return strlen($this->preview_picture) > 0 ? $this->picPath . $this->preview_picture : '';
     }
 
+    public function getMobilePictureUrl() {
+        return strlen($this->mobile_picture) > 0 ? $this->picPath . $this->mobile_picture : '';
+    }
+
     public function getDetailPictureUrl() {
         return strlen($this->detail_picture) > 0 ? $this->picPath . $this->detail_picture : '';
     }

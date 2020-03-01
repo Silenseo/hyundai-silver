@@ -16,7 +16,7 @@
 							<input type="text" class="df-input-bordered callback-form__input capitalize" name="name" id="name" placeholder="Введите имя" v-model="user.name" :class="{ 'invalid' : !validation.name }" @blur="focusLost('name')">
 						</div>
 						<div class="callback-form__right">
-							<label for="name" class="callback-form__label">Ваш телефон</label>
+							<label for="tel" class="callback-form__label">Ваш телефон</label>
 							<input type="tel" v-mask="'+7(999)-999-99-99'" class="df-input-bordered callback-form__input" name="tel" id="tel" placeholder="Введите телефон" v-model="user.phone" :class="{ 'invalid' : !validation.phone }" @blur="focusLost('phone')">
 						</div>
 					</div>
@@ -25,7 +25,7 @@
 							<div class="callback-form__dropdown callback-form__dropdown--center df-select-bordered" :class="{ 'invalid' : !validation.center }">
 								<selectize v-model="center" :settings="settingsCenter">
 									<option value=""> </option>
-									<option :value="c" v-for="c in centersList">{{ c }}</option>
+									<option :value="c.name" v-for="c in centersList">{{ c.name }}</option>
 								</selectize>
 							</div>
 							<div class="callback-form__note">
@@ -88,7 +88,13 @@ export default {
 		},
 		centersList: {
 			type: Array,
-			required: false
+			required: true,
+			validator: function (value) {
+				let flag = value.every(item=>
+					typeof item.name !== 'undefined'
+				)
+				return flag
+			}
 		},
 		url: {
 			type: String,

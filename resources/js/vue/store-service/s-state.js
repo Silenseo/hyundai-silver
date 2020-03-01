@@ -17,6 +17,7 @@ export default {
 	CAR: domian + 'car/',
 	CAR_LIST: domian + 'carList',
 	CAR_LIST2: '/api/carList', //Для дропдаунов со списком авто
+	CAR_LIST3: '/ajax/getServiceJSON', //Для дропдаунов со списком авто в Калькуляторе ТО
 	CAR_MODIFICATIONS: domian + 'car/modifications/',
 	CAR_COMPLECTATIONS: domian + 'car/complectations/',
 	DEALERS_LIST: '/requestapi/getDealers?notest=1',
@@ -35,7 +36,8 @@ export default {
 	CONTACT_US_FORM: '/api/send/contactus', //Форма на странице Обратная связь
 	MOTORSTUDIO_CHECKOUT_FORM: '/api/send/motorstudio_request', //Форма записи на мероприятие Моторстудия
 	VACANCY_FORM: '/api/send/jobseeker', //Форма на странице вакансии
-	NEW_EVENT_MOTORSTUDION_FORM: '/api/send/eventRequest' //Форма на странице вакансии
+	NEW_EVENT_MOTORSTUDION_FORM: '/api/send/eventRequest', //Форма на странице вакансии
+	CHECK_CREDIT: '/api/checkEcredit/' //Показывать ли кнопку Предодобрение кредита на дилерской сборке
   },
   car: {//Данные используются везде
 	code: "",
@@ -56,10 +58,12 @@ export default {
   city: '',
   dealer: '',
   cost: {
-    works: '0 &#8381;',
-    parts: '0 &#8381;',
-    total: '0 &#8381;'
+    works: 0,
+    parts: 0,
+    partsPl2: 0,
+    total: 0
   },
+  serviceParts: 'parts',
   data: [],
   dataEngines: [],
   dealersData: [],
@@ -67,6 +71,44 @@ export default {
   dealersCities: [],
   selectedEvents: [],
   selectedEvent: 0,
+  carsIdLinks: [
+    {
+      id: 22,
+      link: 'Creta'
+    },
+    {
+      id: 26,
+      link: 'NewTucson'
+    },
+    {
+      id: 25,
+      link: 'NewSantaFe'
+    },
+    {
+      id: 23,
+      link: 'Solaris'
+    },
+    {
+      id: 27,
+      link: 'NewElantra'
+    },
+    {
+      id: 24,
+      link: 'Sonata'
+    },
+    {
+      id: 16,
+      link: 'H-1'
+    },
+    {
+      id: 29,
+      link: 'NewSonata'
+    },
+    {
+      id: 28,
+      link: 'i30N'
+    }
+  ],
   //Start
   start: {
 		carcaseList: [],
@@ -113,5 +155,38 @@ export default {
 			lastPay: 0
 		},
 		openMobileLine: false
+  },
+  //DealerCars
+  dealerCars: {
+	  carId: 0
+  },
+  //Trade In
+  tradein: {
+	  currentCar: null,
+	  sendUrl: '',
+	  state: {
+		  step1: false,
+		  step2: false,
+		  step3: false
+	  },
+	  step2: {
+		  brand: '',
+		  model: '',
+		  age: '',
+		  year: '',
+		  complectation: '',
+		  body: '',
+		  condition: '',
+		  milleage: undefined,
+		  vin: ''
+	  },
+	  step3: {
+		name: '',
+		surname: '',
+		patronymic: '',
+		tel: '',
+		email: '',
+		city: ''
+	  }
   }
 }

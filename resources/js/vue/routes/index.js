@@ -87,7 +87,8 @@ export default [
         meta: {
           title: 'Итог | Конфигуратор',
           confState: 'final',
-          step: 5
+		  step: 5,
+		  gtm: 'Итого'
         }
         // beforeEnter: (to, from, next) => {
           // console.log('to.params.id', to.params.id)

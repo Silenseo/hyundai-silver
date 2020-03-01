@@ -18,6 +18,7 @@ var vacancy = require('./backstop_configs/vacancy')
 var vacancyJunior = require('./backstop_configs/vacancy_junior')
 var shell = require('./backstop_configs/shell')
 var superSeries = require('./backstop_configs/super_series')
+// var superSeries2 = require('./backstop_configs/super_series_2')
 var bodyworks = require('./backstop_configs/bodyworks')
 var best = require('./backstop_configs/best')
 var warranty = require('./backstop_configs/warranty')
@@ -134,6 +135,11 @@ pathConfig.array = [
 		name: 'solaris_super_series',
 		path: '/promo/solaris_super_series',
 		scenarios: superSeries.scenarios
+	},
+	{
+		name: 'solaris_super_series_2',
+		path: '/promo/solaris_super_series_2',
+		// scenarios: superSeries2.scenarios
 	},
 	{
 		name: 'bodyworks',

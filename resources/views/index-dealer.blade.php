@@ -11,7 +11,7 @@
 
 @section('content')
     <section class="slider lazyload lazypreview" data-bgset="/images/index/fon.jpg">
-        <div class="container">
+        <div class="container-fluid slider__wrap">
             <div class="row">
                 <div class="col-md-12">
 					<div class="slider__wrap">
@@ -145,13 +145,28 @@
 							*to-hour: Number (Час окончания работы + 55 минут для звонка клиенту)
 							*type: Number (Тип окна обратного звонка: 0 - без выбора дилерского центра, 1 - с выбором)
 							centers-list: Array (Список дилерских центров)
+								{
+									*name: 'Первый',
+									address: 'Москва, улица Новый Арбат д. 21, ст. 1',
+									coordinates: [58.578123, 49.607352],
+									phones: ['777-777','888-888'],
+									stations: ['Смоленская (400 м)', 'Курская (400 м)'],
+									time: 'ежедневно, с 10:00 до 22:00'
+								}
 							*url-call-back: String (URL для отправки формы обратного звонка)
 							*url-ask-question: String (URL для отправки формы задать вопрос)
 
 							* - обязательные параметры
 							-->
 
-							<hot-buttons-dealer :from-hour="10" :to-hour="18" :type="1" :centers-list="['Первый', 'Второй', 'Третий']" url-call-back="/" url-ask-question="/"></hot-buttons-dealer>
+							<hot-buttons-dealer :from-hour="10" :to-hour="18" :type="1" :centers-list="[
+							{
+								name: 'Первый'
+							},
+							{
+								name: 'Второй'
+							}
+						]" url-call-back="/" url-ask-question="/"></hot-buttons-dealer>
 						</div>
 					</div>
                 </div>
@@ -266,8 +281,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="about-hyundai__inner">
+						<h3 class="about-hyundai__title">Hyundai&nbsp;&mdash; новое мышление, новые возможности</h3>
 						<div class="about-hyundai__left">
-							<h3 class="about-hyundai__title">Hyundai&nbsp;&mdash; новое мышление, новые возможности</h3>
 							<p>
 								Основополагающая идея Hyundai&nbsp;&mdash; непрерывность прогресса и&nbsp;производство новых, всё более качественных, практичных и&nbsp;функциональных автомобилей. Этот принцип нашёл отражение в&nbsp;концепте &laquo;Современный премиум&raquo; и&nbsp;воплощается в&nbsp;каждой модели бренда.
 							</p>

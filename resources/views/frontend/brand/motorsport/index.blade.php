@@ -14,7 +14,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="banner__inner">
-					
+
 				</div>
 			</div>
 		</div>
@@ -27,10 +27,9 @@
 			<div class="col-md-12">
 				<div class="intro__inner">
 					<div class="intro__left df-slideUp">
-						<div class="intro__year">2019</div>
+						<div class="intro__year">Hyundai Motosport</div>
 						<h1 class="intro__title">
-							Hyundai
-							<br>Motorsport
+							<a href=" https://www.hyundai.ru/news/komanda-hyundai-motorsport-vpervye-vyigrala-chempionat-mira-fia-po-ralli">Победитель Чемпионата мира FIA по ралли 2019</a>
 						</h1>
 						<div class="intro__subtitle">
 							Команда Хендэ в WRC
@@ -72,8 +71,93 @@
 									<div class="df-lead-text-22px df-text who__text">
 										Участие команды Hyundai в&nbsp;международных соревнованиях обеспечивает компания Hyundai Motorsport GmbH, основанная в&nbsp;2012 году и&nbsp;расположенная в&nbsp;городе Альценау (Германия). Hyundai Motorsport участвует в&nbsp;Чемпионате мира по&nbsp;ралли FIA (WRC) и&nbsp;кольцевых гонках, а&nbsp;также занимается поддержкой клиентов в&nbsp;гонках&nbsp;R5.
 									</div>
-								</div>	
+								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="champ-title">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			<div class="champ__title h1">Чемпионат мира FIA<br> по ралли WRC 2019</div>
+		</div>
+	</div>
+</section>
+
+<section class="champ champ1">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">			
+				<div class="champ__inner">					
+					<div class="champ__graph">
+						<div class="champ__back df-back">
+							<div class="df-back__wrap">
+								<div class="df-back__img js-set-color" data-bg="/images/brand/motorsport/img/champ/bg1.png"></div>
+							</div>
+						</div>
+						<div class="champ__wrapper">
+							<div class="champ__info">
+								<div class="champ__info-sign">
+									<img src="/images/brand/motorsport/img/champ/1.svg" alt="" class="win__icon">
+									<p class="champ__info-sign-title">4 победы — новый рекорд 2019 года</p>
+								</div>
+								<div class="champ__info-desc">
+									<h3 class="champ__info-desc-title">Первый выигрыш!</h3>
+									<p class="champ__info-desc-text">Hyundai Motorsport впервые выиграла Чемпионат мира FIA по&nbsp;ралли (WRC)*, завершив сезон 2019 года на&nbsp;верхней строчке зачета производителей 
+									с&nbsp;отрывом в&nbsp;18 очков от&nbsp;ближайших преследователей.</p>
+									<p class="champ__info-desc-disclaimer">* В ближайшее межсезонье Hyundai Motorsport займется подготовкой к&nbsp;Чемпионату мира FIA</p>
+								</div>
+							</div>
+							<div class="champ__img df-img">
+								<div class="champ__parallax df-img__parallax parallax">
+									<div class="df-img__wrap">
+										<div class="df-img__img champ__image" data-bg="/images/brand/motorsport/img/champ/1.jpg"></div>
+									</div>
+								</div>
+							</div>							
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="champ champ2">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">			
+				<div class="champ__inner">
+					<div class="champ__graph">
+						<div class="champ__back df-back">
+							<div class="df-back__wrap">
+								<div class="df-back__img js-set-color" data-bg="/images/brand/motorsport/img/champ/bg2.png"></div>
+							</div>
+						</div>
+						<div class="champ__wrapper">
+							<div class="champ__img df-img">
+								<div class="champ__parallax df-img__parallax parallax">
+									<div class="df-img__wrap">
+										<div class="df-img__img champ__image" data-bg="/images/brand/motorsport/img/champ/2.jpg"></div>
+									</div>
+								</div>
+							</div>
+							<div class="champ__info">
+								<div class="champ__info-sign">
+									<p class="champ__info-sign-points">380 <span>очков</span></p>
+									<p class="champ__info-sign-title">Заработала команда из&nbsp;Альценау</p>
+								</div>
+								<div class="champ__info-desc">
+									<h3 class="champ__info-desc-title">Это только начало</h3>
+									<p class="champ__info-desc-text">В ближайшее межсезонье Hyundai Motorsport займется подготовкой к&nbsp;Чемпионату мира FIA по&nbsp;ралли 2020 с&nbsp;некоторыми изменениями в&nbsp;составе пилотов, но&nbsp;с&nbsp;еще более высокими амбициями.</p>	
+								</div>
+							</div>							
 						</div>
 					</div>
 				</div>

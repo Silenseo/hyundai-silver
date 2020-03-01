@@ -109,21 +109,23 @@ export default {
 						that.$emit('success');
 						that.closeThis();
 
-						if (that.from === 'calculator') {
-							dataLayer.push({
-								"event": "custom_event",
-								"category" : "Конфигуратор",
-								"action": "Отправка письма на e mail",
-								"label" : that.carCode
-							});
-						} else if (that.from === 'summary') {
-							dataLayer.push({
-								"event": "custom_event",
-								"category" : "Конфигуратор",
-								"action": "Отправка на почту",
-								"label" : that.carCode
-							});
-						}	
+						if (typeof dataLayer !== 'undefined') {
+							if (that.from === 'calculator') {
+								dataLayer.push({
+									"event": "custom_event",
+									"category" : "Конфигуратор",
+									"action": "Отправка письма на e mail",
+									"label" : that.carCode
+								});
+							} else if (that.from === 'summary') {
+								dataLayer.push({
+									"event": "custom_event",
+									"category" : "Конфигуратор",
+									"action": "Отправка на почту",
+									"label" : that.carCode
+								});
+							}	
+						}
 					})
 					.catch(function (error) {
 						that.sending = false

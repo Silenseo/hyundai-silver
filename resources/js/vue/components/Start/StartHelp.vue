@@ -1,6 +1,5 @@
 <template>
 	<section class="help">
-		<div class="help__migel"></div>
 		<h2 class="help__title">Помочь с настройками?</h2>
 		<ul class="help__list">
 			<li class="help__item" :key="index" v-for="(program, index) in programsList" v-if="!(program.id === 1 && currentCar.name === 'H-1')">

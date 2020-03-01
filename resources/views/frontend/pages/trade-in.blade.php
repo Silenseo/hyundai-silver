@@ -19,7 +19,7 @@
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#back-link"></use>
           </svg>
         </a>
-        <div class="head__banner lazyload lazypreview" data-bgset="/images/trade-in/main-md.jpg [(max-width: 640px)] | /images/trade-in/main.jpg">
+        <div class="head__banner lazyload lazypreview" data-bgset="https://optimizator.hyundai.ru/images/trade-in/main-md.jpg?optimization=true [(max-width: 640px)] | https://optimizator.hyundai.ru/images/trade-in/main.jpg?optimization=true">
           <div class="head__composition">
             <h1 class="head__title">Специальное предложение.</h1>
             <div class="head__subtitle">
@@ -50,18 +50,46 @@
           <div class="benefit__content">
             <div class="benefit__item">
               <div class="benefit__item-header benefit__item-header--mobile">
-                <p class="benefit__item-title">CRETA</p>
-                <p class="benefit__item-price"><span>957 000</span> — <span>1 335 000</span> ₽</p>
+                <p class="benefit__item-title">i30N</p>
+                <p class="benefit__item-price"><span>2 200 000</span> — <span>2 350 000</span> ₽</p>
               </div>
               <div class="benefit__img">
-                <img src="/images/trade-in/creta.png" alt="">
+                <img src="https://optimizator.hyundai.ru/images/trade-in/i30N.png?optimization=true" alt="">
+              </div>
+              <div class="benefit__info">
+                <div class="benefit__item-header">
+                  <p class="benefit__item-title">i30N</p>
+                  <p class="benefit__item-price"><span>2 200 000</span> — <span>2 350 000</span> ₽</p>
+                </div>
+                <p class="benefit__item-text">Выгода до 160 000 ₽</p>
+                <div class="benefit__item-buttons">
+                  <a class="df-button" href="/test-drive/i30N">Тест-драйв</a>
+                  <a class="df-button" href="/configurator/car/28">Конфигуратор</a>
+                </div>
+<!--
+                <a href="#" class="df-download-link">
+                  <svg>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#download-link"></use>
+                  </svg>
+                  Скачать брошюру
+                </a>
+-->
+              </div>
+            </div>
+            <div class="benefit__item">
+              <div class="benefit__item-header benefit__item-header--mobile">
+                <p class="benefit__item-title">CRETA</p>
+                <p class="benefit__item-price"><span>957 000</span> — <span>1 485 000</span> ₽</p>
+              </div>
+              <div class="benefit__img">
+                <img src="https://optimizator.hyundai.ru/images/trade-in/creta.png?optimization=true" alt="">
               </div>
               <div class="benefit__info">
                 <div class="benefit__item-header">
                   <p class="benefit__item-title">CRETA</p>
-                  <p class="benefit__item-price"><span>957 000</span> — <span>1 335 000</span> ₽</p>
+                  <p class="benefit__item-price"><span>957 000</span> — <span>1 485 000</span> ₽</p>
                 </div>
-                <p class="benefit__item-text">Выгода до 60 000 ₽</p>
+                <p class="benefit__item-text">Выгода до 40 000 ₽</p>
                 <div class="benefit__item-buttons">
                   <a class="df-button" href="/test-drive/Creta">Тест-драйв</a>
                   <a class="df-button" href="/configurator/car/22">Конфигуратор</a>
@@ -82,14 +110,14 @@
                 <p class="benefit__item-price"><span>1 499 000</span> — <span>2 269 000</span> ₽</p>
               </div>
               <div class="benefit__img">
-                <img src="/images/trade-in/tucson.png" alt="">
+                <img src="https://optimizator.hyundai.ru/images/trade-in/tucson.png?optimization=true" alt="">
               </div>
               <div class="benefit__info">
                 <div class="benefit__item-header">
                   <p class="benefit__item-title">Новый TUCSON</p>
                   <p class="benefit__item-price"><span>1 499 000</span> — <span>2 269 000</span> ₽</p>
                 </div>
-                <p class="benefit__item-text">Выгода до 110 000 ₽</p>
+                <p class="benefit__item-text">Выгода до 80 000 ₽</p>
                 <div class="benefit__item-buttons">
                   <a class="df-button" href="/test-drive/NewTucson">Тест-драйв</a>
                   <a class="df-button" href="/configurator/car/26">Конфигуратор</a>
@@ -110,7 +138,7 @@
                 <p class="benefit__item-price"><span>2 099 000</span> — <span>2 949 000</span> ₽</p>
               </div>
               <div class="benefit__img">
-                <img src="/images/trade-in/santa-fe.png" alt="">
+                <img src="https://optimizator.hyundai.ru/images/trade-in/santa-fe.png?optimization=true" alt="">
               </div>
               <div class="benefit__info">
                 <div class="benefit__item-header">
@@ -135,15 +163,15 @@
             <div class="benefit__item">
               <div class="benefit__item-header benefit__item-header--mobile">
                 <p class="benefit__item-title">SOLARIS</p>
-                <p class="benefit__item-price"><span>739 000</span> — <span>999 000</span> ₽</p>
+                <p class="benefit__item-price"><span>746 000</span> — <span>1 006 000</span> ₽</p>
               </div>
               <div class="benefit__img">
-                <img src="/images/trade-in/solaris.png" alt="">
+                <img src="https://optimizator.hyundai.ru/images/trade-in/solaris.png?optimization=true" alt="">
               </div>
               <div class="benefit__info">
                 <div class="benefit__item-header">
                   <p class="benefit__item-title">SOLARIS</p>
-                  <p class="benefit__item-price"><span>739 000</span> — <span>999 000</span> ₽</p>
+                  <p class="benefit__item-price"><span>746 000</span> — <span>1 006 000</span> ₽</p>
                 </div>
                 <p class="benefit__item-text">Выгода до 50 000 ₽</p>
                 <div class="benefit__item-buttons">
@@ -163,20 +191,48 @@
             <div class="benefit__item">
               <div class="benefit__item-header benefit__item-header--mobile">
                 <p class="benefit__item-title">SONATA</p>
-                <p class="benefit__item-price"><span>1 344 000</span> — <span>1 785 000</span> ₽</p>
+                <p class="benefit__item-price"><span>1 360 000</span> — <span>1 800 000</span> ₽</p>
               </div>
               <div class="benefit__img">
-                <img src="/images/trade-in/sonata.png" alt="">
+                <img src="https://optimizator.hyundai.ru/images/trade-in/sonata.png?optimization=true" alt="">
               </div>
               <div class="benefit__info">
                 <div class="benefit__item-header">
                   <p class="benefit__item-title">SONATA</p>
-                  <p class="benefit__item-price"><span>1 344 000</span> — <span>1 785 000</span> ₽</p>
+                  <p class="benefit__item-price"><span>1 360 000</span> — <span>1 800 000</span> ₽</p>
                 </div>
-                <p class="benefit__item-text">Выгода до 140 000 ₽</p>
+                <p class="benefit__item-text">Выгода до 80 000 ₽</p>
                 <div class="benefit__item-buttons">
                   <a class="df-button" href="/test-drive/Sonata">Тест-драйв</a>
                   <a class="df-button" href="/configurator/car/24">Конфигуратор</a>
+                </div>
+<!--
+                <a href="#" class="df-download-link">
+                  <svg>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#download-link"></use>
+                  </svg>
+                  Скачать брошюру
+                </a>
+-->
+              </div>
+            </div>
+            <div class="benefit__item">
+              <div class="benefit__item-header benefit__item-header--mobile">
+                <p class="benefit__item-title">Новая SONATA</p>
+                <p class="benefit__item-price"><span>1 740 000</span> — <span>1 999 000</span> ₽</p>
+              </div>
+              <div class="benefit__img">
+                <img src="https://optimizator.hyundai.ru/images/trade-in/newsonata.png?optimization=true" alt="">
+              </div>
+              <div class="benefit__info">
+                <div class="benefit__item-header">
+                  <p class="benefit__item-title">Новая SONATA</p>
+                  <p class="benefit__item-price"><span>1 740 000</span> — <span>1 999 000</span> ₽</p>
+                </div>
+                <p class="benefit__item-text">Выгода до 50 000 ₽</p>
+                <div class="benefit__item-buttons">
+                  <a class="df-button" href="/test-drive/NewSonata">Тест-драйв</a>
+                  <a class="df-button" href="/configurator/car/29">Конфигуратор</a>
                 </div>
 <!--
                 <a href="#" class="df-download-link">
@@ -194,14 +250,14 @@
                 <p class="benefit__item-price"><span>1 049 000</span> — <span>1 315 000</span> ₽</p>
               </div>
               <div class="benefit__img">
-                <img src="/images/trade-in/elantra.png" alt="">
+                <img src="https://optimizator.hyundai.ru/images/trade-in/elantra.png?optimization=true" alt="">
               </div>
               <div class="benefit__info">
                 <div class="benefit__item-header">
                   <p class="benefit__item-title">ELANTRA</p>
                   <p class="benefit__item-price"><span>1 049 000</span> — <span>1 315 000</span> ₽</p>
                 </div>
-                <p class="benefit__item-text">Выгода до 50 000 ₽</p>
+                <p class="benefit__item-text">Выгода до 30 000 ₽</p>
                 <div class="benefit__item-buttons">
                   <a class="df-button" href="/test-drive/NewElantra">Тест-драйв</a>
                   <a class="df-button" href="/configurator/car/7">Конфигуратор</a>
@@ -233,7 +289,7 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="slide__img">
-                  <img src="/images/trade-in/computer_2.png" alt="">
+                  <img src="https://optimizator.hyundai.ru/images/trade-in/computer_2.png?optimization=true" alt="">
                 </div>
                 <div class="slide__info">
                   <p class="slide__info-step">Шаг 1</p>
@@ -243,7 +299,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="slide__img">
-                  <img src="/images/trade-in/computer_3.png" alt="">
+                  <img src="https://optimizator.hyundai.ru/images/trade-in/computer_3.png?optimization=true" alt="">
                 </div>
                 <div class="slide__info">
                   <p class="slide__info-step">Шаг 2</p>
@@ -252,7 +308,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="slide__img">
-                  <img src="/images/trade-in/computer_4.png" alt="">
+                  <img src="https://optimizator.hyundai.ru/images/trade-in/computer_4.png?optimization=true" alt="">
                 </div>
                 <div class="slide__info">
                   <p class="slide__info-step">Шаг 3</p>
@@ -262,7 +318,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="slide__img">
-                  <img src="/images/trade-in/computer_5.png" alt="">
+                  <img src="https://optimizator.hyundai.ru/images/trade-in/computer_5.png?optimization=true" alt="">
                 </div>
                 <div class="slide__info">
                   <p class="slide__info-step">Шаг 4</p>

@@ -1,22 +1,25 @@
 {
     "private": true,
     "scripts": {
-        "dev": "npm run dealer_development && npm run development",
+        "dev": "npm run dealer_development -- --env.mixfile=dealer.mix && npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "dealer_development": "cross-env NODE_ENV=development MIX_BUILD=dealer node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
         "watch_dealer": "npm run dealer_development -- --watch",
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "prod": "npm run dealer_production -- --env.mixfile=dealer.mix && npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "dealer_production": "cross-env NODE_ENV=production MIX_BUILD=dealer node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
         "autoprefixer": "^6.7.2",
-        "axios": "^0.18.0",
+        "axios": "^0.19.0",
         "babel-core": "^6.22.1",
         "babel-eslint": "^7.1.1",
         "babel-loader": "^6.2.10",
+        "babel-plugin-dynamic-import-webpack": "^1.1.0",
+        "babel-plugin-remove-webpack": "^1.1.0",
         "babel-plugin-transform-runtime": "^6.22.0",
         "babel-preset-env": "^1.3.2",
         "babel-preset-es2015": "^6.24.1",
@@ -50,6 +53,7 @@
         "lodash": "^4.17.5",
         "nprogress": "^0.2.0",
         "popper.js": "^1.12",
+        "prerender-spa-plugin": "^3.4.0",
         "smoothscroll-polyfill": "^0.4.3",
         "uglify-js": "^3.6.0",
         "uglifyjs-webpack-plugin": "^2.1.3",
@@ -76,6 +80,8 @@
     },
     "dependencies": {
         "date-fns": "^1.30.1",
+        "inputmask": "^4.0.8",
+        "js-base64": "^2.5.1",
         "smooth-scrollbar": "^8.3.1",
         "spritespin": "^4.0.6",
         "v-money": "^0.8.1",

@@ -67,6 +67,7 @@ class MotorstudioController extends Controller
                 'from' => date('Y-m-d', $item->date_start),
                 'to' => date('Y-m-d', $item->date_end),
                 'img' => $item->getPreviewPictureUrl(),
+                'img_mobile' => strlen($item->getMobilePictureUrl()) > 0 ? $item->getMobilePictureUrl() : $item->getPreviewPictureUrl(),
                 'available' => ($item->available == 1),
                 'repair' => ($item->repair == 1),
                 'promo' => ($item->is_promo == 1),
