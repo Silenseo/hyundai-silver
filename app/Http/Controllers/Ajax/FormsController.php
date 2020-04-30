@@ -219,7 +219,7 @@ $mess .= 'Телефон:' . (string)$request->get('phone') . "\n\n";
 		Mail::raw($mess, function ($message){
             $message
                 ->to(explode(',',env('DEALER_EMAIL')))
-                ->subject('Заявка на технчиеское обслуживание');
+                ->subject('Заявка на техническое обслуживание');
         });
 
 /*

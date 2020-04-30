@@ -10,8 +10,8 @@
                     </a>
                     <ul class="showroom__list">
                         <li class="showroom__line">
-                            <h4 class="showroom__title">Новинки</h4> 
-							
+                            <h4 class="showroom__title">Новинки</h4>
+
 					  <ul class="showroom__cars">
 					                                                                              <li class="showroom__car showroom__car">
 					                                              <a href="/promo/solaris_super_series_2" class="d-car">
@@ -53,10 +53,10 @@
 					                                              </div>
 					                                          </a>
 					                                      </li>
-					                                                                        
+
 					                                                                      </ul>
-                        </li>                     
-                    
+                        </li>
+
                         <?php
                         $f = true;
                         $k = 0;?>
@@ -130,39 +130,39 @@
                             <?php $f = false; ?>
                             @endif
                         @endforeach
-                        {{-- <li class="showroom__line">
-                            <h4 class="showroom__title">Коммерческие</h4>
-                            <ul class="showroom__cars">
-                                <li class="showroom__car showroom__car">
-                                    <a href="https://hyundaitrucks.ru/trucks/gruzoviki/" class="d-car" target="_blank">
-                                        <div class="d-car__top-line">
-                                            <h5 class="d-car__title">Грузовики</h5>
-                                            <div class="d-car__name"></div>
-                                        </div>
-                                        <div class="d-car__price"></div>
-                                        <div class="d-car__m-name"></div>
-                                        <div class="d-car__img">
-                                            <img class="showroom-lazyload" data-showroomsrc="/images/cars/hd35.png" alt="HD35">
-                                        </div>
-                                        <span class="showroom__cat-item-name" style="color: #103a71;"><br>Выбрать модель&nbsp;<svg role="img" aria-hidden="true" style="width: 24px; height: 10px;"><use xlink:href="#right-link"></use></svg></span>
-                                    </a>
-                                </li>
-                                <li class="showroom__car showroom__car">
-                                    <a href="https://hyundaitrucks.ru/trucks/avtobusy/" class="d-car" target="_blank">
-                                        <div class="d-car__top-line">
-                                            <h5 class="d-car__title">Автобусы</h5>
-                                            <div class="d-car__name"></div>
-                                        </div>
-                                        <div class="d-car__price"></div>
-                                        <div class="d-car__m-name"></div>
-                                        <div class="d-car__img">
-                                            <img class="showroom-lazyload" data-showroomsrc="/images/cars/bus.png" alt="bus">
-                                        </div>
-                                        <span class="showroom__cat-item-name" style="color: #103a71;"><br>Выбрать модель&nbsp;<svg role="img" aria-hidden="true" style="width: 24px; height: 10px;"><use xlink:href="#right-link"></use></svg></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li> --}}
+<!--                        <li class="showroom__line">-->
+<!--                            <h4 class="showroom__title">Коммерческие</h4>-->
+<!--                            <ul class="showroom__cars">-->
+<!--                                <li class="showroom__car showroom__car">-->
+<!--                                    <a href="https://hyundaitrucks.ru/trucks/gruzoviki/" class="d-car" target="_blank">-->
+<!--                                        <div class="d-car__top-line">-->
+<!--                                            <h5 class="d-car__title">Грузовики</h5>-->
+<!--                                            <div class="d-car__name"></div>-->
+<!--                                        </div>-->
+<!--                                        <div class="d-car__price"></div>-->
+<!--                                        <div class="d-car__m-name"></div>-->
+<!--                                        <div class="d-car__img">-->
+<!--                                            <img class="showroom-lazyload" data-showroomsrc="/images/cars/hd35.png" alt="HD35">-->
+<!--                                        </div>-->
+<!--                                        <span class="showroom__cat-item-name" style="color: #103a71;"><br>Выбрать модель&nbsp;<svg role="img" aria-hidden="true" style="width: 24px; height: 10px;"><use xlink:href="#right-link"></use></svg></span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li class="showroom__car showroom__car">-->
+<!--                                    <a href="https://hyundaitrucks.ru/trucks/avtobusy/" class="d-car" target="_blank">-->
+<!--                                        <div class="d-car__top-line">-->
+<!--                                            <h5 class="d-car__title">Автобусы</h5>-->
+<!--                                            <div class="d-car__name"></div>-->
+<!--                                        </div>-->
+<!--                                        <div class="d-car__price"></div>-->
+<!--                                        <div class="d-car__m-name"></div>-->
+<!--                                        <div class="d-car__img">-->
+<!--                                            <img class="showroom-lazyload" data-showroomsrc="/images/cars/bus.png" alt="bus">-->
+<!--                                        </div>-->
+<!--                                        <span class="showroom__cat-item-name" style="color: #103a71;"><br>Выбрать модель&nbsp;<svg role="img" aria-hidden="true" style="width: 24px; height: 10px;"><use xlink:href="#right-link"></use></svg></span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </li>-->
                     </ul>
                 </div>
             </div>

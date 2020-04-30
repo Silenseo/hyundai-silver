@@ -32,6 +32,17 @@
           За более подробной информацией Вы можете обратиться как к&nbsp;любому официальному дилеру Hyundai Motor CIS, так и&nbsp;непосредственно в&nbsp;отдел корпоративных продаж.</p>
           <div class="info-items">
             <div class="info-item">
+              <h5 class="info-item__title">Седов Юрий</h5>
+              <p class="info-item__text df-text-small-12px">
+                Менеджер отдела продаж
+              </p>
+              <p class="info-item__text" style="font-size:1.5rem">
+                <a href="tel:+73422507800" class="df-link-1" target="_blank" rel="nofollow">+7 (342) 250-78-00</a>, ext. 1223<br>
+                <a href="tel:+79091053839" class="df-link-1" target="_blank" rel="nofollow">+7 (909) 105-38-39</a>
+              </p>
+              <p class="info-item__text"><a href="mailto:yusedov@hyundai-silver.ru" class="df-link-1">yusedov@hyundai-silver.ru</a></p>
+            </div>
+            {{-- <div class="info-item">
               <h5 class="info-item__title">Дмитрий Щербаков</h5>
               <p class="info-item__text df-text-small-12px">
                 Менеджер по корпоративным продажам
@@ -44,7 +55,7 @@
                 Менеджер по корпоративным продажам
               </p>
               <a href="mailto:OAMikhailova@hyundai.ru" class="df-link-1">OAMikhailova@hyundai.ru</a>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>

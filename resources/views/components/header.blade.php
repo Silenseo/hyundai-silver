@@ -86,7 +86,7 @@
         <div class="support-service">
             <a class="support-service__link js-open-support-service__dropdown" href="#" role="button">
                 <div class="support-service__text">Служба клиентской поддержки</div>
-                <div class="support-service__phone">8 800 333-71-67</div>
+                <div class="support-service__phone">+7 (342) 225-08-76</div>
                 <svg role="img" aria-hidden="true" class="support-service__arrow">
                     <use xlink:href="#icon-Arrow_Dropdown"></use>
                 </svg>
@@ -201,20 +201,20 @@
                                         Конфигуратор
                                     </a>
                                 </li>
-                                <li class="main-nav__item">
-                                    <a href="#" class="main-nav__link main-nav__link--contains-submenu js-main-submenu-open">
-                                        Бренд
-                                        <svg role="img" aria-hidden="true" class="main-nav__arrow">
-                                            <use xlink:href="#icon-Arrow_Dropdown"></use>
-                                        </svg>
-                                    </a>
-                                    @component('components/dropdown-brand')@endcomponent
-                                </li>
-                                <li class="main-nav__item">
-                                    <a href="/motorstudio_moscow" class="main-nav__link">
-                                        Motorstudio
-                                    </a>
-                                </li>
+{{--                                <li class="main-nav__item">--}}
+{{--                                    <a href="#" class="main-nav__link main-nav__link--contains-submenu js-main-submenu-open">--}}
+{{--                                        Бренд--}}
+{{--                                        <svg role="img" aria-hidden="true" class="main-nav__arrow">--}}
+{{--                                            <use xlink:href="#icon-Arrow_Dropdown"></use>--}}
+{{--                                        </svg>--}}
+{{--                                    </a>--}}
+{{--                                    @component('components/dropdown-brand')@endcomponent--}}
+{{--                                </li>--}}
+{{--                                <li class="main-nav__item">--}}
+{{--                                    <a href="/motorstudio_moscow" class="main-nav__link">--}}
+{{--                                        Motorstudio--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
                                 <li class="main-nav__item main-nav__item--mir">
                                     <a href="https://mir.hyundai.ru/" target="_blank" class="main-nav__link main-nav__link--iconed">
                                         Мир Хендэ
